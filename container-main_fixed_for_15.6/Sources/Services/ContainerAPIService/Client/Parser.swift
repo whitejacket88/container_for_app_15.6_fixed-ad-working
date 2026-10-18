@@ -1,0 +1,1202 @@
+//===----------------------------------------------------------------------===//
+// Copyright © 2026 Apple Inc. and the container project authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//===----------------------------------------------------------------------===//
+
+import ContainerPersistence
+import ContainerResource
+import Containerization
+import ContainerizationError
+import ContainerizationExtras
+import ContainerizationOCI
+import ContainerizationOS
+import DNSServer
+import Foundation
+import SystemPackage
+
+// MARK: - Collection capacity hints
+// Methods in this file build arrays and dictionaries in loops where the final
+// size is known from the input parameter count. reserveCapacity() and
+// Dictionary(minimumCapacity:) avoid O(log n) reallocation copies as the
+// collection grows incrementally. While this is a micro-optimization for each
+// individual call, these methods execute on every `container run/create` and
+// the savings compound at scale.
+
+/// A parsed volume specification from user input
+public struct ParsedVolume {
+    public let name: String
+    public let destination: String
+    public let options: [String]
+    public let isAnonymous: Bool
+
+    public init(name: String, destination: String, options: [String] = [], isAnonymous: Bool = false) {
+        self.name = name
+        self.destination = destination
+        self.options = options
+        self.isAnonymous = isAnonymous
+    }
+}
+
+/// Union type for parsed mount specifications
+public enum VolumeOrFilesystem {
+    case filesystem(Filesystem)
+    case volume(ParsedVolume)
+}
+
+public struct Parser {
+    public static func memoryStringAsMiB(_ memory: String) throws -> Int64 {
+        let ram = try Measurement.parse(parsing: memory)
+        let mb = ram.converted(to: .mebibytes)
+        return Int64(mb.value)
+    }
+
+    public static func memoryStringAsBytes(_ memory: String) throws -> UInt64 {
+        let ram = try Measurement.parse(parsing: memory)
+        let mb = ram.converted(to: .bytes)
+        return UInt64(mb.value)
+    }
+
+    public static func user(
+        user: String?, uid: UInt32?, gid: UInt32?,
+        defaultUser: ProcessConfiguration.User = .id(uid: 0, gid: 0)
+    ) -> (user: ProcessConfiguration.User, groups: [UInt32]) {
+        var supplementalGroups: [UInt32] = []
+        let user: ProcessConfiguration.User = {
+            if let user = user, !user.isEmpty {
+                return .raw(userString: user)
+            }
+            if let uid, let gid {
+                return .id(uid: uid, gid: gid)
+            }
+            if uid == nil, gid == nil {
+                // Neither uid nor gid is set. return the default user
+                return defaultUser
+            }
+            // One of uid / gid is left unspecified. Set the user accordingly
+            if let uid {
+                return .raw(userString: "\(uid)")
+            }
+            if let gid {
+                supplementalGroups.append(gid)
+            }
+            return defaultUser
+        }()
+        return (user, supplementalGroups)
+    }
+
+    /// Resolve a username/uid/gid triple for an account that's about to be created (as opposed
+    /// to `user(user:uid:gid:defaultUser:)`, which selects an *existing* identity to run a
+    /// process as). `user` uses the same `<name|uid>[:<gid>]` format, but unlike
+    /// `user(user:uid:gid:defaultUser:)` the group component must be numeric — there's no existing
+    /// `/etc/group` on the not-yet-created account to resolve a group name against.
+    ///
+    /// Each of the three pieces is resolved independently, falling back in order from `user`, to
+    /// the matching `uid`/`gid` argument, to the default. `user` only wins outright over `uid`/`gid`
+    /// when it actually specifies that piece (e.g. `--user 1500 --uid 9999` keeps 1500) — a bare
+    /// name in `user` doesn't specify a uid/gid, so `uid`/`gid` still apply in that case.
+    public static func userAccount(
+        user: String?, uid: UInt32?, gid: UInt32?,
+        defaultUsername: String, defaultUID: UInt32, defaultGID: UInt32
+    ) throws -> (username: String, uid: UInt32, gid: UInt32) {
+        var username = defaultUsername
+        var resolvedUID: UInt32?
+        var resolvedGID: UInt32?
+
+        if let user, !user.isEmpty {
+            let parts = user.split(separator: ":", maxSplits: 1, omittingEmptySubsequences: false)
+            let primary = String(parts[0])
+
+            if !primary.isEmpty {
+                if let uidValue = UInt32(primary) {
+                    resolvedUID = uidValue
+                } else {
+                    username = primary
+                }
+            }
+
+            if parts.count == 2 {
+                guard let gidValue = UInt32(parts[1]) else {
+                    throw ContainerizationError(
+                        .invalidArgument,
+                        message: "invalid group '\(parts[1])' in --user '\(user)': group must be numeric"
+                    )
+                }
+                resolvedGID = gidValue
+            }
+        }
+
+        return (username, resolvedUID ?? uid ?? defaultUID, resolvedGID ?? gid ?? defaultGID)
+    }
+
+    public static func platform(os: String, arch: String) -> ContainerizationOCI.Platform {
+        .init(arch: arch, os: os)
+    }
+
+    public static func platform(from platform: String) throws -> ContainerizationOCI.Platform {
+        try .init(from: platform)
+    }
+
+    public static func resources(
+        cpus: Int64?,
+        memory: String?,
+        defaultCPUs: Int,
+        defaultMemory: MemorySize,
+    ) throws -> ContainerConfiguration.Resources {
+        var resource = ContainerConfiguration.Resources()
+        resource.cpus = defaultCPUs
+        resource.memoryInBytes = Int64(defaultMemory.measurement.converted(to: .mebibytes).value).mib()
+
+        if let cpus {
+            resource.cpus = Int(cpus)
+        }
+
+        if let memory {
+            resource.memoryInBytes = try Parser.memoryStringAsMiB(memory).mib()
+        }
+
+        return resource
+    }
+
+    public static func allEnv(imageEnvs: [String], envFiles: [String], envs: [String]) throws -> [String] {
+        var combined: [String] = []
+        // Image config is untrusted. Bare env var names here must not be expanded from the host
+        // process's environment.
+        combined.append(contentsOf: imageEnvs.filter { $0.contains("=") })
+        for envFile in envFiles {
+            let content = try Parser.envFile(path: envFile)
+            combined.append(contentsOf: content)
+        }
+        combined.append(contentsOf: Parser.env(envList: envs))
+
+        let deduped = combined.reduce(into: [String: String](minimumCapacity: combined.count)) { map, entry in
+            let key = String(entry.split(separator: "=", maxSplits: 1).first ?? Substring(entry))
+            map[key] = entry
+        }
+
+        return deduped.map { $0.value }
+    }
+
+    public static func envFile(path: String) throws -> [String] {
+        // This is a somewhat faithful Go->Swift port of Moby's envfile
+        // parsing in the cli:
+        // https://github.com/docker/cli/blob/f5a7a3c72eb35fc5ba9c4d65a2a0e2e1bd216bf2/pkg/kvfile/kvfile.go#L81
+
+        let data: Data
+        do {
+            // Use FileHandle to support named pipes (FIFOs) and process substitutions
+            // like --env-file <(echo "KEY=value")
+            let fileHandle = try FileHandle(forReadingFrom: URL(fileURLWithPath: path))
+            defer { try? fileHandle.close() }
+            data = try fileHandle.readToEnd() ?? Data()
+        } catch {
+            throw ContainerizationError(
+                .invalidArgument,
+                message: "failed to read envfile at \(path)",
+                cause: error
+            )
+        }
+
+        guard let content = String(data: data, encoding: .utf8) else {
+            throw ContainerizationError(
+                .invalidArgument,
+                message: "env file \(path) contains invalid utf8 bytes"
+            )
+        }
+
+        let whiteSpaces = " \t"
+
+        var lines: [String] = []
+        let fileLines = content.components(separatedBy: .newlines)
+
+        for line in fileLines {
+            let trimmedLine = line.drop(while: { $0.isWhitespace })
+
+            // Skip empty lines and comments
+            if trimmedLine.isEmpty || trimmedLine.hasPrefix("#") {
+                continue
+            }
+
+            let hasValue: Bool
+            let variable: String
+            let value: String
+
+            if let equalIndex = trimmedLine.firstIndex(of: "=") {
+                variable = String(trimmedLine[..<equalIndex])
+                value = String(trimmedLine[trimmedLine.index(after: equalIndex)...])
+                hasValue = true
+            } else {
+                variable = String(trimmedLine)
+                value = ""
+                hasValue = false
+            }
+
+            let trimmedVariable = variable.drop(while: { whiteSpaces.contains($0) })
+            if trimmedVariable.contains(where: { whiteSpaces.contains($0) }) {
+                throw ContainerizationError(
+                    .invalidArgument,
+                    message: "variable '\(trimmedVariable)' contains whitespaces"
+                )
+            }
+
+            if trimmedVariable.isEmpty {
+                throw ContainerizationError(
+                    .invalidArgument,
+                    message: "no variable name on line '\(trimmedLine)'"
+                )
+            }
+
+            if hasValue {
+                lines.append("\(trimmedVariable)=\(value)")
+            } else {
+                // We got just a variable name, try and see if it exists on the host.
+                if let envValue = ProcessInfo.processInfo.environment[String(trimmedVariable)] {
+                    lines.append("\(trimmedVariable)=\(envValue)")
+                }
+            }
+        }
+
+        return lines
+    }
+
+    public static func env(envList: [String]) -> [String] {
+        var envVar: [String] = []
+        for env in envList {
+            var env = env
+            // Only inherit from host if no "=" is present (e.g., "--env VAR")
+            // "VAR=" should set an explicit empty value, not inherit.
+            if !env.contains("=") {
+                guard let val = ProcessInfo.processInfo.environment[env] else {
+                    continue
+                }
+                env = "\(env)=\(val)"
+            }
+            envVar.append(env)
+        }
+        return envVar
+    }
+
+    public static func labels(_ rawLabels: [String]) throws -> [String: String] {
+        var result: [String: String] = Dictionary(minimumCapacity: rawLabels.count)
+        for label in rawLabels {
+            if label.isEmpty {
+                throw ContainerizationError(.invalidArgument, message: "label cannot be an empty string")
+            }
+            let parts = label.split(separator: "=", maxSplits: 2)
+            switch parts.count {
+            case 1:
+                result[String(parts[0])] = ""
+            case 2:
+                result[String(parts[0])] = String(parts[1])
+            default:
+                throw ContainerizationError(.invalidArgument, message: "invalid label format \(label)")
+            }
+        }
+        return result
+    }
+
+    public static func process(
+        arguments: [String],
+        processFlags: Flags.Process,
+        managementFlags: Flags.Management,
+        config: ContainerizationOCI.ImageConfig?
+    ) throws -> ProcessConfiguration {
+
+        let imageEnvVars = config?.env ?? []
+        let envvars = try Parser.allEnv(imageEnvs: imageEnvVars, envFiles: processFlags.envFile, envs: processFlags.env)
+
+        let workingDir: String = {
+            if let cwd = processFlags.cwd {
+                return cwd
+            }
+            if let cwd = config?.workingDir {
+                return cwd
+            }
+            return "/"
+        }()
+
+        let processArguments: [String]? = {
+            var result: [String] = []
+            var hasEntrypointOverride: Bool = false
+            // ensure the entrypoint is honored if it has been explicitly set by the user
+            if let entrypoint = managementFlags.entrypoint, !entrypoint.isEmpty {
+                result = [entrypoint]
+                hasEntrypointOverride = true
+            } else if let entrypoint = config?.entrypoint, !entrypoint.isEmpty, entrypoint != [""] {
+                // A single empty string clears the image entrypoint.
+                result = entrypoint
+            }
+            if !arguments.isEmpty {
+                result.append(contentsOf: arguments)
+            } else {
+                if let cmd = config?.cmd, !hasEntrypointOverride, !cmd.isEmpty {
+                    result.append(contentsOf: cmd)
+                }
+            }
+            return result.count > 0 ? result : nil
+        }()
+
+        guard let commandToRun = processArguments, commandToRun.count > 0 else {
+            throw ContainerizationError(.invalidArgument, message: "command/entrypoint not specified for container process")
+        }
+
+        let defaultUser: ProcessConfiguration.User = {
+            if let u = config?.user {
+                return .raw(userString: u)
+            }
+            return .id(uid: 0, gid: 0)
+        }()
+
+        let (user, additionalGroups) = Parser.user(
+            user: processFlags.user, uid: processFlags.uid,
+            gid: processFlags.gid, defaultUser: defaultUser)
+
+        let rlimits = try Parser.rlimits(processFlags.ulimits)
+
+        return .init(
+            executable: commandToRun[0],
+            arguments: [String](commandToRun.dropFirst()),
+            environment: envvars,
+            workingDirectory: workingDir,
+            terminal: processFlags.tty,
+            user: user,
+            supplementalGroups: additionalGroups,
+            rlimits: rlimits
+        )
+    }
+
+    // MARK: Mounts
+
+    public static let mountTypes = [
+        "virtiofs",
+        "bind",
+        "tmpfs",
+    ]
+
+    public static let defaultDirectives = ["type": "virtiofs"]
+
+    public static func tmpfsMounts(_ mounts: [String]) throws -> [Filesystem] {
+        var result: [Filesystem] = []
+        result.reserveCapacity(mounts.count)
+        var seenDestinations: Set<String> = []
+
+        for tmpfs in mounts {
+            let parts = tmpfs.split(separator: ":", maxSplits: 1, omittingEmptySubsequences: false)
+            let destination = String(parts[0])
+            let options = parts.count == 2 ? String(parts[1]).split(separator: ",").map(String.init) : []
+
+            if destination.isEmpty {
+                throw ContainerizationError(.invalidArgument, message: "mount destination cannot be empty")
+            }
+
+            let filePath = FilePath(destination)
+            guard filePath.isAbsolute else {
+                throw ContainerizationError(.invalidArgument, message: "\(destination) is not an absolute path")
+            }
+
+            let normalizedDest = filePath.lexicallyNormalized().string
+            if seenDestinations.contains(normalizedDest) {
+                continue
+            }
+            seenDestinations.insert(normalizedDest)
+
+            let fs = Filesystem.tmpfs(destination: destination, options: options)
+            try validateMount(.filesystem(fs))
+            result.append(fs)
+        }
+        return result
+    }
+
+    public static func mounts(_ rawMounts: [String], relativeTo basePath: URL? = nil) throws -> [VolumeOrFilesystem] {
+        let rawMounts = rawMounts.dedupe()
+        var mounts: [VolumeOrFilesystem] = []
+        mounts.reserveCapacity(rawMounts.count)
+        for mount in rawMounts {
+            let m = try Parser.mount(mount, relativeTo: basePath)
+            try validateMount(m)
+            mounts.append(m)
+        }
+        return mounts
+    }
+
+    public static func mount(_ mount: String, relativeTo basePath: URL? = nil) throws -> VolumeOrFilesystem {
+        let parts = mount.split(separator: ",")
+        if parts.count == 0 {
+            throw ContainerizationError(.invalidArgument, message: "invalid mount format: \(mount)")
+        }
+        var directives = defaultDirectives
+        for part in parts {
+            let keyVal = part.split(separator: "=", maxSplits: 2)
+            var key = String(keyVal[0])
+            var skipValue = false
+            switch key {
+            case "type", "size", "mode":
+                break
+            case "source", "src":
+                key = "source"
+            case "destination", "dst", "target":
+                key = "destination"
+            case "readonly", "ro":
+                key = "ro"
+                skipValue = true
+            default:
+                throw ContainerizationError(.invalidArgument, message: "unknown directive \(key) when parsing mount \(mount)")
+            }
+            var value = ""
+            if !skipValue {
+                if keyVal.count != 2 {
+                    throw ContainerizationError(.invalidArgument, message: "invalid directive format missing value \(part) in \(mount)")
+                }
+                value = String(keyVal[1])
+            }
+            directives[key] = value
+        }
+
+        var fs = Filesystem()
+        var isVolume = false
+        var volumeName = ""
+        for (key, val) in directives {
+            var val = val
+            let type = directives["type"] ?? ""
+
+            switch key {
+            case "type":
+                if val == "bind" {
+                    val = "virtiofs"
+                }
+                switch val {
+                case "virtiofs":
+                    fs.type = Filesystem.FSType.virtiofs
+                case "tmpfs":
+                    fs.type = Filesystem.FSType.tmpfs
+                    fs.source = "tmpfs"
+                case "volume":
+                    isVolume = true
+                default:
+                    throw ContainerizationError(.invalidArgument, message: "unsupported mount type \(val)")
+                }
+
+            case "ro":
+                fs.options.append("ro")
+            case "size":
+                if type != "tmpfs" {
+                    throw ContainerizationError(.invalidArgument, message: "unsupported option size for \(type) mount")
+                }
+                var overflow: Bool
+                var memory = try Parser.memoryStringAsMiB(val)
+                (memory, overflow) = memory.multipliedReportingOverflow(by: 1024 * 1024)
+                if overflow {
+                    throw ContainerizationError(.invalidArgument, message: "overflow encountered when parsing memory string: \(val)")
+                }
+                let s = "size=\(memory)"
+                fs.options.append(s)
+            case "mode":
+                if type != "tmpfs" {
+                    throw ContainerizationError(.invalidArgument, message: "unsupported option mode for \(type) mount")
+                }
+                let s = "mode=\(val)"
+                fs.options.append(s)
+            case "source":
+                switch type {
+                case "virtiofs", "bind":
+                    // For bind mounts, resolve both absolute and relative paths
+                    let url = basePath?.appending(path: val).standardizedFileURL ?? URL(filePath: val)
+                    let absolutePath = url.absoluteURL.path
+
+                    var isDirectory: ObjCBool = false
+                    guard FileManager.default.fileExists(atPath: absolutePath, isDirectory: &isDirectory) else {
+                        throw ContainerizationError(.invalidArgument, message: "path '\(val)' does not exist")
+                    }
+                    guard isDirectory.boolValue else {
+                        throw ContainerizationError(.invalidArgument, message: "path '\(val)' is not a directory")
+                    }
+                    fs.source = absolutePath
+                case "volume":
+                    // For volume mounts, validate as volume name
+                    guard VolumeStorage.isValidVolumeName(val) else {
+                        throw ContainerizationError(.invalidArgument, message: "invalid volume name '\(val)': must match \(VolumeStorage.volumeNamePattern)")
+                    }
+
+                    // This is a named volume
+                    volumeName = val
+                    fs.source = val
+                case "tmpfs":
+                    throw ContainerizationError(.invalidArgument, message: "cannot specify source for tmpfs mount")
+                default:
+                    throw ContainerizationError(.invalidArgument, message: "unknown mount type \(type)")
+                }
+            case "destination":
+                fs.destination = val
+            default:
+                throw ContainerizationError(.invalidArgument, message: "unknown mount directive \(key)")
+            }
+        }
+
+        guard isVolume else {
+            return .filesystem(fs)
+        }
+
+        // If it's a volume type but no source was provided, create an anonymous volume
+        let isAnonymous = volumeName.isEmpty
+        if isAnonymous {
+            volumeName = VolumeStorage.generateAnonymousVolumeName()
+        }
+
+        return .volume(
+            ParsedVolume(
+                name: volumeName,
+                destination: fs.destination,
+                options: fs.options,
+                isAnonymous: isAnonymous
+            ))
+    }
+
+    public static func volumes(_ rawVolumes: [String], relativeTo basePath: URL? = nil) throws -> [VolumeOrFilesystem] {
+        var mounts: [VolumeOrFilesystem] = []
+        mounts.reserveCapacity(rawVolumes.count)
+        for volume in rawVolumes {
+            let m = try Parser.volume(volume, relativeTo: basePath)
+            try Parser.validateMount(m)
+            mounts.append(m)
+        }
+        return mounts
+    }
+
+    public static func volume(_ volume: String, relativeTo basePath: URL? = nil) throws -> VolumeOrFilesystem {
+        var vol = volume
+        vol.trimLeft(char: ":")
+
+        let parts = vol.split(separator: ":")
+        switch parts.count {
+        case 1:
+            // Anonymous volume: -v /path
+            // Generate a random name for the anonymous volume
+            let anonymousName = VolumeStorage.generateAnonymousVolumeName()
+            let destination = String(parts[0])
+            let options: [String] = []
+
+            return .volume(
+                ParsedVolume(
+                    name: anonymousName,
+                    destination: destination,
+                    options: options,
+                    isAnonymous: true
+                ))
+        case 2, 3:
+            let src = String(parts[0])
+            let dst = String(parts[1])
+
+            // Check if it's a filesystem path (absolute, or relative like ".", "..", "./foo", "../foo")
+            guard src.contains("/") || src == "." || src == ".." else {
+                // Named volume - validate name syntax only
+                guard VolumeStorage.isValidVolumeName(src) else {
+                    throw ContainerizationError(.invalidArgument, message: "invalid volume name '\(src)': must match \(VolumeStorage.volumeNamePattern)")
+                }
+
+                // This is a named volume
+                let options = parts.count == 3 ? parts[2].split(separator: ",").map { String($0) } : []
+                return .volume(
+                    ParsedVolume(
+                        name: src,
+                        destination: dst,
+                        options: options
+                    ))
+            }
+            let url = basePath?.appending(path: src).standardizedFileURL ?? URL(filePath: src)
+            let absolutePath = url.absoluteURL.path
+
+            var isDirectory: ObjCBool = false
+            guard FileManager.default.fileExists(atPath: absolutePath, isDirectory: &isDirectory) else {
+                throw ContainerizationError(.invalidArgument, message: "path '\(src)' does not exist")
+            }
+
+            // This is a filesystem mount
+            var fs = Filesystem.virtiofs(
+                source: URL(fileURLWithPath: absolutePath).absolutePath(),
+                destination: dst,
+                options: []
+            )
+            if parts.count == 3 {
+                fs.options = parts[2].split(separator: ",").map { String($0) }
+            }
+            return .filesystem(fs)
+        default:
+            throw ContainerizationError(.invalidArgument, message: "invalid volume format \(volume)")
+        }
+    }
+
+    public static func validMountType(_ type: String) -> Bool {
+        mountTypes.contains(type)
+    }
+
+    public static func validateMount(_ mount: VolumeOrFilesystem) throws {
+        switch mount {
+        case .filesystem(let fs):
+            if !fs.isTmpfs {
+                if !fs.source.isAbsolutePath() {
+                    throw ContainerizationError(
+                        .invalidArgument, message: "\(fs.source) is not an absolute path on the host")
+                }
+                if !FileManager.default.fileExists(atPath: fs.source) {
+                    throw ContainerizationError(.invalidArgument, message: "file path '\(fs.source)' does not exist")
+                }
+            }
+
+            if fs.destination.isEmpty {
+                throw ContainerizationError(.invalidArgument, message: "mount destination cannot be empty")
+            }
+        case .volume(let vol):
+            if vol.destination.isEmpty {
+                throw ContainerizationError(.invalidArgument, message: "volume destination cannot be empty")
+            }
+        // Volume name validation already done during parsing
+        }
+    }
+
+    /// Parse --publish-port arguments into PublishPort objects
+    /// The format of each argument is `[host-ip:]host-port:container-port[/protocol]`
+    /// (e.g., "127.0.0.1:8080:80/tcp")
+    /// host-port and container-port can be ranges (e.g., "127.0.0.1:3456-4567:3456-4567/tcp`
+    ///
+    /// - Parameter rawPublishPorts: Array of port arguments
+    /// - Returns: Array of PublishPort objects
+    /// - Throws: ContainerizationError if parsing fails
+    public static func publishPorts(_ rawPublishPorts: [String]) throws -> [PublishPort] {
+        var publishPorts: [PublishPort] = []
+        publishPorts.reserveCapacity(rawPublishPorts.count)
+
+        // Process each raw port string
+        for socket in rawPublishPorts {
+            let publishPort = try Parser.publishPort(socket)
+            publishPorts.append(publishPort)
+        }
+        return publishPorts
+    }
+
+    // Parse a single `--publish-port` argument into a `PublishPort`.
+    public static func publishPort(_ portText: String) throws -> PublishPort {
+        let publishPortRegex = #/((\[(?<ipv6>[^\]]*)\]|(?<ipv4>[^:].*)):)?(?<hostPort>[^:].*):(?<containerPort>[^:/]*)(/(?<proto>.*))?/#
+        guard let match = try publishPortRegex.wholeMatch(in: portText) else {
+            throw ContainerizationError(.invalidArgument, message: "invalid publish value: \(portText)")
+        }
+
+        let proto: PublishProtocol
+        let protoText = match.proto?.lowercased() ?? "tcp"
+        switch protoText {
+        case "tcp":
+            proto = .tcp
+        case "udp":
+            proto = .udp
+        default:
+            throw ContainerizationError(.invalidArgument, message: "invalid publish protocol: \(protoText)")
+        }
+
+        let hostAddress: IPAddress
+        if let ipv6 = match.ipv6, !ipv6.isEmpty {
+            guard let address = try? IPAddress(String(ipv6)), case .v6 = address else {
+                throw ContainerizationError(.invalidArgument, message: "invalid publish IPv6 address: \(portText)")
+            }
+            hostAddress = address
+        } else if let ipv4 = match.ipv4, !ipv4.isEmpty {
+            guard let address = try? IPAddress(String(ipv4)), case .v4 = address else {
+                throw ContainerizationError(.invalidArgument, message: "invalid publish IPv4 address: \(portText)")
+            }
+            hostAddress = address
+        } else {
+            hostAddress = try IPAddress("0.0.0.0")
+        }
+
+        let hostPortText = match.hostPort
+        let containerPortText = match.containerPort
+        let hostPortRangeStart: UInt16
+        let hostPortRangeEnd: UInt16
+        let containerPortRangeStart: UInt16
+        let containerPortRangeEnd: UInt16
+
+        let hostPortParts = hostPortText.split(separator: "-")
+        switch hostPortParts.count {
+        case 1:
+            guard let start = UInt16(hostPortParts[0]) else {
+                throw ContainerizationError(.invalidArgument, message: "invalid publish host port: \(hostPortText)")
+            }
+            hostPortRangeStart = start
+            hostPortRangeEnd = start
+        case 2:
+            guard let start = UInt16(hostPortParts[0]) else {
+                throw ContainerizationError(.invalidArgument, message: "invalid publish host port: \(hostPortText)")
+            }
+
+            guard let end = UInt16(hostPortParts[1]) else {
+                throw ContainerizationError(.invalidArgument, message: "invalid publish host port: \(hostPortText)")
+            }
+
+            hostPortRangeStart = start
+            hostPortRangeEnd = end
+        default:
+            throw ContainerizationError(.invalidArgument, message: "invalid publish host port: \(hostPortText)")
+        }
+
+        let containerPortParts = containerPortText.split(separator: "-")
+        switch containerPortParts.count {
+        case 1:
+            guard let start = UInt16(containerPortParts[0]) else {
+                throw ContainerizationError(.invalidArgument, message: "invalid publish container port: \(containerPortText)")
+            }
+
+            containerPortRangeStart = start
+            containerPortRangeEnd = start
+        case 2:
+            guard let start = UInt16(containerPortParts[0]) else {
+                throw ContainerizationError(.invalidArgument, message: "invalid publish container port: \(containerPortText)")
+            }
+
+            guard let end = UInt16(containerPortParts[1]) else {
+                throw ContainerizationError(.invalidArgument, message: "invalid publish container port: \(containerPortText)")
+            }
+
+            containerPortRangeStart = start
+            containerPortRangeEnd = end
+        default:
+            throw ContainerizationError(.invalidArgument, message: "invalid publish container port: \(containerPortText)")
+        }
+
+        guard hostPortRangeStart > 1,
+            hostPortRangeStart <= hostPortRangeEnd
+        else {
+            throw ContainerizationError(.invalidArgument, message: "invalid publish host port range: \(hostPortText)")
+        }
+
+        guard containerPortRangeStart > 1,
+            containerPortRangeStart <= containerPortRangeEnd
+        else {
+            throw ContainerizationError(.invalidArgument, message: "invalid publish container port range: \(containerPortText)")
+        }
+
+        let hostCount = hostPortRangeEnd - hostPortRangeStart + 1
+        let containerCount = containerPortRangeEnd - containerPortRangeStart + 1
+
+        guard hostCount == containerCount else {
+            throw ContainerizationError(.invalidArgument, message: "publish host and container port counts are not equal: \(hostPortText):\(containerPortText)")
+        }
+
+        return try PublishPort(
+            hostAddress: hostAddress,
+            hostPort: hostPortRangeStart,
+            containerPort: containerPortRangeStart,
+            proto: proto,
+            count: hostCount
+        )
+    }
+
+    /// Parse --publish-socket arguments into PublishSocket objects
+    /// The format of each argument is `host_path:container_path`
+    /// (e.g., "/tmp/docker.sock:/var/run/docker.sock")
+    ///
+    /// - Parameter rawPublishSockets: Array of socket arguments
+    /// - Returns: Array of PublishSocket objects
+    /// - Throws: ContainerizationError if parsing fails or a path is invalid
+    public static func publishSockets(_ rawPublishSockets: [String]) throws -> [PublishSocket] {
+        var sockets: [PublishSocket] = []
+        sockets.reserveCapacity(rawPublishSockets.count)
+
+        // Process each raw socket string
+        for socket in rawPublishSockets {
+            let parsedSocket = try Parser.publishSocket(socket)
+            sockets.append(parsedSocket)
+        }
+        return sockets
+    }
+
+    // Parse a single `--publish-socket`` argument into a `PublishSocket`.
+    public static func publishSocket(_ socketText: String) throws -> PublishSocket {
+        // Split by colon to two parts: [host_path, container_path]
+        let parts = socketText.split(separator: ":")
+
+        switch parts.count {
+        case 2:
+            // Extract host and container paths
+            let hostPath = String(parts[0])
+            let containerPath = String(parts[1])
+
+            if hostPath.isEmpty {
+                throw ContainerizationError(
+                    .invalidArgument, message: "host socket path cannot be empty")
+            }
+            if containerPath.isEmpty {
+                throw ContainerizationError(
+                    .invalidArgument, message: "container socket path cannot be empty")
+            }
+
+            let absoluteHostPath = FilePathOps.absolutePath(FilePath(hostPath))
+
+            if FileManager.default.fileExists(atPath: absoluteHostPath.string) {
+                do {
+                    let attrs = try FileManager.default.attributesOfItem(atPath: absoluteHostPath.string)
+                    if let fileType = attrs[.type] as? FileAttributeType, fileType == .typeSocket {
+                        throw ContainerizationError(
+                            .invalidArgument,
+                            message: "host socket \(absoluteHostPath) already exists and may be in use")
+                    }
+                    // If it exists but is not a socket, we can remove it and create socket
+                    try FileManager.default.removeItem(atPath: absoluteHostPath.string)
+                } catch let error as ContainerizationError {
+                    throw error
+                } catch {
+                    // For other file system errors, continue with creation
+                }
+            }
+
+            let hostDir = absoluteHostPath.removingLastComponent()
+            if !FileManager.default.fileExists(atPath: hostDir.string) {
+                try FileManager.default.createDirectory(
+                    atPath: hostDir.string, withIntermediateDirectories: true)
+            }
+
+            return try PublishSocket(
+                containerPath: FilePath(containerPath),
+                hostPath: absoluteHostPath,
+                permissions: nil
+            )
+
+        default:
+            throw ContainerizationError(
+                .invalidArgument,
+                message:
+                    "invalid publish-socket format \(socketText). Expected: host_path:container_path")
+        }
+    }
+
+    // MARK: Networks
+
+    /// Parsed network attachment with optional properties
+    public struct ParsedNetwork {
+        public let name: String
+        public let macAddress: String?
+        public let mtu: UInt32?
+        /// Additional DNS names for the attachment, each in the normalized form of a `DNSMatchRule`.
+        public let aliases: [String]
+
+        public init(name: String, macAddress: String? = nil, mtu: UInt32? = nil, aliases: [String] = []) {
+            self.name = name
+            self.macAddress = macAddress
+            self.mtu = mtu
+            self.aliases = aliases
+        }
+    }
+
+    /// Parse network attachment with optional properties
+    /// Format: network_name[,mac=XX:XX:XX:XX:XX:XX][,mtu=VALUE][,alias=NAME]...
+    ///
+    /// An alias is an exact name such as `api.example.test`, or a name with a leading dot such as
+    /// `.example.test` that matches every name below it. The `alias` property can be repeated.
+    ///
+    /// Example: "backend,mac=02:42:ac:11:00:02,mtu=1500,alias=api.example.test,alias=.example.test"
+    public static func network(_ networkSpec: String) throws -> ParsedNetwork {
+        guard !networkSpec.isEmpty else {
+            throw ContainerizationError(.invalidArgument, message: "network specification cannot be empty")
+        }
+
+        let parts = networkSpec.split(separator: ",", omittingEmptySubsequences: false)
+
+        guard !parts.isEmpty else {
+            throw ContainerizationError(.invalidArgument, message: "network specification cannot be empty")
+        }
+
+        let networkName = String(parts[0])
+        if networkName.isEmpty {
+            throw ContainerizationError(.invalidArgument, message: "network name cannot be empty")
+        }
+
+        var macAddress: String?
+        var mtu: UInt32?
+        var aliases = [String]()
+
+        // Parse properties if any
+        for part in parts.dropFirst() {
+            let keyVal = part.split(separator: "=", maxSplits: 2, omittingEmptySubsequences: false)
+
+            let key: String
+            let value: String
+
+            guard keyVal.count == 2 else {
+                throw ContainerizationError(
+                    .invalidArgument,
+                    message: "invalid property format '\(part)' in network specification '\(networkSpec)'"
+                )
+            }
+            key = String(keyVal[0])
+            value = String(keyVal[1])
+
+            switch key {
+            case "mac":
+                if value.isEmpty {
+                    throw ContainerizationError(
+                        .invalidArgument,
+                        message: "mac address value cannot be empty"
+                    )
+                }
+                macAddress = value
+            case "mtu":
+                guard let mtuValue = UInt32(value), mtuValue >= 1280, mtuValue <= 65535 else {
+                    throw ContainerizationError(
+                        .invalidArgument,
+                        message: "invalid mtu value '\(value)': must be between 1280 and 65535"
+                    )
+                }
+                mtu = mtuValue
+            case "alias":
+                do {
+                    aliases.append(try DNSMatchRule(value).description)
+                } catch {
+                    throw ContainerizationError(
+                        .invalidArgument,
+                        message: "invalid alias '\(value)': \(error)"
+                    )
+                }
+            default:
+                throw ContainerizationError(
+                    .invalidArgument,
+                    message: "unknown network property '\(key)'. Available properties: mac, mtu, alias"
+                )
+            }
+        }
+
+        return ParsedNetwork(name: networkName, macAddress: macAddress, mtu: mtu, aliases: aliases)
+    }
+
+    // MARK: DNS
+
+    public static func isValidDomainName(_ name: String) -> Bool {
+        guard !name.isEmpty && name.count <= 255 else {
+            return false
+        }
+        return name.components(separatedBy: ".").allSatisfy { Self.isValidDomainNameLabel($0) }
+    }
+
+    public static func isValidDomainNameLabel(_ label: String) -> Bool {
+        guard !label.isEmpty && label.count <= 63 else {
+            return false
+        }
+        let pattern = #/^[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?$/#
+        return !label.ranges(of: pattern).isEmpty
+    }
+
+    private static let ulimitNameToRlimit: [String: String] = [
+        "core": "RLIMIT_CORE",
+        "cpu": "RLIMIT_CPU",
+        "data": "RLIMIT_DATA",
+        "fsize": "RLIMIT_FSIZE",
+        "locks": "RLIMIT_LOCKS",
+        "memlock": "RLIMIT_MEMLOCK",
+        "msgqueue": "RLIMIT_MSGQUEUE",
+        "nice": "RLIMIT_NICE",
+        "nofile": "RLIMIT_NOFILE",
+        "nproc": "RLIMIT_NPROC",
+        "rss": "RLIMIT_RSS",
+        "rtprio": "RLIMIT_RTPRIO",
+        "rttime": "RLIMIT_RTTIME",
+        "sigpending": "RLIMIT_SIGPENDING",
+        "stack": "RLIMIT_STACK",
+    ]
+
+    /// Parse ulimit specifications into Rlimit objects
+    /// Format: <type>=<soft>[:<hard>]
+    /// Examples:
+    ///   - nofile=1024:2048  (soft=1024, hard=2048)
+    ///   - nofile=1024       (soft=hard=1024)
+    ///   - nofile=unlimited  (soft=hard=UINT64_MAX)
+    ///   - nofile=1024:unlimited (soft=1024, hard=UINT64_MAX)
+    public static func rlimits(_ rawUlimits: [String]) throws -> [ProcessConfiguration.Rlimit] {
+        var rlimits: [ProcessConfiguration.Rlimit] = []
+        rlimits.reserveCapacity(rawUlimits.count)
+        var seenTypes: Set<String> = []
+
+        for ulimit in rawUlimits {
+            let rlimit = try Parser.rlimit(ulimit)
+            if seenTypes.contains(rlimit.limit) {
+                throw ContainerizationError(
+                    .invalidArgument,
+                    message: "duplicate ulimit type: \(ulimit.split(separator: "=").first ?? "")"
+                )
+            }
+            seenTypes.insert(rlimit.limit)
+            rlimits.append(rlimit)
+        }
+
+        return rlimits
+    }
+
+    /// Parse a single ulimit specification
+    public static func rlimit(_ ulimit: String) throws -> ProcessConfiguration.Rlimit {
+        let parts = ulimit.split(separator: "=", maxSplits: 1)
+        guard parts.count == 2 else {
+            throw ContainerizationError(
+                .invalidArgument,
+                message: "invalid ulimit format '\(ulimit)': expected <type>=<soft>[:<hard>]"
+            )
+        }
+
+        let typeName = String(parts[0]).lowercased()
+        let valuesPart = String(parts[1])
+
+        guard let rlimitType = ulimitNameToRlimit[typeName] else {
+            let validTypes = ulimitNameToRlimit.keys.sorted().joined(separator: ", ")
+            throw ContainerizationError(
+                .invalidArgument,
+                message: "unsupported ulimit type '\(typeName)': valid types are \(validTypes)"
+            )
+        }
+
+        let valueParts = valuesPart.split(separator: ":", maxSplits: 1)
+        let soft: UInt64
+        let hard: UInt64
+
+        switch valueParts.count {
+        case 1:
+            // Single value: use for both soft and hard
+            soft = try parseRlimitValue(String(valueParts[0]), typeName: typeName)
+            hard = soft
+        case 2:
+            // Two values: soft:hard
+            soft = try parseRlimitValue(String(valueParts[0]), typeName: typeName)
+            hard = try parseRlimitValue(String(valueParts[1]), typeName: typeName)
+        default:
+            throw ContainerizationError(
+                .invalidArgument,
+                message: "invalid ulimit format '\(ulimit)': expected <type>=<soft>[:<hard>]"
+            )
+        }
+
+        if soft > hard {
+            throw ContainerizationError(
+                .invalidArgument,
+                message: "ulimit '\(typeName)' soft limit (\(soft)) cannot exceed hard limit (\(hard))"
+            )
+        }
+
+        return ProcessConfiguration.Rlimit(limit: rlimitType, soft: soft, hard: hard)
+    }
+
+    private static func parseRlimitValue(_ value: String, typeName: String) throws -> UInt64 {
+        let trimmed = value.trimmingCharacters(in: .whitespaces).lowercased()
+
+        if trimmed == "unlimited" || trimmed == "-1" {
+            return UInt64.max
+        }
+
+        guard let parsed = UInt64(trimmed) else {
+            throw ContainerizationError(
+                .invalidArgument,
+                message: "invalid ulimit value '\(value)' for '\(typeName)': must be a non-negative integer or 'unlimited'"
+            )
+        }
+
+        return parsed
+    }
+
+    // MARK: Capabilities
+
+    /// Parse and validate --cap-add / --cap-drop arguments.
+    /// Returns normalized uppercase CAP_* strings.
+    public static func capabilities(capAdd: [String], capDrop: [String]) throws -> (capAdd: [String], capDrop: [String]) {
+        var normalizedAdd: [String] = []
+        normalizedAdd.reserveCapacity(capAdd.count)
+        for cap in capAdd {
+            let upper = cap.uppercased()
+            if upper == "ALL" {
+                normalizedAdd.append("ALL")
+                continue
+            }
+            // Validate using CapabilityName from the containerization lib
+            _ = try CapabilityName(rawValue: upper)
+            // Normalize to CAP_ prefixed form
+            let normalized = upper.hasPrefix("CAP_") ? upper : "CAP_\(upper)"
+            normalizedAdd.append(normalized)
+        }
+
+        var normalizedDrop: [String] = []
+        normalizedDrop.reserveCapacity(capDrop.count)
+        for cap in capDrop {
+            let upper = cap.uppercased()
+            if upper == "ALL" {
+                normalizedDrop.append("ALL")
+                continue
+            }
+            _ = try CapabilityName(rawValue: upper)
+            let normalized = upper.hasPrefix("CAP_") ? upper : "CAP_\(upper)"
+            normalizedDrop.append(normalized)
+        }
+
+        return (normalizedAdd, normalizedDrop)
+    }
+
+    // MARK: Security paths
+
+    /// Sentinel that clears all previously accumulated paths, including the runtime defaults.
+    private static let pathResetSentinel = "NONE"
+
+    /// Parse and validate --masked-path arguments.
+    ///
+    /// Values are processed in order on top of the runtime default set, so
+    /// `--masked-path /foo` yields the defaults plus `/foo`. The `NONE` sentinel
+    /// clears everything accumulated so far, including the defaults. A nil result
+    /// means the flag was not supplied and the runtime defaults apply unchanged.
+    public static func maskedPaths(_ values: [String]) throws -> [String]? {
+        try pathOverrides(values, defaults: LinuxContainer.defaultMaskedPaths(), flagName: "masked-path")
+    }
+
+    /// Parse and validate --read-only-path arguments. Ordering, the `NONE`
+    /// sentinel, and the nil result carry the same meaning as ``maskedPaths(_:)``.
+    public static func readonlyPaths(_ values: [String]) throws -> [String]? {
+        try pathOverrides(values, defaults: LinuxContainer.defaultReadonlyPaths(), flagName: "read-only-path")
+    }
+
+    /// Accumulate absolute paths on top of `defaults`, honoring the `NONE` reset
+    /// sentinel and dropping duplicates while preserving first-occurrence order.
+    private static func pathOverrides(_ values: [String], defaults: [String], flagName: String) throws -> [String]? {
+        guard !values.isEmpty else {
+            return nil
+        }
+        var paths = defaults
+        var seen = Set(defaults)
+        for value in values {
+            let trimmed = value.trimmingCharacters(in: .whitespaces)
+            if trimmed.uppercased() == pathResetSentinel {
+                paths = []
+                seen = []
+                continue
+            }
+            guard trimmed.hasPrefix("/") else {
+                throw ContainerizationError(
+                    .invalidArgument,
+                    message: "invalid path '\(value)' for --\(flagName): path must be absolute, or the \(pathResetSentinel) sentinel"
+                )
+            }
+            // Strip trailing slashes, preserving the root path itself.
+            var normalized = trimmed
+            while normalized.count > 1 && normalized.hasSuffix("/") {
+                normalized.removeLast()
+            }
+            if seen.insert(normalized).inserted {
+                paths.append(normalized)
+            }
+        }
+        return paths
+    }
+
+    // MARK: Miscellaneous
+
+    public static func parseBool(string: String) -> Bool? {
+        Parsers.parseBool(string: string)
+    }
+}

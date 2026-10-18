@@ -1,0 +1,733 @@
+// swift-tools-version: 6.2
+//===----------------------------------------------------------------------===//
+// Copyright © 2025-2026 Apple Inc. and the container project authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//===----------------------------------------------------------------------===//
+
+// The swift-tools-version declares the minimum version of Swift required to build this package.
+
+import Foundation
+import PackageDescription
+
+let releaseVersion = ProcessInfo.processInfo.environment["RELEASE_VERSION"] ?? "0.0.0"
+let gitCommit = ProcessInfo.processInfo.environment["GIT_COMMIT"] ?? "unspecified"
+let builderShimVersion = "0.13.2"
+let scVersion = "0.52.0"
+
+let package = Package(
+    name: "container",
+    platforms: [.macOS("15")],
+    products: [
+        .library(name: "ContainerCommands", targets: ["ContainerCommands"]),
+        .library(name: "ContainerBuild", targets: ["ContainerBuild"]),
+        .library(name: "ContainerAPIService", targets: ["ContainerAPIService"]),
+        .library(name: "ContainerAPIClient", targets: ["ContainerAPIClient"]),
+        .library(name: "ContainerImagesService", targets: ["ContainerImagesService", "ContainerImagesServiceClient"]),
+        .library(name: "ContainerNetworkClient", targets: ["ContainerNetworkClient"]),
+        .library(name: "ContainerNetworkServer", targets: ["ContainerNetworkServer"]),
+        .library(name: "ContainerNetworkVmnetServer", targets: ["ContainerNetworkVmnetServer"]),
+        .library(name: "ContainerResource", targets: ["ContainerResource"]),
+        .library(name: "ContainerTestSupport", targets: ["ContainerTestSupport"]),
+        .library(name: "ContainerLog", targets: ["ContainerLog"]),
+        .library(name: "ContainerPersistence", targets: ["ContainerPersistence"]),
+        .library(name: "ContainerPlugin", targets: ["ContainerPlugin"]),
+        .library(name: "ContainerRuntimeClient", targets: ["ContainerRuntimeClient"]),
+        .library(name: "ContainerRuntimeLinuxClient", targets: ["ContainerRuntimeLinuxClient"]),
+        .library(name: "ContainerRuntimeLinuxServer", targets: ["ContainerRuntimeLinuxServer"]),
+        .library(name: "ContainerVersion", targets: ["ContainerVersion"]),
+        .library(name: "ContainerXPC", targets: ["ContainerXPC"]),
+        .library(name: "ContainerOS", targets: ["ContainerOS"]),
+        .library(name: "SocketForwarder", targets: ["SocketForwarder"]),
+        .library(name: "TerminalProgress", targets: ["TerminalProgress"]),
+        .library(name: "MachineAPIClient", targets: ["MachineAPIClient"]),
+        .library(name: "MachineAPIService", targets: ["MachineAPIService"]),
+        .library(name: "ContainerK8s", targets: ["ContainerK8s"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/apple/containerization.git", exact: Version(stringLiteral: scVersion)),
+        .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.7.0"),
+        .package(url: "https://github.com/apple/swift-collections.git", from: "1.2.0"),
+        .package(url: "https://github.com/apple/swift-configuration", from: "1.0.0"),
+        .package(url: "https://github.com/apple/swift-log.git", from: "1.10.1"),
+        .package(url: "https://github.com/apple/swift-nio.git", from: "2.80.0"),
+        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.36.0"),
+        .package(url: "https://github.com/apple/swift-system.git", from: "1.6.4"),
+        .package(url: "https://github.com/grpc/grpc-swift-2.git", from: "2.3.0"),
+        .package(url: "https://github.com/grpc/grpc-swift-nio-transport.git", from: "2.9.0"),
+        .package(url: "https://github.com/grpc/grpc-swift-protobuf.git", from: "2.2.0"),
+        .package(url: "https://github.com/swift-server/async-http-client.git", from: "1.20.1"),
+        .package(url: "https://github.com/swiftlang/swift-docc-plugin.git", from: "1.1.0"),
+        .package(url: "https://github.com/mattt/swift-toml.git", from: "2.0.0"),
+        .package(url: "https://github.com/mattt/swift-configuration-toml", from: "2.0.0"),
+        .package(url: "https://github.com/jpsim/Yams.git", from: "6.2.1"),
+    ],
+    targets: [
+        .executableTarget(
+            name: "container",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                "ContainerAPIClient",
+                "ContainerCommands",
+            ],
+            path: "Sources/CLI"
+        ),
+        .testTarget(
+            name: "IntegrationTests",
+            dependencies: [
+                .product(name: "AsyncHTTPClient", package: "async-http-client"),
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "NIOCore", package: "swift-nio"),
+                .product(name: "NIOHTTP1", package: "swift-nio"),
+                .product(name: "NIOPosix", package: "swift-nio"),
+                .product(name: "SystemPackage", package: "swift-system"),
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "ContainerizationArchive", package: "containerization"),
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                .product(name: "ContainerizationOCI", package: "containerization"),
+                .product(name: "ContainerizationOS", package: "containerization"),
+                .product(name: "TOML", package: "swift-toml"),
+                "ContainerAPIClient",
+                "ContainerLog",
+                "ContainerPersistence",
+                "ContainerPlugin",
+                "ContainerResource",
+                "ContainerTestSupport",
+                "MachineAPIClient",
+                "Yams",
+            ],
+            path: "Tests/IntegrationTests"
+        ),
+        .target(
+            name: "ContainerCommands",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "NIO", package: "swift-nio"),
+                .product(name: "SwiftProtobuf", package: "swift-protobuf"),
+                .product(name: "TOML", package: "swift-toml"),
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "ContainerizationArchive", package: "containerization"),
+                .product(name: "ContainerizationOCI", package: "containerization"),
+                .product(name: "ContainerizationOS", package: "containerization"),
+                "ContainerBuild",
+                "ContainerAPIClient",
+                "ContainerImagesServiceClient",
+                "ContainerLog",
+                "ContainerPersistence",
+                "ContainerPlugin",
+                "ContainerResource",
+                "ContainerRuntimeClient",
+                "ContainerRuntimeLinuxClient",
+                "ContainerVersion",
+                .product(name: "SystemPackage", package: "swift-system"),
+                "ContainerXPC",
+                "MachineAPIClient",
+                "TerminalProgress",
+                "Yams",
+            ],
+            path: "Sources/ContainerCommands"
+        ),
+        .target(
+            name: "ContainerBuild",
+            dependencies: [
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "NIO", package: "swift-nio"),
+                .product(name: "NIOPosix", package: "swift-nio"),
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "ContainerizationArchive", package: "containerization"),
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                .product(name: "ContainerizationOCI", package: "containerization"),
+                .product(name: "ContainerizationOS", package: "containerization"),
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                .product(name: "GRPCCore", package: "grpc-swift-2"),
+                .product(name: "GRPCNIOTransportHTTP2", package: "grpc-swift-nio-transport"),
+                .product(name: "GRPCProtobuf", package: "grpc-swift-protobuf"),
+                .product(name: "SystemPackage", package: "swift-system"),
+                "ContainerAPIClient",
+                "ContainerImagesServiceClient",
+                "ContainerLog",
+                "ContainerPersistence",
+                "ContainerResource",
+                "TerminalProgress",
+            ]
+        ),
+        .testTarget(
+            name: "ContainerBuildTests",
+            dependencies: [
+                "ContainerBuild"
+            ]
+        ),
+        .testTarget(
+            name: "ContainerCommandsTests",
+            dependencies: [
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "ContainerizationOCI", package: "containerization"),
+                "ContainerAPIClient",
+                "ContainerCommands",
+                "ContainerResource",
+            ]
+        ),
+        .testTarget(
+            name: "K8sPluginTests",
+            dependencies: [
+                "ContainerAPIClient",
+                "ContainerK8s",
+                "ContainerResource",
+                "Yams",
+            ]
+        ),
+        .target(
+            name: "ContainerK8s",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "ContainerizationOCI", package: "containerization"),
+                .product(name: "ContainerizationOS", package: "containerization"),
+                .product(name: "SystemPackage", package: "swift-system"),
+                "ContainerAPIClient",
+                "ContainerLog",
+                "ContainerPersistence",
+                "ContainerPlugin",
+                "ContainerResource",
+                "ContainerVersion",
+                "TerminalProgress",
+                "Yams",
+            ]
+        ),
+        .executableTarget(
+            name: "k8s",
+            dependencies: ["ContainerK8s"],
+            path: "Sources/Plugins/K8s",
+            exclude: ["config.toml", "Resources"]
+        ),
+        .executableTarget(
+            name: "container-apiserver",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                .product(name: "AsyncHTTPClient", package: "async-http-client"),
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                .product(name: "ContainerizationOS", package: "containerization"),
+                .product(name: "ContainerizationEXT4", package: "containerization"),
+                .product(name: "GRPCCore", package: "grpc-swift-2"),
+                .product(name: "GRPCNIOTransportHTTP2", package: "grpc-swift-nio-transport"),
+                .product(name: "GRPCProtobuf", package: "grpc-swift-protobuf"),
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "SystemPackage", package: "swift-system"),
+                "ContainerAPIService",
+                "ContainerAPIClient",
+                "ContainerLog",
+                "ContainerNetworkClient",
+                "ContainerPersistence",
+                "ContainerPlugin",
+                "ContainerResource",
+                "ContainerVersion",
+                "ContainerXPC",
+                "ContainerOS",
+                "DNSServer",
+            ],
+            path: "Sources/APIServer"
+        ),
+        .target(
+            name: "ContainerAPIService",
+            dependencies: [
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "ContainerizationArchive", package: "containerization"),
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                .product(name: "ContainerizationOS", package: "containerization"),
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "SystemPackage", package: "swift-system"),
+                "CVersion",
+                "ContainerAPIClient",
+                "ContainerNetworkClient",
+                "ContainerPersistence",
+                "ContainerPlugin",
+                "ContainerResource",
+                "ContainerRuntimeClient",
+                "ContainerVersion",
+                "ContainerXPC",
+                "DNSServer",
+                "TerminalProgress",
+            ],
+            path: "Sources/Services/ContainerAPIService/Server"
+        ),
+        .testTarget(
+            name: "ContainerAPIServiceTests",
+            dependencies: [
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                "ContainerAPIService",
+                "ContainerAPIClient",
+                "ContainerNetworkClient",
+                "ContainerPersistence",
+                "ContainerPlugin",
+                "ContainerResource",
+                "ContainerRuntimeLinuxClient",
+                "ContainerRuntimeClient",
+                "ContainerTestSupport",
+                "ContainerXPC",
+            ]
+        ),
+        .target(
+            name: "ContainerAPIClient",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "ContainerizationArchive", package: "containerization"),
+                .product(name: "ContainerizationOCI", package: "containerization"),
+                .product(name: "ContainerizationOS", package: "containerization"),
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "NIOCore", package: "swift-nio"),
+                .product(name: "NIOPosix", package: "swift-nio"),
+                .product(name: "SystemPackage", package: "swift-system"),
+                "ContainerImagesServiceClient",
+                "ContainerPersistence",
+                "ContainerPlugin",
+                "ContainerResource",
+                "ContainerXPC",
+                "DNSServer",
+                "TerminalProgress",
+            ],
+            path: "Sources/Services/ContainerAPIService/Client"
+        ),
+        .testTarget(
+            name: "ContainerAPIClientTests",
+            dependencies: [
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "SystemPackage", package: "swift-system"),
+                "ContainerAPIClient",
+                "ContainerPersistence",
+                "ContainerTestSupport",
+            ]
+        ),
+        .executableTarget(
+            name: "container-core-images",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "SystemPackage", package: "swift-system"),
+                "ContainerImagesService",
+                "ContainerLog",
+                "ContainerPersistence",
+                "ContainerPlugin",
+                "ContainerVersion",
+                "ContainerXPC",
+            ],
+            path: "Sources/Plugins/CoreImages",
+            exclude: ["config.toml"]
+        ),
+        .target(
+            name: "ContainerImagesService",
+            dependencies: [
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "ContainerizationArchive", package: "containerization"),
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                .product(name: "ContainerizationOCI", package: "containerization"),
+                .product(name: "ContainerizationOS", package: "containerization"),
+                "ContainerAPIClient",
+                "ContainerImagesServiceClient",
+                "ContainerLog",
+                "ContainerPersistence",
+                "ContainerResource",
+                "ContainerXPC",
+                "TerminalProgress",
+            ],
+            path: "Sources/Services/ContainerImagesService/Server"
+        ),
+        .target(
+            name: "ContainerImagesServiceClient",
+            dependencies: [
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "Containerization", package: "containerization"),
+                "ContainerXPC",
+                "ContainerLog",
+            ],
+            path: "Sources/Services/ContainerImagesService/Client"
+        ),
+        .executableTarget(
+            name: "container-network-vmnet",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                .product(name: "ContainerizationOS", package: "containerization"),
+                "ContainerLog",
+                "ContainerNetworkClient",
+                "ContainerNetworkServer",
+                "ContainerNetworkVmnetServer",
+                "ContainerPersistence",
+                "ContainerPlugin",
+                "ContainerResource",
+                "ContainerVersion",
+                "ContainerXPC",
+            ],
+            path: "Sources/Plugins/NetworkVmnet",
+            exclude: ["config.toml"]
+        ),
+        .target(
+            name: "ContainerNetworkClient",
+            dependencies: [
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                "ContainerResource",
+                "ContainerXPC",
+            ],
+            path: "Sources/Services/Network/Client"
+        ),
+        .target(
+            name: "ContainerNetworkServer",
+            dependencies: [
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                "ContainerNetworkClient",
+                "ContainerResource",
+                "ContainerXPC",
+                "DNSServer",
+            ],
+            path: "Sources/Services/Network/Server"
+        ),
+        .testTarget(
+            name: "ContainerNetworkServerTests",
+            dependencies: [
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                "ContainerNetworkClient",
+                "ContainerNetworkServer",
+                "ContainerResource",
+                "ContainerXPC",
+                "DNSServer",
+            ]
+        ),
+        .target(
+            name: "ContainerNetworkVmnetServer",
+            dependencies: [
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                "ContainerNetworkServer",
+                "ContainerResource",
+                "ContainerXPC",
+            ],
+            path: "Sources/Services/NetworkVmnet/Server"
+        ),
+        .target(
+            name: "ContainerRuntimeLinuxClient",
+            dependencies: [],
+            path: "Sources/Services/RuntimeLinux/Client"
+        ),
+        .executableTarget(
+            name: "container-runtime-linux",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "Containerization", package: "containerization"),
+                "ContainerLog",
+                "ContainerPlugin",
+                "ContainerResource",
+                "ContainerRuntimeClient",
+                "ContainerRuntimeLinuxClient",
+                "ContainerRuntimeLinuxServer",
+                "ContainerVersion",
+                "ContainerXPC",
+            ],
+            path: "Sources/Plugins/RuntimeLinux",
+            exclude: ["config.toml"]
+        ),
+        .target(
+            name: "ContainerRuntimeLinuxServer",
+            dependencies: [
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                .product(name: "ContainerizationOS", package: "containerization"),
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                "ContainerAPIClient",
+                "ContainerNetworkClient",
+                "ContainerOS",
+                "ContainerPersistence",
+                "ContainerResource",
+                "ContainerRuntimeClient",
+                "ContainerRuntimeLinuxClient",
+                "ContainerXPC",
+                "SocketForwarder",
+            ],
+            path: "Sources/Services/RuntimeLinux/Server"
+        ),
+        .target(
+            name: "ContainerRuntimeClient",
+            dependencies: [
+                "ContainerAPIClient",
+                "ContainerResource",
+                "ContainerXPC",
+            ],
+            path: "Sources/Services/Runtime/RuntimeClient"
+        ),
+        .target(
+            name: "ContainerResource",
+            dependencies: [
+                .product(name: "Collections", package: "swift-collections"),
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "TOML", package: "swift-toml"),
+                "ContainerXPC",
+                "CAuditToken",
+                "CVersion",
+                "Yams",
+            ]
+        ),
+        .testTarget(
+            name: "ContainerResourceTests",
+            dependencies: [
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                "ContainerAPIService",
+                "ContainerResource",
+            ]
+        ),
+        .target(
+            name: "ContainerLog",
+            dependencies: [
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "SystemPackage", package: "swift-system"),
+            ]
+        ),
+        .target(
+            name: "ContainerPersistence",
+            dependencies: [
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "Configuration", package: "swift-configuration"),
+                .product(name: "ConfigurationTOML", package: "swift-configuration-toml"),
+                .product(name: "SystemPackage", package: "swift-system"),
+                "CVersion",
+                "ContainerVersion",
+            ]
+        ),
+        .testTarget(
+            name: "ContainerPersistenceTests",
+            dependencies: [
+                .product(name: "Configuration", package: "swift-configuration"),
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "SystemPackage", package: "swift-system"),
+                "ContainerPersistence",
+                "ContainerTestSupport",
+            ]
+        ),
+        .target(
+            name: "ContainerPlugin",
+            dependencies: [
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "ContainerizationOS", package: "containerization"),
+                .product(name: "SystemPackage", package: "swift-system"),
+                .product(name: "TOML", package: "swift-toml"),
+                "ContainerVersion",
+            ]
+        ),
+        .testTarget(
+            name: "ContainerPluginTests",
+            dependencies: [
+                "ContainerPlugin"
+            ]
+        ),
+        .target(
+            name: "ContainerXPC",
+            dependencies: [
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                .product(name: "Logging", package: "swift-log"),
+                "CAuditToken",
+            ]
+        ),
+        .target(
+            name: "ContainerOS",
+            dependencies: [
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "ContainerizationOS", package: "containerization"),
+            ],
+            path: "Sources/ContainerOS"
+        ),
+        .testTarget(
+            name: "ContainerOSTests",
+            dependencies: [
+                "ContainerOS"
+            ]
+        ),
+        .target(
+            name: "TerminalProgress",
+            dependencies: [
+                .product(name: "ContainerizationOS", package: "containerization")
+            ]
+        ),
+        .testTarget(
+            name: "TerminalProgressTests",
+            dependencies: ["TerminalProgress"]
+        ),
+        .target(
+            name: "DNSServer",
+            dependencies: [
+                .product(name: "NIOCore", package: "swift-nio"),
+                .product(name: "NIOPosix", package: "swift-nio"),
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                .product(name: "ContainerizationOS", package: "containerization"),
+            ]
+        ),
+        .testTarget(
+            name: "DNSServerTests",
+            dependencies: [
+                "DNSServer"
+            ]
+        ),
+        .target(
+            name: "SocketForwarder",
+            dependencies: [
+                .product(name: "Collections", package: "swift-collections"),
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "NIOCore", package: "swift-nio"),
+                .product(name: "NIOFoundationCompat", package: "swift-nio"),
+            ]
+        ),
+        .testTarget(
+            name: "SocketForwarderTests",
+            dependencies: ["SocketForwarder"]
+        ),
+        .target(
+            name: "ContainerVersion",
+            dependencies: [
+                .product(name: "SystemPackage", package: "swift-system"),
+                "CVersion",
+            ],
+        ),
+        .testTarget(
+            name: "ContainerVersionTests",
+            dependencies: [
+                .product(name: "SystemPackage", package: "swift-system"),
+                "ContainerVersion",
+            ]
+        ),
+        .target(
+            name: "CVersion",
+            dependencies: [],
+            publicHeadersPath: "include",
+            cSettings: [
+                .define("CZ_VERSION", to: "\"\(scVersion)\""),
+                .define("GIT_COMMIT", to: "\"\(gitCommit)\""),
+                .define("RELEASE_VERSION", to: "\"\(releaseVersion)\""),
+                .define("BUILDER_SHIM_VERSION", to: "\"\(builderShimVersion)\""),
+            ],
+        ),
+        .target(
+            name: "CAuditToken",
+            dependencies: [],
+            publicHeadersPath: "include",
+            linkerSettings: [
+                .linkedLibrary("bsm")
+            ]
+        ),
+        .target(
+            name: "ContainerTestSupport",
+            dependencies: [
+                .product(name: "AsyncHTTPClient", package: "async-http-client"),
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "ContainerizationArchive", package: "containerization"),
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "NIOCore", package: "swift-nio"),
+                .product(name: "NIOHTTP1", package: "swift-nio"),
+                .product(name: "NIOPosix", package: "swift-nio"),
+                .product(name: "SystemPackage", package: "swift-system"),
+                .product(name: "TOML", package: "swift-toml"),
+                "ContainerAPIClient",
+                "ContainerLog",
+                "ContainerPersistence",
+                "ContainerPlugin",
+                "ContainerResource",
+            ]
+        ),
+        .target(
+            name: "MachineAPIClient",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                .product(name: "ContainerizationOCI", package: "containerization"),
+                .product(name: "Logging", package: "swift-log"),
+                "ContainerAPIClient",
+                "ContainerPersistence",
+                "ContainerResource",
+                "ContainerXPC",
+                "TerminalProgress",
+            ],
+            path: "Sources/Services/MachineAPIService/Client"
+        ),
+        .target(
+            name: "MachineAPIService",
+            dependencies: [
+                .product(name: "Containerization", package: "containerization"),
+                .product(name: "ContainerizationEXT4", package: "containerization"),
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                .product(name: "ContainerizationOCI", package: "containerization"),
+                .product(name: "Logging", package: "swift-log"),
+                .product(name: "SystemPackage", package: "swift-system"),
+                "ContainerAPIClient",
+                "ContainerResource",
+                "ContainerRuntimeClient",
+                "ContainerXPC",
+                "MachineAPIClient",
+            ],
+            path: "Sources/Services/MachineAPIService/Server"
+        ),
+        .executableTarget(
+            name: "machine-apiserver",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                .product(name: "Logging", package: "swift-log"),
+                "ContainerAPIClient",
+                "ContainerLog",
+                "ContainerPersistence",
+                "ContainerPlugin",
+                "ContainerVersion",
+                "ContainerXPC",
+                "MachineAPIClient",
+                "MachineAPIService",
+            ],
+            path: "Sources/Plugins/MachineAPIServer",
+            exclude: ["config.toml", "Resources"]
+        ),
+        .executableTarget(
+            name: "container-build",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                "ContainerAPIClient",
+                "ContainerCommands",
+                "TerminalProgress",
+            ],
+            path: "Sources/Plugins/ContainerBuild",
+            exclude: ["config.toml"]
+        ),
+        .executableTarget(
+            name: "container-builder",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                .product(name: "ContainerizationExtras", package: "containerization"),
+                .product(name: "Logging", package: "swift-log"),
+                "ContainerAPIClient",
+                "ContainerBuild",
+                "ContainerLog",
+                "ContainerPersistence",
+                "ContainerResource",
+                "TerminalProgress",
+            ],
+            path: "Sources/Plugins/ContainerBuilder",
+            exclude: ["config.toml"]
+        ),
+    ]
+)

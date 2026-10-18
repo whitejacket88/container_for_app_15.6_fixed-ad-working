@@ -1,0 +1,439 @@
+//===----------------------------------------------------------------------===//
+// Copyright © 2026 Apple Inc. and the container project authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//===----------------------------------------------------------------------===//
+
+import ContainerPersistence
+import ContainerResource
+import Containerization
+import ContainerizationError
+import ContainerizationExtras
+import ContainerizationOCI
+import DNSServer
+import Foundation
+import Logging
+import TerminalProgress
+
+// MARK: - Collection capacity hints
+// Dictionary(minimumCapacity:) and reserveCapacity() are used in this file to
+// pre-allocate storage when the final collection size is known from the input.
+// This avoids incremental reallocation overhead in hot-path parser methods.
+
+public struct Utility {
+    static let publishedPortCountLimit = 64
+
+    public static func createContainerID(name: String?) -> String {
+        guard let name else {
+            return UUID().uuidString.lowercased()
+        }
+        return name
+    }
+
+    public static func isInfraImage(name: String, builderImage: String, initImage: String) -> Bool {
+        for infraImage in [builderImage, initImage] {
+            if name == infraImage {
+                return true
+            }
+        }
+        return false
+    }
+
+    public static func trimDigest(digest: String) -> String {
+        var hex = digest
+        if let colonIndex = digest.firstIndex(of: ":") {
+            hex = String(digest[digest.index(after: colonIndex)...])
+        }
+        return String(hex.prefix(12))
+    }
+
+    public static func validMACAddress(_ macAddress: String) throws {
+        let pattern = #"^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$"#
+        let regex = try Regex(pattern)
+        if try regex.firstMatch(in: macAddress) == nil {
+            throw ContainerizationError(.invalidArgument, message: "invalid MAC address format \(macAddress), expected format: XX:XX:XX:XX:XX:XX")
+        }
+    }
+
+    public static func containerConfigFromFlags(
+        id: String,
+        image: String,
+        arguments: [String],
+        process: Flags.Process,
+        management: Flags.Management,
+        resource: Flags.Resource,
+        registry: Flags.Registry,
+        imageFetch: Flags.ImageFetch,
+        containerSystemConfig: ContainerSystemConfig,
+        progressUpdate: @escaping ProgressUpdateHandler,
+        log: Logger
+    ) async throws -> (ContainerConfiguration, Kernel, String?) {
+        let requestedPlatform = try DefaultPlatform.resolveWithDefaults(
+            platform: management.platform,
+            os: management.os,
+            arch: management.arch,
+            log: log
+        )
+        let scheme = try RequestScheme(registry.scheme)
+
+        await progressUpdate([
+            .setDescription("Fetching image"),
+            .setItemsName("blobs"),
+        ])
+        let taskManager = ProgressTaskCoordinator()
+        let fetchTask = await taskManager.startTask()
+        let img = try await ClientImage.fetch(
+            reference: image,
+            platform: requestedPlatform,
+            scheme: scheme,
+            containerSystemConfig: containerSystemConfig,
+            progressUpdate: ProgressTaskCoordinator.handler(for: fetchTask, from: progressUpdate),
+            maxConcurrentDownloads: imageFetch.maxConcurrentDownloads
+        )
+
+        // Unpack a fetched image before use
+        await progressUpdate([
+            .setDescription("Unpacking image"),
+            .setItemsName("entries"),
+        ])
+        let unpackTask = await taskManager.startTask()
+        try await img.getCreateSnapshot(
+            platform: requestedPlatform,
+            progressUpdate: ProgressTaskCoordinator.handler(for: unpackTask, from: progressUpdate))
+
+        await progressUpdate([
+            .setDescription("Fetching kernel"),
+            .setItemsName("binary"),
+        ])
+
+        let kernel = try await self.getKernel(management: management)
+
+        // Pull and unpack the initial filesystem
+        await progressUpdate([
+            .setDescription("Fetching init image"),
+            .setItemsName("blobs"),
+        ])
+        let fetchInitTask = await taskManager.startTask()
+        let initImageRef = management.initImage ?? containerSystemConfig.vminit.image
+        let initImage = try await ClientImage.fetch(
+            reference: initImageRef, platform: .current, scheme: scheme,
+            containerSystemConfig: containerSystemConfig,
+            progressUpdate: ProgressTaskCoordinator.handler(for: fetchInitTask, from: progressUpdate),
+            maxConcurrentDownloads: imageFetch.maxConcurrentDownloads)
+
+        await progressUpdate([
+            .setDescription("Unpacking init image"),
+            .setItemsName("entries"),
+        ])
+        let unpackInitTask = await taskManager.startTask()
+        _ = try await initImage.getCreateSnapshot(
+            platform: .current,
+            progressUpdate: ProgressTaskCoordinator.handler(for: unpackInitTask, from: progressUpdate))
+
+        await taskManager.finish()
+
+        let imageConfig = try await img.config(for: requestedPlatform).config
+        let description = img.description
+        let pc = try Parser.process(
+            arguments: arguments,
+            processFlags: process,
+            managementFlags: management,
+            config: imageConfig
+        )
+
+        var config = ContainerConfiguration(id: id, image: description, process: pc)
+        config.platform = requestedPlatform
+
+        config.resources = try Parser.resources(
+            cpus: resource.cpus,
+            memory: resource.memory,
+            defaultCPUs: containerSystemConfig.container.cpus,
+            defaultMemory: containerSystemConfig.container.memory
+        )
+
+        let tmpfs = try Parser.tmpfsMounts(management.tmpFs)
+        let volumesOrFs = try Parser.volumes(management.volumes)
+        let mountsOrFs = try Parser.mounts(management.mounts)
+
+        var resolvedMounts: [Filesystem] = []
+        resolvedMounts.append(contentsOf: tmpfs)
+
+        // Resolve volumes and filesystems
+        for item in (volumesOrFs + mountsOrFs) {
+            switch item {
+            case .filesystem(let fs):
+                resolvedMounts.append(fs)
+            case .volume(let parsed):
+                let volume = try await getOrCreateVolume(parsed: parsed, log: log)
+                let volumeMount = Filesystem.volume(
+                    name: parsed.name,
+                    format: volume.format,
+                    source: volume.source,
+                    destination: parsed.destination,
+                    options: parsed.options
+                )
+                resolvedMounts.append(volumeMount)
+            }
+        }
+
+        config.mounts = resolvedMounts
+
+        if let shmSizeStr = management.shmSize {
+            let measurement = try Measurement.parse(parsing: shmSizeStr)
+            let bytes = measurement.converted(to: .bytes)
+            config.shmSize = UInt64(bytes.value)
+        }
+
+        config.virtualization = management.virtualization
+
+        // Parse network specifications with properties
+        let parsedNetworks = try management.networks.map { try Parser.network($0) }
+        if management.networks.contains(NetworkClient.noNetworkName) {
+            guard management.networks.count == 1 else {
+                throw ContainerizationError(.unsupported, message: "no other networks may be created along with network \(NetworkClient.noNetworkName)")
+            }
+            config.networks = []
+        } else {
+            let networkClient = NetworkClient()
+            let builtinNetworkId = try await networkClient.builtin?.id
+            config.networks = try getAttachmentConfigurations(
+                containerId: config.id,
+                builtinNetworkId: builtinNetworkId,
+                networks: parsedNetworks,
+                dnsDomain: containerSystemConfig.dns.domain,
+            )
+            for attachmentConfiguration in config.networks {
+                _ = try await networkClient.get(id: attachmentConfiguration.network)
+            }
+        }
+
+        if management.dnsDisabled {
+            config.dns = nil
+        } else {
+            let domain = management.dns.domain ?? containerSystemConfig.dns.domain
+            config.dns = .init(
+                nameservers: management.dns.nameservers,
+                domain: domain,
+                searchDomains: management.dns.searchDomains,
+                options: management.dns.options
+            )
+        }
+
+        config.rosetta = management.rosetta || (Platform.current.architecture == "arm64" && requestedPlatform.architecture == "amd64")
+
+        if management.rosetta && Platform.current.architecture != "arm64" {
+            throw ContainerizationError(.unsupported, message: "--rosetta flag requires an arm64 host")
+        }
+
+        config.labels = try Parser.labels(management.labels)
+
+        config.publishedPorts = try Parser.publishPorts(management.publishPorts)
+        guard config.publishedPorts.count <= publishedPortCountLimit else {
+            throw ContainerizationError(.invalidArgument, message: "cannot exceed more than \(publishedPortCountLimit) port publish descriptors")
+        }
+        guard !config.publishedPorts.hasOverlaps() else {
+            throw ContainerizationError(.invalidArgument, message: "host ports for different publish port specs may not overlap")
+        }
+
+        // Parse --publish-socket arguments and add to container configuration
+        // to enable socket forwarding from container to host.
+        config.publishedSockets = try Parser.publishSockets(management.publishSockets)
+
+        config.ssh = management.ssh
+        config.readOnly = management.readOnly
+        config.useInit = management.useInit
+
+        let caps = try Parser.capabilities(capAdd: management.capAdd, capDrop: management.capDrop)
+        config.capAdd = caps.capAdd
+        config.capDrop = caps.capDrop
+        config.maskedPaths = try Parser.maskedPaths(management.maskedPaths)
+        config.readonlyPaths = try Parser.readonlyPaths(management.readonlyPaths)
+        config.stopSignal = imageConfig?.stopSignal
+
+        if let runtime = management.runtime {
+            config.runtimeHandler = runtime
+        }
+
+        return (config, kernel, management.initImage)
+    }
+
+    static func getAttachmentConfigurations(
+        containerId: String,
+        builtinNetworkId: String?,
+        networks: [Parser.ParsedNetwork],
+        dnsDomain: String?,
+    ) throws -> [AttachmentConfiguration] {
+        // Validate MAC addresses if provided
+        for network in networks {
+            if let mac = network.macAddress {
+                try validMACAddress(mac)
+            }
+        }
+
+        // make an FQDN for the first interface
+        let fqdn: String?
+        if !containerId.contains(".") {
+            // add default domain if it exists, and container ID is unqualified
+            if let dnsDomain {
+                fqdn = "\(containerId).\(dnsDomain)."
+            } else {
+                fqdn = nil
+            }
+        } else {
+            // use container ID directly if fully qualified
+            fqdn = "\(containerId)."
+        }
+
+        guard networks.isEmpty else {
+            // Check if this is only the default network with properties (e.g., MAC address)
+            let isOnlyDefaultNetwork = networks.count == 1 && networks[0].name == builtinNetworkId
+
+            // networks may only be specified for macOS 26+ (except for default network with properties)
+            if !isOnlyDefaultNetwork {
+                guard #available(macOS 26, *) else {
+                    throw ContainerizationError(.invalidArgument, message: "non-default network configuration requires macOS 26 or newer")
+                }
+            }
+
+            // attach the first network using the fqdn, and the rest using just the container ID
+            return try networks.enumerated().map { item in
+                let macAddress = try item.element.macAddress.map { try MACAddress($0) }
+                let mtu = item.element.mtu ?? 1280
+                let aliases = try qualifyAliases(item.element.aliases, dnsDomain: dnsDomain)
+                guard item.offset == 0 else {
+                    return AttachmentConfiguration(
+                        network: item.element.name,
+                        options: AttachmentOptions(hostname: containerId, macAddress: macAddress, mtu: mtu, aliases: aliases)
+                    )
+                }
+                return AttachmentConfiguration(
+                    network: item.element.name,
+                    options: AttachmentOptions(hostname: fqdn ?? containerId, macAddress: macAddress, mtu: mtu, aliases: aliases)
+                )
+            }
+        }
+
+        // if no networks specified, attach to the default network
+        guard let builtinNetworkId else {
+            throw ContainerizationError(.invalidState, message: "builtin network is not present")
+        }
+        return [AttachmentConfiguration(network: builtinNetworkId, options: AttachmentOptions(hostname: fqdn ?? containerId, macAddress: nil, mtu: 1280))]
+    }
+
+    /// Appends the default DNS domain to the aliases that have no domain of their own.
+    ///
+    /// This follows the rule that makes `--name foo` the hostname `foo.test.` when the default domain
+    /// is `test`: a name without a dot gets the domain, and a name with a dot is taken to be
+    /// qualified already. For a name with a leading dot, which matches every name below it, the rule
+    /// applies to the name after the dot. Without a default domain the aliases are left as they are,
+    /// and the server rejects any that is not fully qualified.
+    ///
+    /// - Parameters:
+    ///   - aliases: The aliases of an attachment, in their normalized form.
+    ///   - dnsDomain: The default DNS domain from the system configuration, if there is one.
+    /// - Returns: The qualified aliases.
+    static func qualifyAliases(_ aliases: [String], dnsDomain: String?) throws -> [String] {
+        guard let dnsDomain else {
+            return aliases
+        }
+        return try aliases.map { alias in
+            let isSubtree = alias.hasPrefix(".")
+            let name = isSubtree ? String(alias.dropFirst()) : alias
+            guard !name.contains(".") else {
+                return alias
+            }
+            do {
+                return try DNSMatchRule("\(isSubtree ? "." : "")\(name).\(dnsDomain)").description
+            } catch {
+                throw ContainerizationError(
+                    .invalidArgument,
+                    message: "cannot qualify alias \"\(alias)\" with the default DNS domain \"\(dnsDomain)\": \(error)"
+                )
+            }
+        }
+    }
+
+    private static func getKernel(management: Flags.Management) async throws -> Kernel {
+        // For the image itself we'll take the user input and try with it as we can do userspace
+        // emulation for x86, but for the kernel we need it to match the hosts architecture.
+        let s: SystemPlatform = .current
+        var kernel: Kernel
+        if let userKernel = management.kernel {
+            guard FileManager.default.fileExists(atPath: userKernel) else {
+                throw ContainerizationError(.notFound, message: "kernel file not found at path \(userKernel)")
+            }
+            let p = URL(filePath: userKernel)
+            kernel = .init(path: p, platform: s)
+        } else {
+            kernel = try await ClientKernel.getDefaultKernel(for: s)
+        }
+        // Persist any user-supplied boot args onto the kernel command line. A key supplied
+        // here overrides the runtime's matching built-in default (see RuntimeService.bootstrap).
+        kernel.commandLine.kernelArgs.append(contentsOf: management.kernelArgs)
+        return kernel
+    }
+
+    /// Parses key-value pairs from command line arguments.
+    ///
+    /// Supports formats like "key=value" and standalone keys (treated as "key=").
+    /// - Parameter pairs: Array of strings in "key=value" format
+    /// - Returns: Dictionary mapping keys to values
+    public static func parseKeyValuePairs(_ pairs: [String]) -> [String: String] {
+        var result: [String: String] = Dictionary(minimumCapacity: pairs.count)
+        for pair in pairs {
+            let components = pair.split(separator: "=", maxSplits: 1)
+            if components.count == 2 {
+                result[String(components[0])] = String(components[1])
+            } else {
+                result[pair] = ""
+            }
+        }
+        return result
+    }
+
+    /// Gets an existing volume or creates it if it doesn't exist.
+    /// Shows a warning for named volumes when auto-creating.
+    private static func getOrCreateVolume(parsed: ParsedVolume, log: Logger) async throws -> VolumeConfiguration {
+        let labels = parsed.isAnonymous ? [VolumeConfiguration.anonymousLabel: ""] : [:]
+
+        let volume: VolumeConfiguration
+        var wasCreated = false
+        do {
+            volume = try await ClientVolume.create(
+                name: parsed.name,
+                driver: "local",
+                driverOpts: [:],
+                labels: labels
+            )
+            wasCreated = true
+        } catch let error as VolumeError {
+            guard case .volumeAlreadyExists = error else {
+                throw error
+            }
+            // Volume already exists, just inspect it
+            volume = try await ClientVolume.inspect(parsed.name)
+        } catch let error as ContainerizationError {
+            // Handle XPC-wrapped volumeAlreadyExists error
+            guard error.message.contains("already exists") else {
+                throw error
+            }
+            volume = try await ClientVolume.inspect(parsed.name)
+        }
+
+        if wasCreated && !parsed.isAnonymous {
+            log.warning("named volume was automatically created", metadata: ["volume": "\(parsed.name)"])
+        }
+
+        return volume
+    }
+}
