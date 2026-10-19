@@ -1,0 +1,68 @@
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/28] Write sources
+[8/28] Write swift-version--58304C5D6DBC2206.txt
+[10/12] Emitting module ContainerCommandsTests
+[11/12] Compiling ContainerCommandsTests NetworkStartCheckTests.swift
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkStartCheckTests.swift:179:17: error: cannot find 'NetworkCheckMode' in scope
+177 | 
+178 |     @Test func proceedMeansNoRebootstrap() {
+179 |         #expect(NetworkCheckMode.next(after: .proceed) == nil)
+    |                 `- error: cannot find 'NetworkCheckMode' in scope
+180 |     }
+181 | 
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkStartCheckTests.swift:179:47: error: cannot infer contextual base in reference to member 'proceed'
+177 | 
+178 |     @Test func proceedMeansNoRebootstrap() {
+179 |         #expect(NetworkCheckMode.next(after: .proceed) == nil)
+    |                                               `- error: cannot infer contextual base in reference to member 'proceed'
+180 |     }
+181 | 
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkStartCheckTests.swift:183:17: error: cannot find 'NetworkCheckMode' in scope
+181 | 
+182 |     @Test func repairedMeansVerifyOnRebootstrap() {
+183 |         #expect(NetworkCheckMode.next(after: .restartedNeedsRebootstrap(pending)) == .verify(pending))
+    |                 `- error: cannot find 'NetworkCheckMode' in scope
+184 |     }
+185 | 
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkStartCheckTests.swift:183:47: error: cannot infer contextual base in reference to member 'restartedNeedsRebootstrap'
+181 | 
+182 |     @Test func repairedMeansVerifyOnRebootstrap() {
+183 |         #expect(NetworkCheckMode.next(after: .restartedNeedsRebootstrap(pending)) == .verify(pending))
+    |                                               `- error: cannot infer contextual base in reference to member 'restartedNeedsRebootstrap'
+184 |     }
+185 | 
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkStartCheckTests.swift:187:17: error: cannot find 'NetworkCheckMode' in scope
+185 | 
+186 |     @Test func rolledBackMeansPlainRebootstrap() {
+187 |         #expect(NetworkCheckMode.next(after: .restartedNeedsRebootstrap(nil)) == .skip)
+    |                 `- error: cannot find 'NetworkCheckMode' in scope
+188 |     }
+189 | }
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkStartCheckTests.swift:187:47: error: cannot infer contextual base in reference to member 'restartedNeedsRebootstrap'
+185 | 
+186 |     @Test func rolledBackMeansPlainRebootstrap() {
+187 |         #expect(NetworkCheckMode.next(after: .restartedNeedsRebootstrap(nil)) == .skip)
+    |                                               `- error: cannot infer contextual base in reference to member 'restartedNeedsRebootstrap'
+188 |     }
+189 | }
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkStartCheckTests.swift:187:73: error: 'nil' requires a contextual type
+185 | 
+186 |     @Test func rolledBackMeansPlainRebootstrap() {
+187 |         #expect(NetworkCheckMode.next(after: .restartedNeedsRebootstrap(nil)) == .skip)
+    |                                                                         `- error: 'nil' requires a contextual type
+188 |     }
+189 | }
+error: fatalError

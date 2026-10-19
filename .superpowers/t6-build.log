@@ -1,0 +1,95 @@
+[0/1] Planning build
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/27] Write sources
+[8/27] Write swift-version--58304C5D6DBC2206.txt
+[10/17] Compiling ContainerCommands ContainerStart.swift
+[11/17] Compiling ContainerCommands ContainerRun.swift
+[12/17] Compiling ContainerCommands NetworkRepairPrompt.swift
+[13/17] Emitting module ContainerCommands
+[14/75] Compiling ContainerCommands NetworkStartCheck.swift
+[15/81] Compiling ContainerCommands MachineSetDefault.swift
+[16/81] Compiling ContainerCommands MachineStop.swift
+[17/81] Compiling ContainerCommands NetworkCommand.swift
+[18/81] Compiling ContainerCommands NetworkCreate.swift
+[19/81] Compiling ContainerCommands NetworkDelete.swift
+[20/81] Compiling ContainerCommands NetworkInspect.swift
+[21/81] Compiling ContainerCommands NetworkList.swift
+[22/87] Compiling ContainerCommands DNSList.swift
+[23/87] Compiling ContainerCommands KernelSet.swift
+[24/87] Compiling ContainerCommands PropertyList.swift
+[25/87] Compiling ContainerCommands SystemCommand.swift
+[26/87] Compiling ContainerCommands SystemDF.swift
+[27/87] Compiling ContainerCommands SystemDNS.swift
+[28/87] Compiling ContainerCommands SystemKernel.swift
+[29/87] Compiling ContainerCommands ProcessUtils.swift
+[30/87] Compiling ContainerCommands DefaultCommand.swift
+[31/87] Compiling ContainerCommands HelpCommand.swift
+[32/87] Compiling ContainerCommands ImageCommand.swift
+[33/87] Compiling ContainerCommands ImageDelete.swift
+[34/87] Compiling ContainerCommands ImageInspect.swift
+[35/87] Compiling ContainerCommands ImageList.swift
+[36/87] Compiling ContainerCommands NetworkPrune.swift
+[37/87] Compiling ContainerCommands RegistryCommand.swift
+[38/87] Compiling ContainerCommands RegistryList.swift
+[39/87] Compiling ContainerCommands RegistryLogin.swift
+[40/87] Compiling ContainerCommands RegistryLogout.swift
+[41/87] Compiling ContainerCommands DNSCreate.swift
+[42/87] Compiling ContainerCommands DNSDelete.swift
+[43/87] Compiling ContainerCommands ContainerClean.swift
+[44/87] Compiling ContainerCommands ContainerCommit.swift
+[45/87] Compiling ContainerCommands ContainerCopy.swift
+[46/87] Compiling ContainerCommands ContainerCreate.swift
+[47/87] Compiling ContainerCommands ContainerDelete.swift
+[48/87] Compiling ContainerCommands ContainerExec.swift
+[49/87] Compiling ContainerCommands ContainerExport.swift
+[50/87] Compiling ContainerCommands Application.swift
+[51/87] Compiling ContainerCommands ContainerInspect.swift
+[52/87] Compiling ContainerCommands ContainerKill.swift
+[53/87] Compiling ContainerCommands ContainerList.swift
+[54/87] Compiling ContainerCommands ContainerLogs.swift
+[55/87] Compiling ContainerCommands ContainerPrune.swift
+[56/87] Compiling ContainerCommands ContainerStats.swift
+[57/87] Compiling ContainerCommands ContainerStop.swift
+[58/87] Compiling ContainerCommands ImageLoad.swift
+[59/87] Compiling ContainerCommands ImagePrune.swift
+[60/87] Compiling ContainerCommands ImagePull.swift
+[61/87] Compiling ContainerCommands ImagePush.swift
+[62/87] Compiling ContainerCommands ImageSave.swift
+[63/87] Compiling ContainerCommands ImageTag.swift
+[64/87] Compiling ContainerCommands MachineCommand.swift
+[65/87] Compiling ContainerCommands MachineCreate.swift
+[66/87] Compiling ContainerCommands MachineDelete.swift
+[67/87] Compiling ContainerCommands MachineInspect.swift
+[68/87] Compiling ContainerCommands MachineList.swift
+[69/87] Compiling ContainerCommands MachineLogs.swift
+[70/87] Compiling ContainerCommands MachineRun.swift
+[71/87] Compiling ContainerCommands MachineSet.swift
+[72/87] Compiling ContainerCommands VolumeCommand.swift
+[73/87] Compiling ContainerCommands VolumeCreate.swift
+[74/87] Compiling ContainerCommands VolumeDelete.swift
+[75/87] Compiling ContainerCommands VolumeInspect.swift
+[76/87] Compiling ContainerCommands VolumeList.swift
+[77/87] Compiling ContainerCommands VolumePrune.swift
+[78/87] Compiling ContainerCommands SystemLogs.swift
+[79/87] Compiling ContainerCommands SystemProperty.swift
+[80/87] Compiling ContainerCommands SystemStart.swift
+[81/87] Compiling ContainerCommands SystemStatus.swift
+[82/87] Compiling ContainerCommands SystemStop.swift
+[83/87] Compiling ContainerCommands SystemVersion.swift
+[84/93] Compiling container ContainerCLI.swift
+[85/93] Emitting module container
+[86/93] Compiling container_build Application.swift
+[87/93] Emitting module container_build
+[87/93] Write Objects.LinkFileList
+[89/93] Linking container-build
+[90/93] Linking container
+[91/93] Applying container-build
+[92/93] Applying container
+Build complete! (17.58s)

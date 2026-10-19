@@ -1,0 +1,176 @@
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/27] Write swift-version--58304C5D6DBC2206.txt
+Build complete! (0.85s)
+Test Suite 'Selected tests' started at 2026-10-18 19:21:56.990.
+Test Suite 'containerPackageTests.xctest' started at 2026-10-18 19:21:56.992.
+Test Suite 'containerPackageTests.xctest' passed at 2026-10-18 19:21:56.992.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-18 19:21:56.992.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite NetworkResourceDisplayTests started.
+◇ Suite SystemNetworkCheckTests started.
+◇ Suite ImageListTests started.
+◇ Suite ManagedContainerDisplayTests started.
+◇ Suite NetworkDiagnosisTests started.
+◇ Suite NetworkRepairPromptTests started.
+◇ Suite NetworkCheckModeTests started.
+◇ Suite NetworkStartCheckTests started.
+◇ Suite HelpCommandTests started.
+◇ Suite HostNetworkProbeTests started.
+◇ Test registeredUnderSystem() started.
+◇ Suite SystemStatusTests started.
+◇ Test tableHeaderHasNineColumns() started.
+◇ Test healthyListingSucceedsWithoutWarnings() started.
+◇ Test tableHeaderHasTwoColumns() started.
+◇ Test serviceFailureIsNotTreatedAsUnreadableImage() started.
+◇ Suite ContainerLogsTests started.
+◇ Suite NetworkRepairerTests started.
+◇ Test exitCodes() started.
+◇ Test mismatchSingleBridge() started.
+◇ Test systemAddressWins() started.
+◇ Test noBridgesIsUndetermined() started.
+◇ Test okRejectedWhenSystemAddressDisagrees() started.
+◇ Test gatewayIsLowerPlusOne() started.
+◇ Test allUnreadableImagesRenderEmptyJSONAndReportFailure() started.
+◇ Test partialListingRendersHealthyImageAndReportsFailure(format:) started.
+◇ Test choiceLabelsShown() started.
+◇ Test nonTTYNeverReadsOrWrites() started.
+◇ Test containerBridgeWins() started.
+◇ Test invalidThenGiveUp() started.
+◇ Test okWhenGatewayPresent() started.
+◇ Test twoBridgesNoSignalIsAmbiguous() started.
+◇ Test historyMissingFileIsEmpty() started.
+◇ Test choiceOneAndTwo() started.
+◇ Test endOfInputMeansDoNothing() started.
+◇ Test historyMarkApplied() started.
+◇ Test enterMeansDoNothing() started.
+◇ Test helpListsFlags() started.
+◇ Test chooseNetworkPicksSecond() started.
+◇ Test historyRecentWindow() started.
+◇ Test manualStepsListsCommands() started.
+◇ Test notificationListsAllRunning() started.
+◇ Test notificationMentionsRecentChange() started.
+◇ Test repairedMeansVerifyOnRebootstrap() started.
+◇ Test okIsSilent() started.
+◇ Test rolledBackMeansPlainRebootstrap() started.
+◇ Test proceedMeansNoRebootstrap() started.
+◇ Test nonTTYPrintsStepsAndChangesNothing() started.
+◇ Test everyStaticSubcommandReachableViaHelp() started.
+◇ Test skipsWhenNotAllocationOnly() started.
+◇ Test pendingFixOffersRestart() started.
+◇ Test unknownSubcommandReturnsNil() started.
+◇ Test ambiguousDontKnowPrintsAdminCheck() started.
+◇ Test choiceTwoUpdatesOnly() started.
+◇ Test undeterminedWarns() started.
+◇ Test ambiguousAsksNetworkFirst() started.
+◇ Test skipsWhenOptedOut() started.
+◇ Test choiceThreeChangesNothing() started.
+◇ Test choiceOneRepairsAndAsksForRebootstrap() started.
+◇ Test parsesSharedAddress() started.
+◇ Test parseRejectsGarbage() started.
+◇ Test tableIncludesStatusClientAndHostWhenRunning() started.
+◇ Test payloadRoundTripsThroughJSON() started.
+◇ Test tableShowsOnlyStatusWhenNotRunning() started.
+◇ Test imageCountWithoutResourceCountsStaysNil() started.
+◇ Test tableShowsServerAndDaemonFieldsWhenRunning() started.
+◇ Test imageCountOmittedWhenUnavailable() started.
+◇ Test enumeratesLoopback() started.
+◇ Test imageCountIsRecordedOnResourceCounts() started.
+◇ Test case passing 1 argument format → .table to partialListingRendersHealthyImageAndReportsFailure(format:) started.
+◇ Test case passing 1 argument format → .json to partialListingRendersHealthyImageAndReportsFailure(format:) started.
+◇ Test case passing 1 argument format → .toml to partialListingRendersHealthyImageAndReportsFailure(format:) started.
+✔ Test tableHeaderHasTwoColumns() passed after 0.001 seconds.
+◇ Test case passing 1 argument format → .yaml to partialListingRendersHealthyImageAndReportsFailure(format:) started.
+✔ Test tableHeaderHasNineColumns() passed after 0.002 seconds.
+◇ Test followsInitiallyEmptyLog() started.
+◇ Test verifySucceedsMarksApplied() started.
+◇ Test repairNowRestartsOtherContainersOnly() started.
+◇ Test repairNowReportsRemoved() started.
+◇ Test verifyFailureRollsBack() started.
+◇ Test updateOnlyWritesAndRecordsPending() started.
+◇ Test repairNowRollsBackOnStartFailure() started.
+✔ Test registeredUnderSystem() passed after 0.008 seconds.
+✔ Test mismatchSingleBridge() passed after 0.009 seconds.
+✔ Test serviceFailureIsNotTreatedAsUnreadableImage() passed after 0.009 seconds.
+✔ Test gatewayIsLowerPlusOne() passed after 0.009 seconds.
+✔ Test exitCodes() passed after 0.009 seconds.
+✔ Test okRejectedWhenSystemAddressDisagrees() passed after 0.009 seconds.
+✔ Test noBridgesIsUndetermined() passed after 0.009 seconds.
+✔ Test systemAddressWins() passed after 0.010 seconds.
+✔ Test allUnreadableImagesRenderEmptyJSONAndReportFailure() passed after 0.009 seconds.
+✔ Test choiceLabelsShown() passed after 0.009 seconds.
+✔ Test invalidThenGiveUp() passed after 0.009 seconds.
+✔ Test nonTTYNeverReadsOrWrites() passed after 0.010 seconds.
+✔ Test okWhenGatewayPresent() passed after 0.010 seconds.
+✔ Test twoBridgesNoSignalIsAmbiguous() passed after 0.010 seconds.
+✔ Test endOfInputMeansDoNothing() passed after 0.009 seconds.
+✔ Test containerBridgeWins() passed after 0.010 seconds.
+✔ Test choiceOneAndTwo() passed after 0.010 seconds.
+✔ Test enterMeansDoNothing() passed after 0.009 seconds.
+✔ Test historyMissingFileIsEmpty() passed after 0.010 seconds.
+✔ Test manualStepsListsCommands() passed after 0.010 seconds.
+✔ Test chooseNetworkPicksSecond() passed after 0.009 seconds.
+✔ Test notificationMentionsRecentChange() passed after 0.010 seconds.
+✔ Test repairedMeansVerifyOnRebootstrap() passed after 0.010 seconds.
+✔ Test notificationListsAllRunning() passed after 0.010 seconds.
+✔ Test rolledBackMeansPlainRebootstrap() passed after 0.010 seconds.
+✔ Test proceedMeansNoRebootstrap() passed after 0.010 seconds.
+✔ Test partialListingRendersHealthyImageAndReportsFailure(format:) with 4 test cases passed after 0.013 seconds.
+✔ Test healthyListingSucceedsWithoutWarnings() passed after 0.013 seconds.
+✔ Test helpListsFlags() passed after 0.014 seconds.
+✔ Test skipsWhenNotAllocationOnly() passed after 0.013 seconds.
+✔ Test nonTTYPrintsStepsAndChangesNothing() passed after 0.013 seconds.
+✔ Test ambiguousDontKnowPrintsAdminCheck() passed after 0.013 seconds.
+✔ Test historyRecentWindow() passed after 0.013 seconds.
+✔ Test skipsWhenOptedOut() passed after 0.013 seconds.
+✔ Test undeterminedWarns() passed after 0.013 seconds.
+✔ Test parsesSharedAddress() passed after 0.013 seconds.
+✔ Test parseRejectsGarbage() passed after 0.013 seconds.
+✔ Test okIsSilent() passed after 0.013 seconds.
+✔ Test tableIncludesStatusClientAndHostWhenRunning() passed after 0.013 seconds.
+✔ Test choiceThreeChangesNothing() passed after 0.013 seconds.
+✔ Test tableShowsOnlyStatusWhenNotRunning() passed after 0.013 seconds.
+✔ Test imageCountWithoutResourceCountsStaysNil() passed after 0.013 seconds.
+✔ Test tableShowsServerAndDaemonFieldsWhenRunning() passed after 0.013 seconds.
+✔ Test imageCountOmittedWhenUnavailable() passed after 0.013 seconds.
+✔ Test enumeratesLoopback() passed after 0.013 seconds.
+✔ Suite NetworkResourceDisplayTests passed after 0.014 seconds.
+✔ Test imageCountIsRecordedOnResourceCounts() passed after 0.013 seconds.
+✔ Suite ManagedContainerDisplayTests passed after 0.014 seconds.
+✔ Test payloadRoundTripsThroughJSON() passed after 0.013 seconds.
+✔ Test unknownSubcommandReturnsNil() passed after 0.014 seconds.
+✔ Test historyMarkApplied() passed after 0.014 seconds.
+✔ Test everyStaticSubcommandReachableViaHelp() passed after 0.014 seconds.
+✔ Test pendingFixOffersRestart() passed after 0.014 seconds.
+✔ Suite SystemNetworkCheckTests passed after 0.015 seconds.
+✔ Suite NetworkDiagnosisTests passed after 0.015 seconds.
+✔ Suite ImageListTests passed after 0.015 seconds.
+✔ Suite NetworkCheckModeTests passed after 0.015 seconds.
+✔ Test ambiguousAsksNetworkFirst() passed after 0.014 seconds.
+✔ Suite HostNetworkProbeTests passed after 0.015 seconds.
+✔ Suite SystemStatusTests passed after 0.015 seconds.
+✔ Suite HelpCommandTests passed after 0.015 seconds.
+✔ Suite NetworkRepairPromptTests passed after 0.015 seconds.
+✔ Test choiceOneRepairsAndAsksForRebootstrap() passed after 0.015 seconds.
+✔ Test choiceTwoUpdatesOnly() passed after 0.015 seconds.
+✔ Suite NetworkStartCheckTests passed after 0.016 seconds.
+✔ Test repairNowRestartsOtherContainersOnly() passed after 0.017 seconds.
+✔ Test updateOnlyWritesAndRecordsPending() passed after 0.017 seconds.
+✔ Test repairNowReportsRemoved() passed after 0.018 seconds.
+✔ Test repairNowRollsBackOnStartFailure() passed after 0.018 seconds.
+✔ Test verifyFailureRollsBack() passed after 0.019 seconds.
+✔ Test verifySucceedsMarksApplied() passed after 0.019 seconds.
+✔ Suite NetworkRepairerTests passed after 0.022 seconds.
+✔ Test followsInitiallyEmptyLog() passed after 0.086 seconds.
+✔ Suite ContainerLogsTests passed after 0.088 seconds.
+✔ Test run with 63 tests in 13 suites passed after 0.089 seconds.

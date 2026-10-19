@@ -1,0 +1,65 @@
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/28] Write sources
+[8/28] Write swift-version--58304C5D6DBC2206.txt
+[10/12] Compiling ContainerCommandsTests NetworkStartCheckTests.swift
+[11/12] Emitting module ContainerCommandsTests
+[11/13] Write Objects.LinkFileList
+[12/13] Linking containerPackageTests
+Build complete! (7.04s)
+Test Suite 'Selected tests' started at 2026-10-18 19:37:44.921.
+Test Suite 'containerPackageTests.xctest' started at 2026-10-18 19:37:44.923.
+Test Suite 'containerPackageTests.xctest' passed at 2026-10-18 19:37:44.923.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-18 19:37:44.923.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite NetworkCheckModeTests started.
+◇ Suite NetworkStartCheckTests started.
+◇ Test rolledBackMeansPlainRebootstrap() started.
+◇ Test repairedMeansVerifyOnRebootstrap() started.
+◇ Test proceedMeansNoRebootstrap() started.
+◇ Test skipsWhenOptedOut() started.
+◇ Test choiceOneRepairsAndAsksForRebootstrap() started.
+◇ Test skipsWhenNotAllocationOnly() started.
+◇ Test nonTTYPrintsStepsAndChangesNothing() started.
+◇ Test ambiguousDontKnowPrintsAdminCheck() started.
+◇ Test pendingFixOffersRestart() started.
+◇ Test choiceTwoUpdatesOnly() started.
+◇ Test undeterminedWarns() started.
+◇ Test okIsSilent() started.
+◇ Test ambiguousAsksNetworkFirst() started.
+◇ Test choiceThreeChangesNothing() started.
+✔ Test proceedMeansNoRebootstrap() passed after 0.004 seconds.
+✔ Test rolledBackMeansPlainRebootstrap() passed after 0.004 seconds.
+✔ Test repairedMeansVerifyOnRebootstrap() passed after 0.004 seconds.
+✔ Test skipsWhenOptedOut() passed after 0.004 seconds.
+✔ Test skipsWhenNotAllocationOnly() passed after 0.005 seconds.
+✔ Test nonTTYPrintsStepsAndChangesNothing() passed after 0.004 seconds.
+✔ Suite NetworkCheckModeTests passed after 0.005 seconds.
+✔ Test undeterminedWarns() passed after 0.004 seconds.
+✔ Test ambiguousDontKnowPrintsAdminCheck() passed after 0.005 seconds.
+✔ Test choiceThreeChangesNothing() passed after 0.006 seconds.
+✔ Test okIsSilent() passed after 0.006 seconds.
+✔ Test ambiguousAsksNetworkFirst() passed after 0.010 seconds.
+✔ Test choiceOneRepairsAndAsksForRebootstrap() passed after 0.010 seconds.
+✔ Test choiceTwoUpdatesOnly() passed after 0.010 seconds.
+✘ Test pendingFixOffersRestart() recorded an issue at NetworkStartCheckTests.swift:158:9: Expectation failed: (term.output → "⚠ Network problem: kali-gui has no network access.
+  container's setting has already been updated to 192.168.253.x, but container hasn't been restarted since.
+
+  [1] Repair automatically now
+  [2] Update the setting only. I'll restart later
+  [3] Do nothing
+Choose 1, 2 or 3 [3]: Repairing… (restarting container services)
+").contains("kali-gui (interactive session will be disconnected)")
+✘ Test pendingFixOffersRestart() failed after 0.012 seconds with 1 issue.
+✘ Suite NetworkStartCheckTests failed after 0.012 seconds with 1 issue.
+✘ Test run with 14 tests in 2 suites failed after 0.013 seconds with 1 issue.

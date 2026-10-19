@@ -1,0 +1,16 @@
+Installing container binaries from /Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/.build/arm64-apple-macosx/debug into bin/debug/staging/...
+Install update script
+Install uninstaller script
+Signing container binaries...
+bin/debug/staging/bin/container: replacing existing signature
+bin/debug/staging/bin/container-apiserver: replacing existing signature
+bin/debug/staging/libexec/container/plugins/container-core-images/bin/container-core-images: replacing existing signature
+bin/debug/staging/libexec/container/plugins/container-runtime-linux/bin/container-runtime-linux: replacing existing signature
+bin/debug/staging/libexec/container/plugins/container-network-vmnet/bin/container-network-vmnet: replacing existing signature
+bin/debug/staging/libexec/container/plugins/machine-apiserver/bin/machine-apiserver: replacing existing signature
+bin/debug/staging/libexec/container/plugins/k8s/bin/k8s: replacing existing signature
+bin/debug/staging/libexec/container/plugins/build/bin/build: replacing existing signature
+bin/debug/staging/libexec/container/plugins/builder/bin/builder: replacing existing signature
+Creating application installer
+pkgbuild: Inferring bundle components from contents of bin/debug/staging/
+pkgbuild: Wrote package to bin/debug/container-installer-unsigned.pkg

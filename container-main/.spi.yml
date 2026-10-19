@@ -1,0 +1,20 @@
+version: 1
+builder:
+  configs:
+    -
+      documentation_targets:
+        - ContainerAPIService
+        - ContainerAPIClient
+        - ContainerRuntimeClient
+        - ContainerRuntimeLinuxClient
+        - ContainerRuntimeLinuxServer
+        - ContainerNetworkService
+        - ContainerNetworkServiceClient
+        - ContainerImagesService
+        - ContainerImagesServiceClient
+        - ContainerResource
+        - ContainerLog
+        - ContainerPlugin
+        - ContainerXPC
+        - TerminalProgress
+      swift_version: '6.2'

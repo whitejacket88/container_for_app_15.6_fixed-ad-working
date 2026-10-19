@@ -1,0 +1,237 @@
+[0/1] Planning build
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/30] Write swift-version--58304C5D6DBC2206.txt
+[8/30] Write sources
+error: emit-module command failed with exit code 1 (use -v to see invocation)
+[10/13] Emitting module ContainerCommandsTests
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:51:13: error: cannot find type 'PromptIO' in scope
+ 49 |     var output: String { state.withLock { $0.output } }
+ 50 | 
+ 51 |     var io: PromptIO {
+    |             `- error: cannot find type 'PromptIO' in scope
+ 52 |         PromptIO(
+ 53 |             isTTY: { self.tty },
+[11/13] Compiling ContainerCommandsTests NetworkRepairPromptTests.swift
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:51:13: error: cannot find type 'PromptIO' in scope
+ 49 |     var output: String { state.withLock { $0.output } }
+ 50 | 
+ 51 |     var io: PromptIO {
+    |             `- error: cannot find type 'PromptIO' in scope
+ 52 |         PromptIO(
+ 53 |             isTTY: { self.tty },
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:75:17: error: cannot find 'NetworkRepairPrompt' in scope
+ 73 |     @Test func nonTTYNeverReadsOrWrites() {
+ 74 |         let term = FakeTerminal(tty: false, lines: ["1"])
+ 75 |         #expect(NetworkRepairPrompt.chooseAction(io: term.io) == nil)
+    |                 `- error: cannot find 'NetworkRepairPrompt' in scope
+ 76 |         #expect(NetworkRepairPrompt.chooseNetwork(candidates, io: term.io) == nil)
+ 77 |         #expect(term.reads == 0)
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:76:17: error: cannot find 'NetworkRepairPrompt' in scope
+ 74 |         let term = FakeTerminal(tty: false, lines: ["1"])
+ 75 |         #expect(NetworkRepairPrompt.chooseAction(io: term.io) == nil)
+ 76 |         #expect(NetworkRepairPrompt.chooseNetwork(candidates, io: term.io) == nil)
+    |                 `- error: cannot find 'NetworkRepairPrompt' in scope
+ 77 |         #expect(term.reads == 0)
+ 78 |     }
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:81:17: error: cannot find 'NetworkRepairPrompt' in scope
+ 79 | 
+ 80 |     @Test func enterMeansDoNothing() {
+ 81 |         #expect(NetworkRepairPrompt.chooseAction(io: FakeTerminal(lines: [""]).io) == .doNothing)
+    |                 `- error: cannot find 'NetworkRepairPrompt' in scope
+ 82 |     }
+ 83 | 
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:85:17: error: cannot find 'NetworkRepairPrompt' in scope
+ 83 | 
+ 84 |     @Test func choiceOneAndTwo() {
+ 85 |         #expect(NetworkRepairPrompt.chooseAction(io: FakeTerminal(lines: ["1"]).io) == .repairNow)
+    |                 `- error: cannot find 'NetworkRepairPrompt' in scope
+ 86 |         #expect(NetworkRepairPrompt.chooseAction(io: FakeTerminal(lines: ["2"]).io) == .updateOnly)
+ 87 |         #expect(NetworkRepairPrompt.chooseAction(io: FakeTerminal(lines: ["3"]).io) == .doNothing)
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:86:17: error: cannot find 'NetworkRepairPrompt' in scope
+ 84 |     @Test func choiceOneAndTwo() {
+ 85 |         #expect(NetworkRepairPrompt.chooseAction(io: FakeTerminal(lines: ["1"]).io) == .repairNow)
+ 86 |         #expect(NetworkRepairPrompt.chooseAction(io: FakeTerminal(lines: ["2"]).io) == .updateOnly)
+    |                 `- error: cannot find 'NetworkRepairPrompt' in scope
+ 87 |         #expect(NetworkRepairPrompt.chooseAction(io: FakeTerminal(lines: ["3"]).io) == .doNothing)
+ 88 |     }
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:87:17: error: cannot find 'NetworkRepairPrompt' in scope
+ 85 |         #expect(NetworkRepairPrompt.chooseAction(io: FakeTerminal(lines: ["1"]).io) == .repairNow)
+ 86 |         #expect(NetworkRepairPrompt.chooseAction(io: FakeTerminal(lines: ["2"]).io) == .updateOnly)
+ 87 |         #expect(NetworkRepairPrompt.chooseAction(io: FakeTerminal(lines: ["3"]).io) == .doNothing)
+    |                 `- error: cannot find 'NetworkRepairPrompt' in scope
+ 88 |     }
+ 89 | 
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:92:13: error: cannot find 'NetworkRepairPrompt' in scope
+ 90 |     @Test func choiceLabelsShown() {
+ 91 |         let term = FakeTerminal(lines: ["3"])
+ 92 |         _ = NetworkRepairPrompt.chooseAction(io: term.io)
+    |             `- error: cannot find 'NetworkRepairPrompt' in scope
+ 93 |         #expect(term.output.contains("[1] Repair automatically now"))
+ 94 |         #expect(term.output.contains("[2] Update the setting only. I'll restart later"))
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:100:17: error: cannot find 'NetworkRepairPrompt' in scope
+ 98 |     @Test func invalidThenGiveUp() {
+ 99 |         let term = FakeTerminal(lines: ["x", "y", "z", "1"])
+100 |         #expect(NetworkRepairPrompt.chooseAction(io: term.io) == .doNothing)
+    |                 `- error: cannot find 'NetworkRepairPrompt' in scope
+101 |         #expect(term.reads == 3)
+102 |     }
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:105:17: error: cannot find 'NetworkRepairPrompt' in scope
+103 | 
+104 |     @Test func endOfInputMeansDoNothing() {
+105 |         #expect(NetworkRepairPrompt.chooseAction(io: FakeTerminal(lines: []).io) == .doNothing)
+    |                 `- error: cannot find 'NetworkRepairPrompt' in scope
+106 |     }
+107 | 
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:109:17: error: cannot find 'NetworkRepairPrompt' in scope
+107 | 
+108 |     @Test func chooseNetworkPicksSecond() {
+109 |         #expect(NetworkRepairPrompt.chooseNetwork(candidates, io: FakeTerminal(lines: ["2"]).io) == suggested)
+    |                 `- error: cannot find 'NetworkRepairPrompt' in scope
+110 |         #expect(NetworkRepairPrompt.chooseNetwork(candidates, io: FakeTerminal(lines: ["3"]).io) == nil)
+111 |         #expect(NetworkRepairPrompt.chooseNetwork(candidates, io: FakeTerminal(lines: [""]).io) == nil)
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:110:17: error: cannot find 'NetworkRepairPrompt' in scope
+108 |     @Test func chooseNetworkPicksSecond() {
+109 |         #expect(NetworkRepairPrompt.chooseNetwork(candidates, io: FakeTerminal(lines: ["2"]).io) == suggested)
+110 |         #expect(NetworkRepairPrompt.chooseNetwork(candidates, io: FakeTerminal(lines: ["3"]).io) == nil)
+    |                 `- error: cannot find 'NetworkRepairPrompt' in scope
+111 |         #expect(NetworkRepairPrompt.chooseNetwork(candidates, io: FakeTerminal(lines: [""]).io) == nil)
+112 |     }
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:111:17: error: cannot find 'NetworkRepairPrompt' in scope
+109 |         #expect(NetworkRepairPrompt.chooseNetwork(candidates, io: FakeTerminal(lines: ["2"]).io) == suggested)
+110 |         #expect(NetworkRepairPrompt.chooseNetwork(candidates, io: FakeTerminal(lines: ["3"]).io) == nil)
+111 |         #expect(NetworkRepairPrompt.chooseNetwork(candidates, io: FakeTerminal(lines: [""]).io) == nil)
+    |                 `- error: cannot find 'NetworkRepairPrompt' in scope
+112 |     }
+113 | 
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:115:20: error: cannot find 'NetworkRepairPrompt' in scope
+113 | 
+114 |     @Test func notificationListsAllRunning() {
+115 |         let text = NetworkRepairPrompt.notification(
+    |                    `- error: cannot find 'NetworkRepairPrompt' in scope
+116 |             containerId: "kali-gui",
+117 |             diagnosis: .mismatch(current: current, suggested: suggested, evidence: "e"),
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:119:17: error: cannot find 'RunningContainerInfo' in scope
+117 |             diagnosis: .mismatch(current: current, suggested: suggested, evidence: "e"),
+118 |             running: [
+119 |                 RunningContainerInfo(id: "kali-gui", interactive: true),
+    |                 `- error: cannot find 'RunningContainerInfo' in scope
+120 |                 RunningContainerInfo(id: "web", interactive: false),
+121 |             ],
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:120:17: error: cannot find 'RunningContainerInfo' in scope
+118 |             running: [
+119 |                 RunningContainerInfo(id: "kali-gui", interactive: true),
+120 |                 RunningContainerInfo(id: "web", interactive: false),
+    |                 `- error: cannot find 'RunningContainerInfo' in scope
+121 |             ],
+122 |             recent: nil)
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:117:25: error: cannot infer contextual base in reference to member 'mismatch'
+115 |         let text = NetworkRepairPrompt.notification(
+116 |             containerId: "kali-gui",
+117 |             diagnosis: .mismatch(current: current, suggested: suggested, evidence: "e"),
+    |                         `- error: cannot infer contextual base in reference to member 'mismatch'
+118 |             running: [
+119 |                 RunningContainerInfo(id: "kali-gui", interactive: true),
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:122:21: error: 'nil' requires a contextual type
+120 |                 RunningContainerInfo(id: "web", interactive: false),
+121 |             ],
+122 |             recent: nil)
+    |                     `- error: 'nil' requires a contextual type
+123 |         #expect(text.hasPrefix("⚠ Network problem: kali-gui has no network access."))
+124 |         #expect(text.contains("192.168.64.x"))
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:133:22: error: cannot find 'NetworkRepairRecord' in scope
+131 | 
+132 |     @Test func notificationMentionsRecentChange() {
+133 |         let record = NetworkRepairRecord(
+    |                      `- error: cannot find 'NetworkRepairRecord' in scope
+134 |             date: Date().addingTimeInterval(-180), from: "192.168.252.1/24", to: "192.168.64.1/24", choice: 1, pending: false)
+135 |         let text = NetworkRepairPrompt.notification(
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:135:20: error: cannot find 'NetworkRepairPrompt' in scope
+133 |         let record = NetworkRepairRecord(
+134 |             date: Date().addingTimeInterval(-180), from: "192.168.252.1/24", to: "192.168.64.1/24", choice: 1, pending: false)
+135 |         let text = NetworkRepairPrompt.notification(
+    |                    `- error: cannot find 'NetworkRepairPrompt' in scope
+136 |             containerId: "a", diagnosis: .mismatch(current: current, suggested: suggested, evidence: "e"),
+137 |             running: [], recent: record)
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:136:43: error: cannot infer contextual base in reference to member 'mismatch'
+134 |             date: Date().addingTimeInterval(-180), from: "192.168.252.1/24", to: "192.168.64.1/24", choice: 1, pending: false)
+135 |         let text = NetworkRepairPrompt.notification(
+136 |             containerId: "a", diagnosis: .mismatch(current: current, suggested: suggested, evidence: "e"),
+    |                                           `- error: cannot infer contextual base in reference to member 'mismatch'
+137 |             running: [], recent: record)
+138 |         #expect(text.contains("3 minutes ago"))
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:142:20: error: cannot find 'NetworkRepairPrompt' in scope
+140 | 
+141 |     @Test func manualStepsListsCommands() {
+142 |         let text = NetworkRepairPrompt.manualSteps(suggested: suggested, containerIds: ["kali-gui"])
+    |                    `- error: cannot find 'NetworkRepairPrompt' in scope
+143 |         #expect(text.contains("subnet = \"192.168.253.1/24\""))
+144 |         #expect(text.contains("container system stop && container system start"))
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:150:27: error: cannot find 'NetworkRepairHistory' in scope
+148 |     @Test func historyRecentWindow() throws {
+149 |         try withTempDir { dir in
+150 |             let history = NetworkRepairHistory(file: dir.appending("network-repair.json"))
+    |                           `- error: cannot find 'NetworkRepairHistory' in scope
+151 |             let now = Date()
+152 |             try history.append(NetworkRepairRecord(date: now.addingTimeInterval(-300), from: "a", to: "192.168.64.1/24", choice: 1, pending: false))
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:152:32: error: cannot find 'NetworkRepairRecord' in scope
+150 |             let history = NetworkRepairHistory(file: dir.appending("network-repair.json"))
+151 |             let now = Date()
+152 |             try history.append(NetworkRepairRecord(date: now.addingTimeInterval(-300), from: "a", to: "192.168.64.1/24", choice: 1, pending: false))
+    |                                `- error: cannot find 'NetworkRepairRecord' in scope
+153 |             #expect(history.recentChange(to: "192.168.64.1/24", now: now) != nil)
+154 |             #expect(history.recentChange(to: "192.168.64.1/24", now: now.addingTimeInterval(400)) == nil)
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:160:27: error: cannot find 'NetworkRepairHistory' in scope
+158 |     @Test func historyMarkApplied() throws {
+159 |         try withTempDir { dir in
+160 |             let history = NetworkRepairHistory(file: dir.appending("network-repair.json"))
+    |                           `- error: cannot find 'NetworkRepairHistory' in scope
+161 |             try history.append(NetworkRepairRecord(date: Date(), from: "a", to: "192.168.253.1/24", choice: 2, pending: true))
+162 |             try history.markApplied(to: "192.168.253.1/24")
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:161:32: error: cannot find 'NetworkRepairRecord' in scope
+159 |         try withTempDir { dir in
+160 |             let history = NetworkRepairHistory(file: dir.appending("network-repair.json"))
+161 |             try history.append(NetworkRepairRecord(date: Date(), from: "a", to: "192.168.253.1/24", choice: 2, pending: true))
+    |                                `- error: cannot find 'NetworkRepairRecord' in scope
+162 |             try history.markApplied(to: "192.168.253.1/24")
+163 |             #expect(history.load().first?.pending == false)
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairPromptTests.swift:168:23: error: cannot find 'NetworkRepairHistory' in scope
+166 | 
+167 |     @Test func historyMissingFileIsEmpty() {
+168 |         let history = NetworkRepairHistory(file: FilePath("/nonexistent/network-repair.json"))
+    |                       `- error: cannot find 'NetworkRepairHistory' in scope
+169 |         #expect(history.load().isEmpty)
+170 |     }
+error: fatalError

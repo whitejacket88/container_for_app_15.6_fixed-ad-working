@@ -1,0 +1,86 @@
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/28] Write sources
+[8/28] Write swift-version--58304C5D6DBC2206.txt
+[10/16] Emitting module ContainerCommands
+[11/16] Compiling ContainerCommands NetworkRepairer.swift
+[12/18] Compiling ContainerCommands SystemNetworkCheck.swift
+[13/18] Compiling ContainerCommands NetworkStartCheck.swift
+[13/25] Write Objects.LinkFileList
+[15/25] Compiling container_build Application.swift
+[16/25] Emitting module container_build
+[16/26] Write Objects.LinkFileList
+[18/26] Compiling ContainerCommandsTests NetworkRepairerTests.swift
+[19/26] Compiling ContainerCommandsTests NetworkStartCheckTests.swift
+[20/26] Emitting module ContainerCommandsTests
+[20/26] Write Objects.LinkFileList
+[21/26] Linking container
+[22/26] Linking container-build
+[23/26] Applying container
+[24/26] Applying container-build
+[25/26] Linking containerPackageTests
+Build complete! (9.20s)
+Test Suite 'Selected tests' started at 2026-10-18 19:37:29.263.
+Test Suite 'containerPackageTests.xctest' started at 2026-10-18 19:37:29.264.
+Test Suite 'containerPackageTests.xctest' passed at 2026-10-18 19:37:29.264.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-18 19:37:29.264.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite NetworkCheckModeTests started.
+◇ Suite NetworkStartCheckTests started.
+◇ Suite NetworkRepairerTests started.
+◇ Test rolledBackMeansPlainRebootstrap() started.
+◇ Test proceedMeansNoRebootstrap() started.
+◇ Test pendingFixOffersRestart() started.
+◇ Test repairedMeansVerifyOnRebootstrap() started.
+◇ Test ambiguousAsksNetworkFirst() started.
+◇ Test nonTTYPrintsStepsAndChangesNothing() started.
+◇ Test ambiguousDontKnowPrintsAdminCheck() started.
+◇ Test choiceThreeChangesNothing() started.
+◇ Test undeterminedWarns() started.
+◇ Test skipsWhenNotAllocationOnly() started.
+◇ Test choiceOneRepairsAndAsksForRebootstrap() started.
+◇ Test skipsWhenOptedOut() started.
+◇ Test choiceTwoUpdatesOnly() started.
+◇ Test okIsSilent() started.
+◇ Test verifyFailsWhenContainerUnreachable() started.
+◇ Test verifySucceedsMarksApplied() started.
+◇ Test repairNowRollsBackOnStartFailure() started.
+◇ Test repairNowReportsRemoved() started.
+◇ Test verifyFailureRollsBack() started.
+◇ Test repairNowRestartsOtherContainersOnly() started.
+◇ Test updateOnlyWritesAndRecordsPending() started.
+✔ Test rolledBackMeansPlainRebootstrap() passed after 0.014 seconds.
+✔ Test proceedMeansNoRebootstrap() passed after 0.014 seconds.
+✔ Test repairedMeansVerifyOnRebootstrap() passed after 0.014 seconds.
+✔ Test undeterminedWarns() passed after 0.014 seconds.
+✔ Test skipsWhenOptedOut() passed after 0.014 seconds.
+✔ Test choiceThreeChangesNothing() passed after 0.014 seconds.
+✔ Test ambiguousDontKnowPrintsAdminCheck() passed after 0.014 seconds.
+✔ Test skipsWhenNotAllocationOnly() passed after 0.014 seconds.
+✔ Test nonTTYPrintsStepsAndChangesNothing() passed after 0.014 seconds.
+✔ Test okIsSilent() passed after 0.014 seconds.
+✔ Test ambiguousAsksNetworkFirst() passed after 0.014 seconds.
+✔ Test choiceTwoUpdatesOnly() passed after 0.014 seconds.
+✔ Test choiceOneRepairsAndAsksForRebootstrap() passed after 0.014 seconds.
+✔ Suite NetworkCheckModeTests passed after 0.014 seconds.
+✔ Test repairNowRollsBackOnStartFailure() passed after 0.019 seconds.
+✔ Test repairNowRestartsOtherContainersOnly() passed after 0.019 seconds.
+✔ Test repairNowReportsRemoved() passed after 0.019 seconds.
+✔ Test verifyFailsWhenContainerUnreachable() passed after 0.019 seconds.
+✔ Test pendingFixOffersRestart() passed after 0.019 seconds.
+✔ Suite NetworkStartCheckTests passed after 0.019 seconds.
+✔ Test verifyFailureRollsBack() passed after 0.019 seconds.
+✔ Test updateOnlyWritesAndRecordsPending() passed after 0.022 seconds.
+✔ Test verifySucceedsMarksApplied() passed after 0.022 seconds.
+✔ Suite NetworkRepairerTests passed after 0.023 seconds.
+✔ Test run with 21 tests in 3 suites passed after 0.023 seconds.

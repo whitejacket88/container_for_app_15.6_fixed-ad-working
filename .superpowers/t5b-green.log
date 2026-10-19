@@ -1,0 +1,84 @@
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/31] Write swift-version--58304C5D6DBC2206.txt
+[8/31] Write sources
+[10/19] Compiling ContainerCommands NetworkStartCheck.swift
+[11/19] Emitting module ContainerCommands
+[12/33] Emitting module container
+[13/33] Compiling container ContainerCLI.swift
+[13/33] Write Objects.LinkFileList
+[15/33] Compiling container_build Application.swift
+[16/33] Emitting module container_build
+[16/33] Write Objects.LinkFileList
+[18/33] Compiling ContainerCommandsTests ListFormattingTests.swift
+[19/34] Compiling ContainerCommandsTests HelpCommandTests.swift
+[20/34] Compiling ContainerCommandsTests ContainerLogsTests.swift
+[21/34] Emitting module ContainerCommandsTests
+[22/34] Compiling ContainerCommandsTests ImageListTests.swift
+[23/34] Compiling ContainerCommandsTests HostNetworkProbeTests.swift
+[24/34] Compiling ContainerCommandsTests NetworkRepairerTests.swift
+[25/34] Compiling ContainerCommandsTests NetworkRepairPromptTests.swift
+[26/34] Compiling ContainerCommandsTests NetworkStartCheckTests.swift
+[27/34] Compiling ContainerCommandsTests NetworkDiagnosisTests.swift
+[28/34] Compiling ContainerCommandsTests SystemStatusTests.swift
+[28/34] Write Objects.LinkFileList
+[29/34] Linking container-build
+[30/34] Linking container
+[31/34] Applying container-build
+[32/34] Applying container
+[33/34] Linking containerPackageTests
+Build complete! (8.65s)
+Test Suite 'Selected tests' started at 2026-10-18 19:13:33.314.
+Test Suite 'containerPackageTests.xctest' started at 2026-10-18 19:13:33.315.
+Test Suite 'containerPackageTests.xctest' passed at 2026-10-18 19:13:33.315.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-18 19:13:33.315.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite NetworkRepairerTests started.
+◇ Suite NetworkStartCheckTests started.
+◇ Test verifySucceedsMarksApplied() started.
+◇ Test repairNowReportsRemoved() started.
+◇ Test verifyFailureRollsBack() started.
+◇ Test updateOnlyWritesAndRecordsPending() started.
+◇ Test repairNowRestartsOtherContainersOnly() started.
+◇ Test repairNowRollsBackOnStartFailure() started.
+◇ Test ambiguousAsksNetworkFirst() started.
+◇ Test choiceOneRepairsAndAsksForRebootstrap() started.
+◇ Test skipsWhenNotAllocationOnly() started.
+◇ Test undeterminedWarns() started.
+◇ Test skipsWhenOptedOut() started.
+◇ Test ambiguousDontKnowPrintsAdminCheck() started.
+◇ Test nonTTYPrintsStepsAndChangesNothing() started.
+◇ Test choiceThreeChangesNothing() started.
+◇ Test choiceTwoUpdatesOnly() started.
+◇ Test pendingFixOffersRestart() started.
+◇ Test okIsSilent() started.
+✔ Test skipsWhenNotAllocationOnly() passed after 0.012 seconds.
+✔ Test undeterminedWarns() passed after 0.012 seconds.
+✔ Test skipsWhenOptedOut() passed after 0.012 seconds.
+✔ Test ambiguousDontKnowPrintsAdminCheck() passed after 0.012 seconds.
+✔ Test choiceThreeChangesNothing() passed after 0.012 seconds.
+✔ Test nonTTYPrintsStepsAndChangesNothing() passed after 0.012 seconds.
+✔ Test choiceOneRepairsAndAsksForRebootstrap() passed after 0.012 seconds.
+✔ Test ambiguousAsksNetworkFirst() passed after 0.012 seconds.
+✔ Test okIsSilent() passed after 0.014 seconds.
+✔ Test repairNowRestartsOtherContainersOnly() passed after 0.014 seconds.
+✔ Test repairNowRollsBackOnStartFailure() passed after 0.014 seconds.
+✔ Test repairNowReportsRemoved() passed after 0.015 seconds.
+✔ Test verifyFailureRollsBack() passed after 0.015 seconds.
+✔ Test updateOnlyWritesAndRecordsPending() passed after 0.015 seconds.
+✔ Test choiceTwoUpdatesOnly() passed after 0.016 seconds.
+✔ Test verifySucceedsMarksApplied() passed after 0.016 seconds.
+✔ Suite NetworkRepairerTests passed after 0.016 seconds.
+✔ Test pendingFixOffersRestart() passed after 0.018 seconds.
+✔ Suite NetworkStartCheckTests passed after 0.018 seconds.
+✔ Test run with 17 tests in 2 suites passed after 0.019 seconds.

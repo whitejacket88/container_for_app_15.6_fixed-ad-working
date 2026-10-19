@@ -1,0 +1,46 @@
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/28] Write sources
+[8/28] Write swift-version--58304C5D6DBC2206.txt
+[10/12] Emitting module ContainerCommandsTests
+[11/12] Compiling ContainerCommandsTests NetworkRepairerTests.swift
+[12/13] Compiling ContainerCommandsTests NetworkStartCheckTests.swift
+[12/14] Write Objects.LinkFileList
+[13/14] Linking containerPackageTests
+Build complete! (8.88s)
+Test Suite 'Selected tests' started at 2026-10-18 19:37:06.521.
+Test Suite 'containerPackageTests.xctest' started at 2026-10-18 19:37:06.522.
+Test Suite 'containerPackageTests.xctest' passed at 2026-10-18 19:37:06.522.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-18 19:37:06.522.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite NetworkRepairerTests started.
+◇ Test repairNowReportsRemoved() started.
+◇ Test updateOnlyWritesAndRecordsPending() started.
+◇ Test verifyFailureRollsBack() started.
+◇ Test repairNowRollsBackOnStartFailure() started.
+◇ Test verifySucceedsMarksApplied() started.
+◇ Test verifyFailsWhenContainerUnreachable() started.
+◇ Test repairNowRestartsOtherContainersOnly() started.
+✔ Test repairNowReportsRemoved() passed after 0.016 seconds.
+✔ Test updateOnlyWritesAndRecordsPending() passed after 0.016 seconds.
+✔ Test repairNowRestartsOtherContainersOnly() passed after 0.016 seconds.
+✔ Test verifyFailureRollsBack() passed after 0.016 seconds.
+✔ Test repairNowRollsBackOnStartFailure() passed after 0.017 seconds.
+✘ Test verifyFailsWhenContainerUnreachable() recorded an issue at NetworkRepairerTests.swift:218:9: Expectation failed: await repairer.verify(pending, id: "cur") == false
+✔ Test verifySucceedsMarksApplied() passed after 0.018 seconds.
+✘ Test verifyFailsWhenContainerUnreachable() recorded an issue at NetworkRepairerTests.swift:219:9: Expectation failed: try read(file) == original
+✘ Test verifyFailsWhenContainerUnreachable() failed after 0.018 seconds with 2 issues.
+↳ /// A wrong pick (e.g. the Multipass bridge) still has its gateway on the host, so only
+↳ /// reaching the container itself proves the repair worked.
+✘ Suite NetworkRepairerTests failed after 0.019 seconds with 2 issues.
+✘ Test run with 7 tests in 1 suite failed after 0.019 seconds with 2 issues.

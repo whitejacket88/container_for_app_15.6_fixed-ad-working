@@ -1,0 +1,84 @@
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/28] Write sources
+[8/28] Write swift-version--58304C5D6DBC2206.txt
+[10/12] Compiling ContainerPersistenceTests NetworkConfigEditorTests.swift
+[11/12] Emitting module ContainerPersistenceTests
+[11/13] Write Objects.LinkFileList
+[12/13] Linking containerPackageTests
+Build complete! (6.97s)
+Test Suite 'Selected tests' started at 2026-10-18 19:35:19.731.
+Test Suite 'containerPackageTests.xctest' started at 2026-10-18 19:35:19.733.
+Test Suite 'containerPackageTests.xctest' passed at 2026-10-18 19:35:19.734.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-18 19:35:19.734.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.003) seconds
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite NetworkConfigEditorTests started.
+◇ Test refusesEditThatWouldBreakTOML() started.
+◇ Test insertsIntoExistingNetworkTable() started.
+◇ Test keepsFiveBackups() started.
+◇ Test recognisesHeaderWithCommentAndSpaces() started.
+◇ Test checkOnStartDefaultsTrue() started.
+◇ Test replacesExistingSubnet() started.
+◇ Test restoreRevertsFile() started.
+◇ Test readsSubnet() started.
+◇ Test writeCreatesDirAndBacksUp() started.
+◇ Test preservesOtherSectionsAndComments() started.
+◇ Test appendsNetworkTableWhenMissing() started.
+◇ Test handlesCRLF() started.
+✔ Test insertsIntoExistingNetworkTable() passed after 0.001 seconds.
+✔ Test preservesOtherSectionsAndComments() passed after 0.001 seconds.
+✔ Test replacesExistingSubnet() passed after 0.001 seconds.
+✔ Test readsSubnet() passed after 0.001 seconds.
+✔ Test appendsNetworkTableWhenMissing() passed after 0.001 seconds.
+✘ Test recognisesHeaderWithCommentAndSpaces() recorded an issue at NetworkConfigEditorTests.swift:130:9: Expectation failed: (commented → "[network] # vm range
+subnet = "192.168.64.1/24"
+
+[network]
+subnet = "192.168.253.1/24"
+") == ("[network] # vm range\nsubnet = \"192.168.253.1/24\"\n" → "[network] # vm range
+subnet = "192.168.253.1/24"
+")
+✘ Test handlesCRLF() recorded an issue at NetworkConfigEditorTests.swift:138:9: Expectation failed: !((out → "[network]
+subnet = "192.168.64.1/24"
+
+
+[network]
+subnet = "192.168.253.1/24"
+").contains("\n[network]\n" → "
+[network]
+") → true)
+✘ Test recognisesHeaderWithCommentAndSpaces() recorded an issue at NetworkConfigEditorTests.swift:132:9: Expectation failed: (spaced → "[ network ]
+
+[network]
+subnet = "192.168.253.1/24"
+") == ("[ network ]\nsubnet = \"192.168.253.1/24\"\n" → "[ network ]
+subnet = "192.168.253.1/24"
+")
+✘ Test handlesCRLF() recorded an issue at NetworkConfigEditorTests.swift:140:9: Expectation failed: (out.components(separatedBy: "[network]").count → 3) == 2
+✘ Test handlesCRLF() failed after 0.002 seconds with 2 issues.
+✘ Test recognisesHeaderWithCommentAndSpaces() recorded an issue at NetworkConfigEditorTests.swift:133:9: Expectation failed: (NetworkConfigEditor.subnet(in: "[network] # c\nsubnet = \"192.168.253.1/24\"\n") → nil) == (new → 192.168.253.1/24)
+✘ Test recognisesHeaderWithCommentAndSpaces() failed after 0.003 seconds with 3 issues.
+✔ Test checkOnStartDefaultsTrue() passed after 0.008 seconds.
+✘ Test refusesEditThatWouldBreakTOML() recorded an issue at NetworkConfigEditorTests.swift:152:13: Expectation failed: threw
+✘ Test refusesEditThatWouldBreakTOML() recorded an issue at NetworkConfigEditorTests.swift:154:13: Expectation failed: (after → "network.subnet = "192.168.64.1/24"
+
+[network]
+subnet = "192.168.253.1/24"
+") == (original → "network.subnet = "192.168.64.1/24"
+")
+✘ Test refusesEditThatWouldBreakTOML() failed after 0.009 seconds with 2 issues.
+✔ Test restoreRevertsFile() passed after 0.009 seconds.
+✔ Test writeCreatesDirAndBacksUp() passed after 0.010 seconds.
+✔ Test keepsFiveBackups() passed after 0.022 seconds.
+✘ Suite NetworkConfigEditorTests failed after 0.022 seconds with 7 issues.
+✘ Test run with 12 tests in 1 suite failed after 0.022 seconds with 7 issues.

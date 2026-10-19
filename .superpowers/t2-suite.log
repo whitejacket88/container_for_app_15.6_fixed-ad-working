@@ -1,0 +1,244 @@
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/27] Write swift-version--58304C5D6DBC2206.txt
+Build complete! (0.86s)
+Test Suite 'Selected tests' started at 2026-10-18 19:06:18.259.
+Test Suite 'containerPackageTests.xctest' started at 2026-10-18 19:06:18.260.
+Test Suite 'containerPackageTests.xctest' passed at 2026-10-18 19:06:18.260.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-18 19:06:18.260.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite MachineConfigTests started.
+◇ Suite FilesystemEntityStoreTests started.
+◇ Suite NetworkConfigEditorTests started.
+◇ Suite ConfigurationLoaderTests started.
+◇ Suite PathUtilsTests started.
+◇ Test testEntityPathIsIdUnderRoot() started.
+◇ Test virtualizationDefaultsToFalse() started.
+◇ Suite FilePathSymlinksTests started.
+◇ Test roundTripJSON() started.
+◇ Suite ConfigSnapshotDecoderTests started.
+◇ Test testUpdateNonexistentThrows() started.
+◇ Test withPreservesUnchangedFields() started.
+◇ Test withEmptyKernelClearsKernelPath() started.
+◇ Test testListEmpty() started.
+◇ Test testCreateAndRetrieve() started.
+◇ Test testListAfterCreate() started.
+◇ Test withSetsVirtualizationFalse() started.
+◇ Test decodingMissingFieldsUsesDefaults() started.
+◇ Test testDeleteRemovesDirectory() started.
+◇ Test testCreateDuplicateThrows() started.
+◇ Test testRetrieveNonexistentReturnsNil() started.
+◇ Test withSetsKernelPath() started.
+◇ Test testUpsertCreates() started.
+◇ Test testUpdate() started.
+◇ Test withSetsVirtualizationTrue() started.
+◇ Test testDeleteNonexistentThrows() started.
+◇ Test testDelete() started.
+◇ Test withRejectsBogusBoolean() started.
+◇ Test testPersistenceAcrossReinit() started.
+◇ Test testUpsertUpdates() started.
+◇ Test settableKeysIncludeNewFields() started.
+◇ Test testEntityIdWithSlashThrows() started.
+◇ Test insertsIntoExistingNetworkTable() started.
+◇ Test replacesExistingSubnet() started.
+◇ Test appendsNetworkTableWhenMissing() started.
+◇ Test writeCreatesDirAndBacksUp() started.
+◇ Test keepsFiveBackups() started.
+◇ Test restoreRevertsFile() started.
+◇ Test readsSubnet() started.
+◇ Test preservesOtherSectionsAndComments() started.
+◇ Test checkOnStartDefaultsTrue() started.
+◇ Test invalidTomlThrows() started.
+◇ Test copyConfigDoesNotFollowDestinationSymlink() started.
+◇ Test copyConfigToAppRoot() started.
+◇ Test customKernelURLWithDigestCanBeConstructed() started.
+◇ Test copyConfigNoOpsWhenSourceMissing() started.
+◇ Test emptyTomlDecodesToDefaults() started.
+◇ Test loadForPluginIsolatesFromHostileSibling() started.
+◇ Test loadForPluginDecodesQualifiedSection() started.
+◇ Test loadForPluginMalformedSectionThrows() started.
+◇ Test partialOverlapMergesKeys() started.
+◇ Test unknownKeysIgnored() started.
+◇ Test loadFollowsSymlinkedSourceFile() started.
+◇ Test testHomeFallsBackToHomeDirectoryWhenXdgUnset() started.
+◇ Test copyConfigOverwritesExistingReadOnlyDestination() started.
+◇ Test defaultsWithNoFile() started.
+◇ Test loadForPluginSubsectionMissingReturnsDefault() started.
+◇ Test testAppRootFallsBackToApplicationSupportWhenUnset() started.
+◇ Test testAppRootTreatsEmptyEnvAsUnset() started.
+◇ Test partialToml() started.
+◇ Test testInstallRootFromEnvVar() started.
+◇ Test allFilesMissingReturnsDefaults() started.
+◇ Test tomlOverrideAllKeys() started.
+◇ Test testAppRootUsesContainerAppRootWhenSet() started.
+◇ Test testHomeIgnoresContainerAppRoot() started.
+◇ Test pluginLayering() started.
+◇ Test loadForPluginFileMissingReturnsDefault() started.
+◇ Test testAppRootIgnoresXdgConfigHome() started.
+◇ Test loadForPluginErrorIdentifiesMalformedLayerFile() started.
+◇ Test layeredFilesPerKeyPrecedence() started.
+◇ Test testHomeUsesXdgConfigHomeWhenSet() started.
+◇ Test testHomeTreatsEmptyXdgAsUnset() started.
+◇ Test layeredPrecedence() started.
+◇ Test customKernelURLWithoutDigestThrows() started.
+◇ Test loadForPluginEmptyIdThrows() started.
+◇ Test loadForPluginMissingSectionReturnsDefault() started.
+◇ Test loadErrorIdentifiesMalformedLayerFile() started.
+◇ Test symlinkResolvesToTarget() started.
+◇ Test realPathReturnsAbsolutePath() started.
+◇ Test nonExistentPathThrows() started.
+◇ Test relativePathResolvesToAbsolute() started.
+◇ Test decodeNarrowIntegers() started.
+◇ Test decodeOptionalStringWithBoolThrows() started.
+◇ Test decodeNestedStructWithURLStrategy() started.
+◇ Test decodeOptionalsPresent() started.
+◇ Test decodeIntegerOverflowThrows() started.
+◇ Test decodeTypeMismatchThrows() started.
+◇ Test layeredCustomKernelURLCanUseDigestFromLowerLayer() started.
+◇ Test decodeNestedStruct() started.
+◇ Test decodeOptionalIntWithStringThrows() started.
+◇ Test decodeOptionalFloatWithStringThrows() started.
+◇ Test decodeUserTypeWithCustomStrategy() started.
+◇ Test decodeTopLevelPrimitive() started.
+◇ Test decodeFlatStruct() started.
+◇ Test decodeOptionalsAbsent() started.
+◇ Test decodeOptionalBoolWithIntThrows() started.
+◇ Test decodeTopLevelDictionaryThrows() started.
+◇ Test decodeArrayOfStructsThrows() started.
+◇ Test decodeMissingRequiredKeyThrows() started.
+◇ Test decodeScopedSnapshot() started.
+◇ Test decodeIfPresentNestedStruct() started.
+◇ Test decodeURLWithoutStrategyThrows() started.
+◇ Test decodeURLWithCustomStrategy() started.
+◇ Test decodeDeeplyNestedStruct() started.
+◇ Test decodeArrays() started.
+◇ Test decodeEnum() started.
+◇ Test decodeOptionalURLWithStrategy() started.
+◇ Test decodeDictionaryPropertyThrows() started.
+◇ Test decodeCustomCodingKeys() started.
+◇ Test decodeFloat() started.
+◇ Test decodeOptionalDoubleWithStringThrows() started.
+◇ Test decodeURL() started.
+✔ Test virtualizationDefaultsToFalse() passed after 0.007 seconds.
+✔ Test withEmptyKernelClearsKernelPath() passed after 0.007 seconds.
+✔ Test withSetsVirtualizationFalse() passed after 0.007 seconds.
+✔ Test withPreservesUnchangedFields() passed after 0.007 seconds.
+✔ Test decodingMissingFieldsUsesDefaults() passed after 0.007 seconds.
+✔ Test roundTripJSON() passed after 0.007 seconds.
+✔ Test withSetsKernelPath() passed after 0.009 seconds.
+✔ Test testRetrieveNonexistentReturnsNil() passed after 0.010 seconds.
+✔ Test testListEmpty() passed after 0.010 seconds.
+✔ Test withSetsVirtualizationTrue() passed after 0.010 seconds.
+✔ Test testEntityPathIsIdUnderRoot() passed after 0.017 seconds.
+✔ Test testCreateAndRetrieve() passed after 0.022 seconds.
+✔ Test testUpsertCreates() passed after 0.023 seconds.
+✔ Test withRejectsBogusBoolean() passed after 0.024 seconds.
+✔ Test testDeleteRemovesDirectory() passed after 0.024 seconds.
+✔ Test testUpdate() passed after 0.024 seconds.
+✔ Test testUpdateNonexistentThrows() passed after 0.025 seconds.
+✔ Test settableKeysIncludeNewFields() passed after 0.026 seconds.
+✔ Test testCreateDuplicateThrows() passed after 0.026 seconds.
+✔ Test testDeleteNonexistentThrows() passed after 0.026 seconds.
+✔ Test appendsNetworkTableWhenMissing() passed after 0.025 seconds.
+✔ Test insertsIntoExistingNetworkTable() passed after 0.025 seconds.
+✔ Test readsSubnet() passed after 0.025 seconds.
+✔ Test testListAfterCreate() passed after 0.027 seconds.
+✔ Test testDelete() passed after 0.026 seconds.
+✔ Test replacesExistingSubnet() passed after 0.025 seconds.
+✔ Test testEntityIdWithSlashThrows() passed after 0.026 seconds.
+✔ Test testPersistenceAcrossReinit() passed after 0.026 seconds.
+✔ Test customKernelURLWithDigestCanBeConstructed() passed after 0.025 seconds.
+✔ Test testUpsertUpdates() passed after 0.026 seconds.
+✔ Test invalidTomlThrows() passed after 0.025 seconds.
+✔ Test preservesOtherSectionsAndComments() passed after 0.025 seconds.
+✔ Test loadForPluginDecodesQualifiedSection() passed after 0.022 seconds.
+✔ Test checkOnStartDefaultsTrue() passed after 0.025 seconds.
+✔ Test copyConfigNoOpsWhenSourceMissing() passed after 0.025 seconds.
+✔ Test unknownKeysIgnored() passed after 0.022 seconds.
+✔ Test testHomeFallsBackToHomeDirectoryWhenXdgUnset() passed after 0.022 seconds.
+✔ Test loadForPluginMalformedSectionThrows() passed after 0.022 seconds.
+✔ Test defaultsWithNoFile() passed after 0.021 seconds.
+✔ Test emptyTomlDecodesToDefaults() passed after 0.022 seconds.
+✔ Test partialOverlapMergesKeys() passed after 0.022 seconds.
+✔ Test testAppRootTreatsEmptyEnvAsUnset() passed after 0.021 seconds.
+✔ Test testAppRootFallsBackToApplicationSupportWhenUnset() passed after 0.021 seconds.
+✔ Test testInstallRootFromEnvVar() passed after 0.021 seconds.
+✔ Test allFilesMissingReturnsDefaults() passed after 0.021 seconds.
+✔ Test restoreRevertsFile() passed after 0.025 seconds.
+✔ Test testAppRootUsesContainerAppRootWhenSet() passed after 0.021 seconds.
+✔ Test writeCreatesDirAndBacksUp() passed after 0.026 seconds.
+✔ Test testHomeIgnoresContainerAppRoot() passed after 0.021 seconds.
+✔ Test loadFollowsSymlinkedSourceFile() passed after 0.022 seconds.
+✔ Test testAppRootIgnoresXdgConfigHome() passed after 0.021 seconds.
+✔ Test loadForPluginSubsectionMissingReturnsDefault() passed after 0.021 seconds.
+✔ Test copyConfigToAppRoot() passed after 0.025 seconds.
+✔ Test testHomeUsesXdgConfigHomeWhenSet() passed after 0.021 seconds.
+✔ Test partialToml() passed after 0.021 seconds.
+✔ Test loadForPluginIsolatesFromHostileSibling() passed after 0.022 seconds.
+✔ Test testHomeTreatsEmptyXdgAsUnset() passed after 0.021 seconds.
+✔ Test pluginLayering() passed after 0.021 seconds.
+✔ Test copyConfigDoesNotFollowDestinationSymlink() passed after 0.025 seconds.
+✔ Test loadForPluginFileMissingReturnsDefault() passed after 0.021 seconds.
+✔ Test tomlOverrideAllKeys() passed after 0.021 seconds.
+✔ Test loadForPluginErrorIdentifiesMalformedLayerFile() passed after 0.021 seconds.
+✔ Test loadForPluginEmptyIdThrows() passed after 0.021 seconds.
+✔ Test layeredFilesPerKeyPrecedence() passed after 0.021 seconds.
+✔ Test customKernelURLWithoutDigestThrows() passed after 0.021 seconds.
+✔ Test nonExistentPathThrows() passed after 0.020 seconds.
+✔ Test decodeOptionalsPresent() passed after 0.020 seconds.
+✔ Test realPathReturnsAbsolutePath() passed after 0.020 seconds.
+✔ Test decodeNarrowIntegers() passed after 0.020 seconds.
+✔ Test loadForPluginMissingSectionReturnsDefault() passed after 0.021 seconds.
+✔ Test relativePathResolvesToAbsolute() passed after 0.020 seconds.
+✔ Test decodeNestedStruct() passed after 0.020 seconds.
+✔ Test symlinkResolvesToTarget() passed after 0.021 seconds.
+✔ Test decodeTopLevelPrimitive() passed after 0.020 seconds.
+✔ Test layeredPrecedence() passed after 0.021 seconds.
+✔ Test decodeUserTypeWithCustomStrategy() passed after 0.020 seconds.
+✔ Test decodeNestedStructWithURLStrategy() passed after 0.020 seconds.
+✔ Test decodeTypeMismatchThrows() passed after 0.020 seconds.
+✔ Test decodeOptionalFloatWithStringThrows() passed after 0.020 seconds.
+✔ Test decodeFlatStruct() passed after 0.020 seconds.
+✔ Test decodeOptionalIntWithStringThrows() passed after 0.020 seconds.
+✔ Test decodeIntegerOverflowThrows() passed after 0.020 seconds.
+✔ Test decodeScopedSnapshot() passed after 0.020 seconds.
+✔ Test decodeOptionalBoolWithIntThrows() passed after 0.020 seconds.
+✔ Test decodeIfPresentNestedStruct() passed after 0.020 seconds.
+✔ Test decodeOptionalsAbsent() passed after 0.020 seconds.
+✔ Test decodeOptionalStringWithBoolThrows() passed after 0.021 seconds.
+✔ Test decodeArrayOfStructsThrows() passed after 0.020 seconds.
+✔ Test decodeURLWithCustomStrategy() passed after 0.020 seconds.
+✔ Test loadErrorIdentifiesMalformedLayerFile() passed after 0.021 seconds.
+✔ Test decodeEnum() passed after 0.020 seconds.
+✔ Test decodeMissingRequiredKeyThrows() passed after 0.020 seconds.
+✔ Test decodeOptionalURLWithStrategy() passed after 0.020 seconds.
+✔ Test decodeCustomCodingKeys() passed after 0.020 seconds.
+✔ Test decodeFloat() passed after 0.020 seconds.
+✔ Test decodeURL() passed after 0.020 seconds.
+✔ Test decodeDeeplyNestedStruct() passed after 0.020 seconds.
+✔ Test decodeTopLevelDictionaryThrows() passed after 0.020 seconds.
+✔ Test layeredCustomKernelURLCanUseDigestFromLowerLayer() passed after 0.020 seconds.
+✔ Test decodeArrays() passed after 0.020 seconds.
+✔ Test decodeOptionalDoubleWithStringThrows() passed after 0.020 seconds.
+✔ Test decodeDictionaryPropertyThrows() passed after 0.020 seconds.
+✔ Suite FilesystemEntityStoreTests passed after 0.028 seconds.
+✔ Suite MachineConfigTests passed after 0.028 seconds.
+✔ Suite FilePathSymlinksTests passed after 0.028 seconds.
+✔ Suite PathUtilsTests passed after 0.028 seconds.
+✔ Test decodeURLWithoutStrategyThrows() passed after 0.021 seconds.
+✔ Suite ConfigSnapshotDecoderTests passed after 0.028 seconds.
+✔ Test copyConfigOverwritesExistingReadOnlyDestination() passed after 0.024 seconds.
+✔ Suite ConfigurationLoaderTests passed after 0.030 seconds.
+✔ Test keepsFiveBackups() passed after 0.034 seconds.
+✔ Suite NetworkConfigEditorTests passed after 0.036 seconds.
+✔ Test run with 105 tests in 7 suites passed after 0.036 seconds.

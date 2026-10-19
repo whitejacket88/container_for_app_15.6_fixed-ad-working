@@ -1,0 +1,2800 @@
+[0/1] Planning build
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/965] Write sources
+[17/1002] Compiling zstd_preSplit.c
+[18/1002] Compiling huf_decompress.c
+[19/1002] Compiling zstd_decompress_block.c
+[20/1002] Write swift-version--58304C5D6DBC2206.txt
+[21/1002] Compiling zdict.c
+[22/1002] Compiling zstd_ldm.c
+[23/1002] Compiling cover.c
+[24/1002] Compiling fastcover.c
+[25/1002] Compiling zstd_ddict.c
+[26/1002] Compiling zstd_opt.c
+[27/1002] Compiling zstdmt_compress.c
+[28/1002] Compiling divsufsort.c
+[29/1010] Compiling zstd_compress_superblock.c
+[30/1010] Compiling zstd_compress_sequences.c
+[31/1010] Compiling zstd_double_fast.c
+[32/1010] Compiling zstd_compress_literals.c
+[33/1010] Compiling zstd_fast.c
+[34/1010] Compiling zstd_decompress.c
+[35/1010] Compiling hist.c
+[36/1010] Compiling threading.c
+[37/1010] Compiling fse_compress.c
+[38/1010] Compiling zstd_common.c
+[39/1010] Compiling xxhash.c
+[40/1010] Compiling huf_compress.c
+[41/1010] Compiling error_private.c
+[42/1010] Write sources
+[51/1010] Compiling pool.c
+[52/1010] Compiling debug.c
+[53/1010] Write sources
+[54/1010] Compiling fse_decompress.c
+[54/1010] Write sources
+[57/1010] Copying PrivacyInfo.xcprivacy
+[59/1010] Write sources
+[63/1010] Compiling entropy_common.c
+[64/1010] Write sources
+[66/1010] Compiling _NumericsShims _NumericsShims.c
+[67/1010] Write sources
+[68/1010] Compiling zstd_compress.c
+[69/1010] Write sources
+[92/1031] Compiling _AtomicsShims.c
+[92/1031] Write sources
+[98/1104] Compiling RealModule RealFunctions.swift
+[99/1160] Compiling RealModule RelaxedArithmetic.swift
+[100/1160] Compiling RealModule Float80+Real.swift
+[101/1160] Compiling RealModule Real.swift
+[102/1160] Emitting module _CertificateInternals
+[103/1160] Compiling _CertificateInternals _TinyArray.swift
+[103/1160] Write sources
+[117/1160] Compiling ServiceContextModule ServiceContextKey.swift
+[118/1160] Compiling RealModule ElementaryFunctions.swift
+[119/1160] Compiling RealModule AugmentedArithmetic.swift
+[120/1160] Compiling InternalCollectionsUtilities Debugging.swift
+[121/1160] Compiling InternalCollectionsUtilities Descriptions.swift
+[122/1160] Compiling RealModule Double+Real.swift
+[123/1160] Emitting module ServiceContextModule
+[124/1160] Compiling ServiceContextModule ServiceContext.swift
+[125/1160] Compiling RealModule Float+Real.swift
+[126/1160] Compiling RealModule Float16+Real.swift
+[129/1166] Compiling InternalCollectionsUtilities _UniqueCollection.swift
+[130/1166] Emitting module _NIOBase64
+[131/1166] Compiling _NIOBase64 Base64.swift
+[132/1221] Emitting module RealModule
+[132/1227] Write sources
+[136/1227] Compiling Crypto ChaChaPoly_boring.swift
+[137/1227] Compiling Crypto ChaChaPoly.swift
+[137/1227] Write sources
+[143/1248] Compiling Crypto Cipher.swift
+[144/1248] Compiling Crypto Nonces.swift
+[145/1248] Compiling Crypto HPKE-NIST-EC-KEMs.swift
+[146/1248] Compiling Crypto HPKE-KEM.swift
+[147/1248] Compiling Crypto DHKEM.swift
+[148/1248] Compiling Crypto HPKE-KEM-Curve25519.swift
+[149/1248] Compiling Crypto HPKE-Errors.swift
+[150/1248] Compiling Crypto Curve25519.swift
+[151/1248] Compiling Crypto ASN1BitString.swift
+[152/1248] Compiling Crypto HPKE-KexKeyDerivation.swift
+[153/1248] Compiling Crypto HPKE-LabeledExtract.swift
+[154/1248] Compiling Crypto HPKE-Utils.swift
+[155/1248] Compiling Crypto ASN1.swift
+[156/1248] Compiling Crypto ASN1Any.swift
+[157/1248] Emitting module InternalCollectionsUtilities
+[157/1248] Write sources
+[159/1248] Compiling Instrumentation NoOpInstrument.swift
+[160/1248] Compiling Instrumentation MultiplexInstrument.swift
+[161/1248] Compiling Instrumentation Locks.swift
+[162/1248] Compiling Instrumentation Instrument.swift
+[163/1248] Emitting module Instrumentation
+[164/1248] Compiling Instrumentation InstrumentationSystem.swift
+[165/1289] Compiling Logging SwiftLogNoOpLogHandler.swift
+[166/1291] Compiling Logging LoggingSystem.swift
+[167/1352] Compiling _NIODataStructures PriorityQueue.swift
+[168/1352] Compiling _NIODataStructures _TinyArray.swift
+[169/1357] Emitting module Logging
+[170/1377] Compiling Logging LogEvent.swift
+[171/1377] Compiling Logging Locks.swift
+[172/1377] Compiling Logging LogHandler.swift
+[173/1377] Compiling Logging MetadataProvider.swift
+[174/1377] Compiling _RopeModule BigString+Builder.swift
+[175/1377] Compiling _RopeModule BigString+Contents.swift
+[176/1377] Compiling _RopeModule BigString+TextOutputStream.swift
+[177/1377] Compiling _RopeModule BigString+UTF16View.swift
+[178/1377] Compiling _RopeModule BigString+UTF8View.swift
+[179/1377] Compiling _RopeModule BigString+UnicodeScalarView.swift
+[180/1377] Compiling _RopeModule BigSubstring+UTF16View.swift
+[181/1377] Compiling _RopeModule BigSubstring+UTF8View.swift
+[182/1383] Compiling _RopeModule BigString+Summary.swift
+[183/1383] Compiling _RopeModule BigString.swift
+[184/1383] Compiling _RopeModule BigString+Chunk+Append and Insert.swift
+[185/1383] Compiling _RopeModule BigString+Chunk+Breaks.swift
+[186/1383] Compiling _RopeModule BigString+Chunk+Character.swift
+[187/1383] Compiling _RopeModule BigString+Chunk+Counts.swift
+[188/1383] Compiling _RopeModule Rope+_Storage.swift
+[189/1383] Compiling _RopeModule Rope+_UnmanagedLeaf.swift
+[190/1383] Compiling _RopeModule Rope+_UnsafeHandle.swift
+[191/1383] Compiling _RopeModule Rope.swift
+[192/1383] Compiling _RopeModule RopeElement.swift
+[193/1383] Compiling _RopeModule RopeMetric.swift
+[194/1383] Compiling _RopeModule BigString+Equatable.swift
+[195/1383] Compiling _RopeModule BigString+ExpressibleByStringLiteral.swift
+[196/1383] Compiling _RopeModule BigString+Hashing.swift
+[197/1383] Compiling _RopeModule BigString+LosslessStringConvertible.swift
+[198/1383] Compiling _RopeModule BigString+RangeReplaceableCollection.swift
+[199/1383] Compiling _RopeModule BigString+Sequence.swift
+[200/1383] Compiling Logging Logger+With.swift
+[201/1383] Compiling Logging Logger+Attributes.swift
+[202/1383] Compiling Logging Logger.swift
+[203/1383] Emitting module _NIODataStructures
+[204/1383] Compiling _NIODataStructures Heap.swift
+[205/1398] Compiling _RopeModule BigString+Chunk+UnicodeScalar.swift
+[206/1398] Compiling _RopeModule BigString+Chunk.swift
+[207/1398] Compiling _RopeModule BigString+BidirectionalCollection.swift
+[208/1398] Compiling _RopeModule BigString+Comparable.swift
+[209/1398] Compiling _RopeModule BigString+CustomDebugStringConvertible.swift
+[210/1398] Compiling _RopeModule BigString+CustomStringConvertible.swift
+[211/1398] Compiling HeapModule Heap+Invariants.swift
+[212/1398] Compiling HeapModule Heap+ExpressibleByArrayLiteral.swift
+[212/1398] Compiling zstd_lazy.c
+[214/1398] Compiling HeapModule Heap+Descriptions.swift
+[215/1398] Compiling _RopeModule BigSubstring+UnicodeScalarView.swift
+[216/1398] Compiling _RopeModule BigSubstring.swift
+[217/1398] Compiling _RopeModule Rope+Builder.swift
+[218/1398] Compiling _RopeModule Rope+Debugging.swift
+[219/1398] Compiling _RopeModule Rope+Invariants.swift
+[220/1398] Compiling _RopeModule Rope+_Node.swift
+[221/1398] Compiling HeapModule Heap+UnsafeHandle.swift
+[222/1398] Emitting module HeapModule
+[223/1398] Compiling Tracing TracerProtocol.swift
+[224/1398] Compiling Tracing TracingTime.swift
+[225/1398] Compiling _RopeModule BigString+Chunk+Description.swift
+[226/1398] Compiling _RopeModule BigString+Chunk+Index.swift
+[227/1398] Compiling _RopeModule BigString+Chunk+RopeElement.swift
+[228/1398] Compiling _RopeModule BigString+Chunk+Splitting.swift
+[229/1398] Compiling _RopeModule BigString+Chunk+UTF16.swift
+[230/1398] Compiling _RopeModule BigString+Chunk+UTF8.swift
+[231/1398] Compiling HeapModule Heap.swift
+[232/1398] Compiling HeapModule _HeapNode.swift
+[233/1426] Compiling CoreMetrics MappingMetricsFactory.swift
+[234/1426] Compiling CoreMetrics WithMetricsFactory.swift
+[235/1426] Emitting module CoreMetrics
+[236/1426] Compiling CoreMetrics Locks.swift
+[237/1426] Compiling HashTreeCollections _HashNode+Structural union.swift
+[238/1426] Compiling HashTreeCollections _HashNode+Subtree Insertions.swift
+[239/1426] Compiling HashTreeCollections _HashNode+Subtree Modify.swift
+[245/1426] Compiling CoreMetrics Metrics.swift
+[245/1435] Write sources
+[247/1454] Emitting module Tracing
+[248/1485] Compiling Tracing TracerProtocol+Legacy.swift
+[249/1485] Compiling Tracing Tracer.swift
+[250/1485] Compiling HashTreeCollections _AncestorHashSlots.swift
+[251/1485] Compiling HashTreeCollections _Bitmap.swift
+[252/1485] Compiling HashTreeCollections _Bucket.swift
+[253/1485] Compiling HashTreeCollections _Hash.swift
+[254/1485] Compiling HashTreeCollections _HashLevel.swift
+[255/1485] Compiling HashTreeCollections _HashNode+Builder.swift
+[256/1485] Compiling HashTreeCollections _HashNode+Debugging.swift
+[257/1522] Compiling Tracing NoOpTracer.swift
+[258/1522] Compiling Tracing SpanProtocol.swift
+[259/1522] Compiling Tracing InstrumentationSystem+Tracing.swift
+[260/1522] Compiling HashTreeCollections TreeSet+SetAlgebra formSymmetricDifference.swift
+[261/1522] Compiling HashTreeCollections TreeSet+SetAlgebra formUnion.swift
+[262/1522] Compiling HashTreeCollections TreeDictionary+Keys.swift
+[263/1522] Compiling HashTreeCollections TreeSet+SetAlgebra intersection.swift
+[264/1522] Compiling HashTreeCollections TreeDictionary+MapValues.swift
+[265/1522] Compiling HashTreeCollections TreeSet+SetAlgebra isDisjoint.swift
+[266/1522] Compiling HashTreeCollections TreeDictionary+Merge.swift
+[267/1522] Compiling HashTreeCollections TreeSet+SetAlgebra isEqualSet.swift
+[268/1522] Compiling HashTreeCollections TreeDictionary+Sendable.swift
+[269/1522] Compiling HashTreeCollections TreeSet+SetAlgebra isStrictSubset.swift
+[270/1522] Compiling HashTreeCollections TreeDictionary+Sequence.swift
+[271/1522] Compiling HashTreeCollections TreeSet+Equatable.swift
+[272/1522] Compiling HashTreeCollections TreeDictionary+Values.swift
+[273/1522] Compiling HashTreeCollections TreeSet+ExpressibleByArrayLiteral.swift
+[273/1522] Write sources
+[281/1522] Compiling ContainersPreview Strideable+Limits.swift
+[282/1522] Compiling ContainersPreview Drain+Map.swift
+[283/1522] Compiling ContainersPreview Drain+Reduce.swift
+[284/1522] Compiling ContainersPreview Drain.swift
+[285/1522] Compiling ContainersPreview BorrowingSequence.swift
+[286/1522] Compiling ContainersPreview BidirectionalContainer.swift
+[287/1522] Compiling ContainersPreview Container+Filter.swift
+[288/1522] Compiling ContainersPreview Container+SpanwiseZip.swift
+[289/1522] Compiling ContainersPreview BorrowingIteratorProtocol+Filter.swift
+[290/1522] Compiling ContainersPreview BorrowingIteratorProtocol+Map.swift
+[291/1522] Compiling ContainersPreview BorrowingIteratorProtocol+Reduce.swift
+[292/1522] Compiling ContainersPreview BorrowingIteratorProtocol+SpanwiseZip.swift
+[293/1525] Compiling ContainersPreview PermutableContainer.swift
+[294/1525] Compiling ContainersPreview RandomAccessContainer.swift
+[295/1525] Compiling ContainersPreview RangeExpression2.swift
+[296/1525] Compiling ContainersPreview RangeReplaceableContainer.swift
+[297/1525] Compiling ContainersPreview BorrowingIteratorProtocol.swift
+[298/1525] Compiling ContainersPreview BorrowingSequence+Algorithms.swift
+[299/1525] Compiling ContainersPreview BorrowingSequence+Standard Conformances.swift
+[300/1525] Compiling ContainersPreview BorrowingSequence+Utilities.swift
+[301/1525] Compiling ContainersPreview Producer+Collect.swift
+[302/1525] Compiling ContainersPreview Producer+Filter.swift
+[303/1525] Compiling ContainersPreview Producer+Map.swift
+[304/1525] Compiling ContainersPreview Producer+Reduce.swift
+[305/1525] Compiling ContainersPreview Producer.swift
+[306/1525] Compiling ContainersPreview InputSpan.swift
+[307/1525] Compiling ContainersPreview MutableRef.swift
+[308/1525] Compiling ContainersPreview Ref.swift
+[309/1525] Compiling ContainersPreview Container.swift
+[310/1525] Compiling ContainersPreview ContainerIterator.swift
+[311/1525] Compiling ContainersPreview DynamicContainer.swift
+[312/1525] Compiling ContainersPreview MutableContainer.swift
+[313/1525] Compiling HashTreeCollections TreeSet+Codable.swift
+[314/1525] Compiling HashTreeCollections TreeSet+Collection.swift
+[315/1525] Compiling HashTreeCollections TreeSet+CustomReflectable.swift
+[316/1525] Compiling HashTreeCollections TreeSet+Debugging.swift
+[317/1525] Compiling HashTreeCollections TreeSet+Descriptions.swift
+[318/1525] Compiling HashTreeCollections TreeSet+SetAlgebra basics.swift
+[319/1525] Compiling HashTreeCollections TreeSet+SetAlgebra formIntersection.swift
+[328/1527] Compiling ContainersPreview Shared.swift
+[329/1527] Compiling ContainersPreview SpanIterator.swift
+[330/1527] Compiling ContainersPreview UniqueBox.swift
+[331/1527] Compiling ContainersPreview OutputSpan+Extras.swift
+[332/1527] Compiling ContainersPreview TemporaryAllocation.swift
+[333/1527] Compiling ContainersPreview BorrowingIteratorProtocol+Copy.swift
+[334/1527] Compiling ContainersPreview BorrowingIteratorProtocol+ElementsEqual.swift
+[335/1527] Emitting module ContainersPreview
+[335/1527] Write sources
+[340/1527] Compiling HashTreeCollections TreeSet+Extras.swift
+[341/1527] Compiling HashTreeCollections TreeSet+Filter.swift
+[342/1527] Compiling HashTreeCollections TreeSet+Hashable.swift
+[343/1527] Compiling HashTreeCollections TreeSet+Sendable.swift
+[344/1527] Compiling HashTreeCollections TreeSet+Sequence.swift
+[345/1527] Compiling HashTreeCollections TreeSet+SetAlgebra Initializers.swift
+[354/1535] Compiling HashTreeCollections TreeDictionary+Collection.swift
+[355/1535] Compiling HashTreeCollections TreeDictionary+CustomReflectable.swift
+[356/1535] Compiling HashTreeCollections TreeDictionary+Debugging.swift
+[357/1535] Compiling HashTreeCollections TreeDictionary+Descriptions.swift
+[358/1535] Compiling HashTreeCollections TreeDictionary+Equatable.swift
+[359/1535] Compiling HashTreeCollections TreeDictionary+ExpressibleByDictionaryLiteral.swift
+[360/1535] Compiling HashTreeCollections TreeDictionary+Filter.swift
+[361/1535] Compiling HashTreeCollections TreeDictionary+Hashable.swift
+[362/1535] Compiling HashTreeCollections TreeDictionary+Initializers.swift
+[369/1535] Compiling HashTreeCollections TreeDictionary.swift
+[384/1577] Compiling DequeModule RigidDeque+Consumption.swift
+[385/1577] Compiling DequeModule RigidDeque+Container.swift
+[386/1577] Compiling DequeModule RigidDeque+Descriptions.swift
+[387/1577] Compiling DequeModule RigidDeque+Equatable.swift
+[388/1577] Compiling DequeModule RigidDeque+Experimental.swift
+[397/1581] Emitting module OrderedCollections
+[397/1581] Write sources
+[424/1581] Compiling HashTreeCollections TreeSet+SetAlgebra isStrictSuperset.swift
+[425/1581] Compiling HashTreeCollections TreeSet+SetAlgebra isSubset.swift
+[426/1581] Compiling HashTreeCollections TreeSet+SetAlgebra isSuperset.swift
+[427/1581] Compiling HashTreeCollections TreeSet+SetAlgebra subtract.swift
+[428/1581] Compiling HashTreeCollections TreeSet+SetAlgebra subtracting.swift
+[429/1581] Compiling HashTreeCollections TreeSet+SetAlgebra symmetricDifference.swift
+[430/1581] Compiling HashTreeCollections TreeSet+SetAlgebra union.swift
+[431/1581] Compiling HashTreeCollections TreeSet.swift
+[432/1581] Compiling DequeModule RigidDeque+Replacements.swift
+[433/1581] Compiling DequeModule RigidDeque+Testing.swift
+[434/1581] Compiling DequeModule RigidDeque.swift
+[435/1581] Compiling DequeModule UniqueDeque+Append.swift
+[436/1584] Compiling DequeModule RigidDeque+Prepend.swift
+[437/1584] Compiling DequeModule RigidDeque+Removals.swift
+[442/1584] Compiling DequeModule UniqueDeque+Consumption.swift
+[443/1584] Compiling DequeModule UniqueDeque+Container.swift
+[449/1584] Compiling DequeModule RigidDeque+Hashable.swift
+[450/1584] Compiling DequeModule RigidDeque+Initializers.swift
+[451/1584] Compiling DequeModule RigidDeque+Insertions.swift
+[457/1584] Compiling ConcurrencyHelpers LockedValueBox.swift
+[458/1584] Compiling DequeModule UniqueDeque+Equatable.swift
+[459/1584] Compiling DequeModule UniqueDeque+Experimental.swift
+[460/1584] Compiling DequeModule UniqueDeque+Hashable.swift
+[461/1584] Compiling DequeModule UniqueDeque+Initializers.swift
+[462/1584] Compiling DequeModule Deque+ExpressibleByArrayLiteral.swift
+[463/1584] Compiling DequeModule Deque+Extras.swift
+[464/1584] Compiling DequeModule Deque+Hashable.swift
+[465/1584] Compiling DequeModule Deque+Testing.swift
+[466/1584] Compiling DequeModule Deque._Storage.swift
+[467/1584] Emitting module _RopeModule
+[473/1584] Compiling DequeModule UniqueDeque.swift
+[474/1584] Compiling DequeModule _DequeSlot.swift
+[475/1584] Compiling DequeModule _UnsafeDequeHandle.swift
+[476/1584] Compiling DequeModule _UnsafeDequeSegments.swift
+[477/1584] Compiling Metrics Metrics.swift
+[478/1584] Emitting module Metrics
+[478/1584] Write sources
+[480/1584] Emitting module ConcurrencyHelpers
+[481/1584] Compiling ConcurrencyHelpers Lock.swift
+[498/1592] Compiling DequeModule UniqueDeque+Descriptions.swift
+[499/1592] Compiling DequeModule Deque._UnsafeHandle.swift
+[500/1592] Compiling DequeModule Deque.swift
+[501/1592] Compiling DequeModule _DequeBuffer.swift
+[502/1592] Compiling DequeModule _DequeBufferHeader.swift
+[503/1592] Compiling DequeModule RigidDeque+Append.swift
+[504/1592] Compiling DequeModule UniqueDeque+Insertions.swift
+[505/1592] Compiling DequeModule UniqueDeque+Prepend.swift
+[506/1592] Compiling DequeModule UniqueDeque+Removals.swift
+[507/1592] Compiling DequeModule UniqueDeque+Replacements.swift
+[508/1592] Compiling DequeModule Deque+Codable.swift
+[509/1592] Compiling DequeModule Deque+Collection.swift
+[510/1592] Compiling DequeModule Deque+CustomReflectable.swift
+[511/1592] Compiling DequeModule Deque+Descriptions.swift
+[512/1592] Compiling DequeModule Deque+Equatable.swift
+[529/1592] Compiling DequeModule UniqueDeque+Deprecated.swift
+[582/1592] Emitting module Crypto
+[582/1592] Compiling writer.c
+[586/1592] Compiling Crypto RNG_boring.swift
+[587/1592] Compiling Crypto SafeCompare_boring.swift
+[588/1592] Compiling Crypto Zeroization_boring.swift
+[589/1592] Compiling Crypto PrettyBytes.swift
+[590/1592] Compiling Crypto SafeCompare.swift
+[590/1595] Compiling scanner.c
+[601/1595] Compiling ContainerRuntimeLinuxClient LinuxRuntimeData.swift
+[602/1595] Emitting module ContainerRuntimeLinuxClient
+[603/1595] Emitting module ContainerizationError
+[603/1595] Compiling reader.c
+[605/1595] Compiling ContainerizationError ContainerizationError.swift
+[616/1596] Compiling api.c
+[617/1596] Compiling emitter.c
+[618/1596] Compiling CVersion Version.c
+[619/1596] Compiling parser.c
+[621/1596] Compiling SwiftASN1 DER.swift
+[621/1596] Compiling CSystem shims.c
+[623/1616] Compiling SwiftASN1 Errors.swift
+[629/1616] Compiling Crypto SecureBytes.swift
+[630/1616] Compiling Crypto Zeroization.swift
+[631/1616] Compiling Crypto resource_bundle_accessor.swift
+[632/1616] Compiling Yams AliasDereferencingStrategy.swift
+[633/1616] Compiling Yams Anchor.swift
+[634/1616] Compiling Yams Decoder.swift
+[635/1616] Compiling Yams Emitter.swift
+[636/1616] Compiling Yams Mark.swift
+[637/1616] Compiling Yams Node.Alias.swift
+[638/1616] Compiling Yams Resolver.swift
+[639/1616] Compiling Yams String+Yams.swift
+[640/1616] Compiling UnixSignals UnixSignalsSequence.swift
+[641/1616] Emitting module UnixSignals
+[642/1616] Compiling UnixSignals UnixSignal.swift
+[643/1616] Compiling Yams Constructor.swift
+[644/1616] Compiling Yams Encoder.swift
+[645/1616] Compiling Yams Node.Mapping.swift
+[646/1616] Compiling Yams RedundancyAliasingStrategy.swift
+[647/1650] Compiling SystemPackage Util+StringArray.swift
+[654/1650] Compiling CShim vsock.c
+[655/1650] Compiling CShim socket_helpers.c
+[656/1650] Compiling CShim prctl.c
+[657/1650] Compiling CShim openat2.c
+[658/1650] Compiling CShim cz_tap.c
+[659/1650] Compiling CShim capability.c
+[660/1650] Compiling CShim exec_command.c
+[662/1650] Compiling SystemPackage FileOperations.swift
+[663/1650] Compiling SystemPackage FilePath.swift
+[663/1650] Compiling CNIOWindows shim.c
+[664/1650] Compiling CNIOWindows WSAStartup.c
+[665/1650] Compiling CNIOWASI CNIOWASI.c
+[666/1650] Compiling CNIOOpenBSD shim.c
+[667/1650] Compiling CNIOLinux shim.c
+[669/1650] Compiling SystemPackage FileType.swift
+[670/1650] Compiling SystemPackage Identifiers.swift
+[671/1650] Compiling SystemPackage Exports.swift
+[672/1650] Compiling SystemPackage Mocking.swift
+[673/1650] Compiling SystemPackage RawBuffer.swift
+[674/1650] Compiling SystemPackage Stat.swift
+[675/1650] Compiling SystemPackage Backcompat.swift
+[676/1650] Compiling SystemPackage CInterop.swift
+[677/1650] Compiling SystemPackage Constants.swift
+[677/1650] Compiling CNIOLinux liburing_shims.c
+[678/1650] Compiling CNIOPosix event_loop_id.c
+[679/1650] Compiling CNIOLLHTTP c_nio_http.c
+[680/1650] Compiling CNIOLLHTTP c_nio_api.c
+[681/1650] Compiling CNIOFreeBSD shim.c
+[682/1650] Compiling CNIOLLHTTP c_nio_llhttp.c
+[684/1650] Emitting module HashTreeCollections
+[684/1650] Compiling CNIOExtrasZlib inftrees.c
+[685/1650] Compiling CNIOExtrasZlib trees.c
+[686/1650] Compiling CNIOExtrasZlib inffast.c
+[690/1653] Compiling CNIOExtrasZlib inflate.c
+[691/1653] Compiling CNIOExtrasZlib deflate.c
+[693/1653] Compiling SystemPackage FileFlags.swift
+[694/1653] Compiling SystemPackage FileMode.swift
+[696/1653] Compiling CNIOExtrasZlib crc32.c
+[697/1653] Compiling CNIOExtrasZlib adler32.c
+[698/1653] Compiling fiat_p256_adx_sqr.S
+[699/1653] Compiling fiat_p256_adx_mul.S
+[705/1653] Compiling SystemPackage Syscalls.swift
+[706/1653] Compiling SystemPackage WindowsSyscallAdapters.swift
+[707/1653] Compiling SystemPackage MachPort.swift
+[707/1653] Compiling CNIOExtrasZlib zutil.c
+[708/1653] Compiling fiat_curve25519_adx_square.S
+[709/1653] Compiling fiat_curve25519_adx_mul.S
+[711/1653] Emitting module DequeModule
+[712/1653] Compiling SystemPackage PlatformString.swift
+[713/1653] Compiling SystemPackage SystemString.swift
+[714/1653] Compiling CNIODarwin shim.c
+[716/1653] Emitting module SwiftASN1
+[717/1653] Compiling SystemPackage FilePathParsing.swift
+[718/1653] Compiling SystemPackage FilePathString.swift
+[719/1653] Compiling SystemPackage FilePathSyntax.swift
+[720/1653] Compiling SystemPackage FilePathTemp.swift
+[721/1653] Compiling SystemPackage FilePathTempPosix.swift
+[722/1653] Compiling SystemPackage FilePathTempWindows.swift
+[723/1653] Compiling SystemPackage FilePathWindows.swift
+[724/1653] Compiling SystemPackage FilePermissions.swift
+[724/1653] Compiling CNIOBoringSSLShims shims.c
+[726/1653] Compiling SystemPackage Errno.swift
+[727/1653] Compiling SystemPackage ErrnoWindows.swift
+[728/1653] Compiling SystemPackage FileDescriptor.swift
+[729/1653] Compiling SystemPackage FileHelpers.swift
+[732/1653] Compiling SystemPackage FilePathComponentView.swift
+[733/1653] Compiling SystemPackage FilePathComponents.swift
+[734/1653] Compiling SystemPackage Util.swift
+[735/1653] Compiling SystemPackage UtilConsumers.swift
+[736/1653] Compiling SystemPackage WinSDK+Overlay.swift
+[737/1653] Emitting module SystemPackage
+[780/1690] Compiling tls_record.cc
+[782/1690] Compiling ContainerizationOS Path.swift
+[783/1690] Compiling ContainerizationOS Pipe+Close.swift
+[784/1690] Compiling ContainerizationOS Reaper.swift
+[784/1693] Compiling tls_method.cc
+[785/1753] Compiling tls13_enc.cc
+[786/1753] Compiling tls13_server.cc
+[788/1758] Compiling GRPCCore RPCWriter+Serialize.swift
+[789/1758] Compiling GRPCCore UncheckedAsyncIteratorSequence.swift
+[790/1758] Compiling GRPCCore RPCAsyncSequence.swift
+[791/1758] Compiling GRPCCore RPCWriter+Closable.swift
+[792/1758] Compiling GRPCCore RPCWriter.swift
+[793/1758] Compiling GRPCCore RPCWriterProtocol.swift
+[794/1764] Emitting module ContainerVersion
+[795/1764] Compiling ContainerVersion CommandLine+Executable.swift
+[796/1764] Compiling ContainerVersion Bundle+AppBundle.swift
+[797/1764] Compiling ContainerVersion ReleaseVersion.swift
+[798/1764] Compiling GRPCCore ClientRequest.swift
+[799/1764] Compiling GRPCCore ClientResponse.swift
+[800/1764] Compiling GRPCCore ClientRPCExecutor+HedgingExecutor.swift
+[800/1769] Compiling CTomlPlusPlus ctoml.cpp
+[801/1770] Compiling tls13_client.cc
+[803/1770] Compiling GRPCCore ClientRequest+Convenience.swift
+[804/1770] Compiling GRPCCore ClientResponse+Convenience.swift
+[805/1770] Compiling GRPCCore ClientStreamExecutor.swift
+[805/1804] Compiling tls13_both.cc
+[807/1808] Compiling Configuration ConfigSnapshotReader.swift
+[808/1808] Compiling Configuration Deprecations.swift
+[809/1808] Compiling Configuration ExpressibleByConfigInt.swift
+[810/1808] Compiling Configuration ExpressibleByConfigString.swift
+[811/1808] Compiling Configuration CLIKeyEncoder.swift
+[812/1808] Compiling Configuration ConfigKeyEncoder.swift
+[813/1817] Emitting module ContainerizationOS
+[814/1817] Compiling Configuration AccessReporter.swift
+[815/1817] Compiling Configuration AccessLogger.swift
+[816/1817] Compiling Configuration FileAccessLogger.swift
+[817/1817] Compiling Configuration ConfigProvider.swift
+[818/1817] Compiling Configuration ConfigProviderHelpers.swift
+[819/1817] Compiling Configuration ConfigReader+internalHelpers.swift
+[820/1817] Compiling Configuration ConfigReader+methods.swift
+[821/1817] Compiling Configuration ConfigReader.swift
+[822/1817] Compiling Configuration JSONSnapshot.swift
+[823/1817] Emitting module ContainerLog
+[827/1817] Compiling ContainerLog OSLogHandler.swift
+[828/1817] Compiling ContainerLog FileLogHandler.swift
+[829/1817] Compiling ContainerLog ServiceLogger.swift
+[830/1817] Compiling ContainerLog StderrLogHandler.swift
+[831/1817] Emitting module SwiftProtobuf
+[832/1817] Compiling GRPCCore Timeout.swift
+[833/1817] Compiling GRPCCore ClientTransport.swift
+[834/1817] Compiling GRPCCore RPCParts.swift
+[835/1817] Compiling GRPCCore RPCStream.swift
+[836/1817] Compiling GRPCCore RetryThrottle.swift
+[837/1817] Compiling GRPCCore ServerTransport.swift
+[838/1817] Compiling Configuration CommonProviderFileSystem.swift
+[839/1817] Compiling Configuration DirectoryFilesProvider.swift
+[840/1817] Compiling Configuration FileProvider.swift
+[841/1817] Compiling Configuration FileProviderSnapshot.swift
+[846/1817] Compiling Configuration DotSeparatorKeyDecoder.swift
+[847/1817] Compiling Configuration SeparatorKeyEncoder.swift
+[848/1817] Compiling Configuration MultiProvider.swift
+[849/1821] Compiling Configuration EnvironmentKeyEncoder.swift
+[850/1821] Compiling Configuration EnvironmentVariablesProvider.swift
+[857/1821] Compiling Configuration CLIArgumentParser.swift
+[858/1821] Compiling Configuration CLISnapshot.swift
+[859/1821] Compiling Configuration CommandLineArgumentsProvider.swift
+[860/1821] Compiling Configuration EnvironmentFileParser.swift
+[861/1821] Compiling Configuration ConfigSnapshotReader+methods.swift
+[866/1821] Compiling Configuration PropertyListSnapshot.swift
+[867/1821] Compiling Configuration ReloadingFileProvider.swift
+[868/1821] Compiling Configuration ReloadingFileProviderMetrics.swift
+[869/1821] Compiling Configuration YAMLSnapshot.swift
+[870/1821] Compiling Configuration InMemoryProvider.swift
+[871/1821] Compiling Configuration MutableInMemoryProvider.swift
+[872/1821] Compiling Configuration ConfigProvider+Operators.swift
+[873/1821] Compiling Configuration KeyMappingProvider.swift
+[874/1821] Compiling Configuration SecretsSpecifier.swift
+[875/1821] Compiling Configuration AsyncCombineLatestManySequence.swift
+[876/1821] Compiling Configuration CombineLatestManyStateMachine.swift
+[877/1821] Compiling Configuration CombineLatestManyStorage.swift
+[877/1821] Compiling t1_enc.cc
+[886/1821] Compiling Configuration ConfigContext.swift
+[887/1821] Compiling Configuration ConfigKey.swift
+[899/1821] Emitting module Configuration
+[904/1821] Compiling ssl_x509.cc
+[906/1821] Compiling SwiftProtobuf duration.pb.swift
+[907/1821] Compiling SwiftProtobuf empty.pb.swift
+[908/1821] Compiling SwiftProtobuf field_mask.pb.swift
+[909/1821] Compiling SwiftProtobuf source_context.pb.swift
+[910/1821] Compiling SwiftProtobuf struct.pb.swift
+[911/1821] Compiling SwiftProtobuf timestamp.pb.swift
+[912/1821] Compiling SwiftProtobuf type.pb.swift
+[913/1821] Compiling SwiftProtobuf wrappers.pb.swift
+[914/1821] Compiling SwiftProtobuf resource_bundle_accessor.swift
+[915/1821] Compiling Configuration AsyncSequences.swift
+[916/1821] Compiling Configuration FoundationExtensions.swift
+[917/1821] Compiling Configuration Span.swift
+[918/1821] Compiling Configuration ConfigBytesFromStringDecoder.swift
+[933/1823] Emitting module Yams
+[948/1823] Compiling ssl_versions.cc
+[967/1823] Compiling SwiftProtobuf UnknownStorage.swift
+[968/1823] Emitting module GRPCCore
+[973/1823] Compiling GRPCCore RPCWriter+Map.swift
+[974/1823] Compiling GRPCCore RPCWriter+MessageToRPCResponsePart.swift
+[974/1823] Compiling ssl_transcript.cc
+[976/1823] Compiling Yams YamlError.swift
+[977/1823] Compiling Yams YamlTagProviding.swift
+[977/1823] Compiling ssl_stat.cc
+[979/1823] Compiling GRPCCore GRPCContiguousBytes.swift
+[980/1823] Compiling GRPCCore MethodConfig.swift
+[981/1823] Compiling GRPCCore ServiceConfig.swift
+[982/1823] Compiling GRPCCore GRPCClient.swift
+[983/1823] Compiling GRPCCore GRPCServer.swift
+[984/1823] Compiling GRPCCore Base64.swift
+[984/1823] Compiling ssl_session.cc
+[985/1823] Compiling ssl_privkey.cc
+[986/1823] Compiling ssl_lib.cc
+[987/1823] Compiling ssl_key_share.cc
+[988/1823] Compiling ssl_file.cc
+[989/1823] Compiling ssl_credential.cc
+[996/1823] Compiling TOML LocalDateTime.swift
+[997/1823] Compiling TOML Shared.swift
+[998/1823] Compiling TOML Value.swift
+[1027/1823] Compiling ssl_cipher.cc
+[1028/1834] Compiling s3_pkt.cc
+[1030/1834] Compiling ContainerVersionTests CommandLine+ExecutableTests.swift
+[1030/1834] Compiling ssl_buffer.cc
+[1032/1834] Compiling GRPCProtobuf code.pb.swift
+[1033/1834] Compiling GRPCProtobuf ErrorDetails.swift
+[1033/1835] Compiling ssl_asn1.cc
+[1034/1835] Compiling ssl_aead_ctx.cc
+[1035/1835] Compiling ssl_cert.cc
+[1037/1835] Compiling GRPCProtobuf ErrorDetails+AnyPacking.swift
+[1038/1835] Compiling GRPCProtobuf GoogleRPCStatus.swift
+[1039/1835] Compiling GRPCProtobuf RPCError+GoogleRPCStatus.swift
+[1040/1835] Emitting module GRPCProtobuf
+[1041/1835] Emitting module ContainerVersionTests
+[1042/1835] Compiling ContainerVersionTests Bundle+AppBundleTests.swift
+[1043/1835] Compiling TOML Encoder.swift
+[1043/1835] Compiling s3_lib.cc
+[1045/1835] Compiling GRPCProtobuf Coding.swift
+[1046/1835] Compiling GRPCProtobuf ContiguousBytesAdapter.swift
+[1047/1835] Compiling GRPCProtobuf ErrorDetails+CustomStringConvertible.swift
+[1048/1835] Compiling GRPCProtobuf ErrorDetails+Types.swift
+[1048/1835] Compiling s3_both.cc
+[1050/1835] Compiling GRPCProtobuf status.pb.swift
+[1051/1835] Compiling GRPCProtobuf error_details.pb.swift
+[1051/1835] Compiling handshake_server.cc
+[1052/1835] Compiling handshake.cc
+[1054/1835] Compiling TOML Decoder.swift
+[1055/1835] Emitting module TOML
+[1055/1835] Compiling handshake_client.cc
+[1056/1835] Compiling handoff.cc
+[1058/1838] Emitting module ConfigurationTOML
+[1058/1838] Compiling extensions.cc
+[1059/1838] Compiling encrypted_client_hello.cc
+[1060/1838] Compiling md5-x86_64-linux.S
+[1064/1838] Compiling md5-x86_64-apple.S
+[1065/1838] Compiling md5-586-linux.S
+[1066/1838] Compiling dtls_method.cc
+[1067/1838] Compiling d1_srtp.cc
+[1067/1838] Compiling dtls_record.cc
+[1069/1838] Compiling d1_pkt.cc
+[1070/1838] Compiling md5-586-apple.S
+[1072/1838] Compiling ConfigurationTOML TOMLProvider.swift
+[1073/1838] Compiling ConfigurationTOML TOMLSnapshot.swift
+[1073/1838] Compiling d1_lib.cc
+[1074/1838] Compiling chacha20_poly1305_x86_64-apple.S
+[1075/1838] Compiling chacha20_poly1305_armv8-win.S
+[1075/1838] Compiling chacha20_poly1305_x86_64-linux.S
+[1077/1842] Compiling chacha20_poly1305_armv8-linux.S
+[1078/1848] Compiling chacha-x86_64-linux.S
+[1079/1854] Compiling chacha-x86_64-apple.S
+[1080/1861] Compiling chacha-x86-linux.S
+[1081/1861] Compiling d1_both.cc
+[1081/1861] Compiling chacha20_poly1305_armv8-apple.S
+[1083/1861] Compiling chacha-x86-apple.S
+[1084/1861] Compiling chacha-armv8-win.S
+[1085/1861] Compiling chacha-armv8-linux.S
+[1085/1861] Compiling aes128gcmsiv-x86_64-linux.S
+[1087/1861] Compiling chacha-armv4-linux.S
+[1088/1861] Compiling bio_ssl.cc
+[1089/1861] Compiling x86_64-mont5-linux.S
+[1090/1861] Compiling chacha-armv8-apple.S
+[1091/1861] Compiling aes128gcmsiv-x86_64-apple.S
+[1092/1861] Compiling x86_64-mont5-apple.S
+[1093/1861] Compiling x86_64-mont-apple.S
+[1094/1861] Compiling x86-mont-linux.S
+[1095/1861] Compiling x86_64-mont-linux.S
+[1096/1861] Compiling vpaes-x86_64-apple.S
+[1097/1861] Compiling x86-mont-apple.S
+[1099/1861] Compiling TerminalProgress ProgressTaskCoordinator.swift
+[1099/1861] Compiling vpaes-x86_64-linux.S
+[1100/1862] Compiling vpaes-x86-linux.S
+[1102/1862] Compiling TerminalProgress ProgressConfig.swift
+[1102/1862] Compiling vpaes-armv8-win.S
+[1103/1862] Compiling err_data.cc
+[1104/1862] Compiling vpaes-x86-apple.S
+[1106/1862] Emitting module ContainerPlugin
+[1107/1862] Compiling TerminalProgress ProgressTheme.swift
+[1108/1862] Compiling TerminalProgress ProgressUpdate.swift
+[1108/1862] Compiling vpaes-armv8-linux.S
+[1110/1863] Compiling ContainerPlugin ApplicationRoot.swift
+[1111/1863] Compiling ContainerPlugin FilePath+Resolve.swift
+[1111/1863] Compiling sha512-x86_64-linux.S
+[1112/1863] Compiling vpaes-armv7-linux.S
+[1113/1863] Compiling vpaes-armv8-apple.S
+[1114/1863] Compiling sha512-x86_64-apple.S
+[1115/1863] Compiling sha512-armv8-win.S
+[1116/1863] Compiling sha512-armv4-linux.S
+[1117/1863] Compiling sha512-armv8-linux.S
+[1117/1863] Compiling sha512-586-apple.S
+[1119/1863] Compiling sha512-armv8-apple.S
+[1120/1863] Compiling sha512-586-linux.S
+[1121/1863] Compiling ContainerPlugin PluginStateRoot.swift
+[1122/1863] Compiling sha256-x86_64-apple.S
+[1123/1863] Compiling sha256-x86_64-linux.S
+[1124/1863] Compiling sha256-armv8-win.S
+[1126/1863] Emitting module TerminalProgress
+[1127/1863] Compiling TerminalProgress StandardError.swift
+[1127/1863] Compiling sha256-armv8-linux.S
+[1127/1863] Compiling sha256-armv4-linux.S
+[1129/1863] Compiling sha256-armv8-apple.S
+[1129/1863] Compiling sha256-586-apple.S
+[1131/1863] Compiling sha256-586-linux.S
+[1131/1863] Compiling sha1-x86_64-linux.S
+[1133/1863] Compiling sha1-x86_64-apple.S
+[1134/1863] Compiling sha1-armv8-win.S
+[1137/1863] Compiling sha1-armv8-linux.S
+[1138/1863] Compiling sha1-armv4-large-linux.S
+[1139/1863] Compiling sha1-586-linux.S
+[1140/1863] Compiling sha1-586-apple.S
+[1141/1863] Compiling rsaz-avx2-linux.S
+[1142/1863] Compiling sha1-armv8-apple.S
+[1143/1863] Compiling rsaz-avx2-apple.S
+[1145/1863] Compiling ContainerPlugin InstallRoot.swift
+[1145/1863] Compiling rdrand-x86_64-linux.S
+[1147/1863] Compiling ContainerPlugin LaunchPlist.swift
+[1147/1863] Compiling rdrand-x86_64-apple.S
+[1148/1863] Compiling p256_beeu-x86_64-asm-linux.S
+[1149/1863] Compiling p256_beeu-x86_64-asm-apple.S
+[1150/1863] Compiling p256_beeu-armv8-asm-win.S
+[1151/1863] Compiling p256_beeu-armv8-asm-linux.S
+[1152/1863] Compiling p256_beeu-armv8-asm-apple.S
+[1153/1863] Compiling p256-x86_64-asm-apple.S
+[1154/1863] Compiling p256-x86_64-asm-linux.S
+[1155/1863] Compiling p256-armv8-asm-linux.S
+[1156/1863] Compiling p256-armv8-asm-win.S
+[1156/1863] Compiling ghashv8-armv8-win.S
+[1158/1863] Compiling p256-armv8-asm-apple.S
+[1158/1863] Compiling ghashv8-armv8-linux.S
+[1161/1863] Compiling ContainerPlugin PluginFactory.swift
+[1162/1863] Compiling ContainerPlugin PluginConfig.swift
+[1163/1863] Compiling ContainerPlugin LogRoot.swift
+[1164/1863] Compiling ContainerPlugin Plugin.swift
+[1165/1863] Compiling ContainerPlugin PluginLoader.swift
+[1165/1863] Compiling ghashv8-armv7-linux.S
+[1166/1863] Compiling ghashv8-armv8-apple.S
+[1167/1863] Compiling ghash-x86_64-linux.S
+[1168/1863] Compiling ghash-x86_64-apple.S
+[1168/1863] Compiling ghash-x86-linux.S
+[1170/1863] Compiling ghash-x86-apple.S
+[1171/1863] Compiling ghash-ssse3-x86_64-linux.S
+[1172/1863] Compiling ghash-ssse3-x86_64-apple.S
+[1173/1863] Compiling ghash-ssse3-x86-linux.S
+[1174/1863] Compiling ghash-ssse3-x86-apple.S
+[1175/1863] Compiling ghash-neon-armv8-linux.S
+[1176/1863] Compiling ghash-neon-armv8-win.S
+[1176/1863] Compiling ghash-neon-armv8-apple.S
+[1178/1863] Compiling ghash-armv4-linux.S
+[1179/1863] Compiling co-586-linux.S
+[1180/1863] Compiling co-586-apple.S
+[1181/1863] Compiling bsaes-armv7-linux.S
+[1182/1863] Compiling bn-armv8-win.S
+[1183/1863] Compiling bn-armv8-linux.S
+[1184/1863] Compiling bn-armv8-apple.S
+[1185/1863] Compiling bn-586-linux.S
+[1186/1863] Compiling armv8-mont-linux.S
+[1187/1863] Compiling bn-586-apple.S
+[1187/1863] Compiling armv8-mont-win.S
+[1189/1863] Compiling armv4-mont-linux.S
+[1190/1863] Compiling armv8-mont-apple.S
+[1190/1863] Compiling aesv8-gcm-armv8-win.S
+[1192/1863] Compiling aesv8-armv8-win.S
+[1193/1863] Compiling aesv8-gcm-armv8-linux.S
+[1193/1863] Compiling aesv8-gcm-armv8-apple.S
+[1195/1863] Compiling aesv8-armv8-linux.S
+[1196/1863] Compiling TerminalProgress ProgressBar+Terminal.swift
+[1197/1863] Compiling TerminalProgress ProgressBar+State.swift
+[1199/1863] Compiling TerminalProgress ProgressBar+Add.swift
+[1200/1863] Compiling TerminalProgress ProgressBar+RestoreCursor.swift
+[1201/1863] Compiling TerminalProgress ProgressBar.swift
+[1201/1863] Compiling aesv8-armv8-apple.S
+[1202/1863] Compiling aesv8-armv7-linux.S
+[1203/1863] Compiling aesni-x86_64-linux.S
+[1204/1863] Compiling aesni-gcm-x86_64-linux.S
+[1204/1863] Compiling aesni-x86_64-apple.S
+[1206/1863] Compiling aesni-x86-apple.S
+[1207/1863] Compiling aesni-x86-linux.S
+[1208/1863] Compiling aesni-gcm-x86_64-apple.S
+[1209/1863] Compiling aes-gcm-avx2-x86_64-linux.S
+[1210/1863] Compiling aes-gcm-avx10-x86_64-linux.S
+[1211/1863] Compiling aes-gcm-avx10-x86_64-apple.S
+[1212/1863] Compiling aes-gcm-avx2-x86_64-apple.S
+[1213/1865] Compiling x_x509a.cc
+[1214/1865] Compiling x_sig.cc
+[1215/1865] Compiling x_x509.cc
+[1216/1865] Compiling x_val.cc
+[1217/1865] Compiling x_req.cc
+[1218/1865] Compiling x_name.cc
+[1219/1865] Compiling x_spki.cc
+[1220/1865] Compiling x_pubkey.cc
+[1221/1865] Compiling x_exten.cc
+[1222/1865] Compiling x509spki.cc
+[1223/1865] Compiling x_algor.cc
+[1224/1865] Compiling x_crl.cc
+[1225/1865] Compiling x509rset.cc
+[1226/1865] Compiling x_all.cc
+[1227/1865] Compiling x_attrib.cc
+[1228/1865] Compiling x509name.cc
+[1229/1865] Compiling x509_trs.cc
+[1230/1865] Compiling x509_vfy.cc
+[1231/1865] Compiling x509_txt.cc
+[1232/1865] Compiling x509_vpm.cc
+[1233/1865] Compiling x509cset.cc
+[1234/1865] Compiling x509_v3.cc
+[1235/1865] Compiling x509_set.cc
+[1236/1865] Compiling x509_req.cc
+[1238/1865] Compiling ContainerPlugin ServiceManager.swift
+[1238/1865] Compiling x509_def.cc
+[1239/1865] Compiling x509_att.cc
+[1240/1865] Compiling x509_cmp.cc
+[1241/1865] Compiling x509_ext.cc
+[1242/1865] Compiling x509_d2.cc
+[1242/1865] Compiling x509_obj.cc
+[1244/1865] Compiling x509_lu.cc
+[1245/1865] Compiling x509.cc
+[1246/1874] Compiling v3_utl.cc
+[1247/1874] Compiling v3_prn.cc
+[1248/1874] Compiling v3_pmaps.cc
+[1249/1874] Compiling v3_purp.cc
+[1250/1874] Compiling v3_skey.cc
+[1251/1874] Compiling v3_ncons.cc
+[1252/1874] Compiling v3_pcons.cc
+[1254/1874] Compiling ContainerPluginTests ServiceManagerTests.swift
+[1254/1874] Compiling v3_ocsp.cc
+[1256/1874] Emitting module ContainerPluginTests
+[1257/1874] Compiling ContainerPluginTests RootPathTests.swift
+[1257/1874] Compiling v3_lib.cc
+[1258/1874] Compiling v3_int.cc
+[1260/1874] Compiling ContainerPluginTests FilePath+ResolveTests.swift
+[1260/1874] Compiling v3_enum.cc
+[1261/1874] Compiling v3_ia5.cc
+[1262/1874] Compiling v3_genn.cc
+[1264/1874] Compiling ContainerPluginTests MockPluginFactory.swift
+[1265/1874] Compiling ContainerPluginTests PluginConfigTest.swift
+[1265/1874] Compiling v3_info.cc
+[1266/1874] Compiling v3_crld.cc
+[1267/1874] Compiling v3_extku.cc
+[1268/1874] Compiling v3_conf.cc
+[1269/1874] Compiling v3_bitst.cc
+[1270/1874] Compiling v3_cpols.cc
+[1271/1874] Compiling v3_akeya.cc
+[1272/1874] Compiling v3_bcons.cc
+[1274/1874] Compiling ContainerPluginTests PluginTest.swift
+[1274/1874] Compiling t_x509a.cc
+[1275/1874] Compiling v3_akey.cc
+[1275/1874] Compiling v3_alt.cc
+[1277/1874] Compiling t_x509.cc
+[1278/1874] Compiling t_crl.cc
+[1279/1874] Compiling rsa_pss.cc
+[1280/1874] Compiling t_req.cc
+[1281/1874] Compiling i2d_pr.cc
+[1282/1874] Compiling name_print.cc
+[1283/1874] Compiling policy.cc
+[1284/1874] Compiling by_file.cc
+[1285/1874] Compiling by_dir.cc
+[1287/1874] Compiling ContainerPluginTests PluginLoaderTest.swift
+[1287/1874] Compiling asn1_gen.cc
+[1288/1874] Compiling a_sign.cc
+[1289/1874] Compiling algorithm.cc
+[1290/1874] Compiling a_verify.cc
+[1291/1874] Compiling a_digest.cc
+[1292/1874] Compiling voprf.cc
+[1293/1874] Compiling trust_token.cc
+[1294/1874] Compiling ContainerPluginTests PluginFactoryTest.swift
+[1295/1874] Compiling thread_win.cc
+[1296/1874] Compiling thread_none.cc
+[1297/1874] Compiling pmbtoken.cc
+[1298/1874] Compiling thread.cc
+[1299/1874] Compiling thread_pthread.cc
+[1300/1874] Compiling stack.cc
+[1301/1874] Compiling siphash.cc
+[1302/1874] Compiling sha512.cc
+[1303/1874] Compiling rsa_print.cc
+[1304/1874] Compiling sha1.cc
+[1304/1874] Compiling sha256.cc
+[1306/1874] Compiling slhdsa.cc
+[1307/1874] Compiling spake2plus.cc
+[1308/1874] Compiling rsa_extra.cc
+[1309/1874] Compiling rsa_crypt.cc
+[1310/1874] Compiling rc4.cc
+[1311/1874] Compiling windows.cc
+[1312/1874] Compiling rsa_asn1.cc
+[1313/1874] Compiling urandom.cc
+[1314/1874] Compiling refcount.cc
+[1315/1874] Compiling rand.cc
+[1315/1874] Compiling trusty.cc
+[1317/1874] Compiling passive.cc
+[1318/1874] Compiling ios.cc
+[1319/1874] Compiling poly1305_arm_asm.S
+[1320/1874] Compiling getentropy.cc
+[1321/1874] Compiling deterministic.cc
+[1322/1874] Compiling forkunsafe.cc
+[1322/1874] Compiling fork_detect.cc
+[1324/1874] Compiling poly1305_vec.cc
+[1325/1874] Compiling pool.cc
+[1325/1874] Compiling poly1305_arm.cc
+[1327/1874] Compiling poly1305.cc
+[1328/1874] Compiling pkcs8_x509.cc
+[1329/1874] Compiling pkcs7.cc
+[1330/1874] Compiling pkcs8.cc
+[1331/1874] Compiling p5_pbev2.cc
+[1332/1874] Compiling pkcs7_x509.cc
+[1333/1874] Compiling pem_x509.cc
+[1335/1874] Emitting module TerminalProgressTests
+[1336/1874] Compiling TerminalProgressTests ProgressBarTests.swift
+[1336/1874] Compiling pem_xaux.cc
+[1337/1874] Compiling pem_pk8.cc
+[1338/1874] Compiling pem_pkey.cc
+[1339/1874] Compiling mldsa.cc
+[1340/1874] Compiling mlkem.cc
+[1341/1874] Compiling obj_xref.cc
+[1342/1874] Compiling pem_all.cc
+[1343/1874] Compiling pem_oth.cc
+[1344/1874] Compiling pem_lib.cc
+[1344/1874] Compiling pem_info.cc
+[1346/1874] Compiling poly_rq_mul.S
+[1347/1874] Compiling fips_shared_support.cc
+[1348/1874] Compiling obj.cc
+[1348/1874] Compiling md5.cc
+[1350/1874] Compiling mem.cc
+[1351/1874] Compiling md4.cc
+[1352/1874] Compiling lhash.cc
+[1353/1874] Compiling hpke.cc
+[1354/1874] Compiling scrypt.cc
+[1355/1874] Compiling kyber.cc
+[1355/1874] Compiling sign.cc
+[1357/1874] Compiling ex_data.cc
+[1358/1874] Compiling print.cc
+[1359/1874] Compiling hrss.cc
+[1360/1874] Compiling pbkdf.cc
+[1361/1874] Compiling p_x25519_asn1.cc
+[1361/1874] Compiling p_x25519.cc
+[1363/1874] Compiling p_rsa_asn1.cc
+[1364/1874] Compiling p_ed25519.cc
+[1365/1874] Compiling p_ec.cc
+[1365/1874] Compiling p_hkdf.cc
+[1367/1874] Compiling p_ed25519_asn1.cc
+[1368/1874] Compiling p_rsa.cc
+[1369/1874] Compiling p_ec_asn1.cc
+[1370/1874] Compiling p_dh_asn1.cc
+[1371/1874] Compiling p_dh.cc
+[1372/1874] Compiling engine.cc
+[1373/1874] Compiling p_dsa_asn1.cc
+[1373/1874] Compiling evp_ctx.cc
+[1375/1874] Compiling evp.cc
+[1376/1874] Compiling err.cc
+[1377/1874] Compiling evp_asn1.cc
+[1378/1874] Compiling ecdsa_asn1.cc
+[1379/1874] Compiling ecdh.cc
+[1380/1874] Compiling hash_to_curve.cc
+[1381/1874] Compiling ec_derive.cc
+[1382/1874] Compiling dsa_asn1.cc
+[1383/1874] Compiling dsa.cc
+[1384/1874] Compiling ec_asn1.cc
+[1385/1874] Compiling x25519-asm-arm.S
+[1386/1874] Compiling digest_extra.cc
+[1387/1874] Compiling params.cc
+[1388/1874] Compiling dh_asn1.cc
+[1389/1874] Compiling curve25519_64_adx.cc
+[1390/1874] Compiling des.cc
+[1391/1874] Compiling spake25519.cc
+[1391/1874] Compiling bcm.cc
+[1393/1874] Compiling cpu_intel.cc
+[1394/1874] Compiling crypto.cc
+[1395/1874] Compiling cpu_arm_freebsd.cc
+[1396/1874] Compiling cpu_arm_linux.cc
+[1397/1874] Compiling curve25519.cc
+[1398/1874] Compiling cpu_aarch64_sysreg.cc
+[1399/1874] Compiling cpu_aarch64_win.cc
+[1400/1874] Compiling cpu_aarch64_apple.cc
+[1401/1874] Compiling cpu_aarch64_openbsd.cc
+[1402/1874] Compiling cpu_aarch64_fuchsia.cc
+[1403/1874] Compiling cpu_aarch64_linux.cc
+[1404/1874] Compiling conf.cc
+[1405/1874] Compiling tls_cbc.cc
+[1406/1874] Compiling get_cipher.cc
+[1407/1874] Compiling e_tls.cc
+[1408/1874] Compiling e_null.cc
+[1409/1874] Compiling e_rc2.cc
+[1410/1874] Compiling e_rc4.cc
+[1411/1874] Compiling e_des.cc
+[1412/1874] Compiling derive_key.cc
+[1412/1874] Compiling e_aesgcmsiv.cc
+[1414/1874] Compiling e_chacha20poly1305.cc
+[1414/1874] Compiling chacha.cc
+[1416/1874] Compiling e_aesctrhmac.cc
+[1417/1874] Compiling unicode.cc
+[1418/1874] Compiling ber.cc
+[1419/1874] Compiling buf.cc
+[1420/1874] Compiling blake2.cc
+[1421/1874] Compiling cbb.cc
+[1422/1874] Compiling cbs.cc
+[1423/1874] Compiling asn1_compat.cc
+[1424/1874] Compiling socket_helper.cc
+[1425/1874] Compiling bn_asn1.cc
+[1426/1874] Compiling convert.cc
+[1427/1874] Compiling socket.cc
+[1428/1874] Compiling printf.cc
+[1429/1874] Compiling hexdump.cc
+[1430/1874] Compiling pair.cc
+[1431/1874] Compiling fd.cc
+[1431/1874] Compiling errno.cc
+[1433/1874] Compiling file.cc
+[1434/1874] Compiling connect.cc
+[1434/1874] Compiling bio_mem.cc
+[1436/1874] Compiling bio.cc
+[1437/1874] Compiling base64.cc
+[1438/1874] Compiling tasn_utl.cc
+[1439/1874] Compiling tasn_typ.cc
+[1440/1874] Compiling tasn_enc.cc
+[1441/1874] Compiling tasn_fre.cc
+[1442/1874] Compiling posix_time.cc
+[1443/1874] Compiling tasn_new.cc
+[1444/1874] Compiling f_string.cc
+[1445/1874] Compiling f_int.cc
+[1446/1874] Compiling tasn_dec.cc
+[1447/1874] Compiling asn_pack.cc
+[1448/1874] Compiling asn1_par.cc
+[1449/1874] Compiling a_utctm.cc
+[1449/1874] Compiling a_time.cc
+[1451/1874] Compiling a_type.cc
+[1452/1874] Compiling a_strnid.cc
+[1453/1874] Compiling a_strex.cc
+[1454/1874] Compiling a_octet.cc
+[1455/1874] Compiling asn1_lib.cc
+[1456/1874] Compiling a_object.cc
+[1457/1874] Compiling a_mbstr.cc
+[1458/1874] Compiling a_dup.cc
+[1459/1874] Compiling CGRPCNIOTransportZlib empty.c
+[1460/1874] Compiling fiat_p256_adx_sqr.S
+[1461/1874] Compiling a_gentm.cc
+[1462/1874] Compiling a_i2d_fp.cc
+[1463/1874] Compiling a_int.cc
+[1464/1874] Compiling fiat_p256_adx_mul.S
+[1465/1874] Compiling a_bitstr.cc
+[1466/1874] Compiling a_d2i_fp.cc
+[1467/1874] Compiling fiat_curve25519_adx_mul.S
+[1468/1874] Compiling fiat_curve25519_adx_square.S
+[1469/1874] Compiling md5-x86_64-linux.S
+[1470/1874] Compiling md5-x86_64-apple.S
+[1471/1874] Compiling md5-586-apple.S
+[1472/1874] Compiling md5-586-linux.S
+[1473/1874] Compiling chacha20_poly1305_x86_64-linux.S
+[1474/1874] Compiling a_bool.cc
+[1475/1874] Compiling chacha20_poly1305_x86_64-apple.S
+[1476/1874] Compiling chacha20_poly1305_armv8-win.S
+[1477/1874] Compiling chacha20_poly1305_armv8-linux.S
+[1478/1874] Compiling chacha-x86_64-linux.S
+[1479/1874] Compiling chacha-x86_64-apple.S
+[1480/1874] Compiling chacha-x86-linux.S
+[1481/1874] Compiling chacha-x86-apple.S
+[1482/1874] Compiling chacha20_poly1305_armv8-apple.S
+[1483/1874] Compiling chacha-armv8-linux.S
+[1484/1874] Compiling chacha-armv8-win.S
+[1485/1874] Compiling chacha-armv4-linux.S
+[1486/1874] Compiling chacha-armv8-apple.S
+[1487/1874] Compiling aes128gcmsiv-x86_64-linux.S
+[1488/1874] Compiling aes128gcmsiv-x86_64-apple.S
+[1489/1874] Compiling x86_64-mont5-apple.S
+[1489/1874] Compiling x86_64-mont-linux.S
+[1491/1874] Compiling x86_64-mont5-linux.S
+[1492/1874] Compiling x86-mont-linux.S
+[1493/1874] Compiling x86_64-mont-apple.S
+[1494/1874] Compiling x86-mont-apple.S
+[1495/1874] Compiling vpaes-x86_64-apple.S
+[1496/1874] Compiling vpaes-x86_64-linux.S
+[1497/1874] Compiling vpaes-x86-linux.S
+[1498/1874] Compiling vpaes-x86-apple.S
+[1499/1874] Compiling vpaes-armv8-win.S
+[1500/1874] Compiling vpaes-armv8-linux.S
+[1501/1874] Compiling vpaes-armv7-linux.S
+[1502/1874] Compiling vpaes-armv8-apple.S
+[1503/1874] Compiling sha512-x86_64-linux.S
+[1504/1874] Compiling CCryptoBoringSSLShims shims.c
+[1505/1874] Compiling sha512-armv8-win.S
+[1505/1874] Compiling sha512-x86_64-apple.S
+[1507/1874] Compiling err_data.cc
+[1508/1874] Compiling sha512-armv8-linux.S
+[1509/1874] Compiling sha512-armv4-linux.S
+[1510/1874] Compiling sha512-586-linux.S
+[1511/1874] Compiling sha512-586-apple.S
+[1512/1874] Compiling sha512-armv8-apple.S
+[1513/1874] Compiling sha256-x86_64-linux.S
+[1514/1874] Compiling sha256-x86_64-apple.S
+[1514/1874] Compiling sha256-armv8-win.S
+[1516/1874] Compiling sha256-armv8-linux.S
+[1517/1874] Compiling sha256-armv4-linux.S
+[1518/1874] Compiling sha256-armv8-apple.S
+[1519/1874] Compiling sha256-586-linux.S
+[1520/1874] Compiling sha256-586-apple.S
+[1521/1874] Compiling sha1-x86_64-linux.S
+[1522/1874] Compiling sha1-armv8-win.S
+[1523/1874] Compiling sha1-x86_64-apple.S
+[1524/1874] Compiling sha1-armv8-linux.S
+[1525/1874] Compiling sha1-armv4-large-linux.S
+[1525/1874] Compiling sha1-586-apple.S
+[1527/1874] Compiling sha1-586-linux.S
+[1528/1874] Compiling rsaz-avx2-linux.S
+[1529/1874] Compiling rsaz-avx2-apple.S
+[1529/1874] Compiling sha1-armv8-apple.S
+[1531/1874] Compiling rdrand-x86_64-linux.S
+[1532/1874] Compiling rdrand-x86_64-apple.S
+[1533/1874] Compiling p256_beeu-x86_64-asm-linux.S
+[1534/1874] Compiling p256_beeu-x86_64-asm-apple.S
+[1535/1874] Compiling p256-x86_64-asm-linux.S
+[1536/1874] Compiling p256_beeu-armv8-asm-win.S
+[1537/1874] Compiling p256_beeu-armv8-asm-linux.S
+[1538/1874] Compiling p256-x86_64-asm-apple.S
+[1539/1874] Compiling p256_beeu-armv8-asm-apple.S
+[1540/1874] Compiling p256-armv8-asm-win.S
+[1541/1874] Compiling p256-armv8-asm-linux.S
+[1542/1874] Compiling ghashv8-armv8-linux.S
+[1543/1874] Compiling ghashv8-armv8-win.S
+[1544/1874] Compiling ghashv8-armv8-apple.S
+[1545/1874] Compiling p256-armv8-asm-apple.S
+[1545/1874] Compiling ghashv8-armv7-linux.S
+[1547/1874] Compiling ghash-x86_64-linux.S
+[1548/1874] Compiling ghash-x86_64-apple.S
+[1549/1874] Compiling ghash-x86-apple.S
+[1549/1874] Compiling ghash-x86-linux.S
+[1551/1874] Compiling ghash-ssse3-x86-apple.S
+[1552/1874] Compiling ghash-ssse3-x86-linux.S
+[1553/1874] Compiling ghash-ssse3-x86_64-linux.S
+[1554/1874] Compiling ghash-ssse3-x86_64-apple.S
+[1555/1874] Compiling ghash-neon-armv8-linux.S
+[1555/1874] Compiling ghash-neon-armv8-win.S
+[1557/1874] Compiling ghash-armv4-linux.S
+[1558/1874] Compiling co-586-linux.S
+[1559/1874] Compiling ghash-neon-armv8-apple.S
+[1560/1874] Compiling co-586-apple.S
+[1561/1874] Compiling bsaes-armv7-linux.S
+[1562/1874] Compiling bn-armv8-linux.S
+[1562/1874] Compiling bn-armv8-win.S
+[1564/1874] Compiling bn-armv8-apple.S
+[1565/1874] Compiling bn-586-linux.S
+[1566/1874] Compiling bn-586-apple.S
+[1567/1874] Compiling armv8-mont-win.S
+[1568/1874] Compiling aesv8-gcm-armv8-win.S
+[1568/1874] Compiling armv8-mont-linux.S
+[1570/1874] Compiling aesv8-gcm-armv8-linux.S
+[1571/1874] Compiling armv4-mont-linux.S
+[1572/1874] Compiling armv8-mont-apple.S
+[1573/1874] Compiling aesv8-armv8-win.S
+[1574/1874] Compiling aesv8-armv7-linux.S
+[1575/1874] Compiling aesv8-armv8-apple.S
+[1576/1874] Compiling aesv8-gcm-armv8-apple.S
+[1577/1874] Compiling aesni-x86_64-linux.S
+[1578/1874] Compiling aesv8-armv8-linux.S
+[1579/1874] Compiling aesni-x86_64-apple.S
+[1580/1874] Compiling aesni-x86-linux.S
+[1581/1874] Compiling aesni-x86-apple.S
+[1582/1874] Compiling aesni-gcm-x86_64-linux.S
+[1583/1874] Compiling aes-gcm-avx512-x86_64-linux.S
+[1584/1874] Compiling aesni-gcm-x86_64-apple.S
+[1585/1874] Compiling aes-gcm-avx512-x86_64-apple.S
+[1586/1874] Compiling aes-gcm-avx2-x86_64-linux.S
+[1587/1874] Compiling aes-gcm-avx2-x86_64-apple.S
+[1588/1874] Compiling xwing.cc
+[1589/1874] Compiling c-nioatomics.c
+[1590/1874] Compiling x_req.cc
+[1591/1874] Compiling x_x509a.cc
+[1592/1874] Compiling x_spki.cc
+[1593/1874] Compiling x_sig.cc
+[1594/1874] Compiling x_x509.cc
+[1595/1874] Compiling x_pubkey.cc
+[1596/1874] Compiling x_name.cc
+[1597/1874] Compiling x_exten.cc
+[1598/1874] Compiling x_crl.cc
+[1599/1874] Compiling x_all.cc
+[1600/1874] Compiling x509rset.cc
+[1601/1874] Compiling x_attrib.cc
+[1602/1874] Compiling c-atomics.c
+[1603/1874] Compiling x509spki.cc
+[1604/1874] Compiling x_algor.cc
+[1605/1874] Compiling x509cset.cc
+[1606/1874] Compiling x509name.cc
+[1607/1881] Compiling x509_vpm.cc
+[1608/1881] Compiling x509_vfy.cc
+[1609/1881] Compiling x509_v3.cc
+[1610/1881] Compiling x509_txt.cc
+[1611/1881] Compiling x509_set.cc
+[1612/1881] Compiling x509_req.cc
+[1613/1881] Compiling x509_lu.cc
+[1614/1881] Compiling x509_trs.cc
+[1616/1881] Emitting module NIOConcurrencyHelpers
+[1616/1881] Compiling x509_obj.cc
+[1618/1881] Compiling NIOConcurrencyHelpers lock.swift
+[1619/1881] Compiling NIOConcurrencyHelpers NIOLockedValueBox.swift
+[1620/1881] Compiling NIOConcurrencyHelpers NIOThreadPoolWorkAvailable.swift
+[1621/1881] Compiling NIOConcurrencyHelpers NIOLock.swift
+[1622/1881] Compiling NIOConcurrencyHelpers NIOAtomic.swift
+[1623/1881] Compiling NIOConcurrencyHelpers atomics.swift
+[1623/1881] Compiling x509_ext.cc
+[1624/1881] Compiling x509_def.cc
+[1625/1881] Compiling x509_d2.cc
+[1626/1881] Compiling x509_cmp.cc
+[1627/1881] Compiling x509.cc
+[1628/1881] Compiling v3_utl.cc
+[1629/1881] Compiling x509_att.cc
+[1629/1881] Compiling v3_purp.cc
+[1631/1881] Compiling v3_prn.cc
+[1632/1881] Compiling v3_skey.cc
+[1633/1881] Compiling v3_pmaps.cc
+[1634/1881] Compiling v3_pcons.cc
+[1634/1881] Compiling v3_ncons.cc
+[1636/1881] Compiling v3_ocsp.cc
+[1637/1881] Compiling v3_lib.cc
+[1638/1881] Compiling v3_int.cc
+[1639/1881] Compiling v3_ia5.cc
+[1640/1881] Compiling v3_genn.cc
+[1640/1881] Compiling v3_info.cc
+[1642/1881] Compiling v3_extku.cc
+[1643/1881] Compiling v3_conf.cc
+[1644/1881] Compiling v3_enum.cc
+[1645/1881] Compiling v3_crld.cc
+[1646/1881] Compiling v3_bitst.cc
+[1647/1881] Compiling v3_alt.cc
+[1648/1881] Compiling v3_cpols.cc
+[1649/1881] Compiling v3_bcons.cc
+[1650/1881] Compiling v3_akeya.cc
+[1650/1881] Compiling t_x509a.cc
+[1652/1881] Compiling v3_akey.cc
+[1653/1881] Compiling t_crl.cc
+[1654/1881] Compiling t_x509.cc
+[1655/1881] Compiling t_req.cc
+[1656/1881] Compiling i2d_pr.cc
+[1657/1881] Compiling name_print.cc
+[1658/1881] Compiling rsa_pss.cc
+[1659/1881] Compiling policy.cc
+[1660/1881] Compiling by_file.cc
+[1661/1881] Compiling by_dir.cc
+[1662/1881] Compiling asn1_gen.cc
+[1663/1881] Compiling a_verify.cc
+[1664/1881] Compiling algorithm.cc
+[1665/1881] Compiling trust_token.cc
+[1666/1881] Compiling a_digest.cc
+[1667/1881] Compiling thread_win.cc
+[1667/1881] Compiling voprf.cc
+[1669/1881] Compiling a_sign.cc
+[1670/1881] Compiling pmbtoken.cc
+[1671/1881] Compiling thread_pthread.cc
+[1672/1881] Compiling thread.cc
+[1673/1881] Compiling thread_none.cc
+[1674/1881] Compiling stack.cc
+[1675/1881] Compiling sha256.cc
+[1676/1881] Compiling siphash.cc
+[1677/1881] Compiling sha512.cc
+[1678/1881] Compiling slhdsa.cc
+[1679/1881] Compiling spake2plus.cc
+[1680/1881] Compiling sha1.cc
+[1681/1881] Compiling rsa_print.cc
+[1682/1881] Compiling rsa_extra.cc
+[1683/1881] Compiling rsa_crypt.cc
+[1684/1881] Compiling refcount.cc
+[1685/1881] Compiling rc4.cc
+[1686/1881] Compiling urandom.cc
+[1687/1881] Compiling rsa_asn1.cc
+[1688/1881] Compiling windows.cc
+[1689/1881] Compiling trusty.cc
+[1690/1881] Compiling passive.cc
+[1691/1881] Compiling rand.cc
+[1692/1881] Compiling poly1305_arm_asm.S
+[1693/1881] Compiling ios.cc
+[1694/1881] Compiling getentropy.cc
+[1695/1881] Compiling forkunsafe.cc
+[1696/1881] Compiling fork_detect.cc
+[1697/1881] Compiling deterministic.cc
+[1698/1881] Compiling poly1305_arm.cc
+[1698/1881] Compiling poly1305_vec.cc
+[1700/1881] Compiling poly1305.cc
+[1701/1881] Compiling pool.cc
+[1702/1881] Compiling p5_pbev2.cc
+[1703/1881] Compiling pkcs8.cc
+[1704/1881] Compiling pem_x509.cc
+[1705/1881] Compiling pkcs8_x509.cc
+[1706/1881] Compiling pem_xaux.cc
+[1707/1881] Compiling pkcs7.cc
+[1708/1881] Compiling pem_pkey.cc
+[1709/1881] Compiling pkcs7_x509.cc
+[1710/1881] Compiling pem_oth.cc
+[1711/1881] Compiling pem_pk8.cc
+[1712/1881] Compiling mlkem.cc
+[1713/1881] Compiling mem.cc
+[1714/1881] Compiling obj_xref.cc
+[1715/1881] Compiling pem_info.cc
+[1716/1881] Compiling mldsa.cc
+[1717/1881] Compiling poly_rq_mul.S
+[1718/1881] Compiling obj.cc
+[1719/1881] Compiling md5.cc
+[1720/1881] Compiling fips_shared_support.cc
+[1721/1881] Compiling pem_lib.cc
+[1722/1881] Compiling pem_all.cc
+[1723/1881] Compiling md4.cc
+[1724/1881] Compiling lhash.cc
+[1725/1881] Compiling fuzzer_mode.cc
+[1726/1881] Compiling ex_data.cc
+[1726/1881] Compiling kyber.cc
+[1728/1881] Compiling hpke.cc
+[1729/1881] Compiling scrypt.cc
+[1730/1881] Compiling hrss.cc
+[1731/1881] Compiling sign.cc
+[1732/1881] Compiling print.cc
+[1733/1881] Compiling pbkdf.cc
+[1734/1881] Compiling p_x25519_asn1.cc
+[1735/1881] Compiling p_x25519.cc
+[1736/1881] Compiling p_rsa.cc
+[1737/1881] Compiling p_rsa_asn1.cc
+[1738/1881] Compiling p_hkdf.cc
+[1739/1881] Compiling p_ed25519.cc
+[1740/1881] Compiling p_ed25519_asn1.cc
+[1741/1881] Compiling p_ec.cc
+[1742/1881] Compiling p_ec_asn1.cc
+[1743/1881] Compiling p_dsa_asn1.cc
+[1744/1881] Compiling err.cc
+[1745/1881] Compiling engine.cc
+[1746/1881] Compiling p_dh_asn1.cc
+[1747/1881] Compiling ecdsa_p1363.cc
+[1747/1881] Compiling evp_ctx.cc
+[1749/1881] Compiling p_dh.cc
+[1750/1881] Compiling evp.cc
+[1751/1881] Compiling evp_asn1.cc
+[1752/1881] Compiling ecdsa_asn1.cc
+[1753/1881] Compiling ecdh.cc
+[1754/1881] Compiling ec_derive.cc
+[1755/1881] Compiling dsa.cc
+[1756/1881] Compiling hash_to_curve.cc
+[1757/1881] Compiling dsa_asn1.cc
+[1758/1881] Compiling ec_asn1.cc
+[1759/1881] Compiling x25519-asm-arm.S
+[1760/1881] Compiling params.cc
+[1761/1881] Compiling digest_extra.cc
+[1762/1881] Compiling dh_asn1.cc
+[1763/1881] Compiling des.cc
+[1764/1881] Compiling curve25519_64_adx.cc
+[1765/1881] Compiling spake25519.cc
+[1766/1881] Compiling cpu_arm_freebsd.cc
+[1767/1881] Compiling crypto.cc
+[1768/1881] Compiling cpu_arm_linux.cc
+[1769/1881] Compiling cpu_intel.cc
+[1769/1881] Compiling curve25519.cc
+[1771/1881] Compiling cpu_aarch64_win.cc
+[1772/1881] Compiling cpu_aarch64_openbsd.cc
+[1773/1881] Compiling cpu_aarch64_sysreg.cc
+[1773/1881] Compiling cpu_aarch64_fuchsia.cc
+[1775/1881] Compiling cpu_aarch64_linux.cc
+[1776/1881] Compiling cpu_aarch64_apple.cc
+[1777/1881] Compiling tls_cbc.cc
+[1778/1881] Compiling conf.cc
+[1779/1881] Compiling get_cipher.cc
+[1780/1881] Compiling e_tls.cc
+[1781/1881] Compiling e_null.cc
+[1782/1881] Compiling e_rc4.cc
+[1783/1881] Compiling cms.cc
+[1784/1881] Compiling e_des.cc
+[1785/1881] Compiling e_rc2.cc
+[1786/1881] Compiling e_chacha20poly1305.cc
+[1787/1881] Compiling e_aesgcmsiv.cc
+[1788/1881] Compiling e_aesctrhmac.cc
+[1789/1881] Compiling e_aeseax.cc
+[1790/1881] Compiling derive_key.cc
+[1791/1881] Compiling chacha.cc
+[1792/1881] Compiling unicode.cc
+[1793/1881] Compiling cbb.cc
+[1794/1881] Compiling cbs.cc
+[1795/1881] Compiling buf.cc
+[1796/1881] Compiling ber.cc
+[1797/1881] Compiling sqrt.cc
+[1798/1881] Compiling exponentiation.cc
+[1799/1881] Compiling asn1_compat.cc
+[1800/1881] Compiling div.cc
+[1801/1881] Compiling convert.cc
+[1802/1881] Compiling blake2.cc
+[1803/1881] Compiling bn_asn1.cc
+[1804/1881] Compiling printf.cc
+[1805/1881] Compiling file.cc
+[1806/1881] Compiling fd.cc
+[1807/1881] Compiling hexdump.cc
+[1808/1881] Compiling errno.cc
+[1809/1881] Compiling pair.cc
+[1810/1881] Compiling bio_mem.cc
+[1811/1881] Compiling base64.cc
+[1812/1881] Compiling bio.cc
+[1813/1881] Compiling tasn_typ.cc
+[1814/1881] Compiling tasn_fre.cc
+[1815/1881] Compiling tasn_enc.cc
+[1816/1881] Compiling tasn_utl.cc
+[1817/1881] Compiling tasn_new.cc
+[1818/1881] Compiling tasn_dec.cc
+[1819/1881] Compiling f_string.cc
+[1820/1881] Compiling posix_time.cc
+[1820/1881] Compiling asn_pack.cc
+[1822/1881] Compiling f_int.cc
+[1823/1881] Compiling a_utctm.cc
+[1824/1881] Compiling asn1_par.cc
+[1825/1881] Compiling asn1_lib.cc
+[1826/1881] Compiling a_type.cc
+[1827/1881] Compiling a_strnid.cc
+[1828/1881] Compiling a_time.cc
+[1829/1881] Compiling a_octet.cc
+[1830/1881] Compiling bcm.cc
+[1831/1881] Compiling a_i2d_fp.cc
+[1831/1881] Compiling a_strex.cc
+[1833/1881] Compiling a_mbstr.cc
+[1834/1881] Compiling CAuditToken AuditToken.c
+[1835/1881] Compiling a_object.cc
+[1836/1881] Write sources
+[1836/1881] Compiling CArchive archive_swift_bridge.c
+[1838/1881] Write sources
+[1840/1881] Compiling CAsyncHTTPClient CAsyncHTTPClient.c
+[1840/1881] Write sources
+[1843/1881] Compiling a_int.cc
+[1844/1881] Compiling a_d2i_fp.cc
+[1845/1881] Write sources
+[1847/1881] Compiling a_dup.cc
+[1848/1881] Compiling a_gentm.cc
+[1849/1881] Compiling a_bool.cc
+[1850/1982] Compiling aes.cc
+[1851/2038] Compiling a_bitstr.cc
+[1853/2038] Compiling Algorithms FlattenCollection.swift
+[1854/2038] Compiling Algorithms Grouped.swift
+[1855/2038] Compiling Algorithms Indexed.swift
+[1856/2038] Compiling Algorithms Intersperse.swift
+[1857/2039] Compiling Algorithms Suffix.swift
+[1858/2039] Compiling Algorithms Trim.swift
+[1860/2041] Compiling Algorithms Unique.swift
+[1861/2041] Compiling Algorithms Windows.swift
+[1862/2041] Compiling BitCollections BitSet+CustomStringConvertible.swift
+[1863/2041] Compiling BitCollections BitSet+Equatable.swift
+[1864/2041] Compiling BitCollections BitSet+ExpressibleByArrayLiteral.swift
+[1865/2056] Compiling BitCollections BitSet+SetAlgebra conformance.swift
+[1866/2056] Compiling BitCollections BitSet+SetAlgebra formIntersection.swift
+[1867/2056] Compiling BitCollections BitSet+SetAlgebra formSymmetricDifference.swift
+[1868/2056] Compiling BitCollections BitSet+SetAlgebra formUnion.swift
+[1869/2056] Compiling BitCollections BitSet+SetAlgebra intersection.swift
+[1870/2056] Compiling BitCollections BitSet+SetAlgebra isDisjoint.swift
+[1871/2056] Compiling Algorithms EitherSequence.swift
+[1872/2056] Compiling Algorithms FirstNonNil.swift
+[1877/2056] Compiling Atomics Unmanaged extensions.swift
+[1881/2056] Compiling Algorithms Chain.swift
+[1882/2056] Compiling Algorithms Chunked.swift
+[1883/2056] Compiling Algorithms Combinations.swift
+[1884/2056] Compiling Algorithms Compacted.swift
+[1885/2056] Compiling Algorithms Product.swift
+[1886/2056] Compiling Algorithms Joined.swift
+[1887/2056] Compiling Algorithms Split.swift
+[1888/2056] Compiling Algorithms Stride.swift
+[1889/2056] Compiling Algorithms Keyed.swift
+[1890/2056] Compiling Algorithms MinMax.swift
+[1891/2056] Compiling Algorithms Partition.swift
+[1892/2056] Compiling Algorithms Permutations.swift
+[1895/2056] Compiling BitCollections BitSet+Extras.swift
+[1896/2056] Compiling BitCollections BitSet+Hashable.swift
+[1897/2056] Compiling BitCollections BitSet+Initializers.swift
+[1898/2056] Compiling BitCollections BitSet+Invariants.swift
+[1899/2056] Compiling BitCollections BitSet+Random.swift
+[1900/2056] Compiling BitCollections BitSet+SetAlgebra basics.swift
+[1901/2056] Compiling CryptoBoringWrapper resource_bundle_accessor.swift
+[1902/2056] Compiling Algorithms RandomSample.swift
+[1903/2056] Compiling Algorithms Reductions.swift
+[1904/2056] Compiling Algorithms Rotate.swift
+[1907/2056] Compiling Algorithms Cycle.swift
+[1908/2056] Compiling BitCollections BitSet+SetAlgebra subtracting.swift
+[1909/2056] Compiling BitCollections BitSet+SetAlgebra symmetricDifference.swift
+[1910/2056] Compiling BitCollections BitSet+SetAlgebra union.swift
+[1911/2056] Compiling BitCollections BitSet+Sorted Collection APIs.swift
+[1912/2056] Compiling BitCollections BitSet.Counted.swift
+[1913/2056] Compiling BitCollections BitSet.Index.swift
+[1914/2056] Compiling BitCollections BitSet+SetAlgebra isEqualSet.swift
+[1915/2056] Compiling BitCollections BitSet+SetAlgebra isStrictSubset.swift
+[1916/2056] Compiling BitCollections BitSet+SetAlgebra isStrictSuperset.swift
+[1917/2056] Compiling AsyncAlgorithms RangeReplaceableCollection.swift
+[1918/2056] Compiling AsyncAlgorithms Rethrow.swift
+[1919/2056] Compiling AsyncAlgorithms SetAlgebra.swift
+[1920/2056] Compiling CryptoBoringWrapper RandomBytes.swift
+[1924/2056] Compiling ArgumentParserToolInfo ToolInfo.swift
+[1925/2056] Emitting module ArgumentParserToolInfo
+[1935/2056] Compiling Algorithms AdjacentPairs.swift
+[1938/2061] Emitting module BitCollections
+[1945/2061] Compiling AsyncAlgorithms UnsafeTransfer.swift
+[1946/2061] Compiling AsyncAlgorithms AsyncZip2Sequence.swift
+[1947/2061] Compiling AsyncAlgorithms AsyncZip3Sequence.swift
+[1948/2061] Compiling AsyncAlgorithms ZipStateMachine.swift
+[1949/2061] Compiling AsyncAlgorithms ZipStorage.swift
+[1950/2061] Compiling BitCollections _Word.swift
+[1951/2109] Compiling ArgumentParser Name.swift
+[1952/2109] Compiling ArgumentParser Parsed.swift
+[1953/2109] Compiling ArgumentParser ParsedValues.swift
+[1954/2109] Compiling ArgumentParser ParserError.swift
+[1955/2109] Compiling ArgumentParser Option.swift
+[1956/2109] Compiling ArgumentParser OptionGroup.swift
+[1957/2109] Compiling ArgumentParser ArgumentDecoder.swift
+[1958/2109] Compiling ArgumentParser ArgumentDefinition.swift
+[1959/2109] Compiling ArgumentParser ArgumentSet.swift
+[1960/2109] Compiling ArgumentParser CommandParser.swift
+[1961/2109] Compiling ArgumentParser InputKey.swift
+[1962/2109] Compiling ArgumentParser InputOrigin.swift
+[1963/2109] Compiling ArgumentParser FishCompletionsGenerator.swift
+[1964/2109] Compiling ArgumentParser ZshCompletionsGenerator.swift
+[1965/2109] Compiling CryptoBoringWrapper FiniteFieldArithmeticContext.swift
+[1966/2109] Compiling ArgumentParser ArgumentHelp.swift
+[1967/2109] Compiling ArgumentParser ArgumentVisibility.swift
+[1986/2109] Compiling ArgumentParser ParentCommand.swift
+[1987/2109] Compiling ArgumentParser AsyncParsableCommand.swift
+[1988/2109] Compiling ArgumentParser CommandConfiguration.swift
+[1989/2109] Compiling ArgumentParser CommandGroup.swift
+[1990/2109] Compiling ArgumentParser EnumerableFlag.swift
+[1991/2109] Compiling ArgumentParser ExpressibleByArgument.swift
+[1993/2109] Compiling ArgumentParser Argument.swift
+[1994/2109] Compiling ArgumentParser ArgumentDiscussion.swift
+[1995/2109] Emitting module AsyncAlgorithms
+[1996/2109] Compiling CryptoBoringWrapper CryptoKitErrors_boring.swift
+[1997/2115] Emitting module Atomics
+[1998/2115] Compiling ArgumentParser ParsableArguments.swift
+[1999/2115] Compiling ArgumentParser ParsableCommand.swift
+[2000/2115] Compiling ArgumentParser UsageGenerator.swift
+[2001/2115] Compiling ArgumentParser CollectionExtensions.swift
+[2002/2115] Compiling ArgumentParser Foundation.swift
+[2003/2115] Compiling ArgumentParser Mutex.swift
+[2004/2115] Compiling Collections HeapModule reexports.swift
+[2005/2115] Compiling Collections HashTreeCollections reexports.swift
+[2006/2115] Compiling Collections DequeModule reexports.swift
+[2007/2115] Compiling Collections OrderedCollections reexports.swift
+[2008/2115] Emitting module Collections
+[2009/2115] Compiling Collections BitCollections reexports.swift
+[2010/2115] Emitting module CryptoBoringWrapper
+[2011/2115] Compiling CryptoBoringWrapper BoringSSLAEAD.swift
+[2012/2180] Emitting module ArgumentParser
+[2013/2185] Compiling NIOCore ChannelInvoker.swift
+[2014/2185] Compiling NIOCore ChannelOption.swift
+[2015/2185] Compiling NIOCore ChannelPipeline.swift
+[2016/2185] Compiling NIOCore CircularBuffer.swift
+[2017/2185] Compiling NIOCore Codec.swift
+[2018/2185] Compiling CryptoBoringWrapper EllipticCurve.swift
+[2019/2185] Compiling CryptoBoringWrapper EllipticCurvePoint.swift
+[2020/2185] Compiling CryptoBoringWrapper ArbitraryPrecisionInteger.swift
+[2021/2185] Compiling NIOCore NIOAsyncWriter.swift
+[2022/2185] Compiling NIOCore NIOThrowingAsyncSequenceProducer.swift
+[2023/2185] Compiling NIOCore BSDSocketAPI.swift
+[2024/2185] Compiling NIOCore ByteBuffer-aux.swift
+[2025/2185] Compiling NIOCore ByteBuffer-binaryEncodedLengthPrefix.swift
+[2026/2185] Compiling NIOCore ByteBuffer-conversions.swift
+[2027/2185] Compiling NIOCore ByteBuffer-core.swift
+[2028/2185] Compiling NIOCore NIOPooledRecvBufferAllocator.swift
+[2029/2185] Compiling NIOCore NIOScheduledCallback.swift
+[2030/2185] Compiling NIOCore NIOSendable.swift
+[2031/2185] Compiling NIOCore NIOSplitLinesMessageDecoder.swift
+[2032/2185] Compiling ArgumentParser CodingKeyValidator.swift
+[2033/2241] Compiling _CryptoExtras ThreadSpecific.swift
+[2034/2241] Compiling NIOCore ByteBuffer-views.swift
+[2035/2241] Compiling NIOCore Channel.swift
+[2036/2241] Compiling NIOCore ConvenienceOptionSupport.swift
+[2037/2241] Compiling NIOCore DeadChannel.swift
+[2038/2241] Compiling _CryptoExtras IntegerEncoding.swift
+[2039/2241] Compiling _CryptoExtras PEMDocument.swift
+[2040/2241] Compiling _CryptoExtras PrettyBytes.swift
+[2041/2241] Compiling _CryptoExtras SubjectPublicKeyInfo.swift
+[2042/2241] Compiling _CryptoExtras ThreadOps.swift
+[2043/2241] Compiling _CryptoExtras ThreadPosix.swift
+[2044/2241] Compiling _CryptoExtras Scrypt.swift
+[2045/2241] Compiling _CryptoExtras OPRF.swift
+[2046/2241] Compiling _CryptoExtras OPRFClient.swift
+[2047/2241] Compiling _CryptoExtras OPRFServer.swift
+[2048/2241] Compiling _CryptoExtras VOPRF+API.swift
+[2049/2241] Compiling _CryptoExtras BoringSSLHelpers.swift
+[2050/2241] Compiling _CryptoExtras CryptoKitErrors_boring.swift
+[2051/2241] Compiling _CryptoExtras Data+Extensions.swift
+[2052/2241] Compiling _CryptoExtras DigestType.swift
+[2053/2241] Compiling _CryptoExtras Error.swift
+[2054/2241] Emitting module Algorithms
+[2055/2251] Compiling ServiceLifecycle Service.swift
+[2056/2251] Compiling ServiceLifecycle AsyncGracefulShutdownSequence.swift
+[2057/2251] Compiling _CryptoExtras I2OSP.swift
+[2062/2251] Compiling ServiceLifecycle AsyncCancelOnGracefulShutdownSequence.swift
+[2063/2251] Compiling ServiceLifecycle CancellationWaiter.swift
+[2064/2251] Compiling ServiceLifecycle ServiceRunnerError.swift
+[2065/2251] Compiling _CryptoExtras ObjectIdentifier.swift
+[2066/2251] Compiling _CryptoExtras PKCS8DERRepresentation.swift
+[2067/2251] Compiling _CryptoExtras PKCS8PrivateKey.swift
+[2068/2251] Compiling _CryptoExtras RFC8410AlgorithmIdentifier.swift
+[2069/2251] Compiling _CryptoExtras ECToolbox_boring.swift
+[2070/2251] Compiling _CryptoExtras ARCPrecredential.swift
+[2071/2251] Compiling _CryptoExtras ARCPresentation.swift
+[2072/2253] Compiling _CryptoExtras AES_CTR_boring.swift
+[2073/2253] Compiling _CryptoExtras ChaCha20CTR.swift
+[2078/2258] Compiling ServiceLifecycle ServiceGroupConfiguration.swift
+[2079/2258] Emitting module ServiceLifecycle
+[2080/2258] Compiling ServiceLifecycle ClosureService.swift
+[2081/2258] Compiling ServiceLifecycle GracefulShutdown.swift
+[2082/2258] Compiling _CryptoExtras AES_CBC.swift
+[2083/2258] Compiling _CryptoExtras AES_CFB.swift
+[2084/2258] Compiling _CryptoExtras AES_CTR.swift
+[2085/2258] Compiling _CryptoExtras AES_GCM_SIV.swift
+[2086/2258] Compiling _CryptoExtras Block Function.swift
+[2087/2258] Compiling _CryptoExtras AES_CFB_boring.swift
+[2088/2258] Emitting module _CryptoExtras
+[2089/2264] Compiling _CryptoExtras PBKDF2_commoncrypto.swift
+[2090/2264] Compiling _CryptoExtras PBKDF2.swift
+[2091/2264] Compiling _CryptoExtras Scrypt_boring.swift
+[2120/2264] Compiling _CryptoExtras VOPRFClient.swift
+[2121/2264] Compiling _CryptoExtras VOPRFServer.swift
+[2122/2264] Compiling _CryptoExtras RSA+BlindSigning.swift
+[2123/2264] Compiling _CryptoExtras RSA.swift
+[2124/2264] Compiling _CryptoExtras RSA_boring.swift
+[2127/2264] Compiling _CryptoExtras ARCRequest.swift
+[2128/2264] Compiling _CryptoExtras ARCResponse.swift
+[2129/2264] Compiling _CryptoExtras ARCServer.swift
+[2130/2264] Compiling _CryptoExtras ChaCha20CTR_boring.swift
+[2139/2264] Compiling _CryptoExtras Prover.swift
+[2140/2264] Compiling _CryptoExtras Verifier.swift
+[2141/2264] Compiling _CryptoExtras ZKPToolbox.swift
+[2142/2264] Compiling _CryptoExtras resource_bundle_accessor.swift
+[2143/2264] Compiling NIOCore EventLoop+SerialExecutor.swift
+[2144/2264] Compiling NIOCore EventLoop.swift
+[2145/2264] Compiling NIOCore EventLoopFuture+AssumeIsolated.swift
+[2146/2264] Compiling _CryptoExtras ARC.swift
+[2147/2264] Compiling _CryptoExtras ARCCredential.swift
+[2148/2264] Compiling _CryptoExtras ARCEncoding.swift
+[2149/2264] Compiling _CryptoExtras ECToolbox.swift
+[2150/2264] Compiling _CryptoExtras HashToField.swift
+[2151/2264] Compiling _CryptoExtras KDF.swift
+[2152/2264] Compiling _CryptoExtras PBKDF2_boring.swift
+[2153/2264] Compiling ServiceLifecycle ServiceGroup.swift
+[2176/2264] Compiling _CryptoExtras AES_GCM_SIV_boring.swift
+[2177/2264] Compiling _CryptoExtras CMAC.swift
+[2178/2264] Compiling _CryptoExtras ARC+API.swift
+[2182/2264] Compiling _CryptoExtras ThreadWindows.swift
+[2183/2264] Compiling _CryptoExtras DLEQ.swift
+[2188/2264] Compiling NIOCore SocketAddresses.swift
+[2189/2264] Compiling NIOCore SocketOptionProvider.swift
+[2190/2264] Compiling NIOCore SystemCallHelpers.swift
+[2191/2264] Compiling NIOCore TimeAmount+Duration.swift
+[2192/2264] Compiling NIOCore TypeAssistedChannelHandler.swift
+[2193/2264] Compiling NIOCore UniversalBootstrapSupport.swift
+[2194/2264] Compiling NIOCore Utilities.swift
+[2214/2343] Compiling X509 VersionPolicy.swift
+[2215/2343] Compiling X509 ServerIdentityPolicy.swift
+[2216/2343] Compiling X509 TrustRootLoading.swift
+[2217/2343] Compiling X509 UnverifiedChain.swift
+[2218/2343] Compiling X509 ValidatedCertificateChain.swift
+[2219/2343] Compiling X509 VerificationDiagnostic.swift
+[2220/2343] Compiling X509 Verifier.swift
+[2221/2363] Compiling X509 SubjectKeyIdentifier.swift
+[2222/2363] Compiling X509 Extension.swift
+[2223/2363] Compiling X509 Extensions.swift
+[2224/2363] Compiling X509 ExtensionsBuilder.swift
+[2225/2363] Compiling X509 GeneralName.swift
+[2226/2363] Compiling X509 Lock.swift
+[2227/2363] Compiling X509 LockedValueBox.swift
+[2228/2363] Compiling X509 BasicOCSPResponse.swift
+[2229/2363] Compiling X509 DirectoryString.swift
+[2230/2363] Compiling X509 OCSPCertID.swift
+[2231/2363] Compiling X509 OCSPCertStatus.swift
+[2232/2373] Compiling X509 CMSAttribute.swift
+[2233/2373] Compiling X509 CMSContentInfo.swift
+[2234/2373] Compiling X509 CMSEncapsulatedContentInfo.swift
+[2235/2373] Compiling X509 CMSIssuerAndSerialNumber.swift
+[2236/2373] Compiling X509 CMSOperations.swift
+[2237/2373] Compiling X509 CMSSignature.swift
+[2238/2373] Compiling X509 CMSSignedData.swift
+[2239/2373] Compiling X509 CMSSignerIdentifier.swift
+[2240/2373] Compiling X509 CMSSignerInfo.swift
+[2241/2373] Compiling X509 CMSVersion.swift
+[2242/2373] Compiling X509 Curve25519+DER.swift
+[2243/2373] Compiling X509 OCSPExtensionID.swift
+[2244/2373] Compiling X509 OCSPNonce.swift
+[2245/2373] Compiling X509 OCSPPolicy.swift
+[2246/2373] Compiling X509 OCSPRequest.swift
+[2247/2373] Compiling X509 OCSPResponse.swift
+[2248/2373] Compiling X509 OCSPResponseBytes.swift
+[2249/2373] Compiling X509 OCSPResponseData.swift
+[2250/2373] Compiling X509 OCSPResponseStatus.swift
+[2251/2373] Compiling X509 OCSPSignature.swift
+[2252/2373] Compiling X509 OCSPSingleRequest.swift
+[2253/2373] Compiling X509 OCSPSingleResponse.swift
+[2254/2373] Compiling X509 StateOrProvinceName.swift
+[2255/2373] Compiling X509 StreetAddress.swift
+[2256/2373] Compiling X509 Error.swift
+[2257/2373] Compiling X509 AuthorityInformationAccess.swift
+[2258/2373] Compiling X509 AuthorityKeyIdentifier.swift
+[2259/2373] Compiling X509 BasicConstraints.swift
+[2260/2373] Compiling X509 ExtendedKeyUsage.swift
+[2261/2373] Compiling X509 ExtensionIdentifiers.swift
+[2262/2373] Compiling X509 KeyUsage.swift
+[2263/2373] Compiling X509 NameConstraints.swift
+[2264/2373] Compiling X509 SubjectAlternativeName.swift
+[2265/2373] Compiling X509 OCSPTBSRequest.swift
+[2266/2373] Compiling X509 OCSPVersion.swift
+[2267/2373] Compiling X509 PKCS8PrivateKey.swift
+[2268/2373] Compiling X509 PromiseAndFuture.swift
+[2269/2373] Compiling X509 RDNAttribute.swift
+[2270/2373] Compiling X509 RandomNumberGenerator+bytes.swift
+[2271/2373] Compiling X509 RelativeDistinguishedName.swift
+[2272/2373] Compiling X509 SEC1PrivateKey.swift
+[2273/2373] Compiling X509 SecKeyWrapper.swift
+[2274/2373] Compiling X509 Signature.swift
+[2275/2373] Compiling X509 SignatureAlgorithm.swift
+[2276/2373] Compiling X509 AllOfPolicies.swift
+[2277/2373] Compiling X509 AnyPolicy.swift
+[2278/2373] Compiling X509 CertificateStore.swift
+[2279/2373] Compiling X509 CustomCertificateStore.swift
+[2280/2373] Compiling X509 OneOfPolicies.swift
+[2281/2373] Compiling X509 PolicyBuilder.swift
+[2282/2373] Compiling X509 BasicConstraintsPolicy.swift
+[2283/2373] Compiling X509 DNSNames.swift
+[2284/2373] Compiling X509 DirectoryNames.swift
+[2285/2373] Compiling X509 ExpiryPolicy.swift
+[2286/2373] Compiling X509 IPConstraints.swift
+[2287/2373] Compiling X509 CustomPrivateKey.swift
+[2288/2373] Compiling X509 Digests.swift
+[2289/2373] Compiling X509 DistinguishedName.swift
+[2290/2373] Compiling X509 CommonName.swift
+[2291/2373] Compiling X509 CountryName.swift
+[2292/2373] Compiling X509 DNBuilder.swift
+[2293/2373] Compiling X509 DomainComponent.swift
+[2294/2373] Compiling X509 EmailAddress.swift
+[2295/2373] Compiling X509 LocalityName.swift
+[2296/2373] Compiling X509 OrganizationName.swift
+[2297/2373] Compiling X509 OrganizationalUnitName.swift
+[2298/2373] Compiling X509 CSRAttribute.swift
+[2299/2373] Compiling X509 CSRAttributes.swift
+[2300/2373] Compiling X509 CSRVersion.swift
+[2301/2373] Compiling X509 CertificateSigningRequest.swift
+[2302/2373] Compiling X509 CertificationRequestInfo.swift
+[2303/2373] Compiling X509 ExtensionRequest.swift
+[2304/2373] Compiling X509 Certificate.swift
+[2305/2373] Compiling X509 CertificatePrivateKey.swift
+[2306/2373] Compiling X509 CertificatePublicKey.swift
+[2307/2373] Compiling X509 CertificateSerialNumber.swift
+[2308/2373] Compiling X509 CertificateVersion.swift
+[2316/2373] Emitting module NIOCore
+[2324/2373] Compiling X509 NameConstraintsPolicy.swift
+[2325/2373] Compiling X509 RFC5280Policy.swift
+[2326/2373] Compiling X509 URIConstraints.swift
+[2334/2433] Compiling NIOFoundationEssentialsCompat Codable+ByteBuffer.swift
+[2335/2433] Emitting module X509
+[2336/2433] Emitting module NIOEmbedded
+[2337/2433] Compiling X509 VerifierPolicy.swift
+[2338/2433] Compiling X509 AlgorithmIdentifier.swift
+[2339/2433] Compiling X509 ECDSASignature.swift
+[2340/2433] Compiling X509 RSAPKCS1PublicKey.swift
+[2341/2433] Compiling X509 SubjectPublicKeyInfo.swift
+[2342/2433] Compiling X509 TBSCertificate.swift
+[2343/2433] Compiling X509 Time.swift
+[2344/2433] Compiling X509 TimeCalculations.swift
+[2345/2433] Compiling X509 Validity.swift
+[2346/2433] Compiling X509 X509SendableMetatype.swift
+[2347/2433] Compiling NIOEmbedded AsyncTestingEventLoop.swift
+[2348/2433] Emitting module NIOFoundationEssentialsCompat
+[2349/2433] Compiling NIOFoundationEssentialsCompat ByteBuffer-foundation.swift
+[2350/2433] Compiling NIOPosix Linux.swift
+[2351/2433] Compiling NIOPosix LinuxCPUSet.swift
+[2352/2433] Compiling NIOPosix LinuxUring.swift
+[2353/2433] Compiling NIOPosix MultiThreadedEventLoopGroup.swift
+[2354/2433] Compiling NIOPosix NIOPosixSendableMetatype.swift
+[2355/2433] Compiling NIOPosix NIORandomizedDNSResolver.swift
+[2356/2438] Compiling NIOPosix Pool.swift
+[2357/2438] Compiling NIOPosix PosixSingletons+ConcurrencyTakeOver.swift
+[2358/2438] Compiling NIOPosix PosixSingletons.swift
+[2359/2438] Compiling NIOPosix RawSocketBootstrap.swift
+[2360/2438] Compiling NIOPosix Resolver.swift
+[2361/2438] Compiling NIOPosix Selectable.swift
+[2362/2438] Compiling NIOEmbedded AsyncTestingChannel.swift
+[2363/2438] Compiling NIOEmbedded Embedded.swift
+[2364/2438] Compiling NIOPosix BSDSocketAPICommon.swift
+[2365/2438] Compiling NIOPosix BSDSocketAPIPosix.swift
+[2366/2438] Compiling NIOPosix BSDSocketAPIWindows.swift
+[2367/2438] Compiling NIOPosix BaseSocket.swift
+[2368/2438] Compiling NIOPosix BaseSocketChannel+AccessibleTransport.swift
+[2369/2438] Compiling NIOPosix BaseSocketChannel+SocketOptionProvider.swift
+[2370/2438] Compiling NIOPosix Utilities.swift
+[2371/2438] Compiling NIOPosix VsockAddress.swift
+[2372/2438] Compiling NIOPosix VsockChannelEvents.swift
+[2373/2438] Compiling NIOPosix Windows.swift
+[2374/2438] Compiling NIOPosix resource_bundle_accessor.swift
+[2375/2438] Compiling NIOPosix SelectorWSAPoll.swift
+[2376/2438] Compiling NIOPosix ServerSocket.swift
+[2377/2438] Compiling NIOPosix Socket.swift
+[2378/2438] Compiling NIOPosix SocketChannel.swift
+[2379/2438] Compiling NIOPosix SocketProtocols.swift
+[2380/2438] Emitting module NIOPosix
+[2381/2438] Compiling NIOPosix SelectableChannel.swift
+[2382/2438] Compiling NIOPosix SelectableEventLoop.swift
+[2383/2438] Compiling NIOPosix SelectorEpoll.swift
+[2384/2438] Compiling NIOPosix SelectorGeneric.swift
+[2385/2438] Compiling NIOPosix SelectorKqueue.swift
+[2386/2438] Compiling NIOPosix SelectorUring.swift
+[2387/2438] Compiling NIOPosix BaseSocketChannel.swift
+[2388/2438] Compiling NIOPosix BaseStreamSocketChannel.swift
+[2389/2438] Compiling NIOPosix Bootstrap.swift
+[2390/2438] Compiling NIOPosix ControlMessage.swift
+[2391/2438] Compiling NIOPosix DatagramVectorReadManager.swift
+[2392/2438] Compiling NIOPosix Errors+Any.swift
+[2393/2438] Compiling NIOPosix StructuredConcurrencyHelpers.swift
+[2394/2438] Compiling NIOPosix System.swift
+[2395/2438] Compiling NIOPosix Thread.swift
+[2396/2438] Compiling NIOPosix ThreadPosix.swift
+[2397/2438] Compiling NIOPosix ThreadWindows.swift
+[2398/2438] Compiling NIOPosix NIOThreadPool.swift
+[2399/2438] Compiling NIOPosix NonBlockingFileIO.swift
+[2400/2438] Compiling NIOPosix PendingDatagramWritesManager.swift
+[2401/2438] Compiling NIOPosix PendingWritesManager.swift
+[2402/2438] Compiling NIOPosix PipeChannel.swift
+[2403/2438] Compiling NIOPosix PipePair.swift
+[2404/2438] Compiling NIOPosix FileDescriptor.swift
+[2405/2438] Compiling NIOPosix GetaddrinfoResolver.swift
+[2406/2438] Compiling NIOPosix HappyEyeballs.swift
+[2407/2438] Compiling NIOPosix IO.swift
+[2408/2438] Compiling NIOPosix IntegerBitPacking.swift
+[2409/2438] Compiling NIOPosix IntegerTypes.swift
+[2410/2477] Emitting module NIO
+[2411/2477] Compiling NIO Exports.swift
+[2412/2517] Compiling NIOTLS TLSEvents.swift
+[2413/2517] Compiling NIOFoundationCompat Exports.swift
+[2414/2517] Compiling NIOSOCKS SelectedAuthenticationMethod.swift
+[2415/2518] Compiling NIOSOCKS SOCKSResponse.swift
+[2416/2518] Compiling NIOSOCKS ClientStateMachine.swift
+[2417/2518] Emitting module NIOFoundationCompat
+[2418/2518] Compiling NIOFoundationCompat WaitSpinningRunLoop.swift
+[2419/2518] Compiling NIOFoundationCompat JSONSerialization+ByteBuffer.swift
+[2420/2518] Emitting module _NIOFileSystem
+[2421/2522] Compiling NIOSOCKS Errors.swift
+[2422/2522] Compiling NIOSOCKS SOCKSClientHandler.swift
+[2423/2522] Compiling NIOSOCKS SOCKSServerHandshakeHandler.swift
+[2424/2532] Compiling NIOHTTP1 HTTPEncoder.swift
+[2425/2532] Compiling NIOHTTP1 HTTPHeaderValidator.swift
+[2426/2532] Compiling NIOHTTP1 NIOTypedHTTPServerUpgradeHandler.swift
+[2427/2533] Compiling NIOTLS ProtocolNegotiationHandlerStateMachine.swift
+[2428/2533] Compiling NIOTLS NIOTypedApplicationProtocolNegotiationHandler.swift
+[2429/2533] Compiling NIOTLS ApplicationProtocolNegotiationHandler.swift
+[2430/2533] Emitting module NIOTLS
+[2431/2533] Compiling NIOTLS SNIHandler.swift
+[2432/2533] Compiling NIOSOCKS ServerStateMachine.swift
+[2433/2533] Compiling NIOSOCKS Helpers.swift
+[2434/2533] Compiling NIOSOCKS Messages.swift
+[2435/2533] Emitting module NIOSOCKS
+[2436/2533] Compiling NIOSOCKS SOCKSRequest.swift
+[2437/2533] Emitting module NIOHTTP1
+[2438/2533] Compiling SocketForwarder SocketForwarder.swift
+[2439/2533] Compiling SocketForwarder SocketForwarderResult.swift
+[2440/2545] Compiling _NIOFileSystem DirectoryEntry.swift
+[2441/2548] Compiling _NIOFileSystem Exports.swift
+[2442/2548] Compiling _NIOFileSystem FileChunks.swift
+[2443/2548] Compiling _NIOFileSystem FileHandle.swift
+[2444/2552] Compiling SocketForwarder GlueHandler.swift
+[2445/2552] Compiling NIOSSL SSLCertificateExtensions.swift
+[2446/2552] Compiling NIOSSL SSLCertificateName.swift
+[2447/2561] Compiling NIOSSL SSLCallbacks.swift
+[2448/2561] Compiling NIOSSL SSLCertificate.swift
+[2451/2563] Compiling NIOSSL SSLConnection.swift
+[2452/2563] Compiling NIOSSL SSLContext.swift
+[2453/2563] Compiling NIOSSL SSLErrors.swift
+[2454/2563] Compiling NIOSSL AndroidCABundle.swift
+[2455/2587] Emitting module SocketForwarder
+[2456/2587] Compiling NIOTransportServices NIOTSEventLoopGroup.swift
+[2457/2587] Compiling NIOTransportServices NIOTSBootstraps.swift
+[2458/2587] Compiling NIOTransportServices NIOTSChannelOptions.swift
+[2459/2587] Compiling NIOTransportServices NIOTSConnectionBootstrap.swift
+[2460/2587] Compiling SocketForwarder LRUCache.swift
+[2461/2587] Compiling SocketForwarder ConnectHandler.swift
+[2462/2587] Emitting module ContainerizationIO
+[2463/2587] Compiling ContainerizationIO ReadStream.swift
+[2464/2587] Compiling _NIOFileSystem NIOFileSystemSendableMetatype.swift
+[2465/2587] Compiling _NIOFileSystem OpenOptions.swift
+[2466/2587] Compiling _NIOFileSystem String+FileSystem.swift
+[2467/2587] Compiling _NIOFileSystem resource_bundle_accessor.swift
+[2468/2587] Compiling SocketForwarder TCPForwarder.swift
+[2469/2587] Compiling NIOTransportServices NIOTSSingletons.swift
+[2470/2587] Compiling NIOTransportServices NIOTSListenerBootstrap.swift
+[2471/2587] Compiling NIOTransportServices NIOTSListenerChannel.swift
+[2472/2587] Compiling NIOTransportServices StateManagedListenerChannel.swift
+[2473/2587] Compiling NIOHTTP1 NIOTypedHTTPServerUpgraderStateMachine.swift
+[2474/2587] Compiling _NIOFileSystem Syscalls.swift
+[2475/2587] Compiling _NIOFileSystem SystemFileHandle.swift
+[2476/2587] Compiling _NIOFileSystem Utilities.swift
+[2477/2587] Compiling _NIOFileSystem NIOFilePath.swift
+[2478/2587] Compiling SocketForwarder UDPForwarder.swift
+[2479/2587] Compiling NIOTransportServices NIOTSErrors.swift
+[2480/2587] Compiling NIOTransportServices SocketAddress+NWEndpoint.swift
+[2481/2596] Compiling NIOTransportServices AcceptHandler.swift
+[2482/2596] Compiling NIOTransportServices NIOTSDatagramConnectionBootstrap.swift
+[2483/2596] Compiling NIOTransportServices NIOTSDatagramConnectionChannel.swift
+[2484/2596] Compiling NIOTransportServices NIOTSEventLoop.swift
+[2485/2596] Compiling NIOTransportServices StateManagedChannel.swift
+[2486/2596] Compiling NIOTransportServices NIOTSNetworkEvents.swift
+[2487/2596] Compiling NIOTransportServices NIOTSDatagramListenerBootstrap.swift
+[2488/2596] Compiling NIOTransportServices NIOTSDatagramListenerChannel.swift
+[2489/2596] Compiling NIOSSL SSLPublicKey.swift
+[2490/2596] Compiling NIOSSL SecurityFrameworkCertificateVerification.swift
+[2491/2596] Compiling NIOSSL String+unsafeUninitializedCapacity.swift
+[2492/2596] Compiling _NIOFileSystem BufferedWriter.swift
+[2493/2596] Compiling NIOSSL TLSConfiguration.swift
+[2494/2596] Compiling NIOSSL SubjectAlternativeName.swift
+[2495/2596] Compiling NIOSSL NIOSSLSecureBytes.swift
+[2496/2596] Compiling NIOSSL RNG.swift
+[2497/2621] Compiling SocketForwarderTests UDPEchoHandler.swift
+[2498/2621] Compiling SocketForwarderTests TCPEchoServer.swift
+[2499/2630] Emitting module SocketForwarderTests
+[2500/2632] Compiling SocketForwarderTests ConnectHandlerRaceTest.swift
+[2501/2632] Emitting module NIOTransportServices
+[2502/2634] Compiling NIOHPACK DynamicHeaderTable.swift
+[2503/2634] Compiling NIOHPACK HPACKDecoder.swift
+[2504/2634] Compiling NIOExtras FixedLengthFrameDecoder.swift
+[2505/2634] Compiling NIOExtras RequestResponseWithIDHandler.swift
+[2506/2634] Compiling NIOExtras QuiescingHelper.swift
+[2507/2634] Compiling NIOExtras MarkedCircularBuffer+PopFirstCheckMarked.swift
+[2508/2634] Compiling NIOExtras LengthFieldBasedFrameDecoder.swift
+[2509/2634] Compiling NIOExtras LengthFieldPrepender.swift
+[2510/2634] Compiling SocketForwarderTests UDPEchoServer.swift
+[2511/2634] Compiling SocketForwarderTests UDPForwarderTest.swift
+[2512/2634] Compiling NIOExtras LineBasedFrameDecoder.swift
+[2514/2635] Compiling NIOExtras PCAPRingBuffer.swift
+[2515/2635] Compiling NIOExtras RequestResponseHandlers+State.swift
+[2516/2635] Compiling NIOExtras NIOExtrasError.swift
+[2517/2635] Compiling NIOExtras NIOLengthFieldBitLength.swift
+[2518/2635] Compiling NIOExtras HTTP1ProxyConnectHandler.swift
+[2520/2635] Compiling NIOExtras JSONRPCFraming+ContentLengthHeader.swift
+[2521/2635] Compiling NIOExtras JSONRPCFraming.swift
+[2523/2635] Compiling NIOHPACK HPACKErrors.swift
+[2524/2636] Compiling SocketForwarderTests TCPEchoHandler.swift
+[2525/2636] Compiling SocketForwarderTests LRUCacheTest.swift
+[2526/2636] Compiling SocketForwarderTests TCPForwarderTest.swift
+[2528/2636] Compiling NIOExtras NIORequestIdentifiable.swift
+[2529/2636] Compiling NIOHTTPCompression HTTPCompression.swift
+[2530/2636] Emitting module NIOHTTPCompression
+[2531/2636] Compiling NIOHTTPCompression HTTPDecompression.swift
+[2536/2636] Compiling NIOHTTPCompression HTTPResponseCompressor.swift
+[2537/2636] Compiling NIOHTTPCompression HTTPDecompressor.swift
+[2538/2636] Compiling NIOHTTPCompression HTTPRequestCompressor.swift
+[2539/2636] Compiling NIOHPACK HPACKEncoder.swift
+[2541/2636] Compiling NIOExtras RequestResponseHandler.swift
+[2546/2636] Emitting module NIOExtras
+[2553/2636] Compiling NIOHPACK StaticHeaderTable.swift
+[2554/2636] Compiling NIOTransportServices TCPOptions+SocketChannelOption.swift
+[2555/2636] Compiling NIOTransportServices UDPOptions+SocketChannelOption.swift
+[2556/2636] Emitting module NIOHPACK
+[2557/2636] Compiling NIOHPACK HuffmanTables.swift
+[2561/2636] Compiling NIOTransportServices StateManagedNWConnectionChannel.swift
+[2566/2636] Compiling NIOHPACK IndexedHeaderTable.swift
+[2567/2636] Compiling NIOHPACK IntegerCoding.swift
+[2568/2636] Compiling NIOHPACK HuffmanCoding.swift
+[2570/2636] Compiling NIOSSL Zeroization.swift
+[2572/2639] Compiling NIOHPACK HeaderTables.swift
+[2573/2639] Compiling NIOHPACK HPACKHeader.swift
+[2578/2639] Emitting module NIOSSL
+[2593/2639] Compiling NIOSSL UniversalBootstrapSupport.swift
+[2594/2639] Compiling NIOSSL UnsafeKeyAndChainTarget.swift
+[2595/2639] Compiling NIOSSL resource_bundle_accessor.swift
+[2596/2696] Compiling NIOExtras WritePCAPHandler.swift
+[2597/2703] Compiling NIOHTTP2 ConcurrentStreamBuffer.swift
+[2598/2703] Compiling NIOHTTP2 ControlFrameBuffer.swift
+[2599/2703] Compiling NIOHTTP2 OutboundFlowControlBuffer.swift
+[2600/2703] Compiling NIOHTTP2 OutboundFrameBuffer.swift
+[2601/2703] Compiling NIOHTTP2 ReceivingRstStreamState.swift
+[2602/2703] Compiling NIOHTTP2 ReceivingWindowUpdateState.swift
+[2603/2703] Compiling NIOHTTP2 MaySendFrames.swift
+[2604/2703] Compiling NIOHTTP2 ReceivingHeadersState.swift
+[2605/2703] Compiling NIOHTTP2 ReceivingPushPromiseState.swift
+[2606/2703] Compiling NIOHTTP2 Error+Any.swift
+[2610/2728] Compiling NIOHTTP2 SendingDataState.swift
+[2611/2728] Compiling NIOHTTP2 SendingGoawayState.swift
+[2612/2728] Compiling NIOHTTP2 SendingHeadersState.swift
+[2613/2728] Compiling NIOHTTP2 SendingPushPromiseState.swift
+[2614/2735] Compiling ContainerizationExtras AddressAllocator.swift
+[2615/2735] Compiling ContainerizationExtras AddressError.swift
+[2616/2735] Compiling ContainerizationExtras AsyncLock.swift
+[2617/2737] Compiling ContainerizationExtras NetworkConfiguration.swift
+[2618/2737] Compiling ContainerizationExtras Prefix.swift
+[2619/2737] Compiling ContainerizationExtras Timeout.swift
+[2620/2737] Compiling ContainerizationExtras UInt8+DataBinding.swift
+[2621/2737] Compiling NIOHTTP2 HTTP2SettingsState.swift
+[2622/2737] Compiling NIOHTTP2 HasExtendedConnectSettings.swift
+[2623/2737] Compiling NIOHTTP2 HasFlowControlWindows.swift
+[2624/2737] Compiling NIOHTTP2 HasLocalSettings.swift
+[2625/2737] Compiling NIOHTTP2 HasRemoteSettings.swift
+[2626/2737] Compiling ContainerizationExtras RotatingAddressAllocator.swift
+[2627/2737] Compiling ContainerizationExtras TLSUtils.swift
+[2628/2737] Compiling ContainerizationExtras ProgressEvent.swift
+[2629/2737] Compiling ContainerizationExtras ProxyUtils.swift
+[2630/2737] Compiling ContainerizationExtras CIDRv6.swift
+[2631/2737] Compiling ContainerizationExtras FileManager+Temporary.swift
+[2632/2737] Compiling ContainerizationExtras IPAddress.swift
+[2633/2737] Compiling ContainerizationExtras AsyncMutex.swift
+[2634/2737] Compiling ContainerizationExtras CIDR.swift
+[2635/2737] Compiling ContainerizationExtras CIDRv4.swift
+[2638/2737] Compiling NIOCertificateReloading CertificateReloader.swift
+[2639/2737] Compiling NIOCertificateReloading TimedCertificateReloader.swift
+[2640/2737] Emitting module NIOCertificateReloading
+[2641/2737] Compiling ContainerizationExtras IPv4Address.swift
+[2642/2737] Compiling ContainerizationExtras IPv6Address+Parse.swift
+[2643/2737] Compiling ContainerizationExtras IndexedAddressAllocator.swift
+[2650/2737] Emitting module NIOHTTP2
+[2651/2737] Compiling NIOHTTP2 HTTP2UserEvents.swift
+[2652/2737] Compiling NIOHTTP2 InboundEventBuffer.swift
+[2653/2737] Compiling NIOHTTP2 InboundWindowManager.swift
+[2654/2737] Compiling NIOHTTP2 MultiplexerAbstractChannel.swift
+[2655/2737] Compiling NIOHTTP2 NIOHTTP2FrameDelegate.swift
+[2656/2737] Compiling NIOHTTP2 NIOHTTP2ServerConnectionManagementHandler+StateMachine.swift
+[2657/2737] Compiling NIOHTTP2 NIOHTTP2ServerConnectionManagementHandler.swift
+[2658/2737] Compiling ContainerizationExtras MACAddress.swift
+[2659/2737] Compiling ContainerizationExtras NetworkAddress+Allocator.swift
+[2660/2737] Compiling NIOHTTP2 StreamChannelFlowController.swift
+[2661/2737] Compiling NIOHTTP2 StreamChannelList.swift
+[2662/2737] Compiling NIOHTTP2 StreamMap.swift
+[2663/2737] Compiling NIOHTTP2 StreamStateMachine.swift
+[2664/2737] Compiling NIOHTTP2 Timer.swift
+[2665/2737] Compiling NIOHTTP2 UnsafeTransfer.swift
+[2666/2737] Compiling NIOHTTP2 WatermarkedFlowController.swift
+[2671/2737] Compiling NIOHTTP2 HTTP2Stream.swift
+[2672/2737] Compiling NIOHTTP2 HTTP2StreamChannel+OutboundStreamMultiplexer.swift
+[2673/2737] Compiling NIOHTTP2 HTTP2StreamChannel.swift
+[2674/2737] Compiling NIOHTTP2 HTTP2StreamDelegate.swift
+[2675/2737] Compiling NIOHTTP2 HTTP2StreamID.swift
+[2676/2737] Compiling NIOHTTP2 HTTP2StreamMultiplexer.swift
+[2677/2737] Compiling NIOHTTP2 HTTP2ToHTTP1Codec.swift
+[2678/2737] Emitting module ContainerizationExtras
+[2679/2739] Compiling NIOFileSystem Exports.swift
+[2680/2739] Emitting module NIOFileSystem
+[2681/2739] Compiling ContainerizationExtras IPv6Address.swift
+[2683/2775] Compiling ContainerXPC XPCServerSession.swift
+[2684/2775] Compiling DNSServer UInt8+Binding.swift
+[2685/2776] Compiling DNSServer DNSServer.swift
+[2686/2776] Compiling DNSServer CompositeResolver.swift
+[2687/2776] Emitting module DNSServer
+[2688/2776] Emitting module ContainerizationArchive
+[2689/2776] Compiling DNSServer Types.swift
+[2690/2776] Compiling DNSServer NxDomainResolver.swift
+[2691/2776] Compiling DNSServer DNSEnums.swift
+[2692/2776] Compiling DNSServer DNSName.swift
+[2693/2776] Compiling DNSServer StandardQueryValidator.swift
+[2694/2776] Compiling DNSServer DNSBindError.swift
+[2695/2776] Compiling DNSServer IPAddressProtocol.swift
+[2696/2776] Compiling DNSServer Message.swift
+[2697/2776] Compiling DNSServer AliasPolicy.swift
+[2698/2776] Compiling DNSServer DNSHandler.swift
+[2701/2776] Compiling DNSServer DNSMatchRule.swift
+[2702/2776] Compiling DNSServer DNSServer+Handle.swift
+[2703/2776] Compiling DNSServer HostTableResolver.swift
+[2704/2776] Compiling ContainerXPC XPCClient.swift
+[2705/2776] Emitting module ContainerXPC
+[2706/2776] Compiling ContainerizationArchive ArchiveError.swift
+[2707/2776] Compiling DNSServer Question.swift
+[2708/2776] Compiling DNSServer ResourceRecord.swift
+[2709/2776] Compiling ContainerizationArchive ArchiveWriterConfiguration.swift
+[2710/2776] Compiling ContainerizationArchive TempDir.swift
+[2711/2776] Compiling ContainerizationArchive ZstdArchiveSource.swift
+[2722/2776] Compiling NIOHTTP2 LocallyQuiescingState.swift
+[2723/2776] Compiling NIOHTTP2 QuiescingState.swift
+[2724/2776] Compiling NIOHTTP2 RemotelyQuiescingState.swift
+[2725/2776] Compiling NIOHTTP2 SendAndReceiveGoawayState.swift
+[2726/2776] Compiling NIOHTTP2 StateMachineResult.swift
+[2727/2776] Compiling NIOHTTP2 ContentLengthVerifier.swift
+[2728/2776] Compiling NIOHTTP2 DOSHeuristics.swift
+[2729/2776] Compiling NIOHTTP2 HTTP2FlowControlWindow.swift
+[2730/2776] Compiling NIOHTTP2 HTTP2Frame.swift
+[2731/2776] Compiling NIOHTTP2 HTTP2FrameEncoder.swift
+[2732/2776] Compiling NIOHTTP2 HTTP2FrameParser.swift
+[2733/2776] Compiling NIOHTTP2 HTTP2PingData.swift
+[2734/2776] Compiling NIOHTTP2 HTTP2PipelineHelpers.swift
+[2735/2776] Compiling NIOHTTP2 HTTP2Settings.swift
+[2736/2776] Compiling ContainerizationArchive WriteEntry.swift
+[2739/2776] Compiling ContainerXPC XPCMessage.swift
+[2740/2776] Compiling ContainerXPC XPCClientSession.swift
+[2741/2776] Compiling ContainerXPC XPCServer.swift
+[2742/2776] Compiling ContainerizationArchive ArchiveReader.swift
+[2743/2776] Compiling ContainerizationArchive ArchiveWriter.swift
+[2744/2785] Compiling ContainerizationNetlink Types.swift
+[2745/2785] Compiling ContainerizationNetlink NetlinkSocket.swift
+[2746/2927] Compiling DNSServerTests MockHandlers.swift
+[2747/2927] Compiling ContainerizationEXT4 FileTimestamps.swift
+[2748/2928] Compiling ContainerizationNetlink NetlinkSession.swift
+[2749/2928] Emitting module ContainerizationNetlink
+[2750/2928] Compiling DNSServerTests CompositeResolverTest.swift
+[2751/2928] Compiling ContainerizationEXT4 UnsafeLittleEndianBytes.swift
+[2752/2928] Compiling ContainerizationEXT4 FilePath+Extensions.swift
+[2753/2928] Compiling ContainerizationEXT4 EXT4.swift
+[2754/2928] Compiling ContainerizationEXT4 EXT4Reader+Export.swift
+[2755/2928] Compiling ContainerizationEXT4 EXT4+Types.swift
+[2756/2928] Compiling ContainerizationEXT4 EXT4+Xattrs.swift
+[2757/2928] Compiling AsyncHTTPClient SOCKSEventsHandler.swift
+[2758/2928] Compiling AsyncHTTPClient TLSEventsHandler.swift
+[2759/2928] Compiling ContainerizationEXT4 Integer+Extensions.swift
+[2760/2934] Emitting module ContainerizationEXT4
+[2761/2934] Emitting module DNSServerTests
+[2762/2934] Compiling ContainerizationEXT4 Formatter+Unpack.swift
+[2763/2934] Compiling AsyncHTTPClient HTTPConnectionPool+Factory.swift
+[2764/2934] Compiling AsyncHTTPClient HTTPClient+StructuredConcurrency.swift
+[2765/2934] Compiling AsyncHTTPClient HTTPClient.swift
+[2766/2934] Compiling AsyncHTTPClient HTTPClientConfiguration+SwiftConfiguration.swift
+[2767/2934] Compiling AsyncHTTPClient HTTPHandler.swift
+[2768/2934] Compiling AsyncHTTPClient LRUCache.swift
+[2769/2934] Compiling AsyncHTTPClient RequestFramingMetadata.swift
+[2770/2934] Compiling AsyncHTTPClient HTTP1Connection.swift
+[2771/2934] Compiling AsyncHTTPClient HTTP1ConnectionStateMachine.swift
+[2772/2934] Compiling AsyncHTTPClient HTTP2ClientRequestHandler.swift
+[2773/2934] Compiling AsyncHTTPClient HTTP2Connection.swift
+[2774/2934] Compiling AsyncHTTPClient HTTP2IdleHandler.swift
+[2775/2934] Compiling AsyncHTTPClient HTTPConnectionEvent.swift
+[2776/2934] Compiling DNSServerTests StandardQueryValidatorTest.swift
+[2777/2934] Compiling DNSServerTests DNSMatchRuleTests.swift
+[2784/2934] Compiling AsyncHTTPClient HTTP1ClientChannelHandler.swift
+[2787/2941] Compiling AsyncHTTPClient RequestBag+Tracing.swift
+[2788/2941] Compiling AsyncHTTPClient RequestBag.swift
+[2789/2941] Compiling AsyncHTTPClient RequestValidation.swift
+[2790/2941] Compiling AsyncHTTPClient HTTPConnectionPool+StateMachine.swift
+[2791/2941] Compiling AsyncHTTPClient ConnectionTarget.swift
+[2792/2941] Compiling AsyncHTTPClient DeconstructedURL.swift
+[2793/2941] Compiling AsyncHTTPClient HTTPConnectionPool+HTTP2StateMachine.swift
+[2794/2941] Compiling AsyncHTTPClient HTTPConnectionPool+RequestQueue.swift
+[2795/2941] Compiling AsyncHTTPClient NWWaitingHandler.swift
+[2796/2941] Compiling AsyncHTTPClient TLSConfiguration.swift
+[2797/2941] Compiling AsyncHTTPClient RedirectState.swift
+[2798/2941] Compiling AsyncHTTPClient RequestBag+StateMachine.swift
+[2799/2941] Emitting module AsyncHTTPClient
+[2800/2941] Compiling DNSServerTests AliasPolicyTests.swift
+[2801/2941] Compiling DNSServerTests HostTableResolverTest.swift
+[2802/2941] Compiling GRPCNIOTransportCore GRPCServerStreamHandler.swift
+[2803/2941] Compiling GRPCNIOTransportCore HTTP2ServerTransport.swift
+[2804/2941] Compiling GRPCNIOTransportCore ListenerConfigurator.swift
+[2805/2941] Compiling GRPCNIOTransportCore ListenerFactory.swift
+[2806/2941] Compiling AsyncHTTPClient SSLContextCache.swift
+[2807/2941] Compiling AsyncHTTPClient Scheme.swift
+[2810/2941] Compiling AsyncHTTPClient Singleton.swift
+[2811/2941] Compiling AsyncHTTPClient StringConvertibleInstances.swift
+[2812/2941] Compiling AsyncHTTPClient StructuredConcurrencyHelpers.swift
+[2813/2941] Compiling AsyncHTTPClient TracingSupport.swift
+[2814/2941] Compiling AsyncHTTPClient Utils.swift
+[2830/2941] Compiling AsyncHTTPClient HTTPClientRequest.swift
+[2831/2941] Compiling AsyncHTTPClient HTTPClientResponse.swift
+[2832/2941] Compiling AsyncHTTPClient SingleIteratorPrecondition.swift
+[2833/2941] Compiling AsyncHTTPClient Transaction+StateMachine.swift
+[2834/2941] Compiling AsyncHTTPClient Transaction.swift
+[2835/2941] Compiling AsyncHTTPClient Base64.swift
+[2836/2941] Compiling AsyncHTTPClient HTTPConnectionPool+Manager.swift
+[2837/2941] Compiling AsyncHTTPClient HTTPConnectionPool.swift
+[2838/2941] Compiling AsyncHTTPClient HTTPExecutableRequest.swift
+[2839/2941] Compiling AsyncHTTPClient HTTPRequestStateMachine+Demand.swift
+[2840/2941] Compiling AsyncHTTPClient HTTPRequestStateMachine.swift
+[2841/2941] Compiling AsyncHTTPClient RequestBodyLength.swift
+[2843/2941] Compiling ContainerizationEXT4 EXT4+Formatter.swift
+[2844/2941] Compiling ContainerizationEXT4 EXT4+Journal.swift
+[2845/2941] Compiling ContainerizationEXT4 EXT4+Extensions.swift
+[2846/2941] Compiling ContainerizationEXT4 EXT4+FileTree.swift
+[2847/2941] Compiling ContainerizationEXT4 EXT4+Ptr.swift
+[2848/2941] Compiling ContainerizationEXT4 EXT4+Reader.swift
+[2849/2941] Compiling ContainerizationEXT4 EXT4Reader+IO.swift
+[2857/2941] Compiling AsyncHTTPClient BasicAuth.swift
+[2858/2941] Emitting module GRPCNIOTransportCore
+[2873/2941] Compiling AsyncHTTPClient NIOLoopBound+Execute.swift
+[2874/2941] Compiling AsyncHTTPClient NWErrorHandler.swift
+[2875/2941] Compiling AsyncHTTPClient RequestOptions.swift
+[2876/2941] Compiling AsyncHTTPClient HTTPConnectionPool+Backoff.swift
+[2877/2941] Compiling AsyncHTTPClient HTTPConnectionPool+HTTP1Connections.swift
+[2878/2941] Compiling AsyncHTTPClient HTTPConnectionPool+HTTP1StateMachine.swift
+[2879/2941] Compiling AsyncHTTPClient HTTPConnectionPool+HTTP2Connections.swift
+[2901/2954] Compiling GRPCNIOTransportHTTP2Posix NIOClientBootstrap+SocketAddress.swift
+[2902/2967] Compiling GRPCNIOTransportHTTP2Posix ValidatedCertificateChain.swift
+[2903/2998] Compiling GRPCNIOTransportHTTP2TransportServices Config+TLS.swift
+[2904/2998] Compiling GRPCNIOTransportHTTP2TransportServices HTTP2ServerTransport+TransportServices.swift
+[2905/2998] Compiling GRPCNIOTransportHTTP2TransportServices Exports.swift
+[2906/2998] Emitting module GRPCNIOTransportHTTP2TransportServices
+[2907/2998] Compiling GRPCNIOTransportHTTP2TransportServices HTTP2ClientTransport+TransportServices.swift
+[2908/2998] Compiling GRPCNIOTransportHTTP2Posix NIOSSL+GRPC.swift
+[2909/2998] Compiling ContainerizationOCI ContentStoreProtocol.swift
+[2910/2998] Compiling ContainerizationOCI ContentWriter.swift
+[2911/2998] Compiling ContainerizationOCI AsyncTypes.swift
+[2912/2998] Compiling ContainerizationOCI Content.swift
+[2913/2998] Compiling ContainerizationOCI Authentication.swift
+[2914/2998] Compiling ContainerizationOCI KeychainHelper.swift
+[2915/2998] Compiling ContainerizationOCI RegistryClient+Error.swift
+[2916/2998] Compiling ContainerizationOCI RegistryClient+Fetch.swift
+[2917/2998] Compiling CloudHypervisor Client+VMM.swift
+[2918/2999] Compiling CloudHypervisor Client+VM.swift
+[2919/2999] Compiling ContainerizationOCI AnnotationKeys.swift
+[2920/2999] Compiling ContainerizationOCI Bundle.swift
+[2921/2999] Compiling CloudHypervisor CloudHypervisor.swift
+[2922/2999] Compiling GRPCNIOTransportHTTP2Posix Exports.swift
+[2923/2999] Compiling GRPCNIOTransportHTTP2Posix HTTP2ClientTransport+Posix.swift
+[2924/2999] Compiling GRPCNIOTransportHTTP2Posix Config+TLS.swift
+[2925/2999] Emitting module GRPCNIOTransportHTTP2Posix
+[2926/2999] Compiling GRPCNIOTransportHTTP2Posix HTTP2ServerTransport+Posix.swift
+[2927/2999] Compiling CloudHypervisor Client+Hotplug.swift
+[2928/2999] Compiling CloudHypervisor CloudHypervisor+Error.swift
+[2929/2999] Emitting module CloudHypervisor
+[2930/2999] Compiling CloudHypervisor CloudHypervisor+Client.swift
+[2935/3004] Compiling CloudHypervisor DeviceConfigs.swift
+[2936/3004] Compiling CloudHypervisor HTTPOverUDS.swift
+[2937/3004] Emitting module GRPCNIOTransportHTTP2
+[2938/3004] Compiling CloudHypervisor VmConfig.swift
+[2939/3004] Compiling GRPCNIOTransportHTTP2 Exports.swift
+[2940/3004] Compiling CloudHypervisor VmInfo.swift
+[2941/3004] Compiling ContainerizationOCI String+Extension.swift
+[2942/3004] Compiling ContainerizationOCI URL+Extensions.swift
+[2943/3004] Compiling ContainerizationOCI Descriptor.swift
+[2944/3004] Compiling ContainerizationOCI FileManager+Size.swift
+[2945/3004] Compiling ContainerizationOCI ImageConfig.swift
+[2946/3004] Compiling ContainerizationOCI Index.swift
+[2947/3004] Compiling ContainerizationOCI LinuxSeccomp+Decode.swift
+[2948/3004] Emitting module ContainerizationOCI
+[2949/3004] Compiling ContainerizationOCI LinuxSeccomp+DefaultProfile.swift
+[2950/3004] Compiling ContainerizationOCI Manifest.swift
+[2951/3004] Compiling ContainerizationOCI MediaType.swift
+[2952/3004] Compiling ContainerizationOCI Platform.swift
+[2953/3004] Compiling ContainerizationOCI Reference.swift
+[2954/3004] Compiling ContainerizationOCI Spec+Redaction.swift
+[2955/3004] Compiling DNSServerTests NxDomainResolverTest.swift
+[2956/3004] Compiling DNSServerTests RecordsTests.swift
+[2961/3004] Compiling ContainerizationOCI Digest.swift
+[2962/3004] Compiling ContainerizationOCI LocalContent.swift
+[2963/3004] Compiling ContainerizationOCI LocalContentStore.swift
+[2964/3004] Compiling ContainerizationOCI SHA256+Extensions.swift
+[2965/3004] Compiling ContainerizationOCI LocalOCILayoutClient.swift
+[2966/3004] Compiling ContainerizationOCI RegistryClient+Catalog.swift
+[2969/3004] Compiling ContainerizationOCI RegistryClient+Push.swift
+[2970/3004] Compiling ContainerizationOCI RegistryClient+Referrers.swift
+[2971/3004] Compiling ContainerizationOCI RegistryClient+Token.swift
+[2972/3004] Compiling ContainerizationOCI RegistryClient.swift
+[2973/3004] Compiling ContainerizationOCI Spec.swift
+[2974/3004] Compiling ContainerizationOCI State.swift
+[2975/3004] Compiling ContainerizationOCI Version.swift
+[2976/3074] Compiling Containerization VirtiofsdOptions.swift
+[2977/3074] Compiling Containerization VirtiofsdProcess.swift
+[2978/3074] Compiling Containerization VirtualMachineAgent+Additions.swift
+[2979/3074] Compiling Containerization VirtualMachineAgent+Interface.swift
+[2980/3074] Compiling Containerization VirtualMachineAgent.swift
+[2981/3074] Compiling Containerization VirtualMachineInstance.swift
+[2982/3074] Compiling Containerization VirtualMachineManager.swift
+[2983/3081] Compiling Containerization AttachedFilesystem.swift
+[2984/3081] Compiling Containerization BridgeManager.swift
+[2985/3081] Compiling Containerization BridgeStateFile.swift
+[2986/3081] Compiling Containerization CHHotplugProvider.swift
+[2987/3081] Compiling Containerization CHInstanceExtension.swift
+[2988/3081] Compiling Containerization CHInterface.swift
+[2989/3081] Compiling Containerization CHProcess.swift
+[2990/3081] Compiling Containerization CHStdioPortSlot.swift
+[2991/3081] Compiling Containerization CHVirtualMachineInstance.swift
+[2992/3081] Compiling Containerization CHVirtualMachineManager.swift
+[2993/3081] Compiling Containerization Container.swift
+[2994/3081] Compiling Containerization ContainerManager.swift
+[2995/3081] Compiling Containerization ContainerStatistics.swift
+[2996/3081] Compiling Containerization DNSConfiguration.swift
+[2997/3081] Compiling Containerization ExitStatus.swift
+[2998/3081] Compiling Containerization FileMount.swift
+[2999/3081] Compiling Containerization UnixSocketRelay.swift
+[3000/3081] Compiling Containerization UnixSocketRelayManager.swift
+[3001/3081] Compiling Containerization VMConfiguration.swift
+[3002/3081] Compiling Containerization VMResources.swift
+[3003/3081] Compiling Containerization VZVirtualMachine+Helpers.swift
+[3004/3081] Compiling Containerization VZVirtualMachineInstance.swift
+[3005/3081] Compiling Containerization VZVirtualMachineManager.swift
+[3006/3081] Compiling Containerization ImageStore+Export.swift
+[3007/3081] Compiling Containerization ImageStore+Import.swift
+[3008/3081] Compiling Containerization ImageStore+OCILayout.swift
+[3009/3081] Compiling Containerization ImageStore+ReferenceManager.swift
+[3010/3081] Compiling Containerization ImageStore.swift
+[3011/3081] Compiling Containerization InitImage.swift
+[3012/3081] Compiling Containerization KernelImage.swift
+[3013/3081] Compiling Containerization EXT4Unpacker.swift
+[3014/3081] Compiling Containerization Vminitd+Rosetta.swift
+[3015/3081] Compiling Containerization Vminitd+SocketRelay.swift
+[3016/3081] Compiling Containerization Vminitd.swift
+[3017/3081] Compiling Containerization VmnetNetwork.swift
+[3018/3081] Compiling Containerization Vsock+Linux.swift
+[3019/3081] Compiling Containerization VsockListener.swift
+[3020/3081] Compiling Containerization VsockPortAllocator.swift
+[3021/3081] Compiling Containerization LinuxProcess.swift
+[3022/3081] Compiling Containerization LinuxProcessConfiguration.swift
+[3023/3081] Compiling Containerization Mount+CH.swift
+[3024/3081] Compiling Containerization Mount.swift
+[3025/3081] Compiling Containerization NATInterface.swift
+[3026/3081] Compiling Containerization NATNetworkInterface.swift
+[3027/3081] Compiling Containerization Network.swift
+[3028/3081] Compiling Containerization SandboxContext.grpc.swift
+[3029/3081] Emitting module Containerization
+[3030/3081] Compiling Containerization Hash.swift
+[3031/3081] Compiling Containerization HostDefaultRoute.swift
+[3032/3081] Compiling Containerization HostsConfiguration.swift
+[3033/3081] Compiling Containerization HotplugProvider.swift
+[3034/3081] Compiling Containerization ReaderStream.swift
+[3035/3081] Compiling Containerization Terminal+ReaderStream.swift
+[3036/3081] Compiling Containerization Writer.swift
+[3037/3081] Compiling Containerization Image.swift
+[3038/3081] Compiling Containerization SandboxContext.pb.swift
+[3039/3081] Compiling Containerization SandboxOverrides.swift
+[3040/3081] Compiling Containerization Signal.swift
+[3041/3081] Compiling Containerization SystemPlatform.swift
+[3042/3081] Compiling Containerization TAPDevice.swift
+[3043/3081] Compiling Containerization TimeSyncer.swift
+[3044/3081] Compiling Containerization UnixSocketConfiguration.swift
+[3045/3081] Compiling Containerization Unpacker.swift
+[3046/3081] Compiling Containerization Interface.swift
+[3047/3081] Compiling Containerization IptablesRules.swift
+[3048/3081] Compiling Containerization Kernel+Commandline.swift
+[3049/3081] Compiling Containerization Kernel.swift
+[3050/3081] Compiling Containerization LinuxBridgedNetwork.swift
+[3051/3081] Compiling Containerization LinuxContainer.swift
+[3052/3081] Compiling Containerization LinuxPod.swift
+[3053/3113] Compiling ContainerPersistence FilePath+Symlinks.swift
+[3054/3132] Compiling ContainerPersistence Parsers.swift
+[3055/3132] Emitting module ContainerImagesServiceClient
+[3056/3132] Compiling ContainerPersistence Measurement+Parse.swift
+[3057/3132] Compiling ContainerPersistence MemorySize.swift
+[3058/3132] Compiling ContainerImagesServiceClient ImageServiceXPCKeys.swift
+[3059/3132] Compiling ContainerOS LocalNetworkPrivacy.swift
+[3060/3132] Compiling ContainerOS DirectoryWatcher.swift
+[3061/3132] Emitting module ContainerOS
+[3062/3132] Compiling ContainerImagesServiceClient ImageServiceXPCRoutes.swift
+[3063/3132] Compiling ContainerImagesServiceClient RemoteContentStoreClient.swift
+[3064/3132] Compiling ContainerPersistence PathUtils.swift
+[3065/3134] Compiling ContainerPersistence MachineConfig.swift
+[3066/3134] Compiling ContainerResource NetworkResource.swift
+[3067/3134] Compiling ContainerResource NetworkStatus.swift
+[3068/3134] Compiling ContainerResource ListDisplayable.swift
+[3069/3134] Compiling ContainerResource ListFormat.swift
+[3070/3134] Compiling ContainerResource OutputRendering.swift
+[3071/3134] Compiling ContainerResource TableOutput.swift
+[3072/3137] Compiling ContainerResource AttachmentConfiguration.swift
+[3073/3137] Compiling ContainerResource NetworkConfiguration.swift
+[3074/3137] Compiling ContainerResource NetworkMode.swift
+[3075/3137] Emitting module ContainerResource
+[3076/3137] Compiling ContainerResource ContainerSnapshot.swift
+[3077/3137] Compiling ContainerResource ContainerStats.swift
+[3078/3137] Compiling ContainerResource ContainerStatus.swift
+[3079/3137] Compiling ContainerResource ContainerStopOptions.swift
+[3080/3137] Compiling ContainerPersistence EntityStore.swift
+[3081/3137] Compiling ContainerPersistence ContainerSystemConfig.swift
+[3082/3137] Compiling ContainerResource ApplicationError.swift
+[3083/3137] Compiling ContainerResource FileManager+AllocatedSize.swift
+[3084/3137] Emitting module ContainerPersistence
+[3085/3137] Compiling ContainerResource ManagedResource.swift
+[3086/3137] Compiling ContainerResource ResourceLabels.swift
+[3087/3137] Compiling ContainerResource ImageDescription.swift
+[3088/3137] Compiling ContainerResource ImageResource.swift
+[3089/3137] Compiling ContainerResource Attachment.swift
+[3090/3137] Compiling ContainerResource Bundle.swift
+[3091/3137] Compiling ContainerResource ContainerConfiguration.swift
+[3092/3137] Compiling ContainerResource ContainerCreateOptions.swift
+[3093/3137] Compiling ContainerResource ContainerListFilters.swift
+[3098/3137] Compiling ContainerResource Filesystem.swift
+[3099/3137] Compiling ContainerResource ManagedContainer.swift
+[3100/3137] Compiling ContainerResource ProcessConfiguration.swift
+[3101/3137] Compiling ContainerResource PublishPort.swift
+[3102/3137] Compiling ContainerResource PublishSocket.swift
+[3103/3137] Compiling ContainerResource RuntimeStatus.swift
+[3104/3137] Emitting module ContainerOSTests
+[3105/3137] Compiling ContainerOSTests DirectoryWatcherTest.swift
+[3106/3137] Compiling ContainerResource RegistryResource.swift
+[3107/3137] Compiling ContainerResource VolumeConfiguration.swift
+[3108/3137] Compiling ContainerResource VolumeResource.swift
+[3109/3172] Compiling ContainerNetworkClient NetworkKeys.swift
+[3110/3172] Compiling ContainerNetworkClient NetworkRoutes.swift
+[3111/3172] Compiling ContainerNetworkClient NetworkMatch.swift
+[3112/3172] Emitting module ContainerNetworkClient
+[3113/3172] Compiling ContainerNetworkClient NetworkClient.swift
+[3114/3172] Emitting module ContainerAPIClient
+[3115/3175] Compiling ContainerAPIClient SignalThreshold.swift
+[3116/3175] Compiling ContainerAPIClient String+Extensions.swift
+[3117/3175] Compiling ContainerAPIClient SystemHealth.swift
+[3118/3175] Compiling ContainerAPIClient HostDNSResolver.swift
+[3119/3175] Compiling ContainerAPIClient ImageLoadResult.swift
+[3120/3175] Compiling ContainerAPIClient NetworkClient.swift
+[3121/3175] Compiling ContainerAPIClient ProgressUpdateClient.swift
+[3122/3175] Compiling ContainerAPIClient ProgressUpdateService.swift
+[3123/3175] Compiling ContainerAPIClient RequestScheme.swift
+[3124/3175] Compiling ContainerAPIClient ClientProcess.swift
+[3125/3175] Compiling ContainerAPIClient ClientVolume.swift
+[3126/3175] Compiling ContainerAPIClient Constants.swift
+[3127/3175] Compiling ContainerAPIClient ContainerClient.swift
+[3128/3175] Compiling ContainerAPIClient ContainerizationProgressAdapter.swift
+[3129/3175] Compiling ContainerAPIClient DefaultPlatform.swift
+[3130/3175] Compiling ContainerAPIClient Arch.swift
+[3131/3175] Compiling ContainerAPIClient Archiver.swift
+[3132/3175] Compiling ContainerAPIClient Array+Dedupe.swift
+[3133/3175] Compiling ContainerAPIClient ClientDiskUsage.swift
+[3134/3175] Compiling ContainerAPIClient ClientHealthCheck.swift
+[3135/3175] Compiling ContainerAPIClient ClientImage+ImageResource.swift
+[3136/3175] Compiling ContainerAPIClient ClientImage.swift
+[3137/3175] Compiling ContainerAPIClient ClientKernel.swift
+[3138/3181] Compiling ContainerNetworkServer Network.swift
+[3139/3181] Compiling ContainerNetworkServer NetworkService.swift
+[3140/3181] Compiling ContainerAPIClient DiskUsage.swift
+[3141/3181] Compiling ContainerAPIClient FileDownloader.swift
+[3142/3181] Compiling ContainerAPIClient Flags.swift
+[3143/3181] Compiling ContainerAPIClient PacketFilter.swift
+[3144/3181] Compiling ContainerAPIClient Parser.swift
+[3145/3181] Compiling ContainerAPIClient ProcessIO.swift
+[3146/3181] Compiling ContainerNetworkServer NetworkHarness.swift
+[3147/3181] Compiling ContainerNetworkServer AttachmentAllocator.swift
+[3148/3181] Emitting module ContainerNetworkServer
+[3149/3181] Compiling ContainerNetworkServer DefaultNetworkService.swift
+[3150/3184] Compiling ContainerAPIClient Utility+PluginLoader.swift
+[3151/3184] Compiling ContainerAPIClient Utility.swift
+[3152/3184] Compiling ContainerAPIClient XPC+.swift
+[3153/3187] Emitting module ContainerNetworkVmnetServer
+[3154/3202] Compiling ContainerNetworkServerTests NetworkAliasProtocolTests.swift
+[3155/3255] Emitting module ContainerImagesService
+[3156/3255] Compiling MachineAPIClient MachineUserSetup.swift
+[3157/3255] Compiling ContainerNetworkVmnetServer ReservedVmnetNetwork.swift
+[3158/3255] Compiling ContainerNetworkVmnetServer AllocationOnlyVmnetNetwork.swift
+[3159/3255] Compiling MachineAPIClient MachineKeys.swift
+[3160/3255] Compiling ContainerRuntimeClient NetworkBootstrapInfo.swift
+[3161/3255] Compiling ContainerRuntimeClient InterfaceStrategy.swift
+[3162/3255] Compiling MachineAPIClient MachineRoutes.swift
+[3163/3255] Compiling ContainerTestSupport TemporaryStorage.swift
+[3164/3256] Compiling ContainerRuntimeClient SandboxSnapshot.swift
+[3165/3256] Compiling ContainerRuntimeClient RuntimeRoutes.swift
+[3166/3256] Compiling ContainerRuntimeClient Bundle+Log.swift
+[3167/3256] Emitting module ContainerRuntimeClient
+[3168/3256] Compiling ContainerRuntimeClient ExitMonitor.swift
+[3169/3256] Compiling ContainerTestSupport ContainerFixture+VolumeHelpers.swift
+[3170/3256] Compiling MachineAPIClient MachineSnapshot.swift
+[3171/3256] Compiling ContainerBuild TerminalCommand.swift
+[3172/3257] Compiling ContainerTestSupport LoopbackFileServer.swift
+[3173/3257] Compiling MachineAPIClient MachineConfiguration.swift
+[3174/3257] Compiling ContainerImagesService ContentServiceHarness.swift
+[3175/3257] Compiling ContainerImagesService ContentStoreService.swift
+[3176/3257] Compiling MachineAPIClient MachineClient.swift
+[3177/3257] Compiling ContainerBuild Globber.swift
+[3178/3257] Compiling MachineAPIClient Flags.swift
+[3179/3257] Compiling ContainerBuild Builder.grpc.swift
+[3180/3257] Compiling ContainerTestSupport KernelFixture.swift
+[3181/3257] Compiling ContainerRuntimeClient RuntimeKeys.swift
+[3182/3257] Compiling ContainerRuntimeClient RuntimeConfiguration.swift
+[3183/3257] Compiling ContainerTestSupport WarmupImage.swift
+[3184/3257] Compiling ContainerK8s K8sHelper+Networking.swift
+[3185/3257] Compiling ContainerK8s K8sHelper+Readiness.swift
+[3186/3258] Compiling ContainerRuntimeClient RuntimeClient.swift
+[3187/3258] Emitting module MachineAPIClient
+[3188/3258] Compiling ContainerTestSupport ContainerFixture+MachineHelpers.swift
+[3189/3258] Compiling ContainerTestSupport ContainerFixture+NetworkHelpers.swift
+[3190/3258] Compiling MachineAPIClient MachineBundle.swift
+[3191/3258] Compiling ContainerTestSupport ContainerFixture+ContainerHelpers.swift
+[3192/3258] Compiling ContainerTestSupport ContainerFixture+ImageHelpers.swift
+[3193/3258] Compiling ContainerImagesService ImagesServiceHarness.swift
+[3194/3258] Compiling ContainerTestSupport ContainerFixture+SSHTestHelpers.swift
+[3195/3258] Compiling ContainerTestSupport ContainerFixture+SystemHelpers.swift
+[3196/3258] Compiling ContainerImagesService SnapshotStore.swift
+[3197/3258] Compiling ContainerK8s K8sHelper+Image.swift
+[3198/3258] Compiling ContainerK8s NodeProvisioner.swift
+[3199/3258] Compiling ContainerK8s K8sHelper+Bootstrap.swift
+[3200/3258] Compiling ContainerK8s K8sHelper+Kubeconfig.swift
+[3201/3258] Compiling ContainerTestSupport BuildFixture.swift
+[3202/3258] Compiling ContainerTestSupport CommandResult.swift
+[3203/3258] Emitting module ContainerTestSupport
+[3206/3258] Compiling ContainerBuild Builder.swift
+[3211/3258] Emitting module ContainerBuild
+[3214/3258] Compiling ContainerK8s TableOutput.swift
+[3215/3258] Compiling ContainerTestSupport ContainerFixture.swift
+[3216/3258] Compiling ContainerImagesService ImagesService.swift
+[3217/3258] Compiling ContainerBuild URL+Extensions.swift
+[3218/3280] Compiling ContainerAPIService NetworkMatchSelector.swift
+[3219/3280] Compiling ContainerAPIService NetworksHarness.swift
+[3220/3280] Compiling ContainerAPIService KernelHarness.swift
+[3221/3280] Compiling ContainerAPIService KernelService.swift
+[3222/3310] Emitting module ContainerK8s
+[3223/3310] Compiling IntegrationTests TestCLIBuilder.swift
+[3224/3310] Compiling IntegrationTests TestCLIBuilderEnvOnly.swift
+[3225/3355] Emitting module container_network_vmnet
+[3226/3355] Compiling container_network_vmnet NetworkVmnetHelper.swift
+[3227/3355] Compiling IntegrationTests ContainerFixture+Testing.swift
+[3228/3355] Compiling IntegrationTests TestCLIClean.swift
+[3229/3355] Compiling IntegrationTests TestCLIBuilderTarExport.swift
+[3230/3355] Compiling IntegrationTests TestCLIBuilderWarmupPullSerial.swift
+[3231/3356] Compiling ContainerBuild Builder.pb.swift
+[3232/3356] Emitting module ContainerRuntimeLinuxServer
+[3233/3356] Compiling ContainerAPIService VolumesHarness.swift
+[3234/3356] Compiling ContainerAPIService PluginsService.swift
+[3235/3356] Compiling ContainerAPIClientTests RequestSchemeTests.swift
+[3236/3357] Compiling ContainerAPIService PluginsHarness.swift
+[3237/3357] Compiling ContainerRuntimeLinuxServer IsolatedInterfaceStrategy.swift
+[3238/3357] Compiling container_network_vmnet NetworkVmnetHelper+Start.swift
+[3239/3357] Emitting module MachineAPIService
+[3240/3357] Compiling MachineAPIService MachinesHarness.swift
+[3241/3357] Emitting module ContainerAPIService
+[3244/3362] Compiling ContainerAPIService NetworksService.swift
+[3245/3362] Compiling IntegrationTests TestCLICommit.swift
+[3246/3362] Compiling IntegrationTests TestCLICopyCommand.swift
+[3249/3362] Compiling ContainerNetworkServerTests AttachmentAllocatorTest.swift
+[3250/3362] Emitting module ContainerNetworkServerTests
+[3251/3362] Compiling ContainerAPIClientTests ArchTests.swift
+[3252/3368] Emitting module k8s
+[3253/3368] Compiling k8s K8sCommand.swift
+[3254/3368] Compiling k8s K8sMain.swift
+[3255/3368] Compiling ContainerPersistenceTests PathUtilsTests.swift
+[3256/3368] Compiling ContainerAPIService VolumesService.swift
+[3257/3374] Emitting module container_core_images
+[3258/3374] Compiling container_core_images ImagesHelper.swift
+[3259/3374] Compiling ContainerPersistenceTests MachineConfigTests.swift
+[3260/3374] Compiling container_builder BuilderStop.swift
+[3261/3374] Compiling container_builder BuilderStart.swift
+[3262/3374] Compiling container_builder BuilderDelete.swift
+[3263/3374] Compiling container_builder Application.swift
+[3264/3374] Emitting module container_builder
+[3265/3374] Compiling container_builder BuilderStatus.swift
+[3266/3374] Compiling K8sPluginTests K8sNodeImageVersionTests.swift
+[3267/3374] Compiling ContainerPersistenceTests FilesystemEntityStoreTests.swift
+[3268/3374] Compiling ContainerPersistenceTests FilePathSymlinksTests.swift
+[3269/3374] Compiling MachineAPIService MachinesService.swift
+[3270/3374] Compiling ContainerAPIClientTests DefaultPlatformTests.swift
+[3270/3374] Write Objects.LinkFileList
+[3272/3379] Compiling IntegrationTests TestCLIBuilderLifecycleSerial.swift
+[3273/3379] Compiling IntegrationTests TestCLIBuilderLocalOutput.swift
+[3274/3386] Compiling ContainerAPIClientTests MemorySizeTests.swift
+[3274/3399] Write Objects.LinkFileList
+[3276/3464] Compiling ContainerRuntimeLinuxServer RuntimeService.swift
+[3277/3464] Compiling ContainerRuntimeLinuxServer NonisolatedInterfaceStrategy.swift
+[3278/3464] Compiling machine_apiserver MachineAPIServer.swift
+[3279/3464] Compiling ContainerCommands ManagedContainer+ListDisplayable.swift
+[3280/3464] Compiling ContainerCommands ProcessUtils.swift
+[3281/3464] Compiling ContainerCommands DefaultCommand.swift
+[3282/3464] Compiling ContainerCommands Flags+ProgressConfig.swift
+[3283/3464] Compiling ContainerCommands HelpCommand.swift
+[3284/3464] Compiling ContainerCommands ImageCommand.swift
+[3285/3469] Compiling machine_apiserver MachineAPIServer+Start.swift
+[3286/3469] Emitting module machine_apiserver
+[3287/3469] Compiling ContainerAPIClientTests DiskUsageTests.swift
+[3288/3469] Compiling ContainerAPIClientTests HostDNSResolverTest.swift
+[3289/3469] Compiling ContainerAPIClientTests Measurement+ParseTests.swift
+[3290/3469] Compiling container_apiserver APIServer.swift
+[3291/3469] Compiling container_apiserver LocalhostDNSHandler.swift
+[3292/3469] Compiling container_apiserver ContainerDNSHandler.swift
+[3293/3469] Emitting module ContainerAPIClientTests
+[3294/3469] Emitting module ContainerPersistenceTests
+[3295/3469] Compiling ContainerPersistenceTests ConfigSnapshotDecoderTests.swift
+[3296/3469] Compiling ContainerAPIClientTests UtilityTests.swift
+[3297/3469] Emitting module container_apiserver
+[3298/3469] Compiling container_apiserver APIServer+Start.swift
+[3299/3469] Compiling ContainerCommands MachineSet.swift
+[3300/3469] Compiling ContainerCommands MachineSetDefault.swift
+[3301/3469] Compiling ContainerCommands MachineStop.swift
+[3302/3469] Compiling ContainerCommands NetworkCommand.swift
+[3303/3469] Compiling ContainerCommands NetworkCreate.swift
+[3304/3469] Compiling ContainerCommands NetworkDelete.swift
+[3305/3469] Compiling ContainerCommands MachineDelete.swift
+[3306/3469] Compiling ContainerCommands MachineHelpers.swift
+[3307/3469] Compiling ContainerCommands MachineInspect.swift
+[3308/3469] Compiling ContainerCommands MachineList.swift
+[3309/3469] Compiling ContainerCommands MachineLogs.swift
+[3310/3469] Compiling ContainerCommands MachineRun.swift
+[3311/3469] Compiling ContainerPersistenceTests ConfigurationLoaderTests.swift
+[3312/3492] Emitting module ContainerCommands
+[3313/3500] Compiling ContainerResourceTests AttachmentOptionsTests.swift
+[3314/3500] Compiling ContainerResourceTests ContainerConfigurationTests.swift
+[3315/3500] Compiling ContainerResourceTests ListFormattingTests.swift
+[3316/3500] Compiling ContainerResourceTests ManagedContainerTests.swift
+[3317/3500] Compiling ContainerResourceTests ManagedResourceTests.swift
+[3318/3500] Compiling ContainerResourceTests NetworkConfigurationTest.swift
+[3319/3500] Compiling ContainerCommands ContainerCommit.swift
+[3320/3500] Compiling ContainerCommands ContainerCopy.swift
+[3321/3500] Compiling ContainerCommands ContainerCreate.swift
+[3322/3500] Compiling ContainerCommands ContainerStart.swift
+[3323/3500] Compiling ContainerCommands ContainerStats.swift
+[3324/3500] Compiling ContainerCommands ContainerStop.swift
+[3331/3500] Compiling container_runtime_linux RuntimeLinuxHelper+Start.swift
+[3332/3500] Compiling container_runtime_linux RuntimeLinuxHelper.swift
+[3333/3500] Emitting module container_runtime_linux
+[3334/3500] Compiling ContainerCommands RegistryLogin.swift
+[3335/3500] Compiling ContainerCommands RegistryLogout.swift
+[3336/3500] Compiling ContainerCommands DNSCreate.swift
+[3337/3500] Compiling ContainerCommands DNSDelete.swift
+[3338/3500] Compiling ContainerCommands DNSList.swift
+[3339/3500] Compiling ContainerCommands KernelSet.swift
+[3340/3500] Compiling ContainerCommands PropertyList.swift
+[3341/3500] Compiling ContainerCommands SystemCommand.swift
+[3344/3500] Compiling IntegrationTests TestCLIVersion.swift
+[3345/3500] Compiling IntegrationTests TestCLIAnonymousVolumes.swift
+[3346/3500] Compiling IntegrationTests TestCLIVolumes.swift
+[3347/3500] Compiling IntegrationTests TestCLIVolumesSerial.swift
+[3348/3500] Compiling IntegrationTests ImageWarmup.swift
+[3349/3500] Compiling ContainerCommands RegistryList.swift
+[3350/3500] Compiling ContainerCommands SystemDF.swift
+[3351/3500] Compiling ContainerCommands SystemDNS.swift
+[3352/3500] Compiling ContainerCommands SystemKernel.swift
+[3353/3500] Compiling ContainerCommands SystemLogs.swift
+[3354/3500] Compiling ContainerCommands SystemProperty.swift
+[3355/3500] Compiling ContainerCommands SystemStart.swift
+[3356/3500] Compiling ContainerCommands SystemStatus.swift
+[3357/3500] Compiling ContainerCommands SystemStop.swift
+[3358/3500] Compiling ContainerCommands ImageTag.swift
+[3359/3500] Compiling ContainerCommands OCIImageArchive.swift
+[3360/3500] Compiling ContainerCommands ListFormat+ExpressibleByArgument.swift
+[3361/3500] Compiling ContainerCommands MachineCapabilities.swift
+[3362/3500] Compiling ContainerCommands MachineCommand.swift
+[3363/3500] Compiling ContainerCommands MachineCreate.swift
+[3373/3500] Write Objects.LinkFileList
+[3376/3500] Compiling ContainerAPIServiceTests RuntimeConfigurationTests.swift
+[3377/3500] Compiling K8sPluginTests K8sCreateCNITests.swift
+[3378/3500] Compiling ContainerCommands ImageDelete.swift
+[3379/3500] Compiling ContainerCommands ImageInspect.swift
+[3380/3500] Compiling ContainerCommands ImageList.swift
+[3381/3500] Compiling ContainerCommands ImageLoad.swift
+[3382/3500] Compiling ContainerCommands ImagePrune.swift
+[3383/3500] Compiling ContainerCommands ImagePull.swift
+[3384/3500] Compiling ContainerCommands ImagePush.swift
+[3385/3500] Compiling ContainerCommands ImageResource+ListDisplayable.swift
+[3386/3500] Compiling ContainerCommands ImageSave.swift
+[3387/3500] Compiling K8sPluginTests K8sListTests.swift
+[3388/3500] Emitting module K8sPluginTests
+[3389/3500] Compiling ContainerCommands ContainerDelete.swift
+[3390/3500] Compiling ContainerCommands ContainerExec.swift
+[3391/3500] Compiling ContainerCommands ContainerExport.swift
+[3392/3500] Compiling ContainerCommands ContainerInspect.swift
+[3393/3500] Compiling ContainerCommands ContainerKill.swift
+[3394/3500] Compiling ContainerCommands ContainerList.swift
+[3395/3500] Compiling ContainerCommands ContainerLogs.swift
+[3396/3500] Compiling ContainerCommands ContainerPrune.swift
+[3397/3500] Compiling ContainerCommands ContainerRun.swift
+[3398/3500] Compiling ContainerBuildTests BuildFile.swift
+[3399/3500] Compiling ContainerBuildTests GlobberTests.swift
+[3400/3500] Compiling ContainerBuildTests BuilderExtensionsTests.swift
+[3401/3500] Emitting module ContainerBuildTests
+[3402/3500] Compiling ContainerBuildTests BuildFSSyncTests.swift
+[3403/3500] Compiling K8sPluginTests K8sLoadImageTests.swift
+[3404/3500] Compiling K8sPluginTests KubeconfigMergeTests.swift
+[3410/3500] Write Objects.LinkFileList
+[3413/3500] Compiling ContainerResourceTests VolumeConfigurationTests.swift
+[3414/3500] Compiling ContainerResourceTests RegistryResourceTests.swift
+[3415/3500] Compiling ContainerResourceTests PublishSocketTests.swift
+[3416/3500] Compiling ContainerResourceTests ResourceLabelsTest.swift
+[3417/3500] Compiling ContainerResourceTests PublishPortTests.swift
+[3420/3500] Compiling ContainerResourceTests VolumeJournalConfigTests.swift
+[3421/3501] Emitting module ContainerAPIServiceTests
+[3422/3501] Compiling ContainerAPIServiceTests DiskUsagePathTests.swift
+[3423/3501] Compiling ContainerAPIServiceTests LogFileTests.swift
+[3424/3501] Compiling ContainerAPIServiceTests NetworkMatchSelectorTests.swift
+[3425/3501] Compiling ContainerAPIServiceTests KernelServiceTests.swift
+[3426/3501] Compiling ContainerAPIServiceTests AttachmentNameValidatorTests.swift
+[3427/3501] Compiling ContainerCommands SystemVersion.swift
+[3428/3501] Compiling ContainerCommands VolumeCommand.swift
+[3429/3501] Compiling ContainerCommands VolumeCreate.swift
+[3430/3501] Compiling ContainerCommands VolumeDelete.swift
+[3431/3501] Compiling ContainerCommands VolumeInspect.swift
+[3432/3501] Compiling ContainerCommands VolumeList.swift
+[3433/3501] Compiling ContainerCommands VolumePrune.swift
+[3434/3501] Compiling ContainerCommands VolumeResource+ListDisplayable.swift
+[3434/3501] Write Objects.LinkFileList
+[3436/3503] Emitting module IntegrationTests
+[3437/3503] Compiling ContainerResourceTests VolumeValidationTests.swift
+[3450/3503] Compiling container_build Application.swift
+[3451/3503] Emitting module container_build
+[3454/3503] Emitting module ContainerResourceTests
+[3462/3505] Compiling container ContainerCLI.swift
+[3463/3505] Emitting module container
+[3463/3512] Linking container-network-vmnet
+[3464/3512] Write Objects.LinkFileList
+[3465/3512] Applying container-network-vmnet
+[3466/3512] Linking k8s
+[3467/3512] Write Objects.LinkFileList
+[3475/3512] Compiling ContainerCommandsTests ListFormattingTests.swift
+[3476/3512] Compiling ContainerCommandsTests SystemStatusTests.swift
+[3477/3512] Compiling ContainerCommandsTests NetworkDiagnosisTests.swift
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:23:79: error: cannot find type 'HostInterface' in scope
+ 21 | 
+ 22 | struct NetworkDiagnosisTests {
+ 23 |     private func b(_ name: String, _ ip: String, _ len: UInt8 = 24) throws -> HostInterface {
+    |                                                                               `- error: cannot find type 'HostInterface' in scope
+ 24 |         HostInterface(name: name, address: try IPv4Address(ip), prefixLength: len)
+ 25 |     }
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:30:22: error: cannot find 'NetworkDiagnosis' in scope
+ 28 | 
+ 29 |     @Test func okWhenGatewayPresent() throws {
+ 30 |         let result = NetworkDiagnosis.diagnose(
+    |                      `- error: cannot find 'NetworkDiagnosis' in scope
+ 31 |             configuredSubnet: configured64,
+ 32 |             hostInterfaces: [try b("bridge100", "192.168.64.1")],
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:33:34: error: 'nil' requires a contextual type
+ 31 |             configuredSubnet: configured64,
+ 32 |             hostInterfaces: [try b("bridge100", "192.168.64.1")],
+ 33 |             systemSharedAddress: nil,
+    |                                  `- error: 'nil' requires a contextual type
+ 34 |             containerBridge: nil)
+ 35 |         #expect(result == .ok)
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:34:30: error: 'nil' requires a contextual type
+ 32 |             hostInterfaces: [try b("bridge100", "192.168.64.1")],
+ 33 |             systemSharedAddress: nil,
+ 34 |             containerBridge: nil)
+    |                              `- error: 'nil' requires a contextual type
+ 35 |         #expect(result == .ok)
+ 36 |     }
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:39:22: error: cannot find 'NetworkDiagnosis' in scope
+ 37 | 
+ 38 |     @Test func mismatchSingleBridge() throws {
+ 39 |         let result = NetworkDiagnosis.diagnose(
+    |                      `- error: cannot find 'NetworkDiagnosis' in scope
+ 40 |             configuredSubnet: configured64,
+ 41 |             hostInterfaces: [try b("bridge101", "192.168.253.1"), try b("en0", "192.168.1.20")],
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:42:34: error: 'nil' requires a contextual type
+ 40 |             configuredSubnet: configured64,
+ 41 |             hostInterfaces: [try b("bridge101", "192.168.253.1"), try b("en0", "192.168.1.20")],
+ 42 |             systemSharedAddress: nil,
+    |                                  `- error: 'nil' requires a contextual type
+ 43 |             containerBridge: nil)
+ 44 |         guard case .mismatch(let current, let suggested, _) = result else {
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:43:30: error: 'nil' requires a contextual type
+ 41 |             hostInterfaces: [try b("bridge101", "192.168.253.1"), try b("en0", "192.168.1.20")],
+ 42 |             systemSharedAddress: nil,
+ 43 |             containerBridge: nil)
+    |                              `- error: 'nil' requires a contextual type
+ 44 |         guard case .mismatch(let current, let suggested, _) = result else {
+ 45 |             Issue.record("expected mismatch, got \(result)")
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:54:22: error: cannot find 'NetworkDiagnosis' in scope
+ 52 |     @Test func twoBridgesNoSignalIsAmbiguous() throws {
+ 53 |         let bridges = [try b("bridge100", "192.168.252.1"), try b("bridge101", "192.168.253.1")]
+ 54 |         let result = NetworkDiagnosis.diagnose(
+    |                      `- error: cannot find 'NetworkDiagnosis' in scope
+ 55 |             configuredSubnet: configured64, hostInterfaces: bridges,
+ 56 |             systemSharedAddress: nil, containerBridge: nil)
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:56:34: error: 'nil' requires a contextual type
+ 54 |         let result = NetworkDiagnosis.diagnose(
+ 55 |             configuredSubnet: configured64, hostInterfaces: bridges,
+ 56 |             systemSharedAddress: nil, containerBridge: nil)
+    |                                  `- error: 'nil' requires a contextual type
+ 57 |         #expect(result == .ambiguous(current: configured64, candidates: bridges))
+ 58 |     }
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:56:56: error: 'nil' requires a contextual type
+ 54 |         let result = NetworkDiagnosis.diagnose(
+ 55 |             configuredSubnet: configured64, hostInterfaces: bridges,
+ 56 |             systemSharedAddress: nil, containerBridge: nil)
+    |                                                        `- error: 'nil' requires a contextual type
+ 57 |         #expect(result == .ambiguous(current: configured64, candidates: bridges))
+ 58 |     }
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:62:22: error: cannot find 'NetworkDiagnosis' in scope
+ 60 |     @Test func systemAddressWins() throws {
+ 61 |         let bridges = [try b("bridge100", "192.168.252.1"), try b("bridge101", "192.168.253.1")]
+ 62 |         let result = NetworkDiagnosis.diagnose(
+    |                      `- error: cannot find 'NetworkDiagnosis' in scope
+ 63 |             configuredSubnet: configured64, hostInterfaces: bridges,
+ 64 |             systemSharedAddress: try IPv4Address("192.168.253.1"), containerBridge: nil)
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:64:85: error: 'nil' requires a contextual type
+ 62 |         let result = NetworkDiagnosis.diagnose(
+ 63 |             configuredSubnet: configured64, hostInterfaces: bridges,
+ 64 |             systemSharedAddress: try IPv4Address("192.168.253.1"), containerBridge: nil)
+    |                                                                                     `- error: 'nil' requires a contextual type
+ 65 |         guard case .mismatch(_, let suggested, _) = result else {
+ 66 |             Issue.record("expected mismatch, got \(result)")
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:74:22: error: cannot find 'NetworkDiagnosis' in scope
+ 72 |     @Test func containerBridgeWins() throws {
+ 73 |         let bridges = [try b("bridge100", "192.168.252.1"), try b("bridge101", "192.168.253.1")]
+ 74 |         let result = NetworkDiagnosis.diagnose(
+    |                      `- error: cannot find 'NetworkDiagnosis' in scope
+ 75 |             configuredSubnet: configured64, hostInterfaces: bridges,
+ 76 |             systemSharedAddress: nil, containerBridge: "bridge100")
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:76:34: error: 'nil' requires a contextual type
+ 74 |         let result = NetworkDiagnosis.diagnose(
+ 75 |             configuredSubnet: configured64, hostInterfaces: bridges,
+ 76 |             systemSharedAddress: nil, containerBridge: "bridge100")
+    |                                  `- error: 'nil' requires a contextual type
+ 77 |         guard case .mismatch(_, let suggested, _) = result else {
+ 78 |             Issue.record("expected mismatch, got \(result)")
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:86:22: error: cannot find 'NetworkDiagnosis' in scope
+ 84 |     @Test func okRejectedWhenSystemAddressDisagrees() throws {
+ 85 |         let bridges = [try b("bridge100", "192.168.252.1"), try b("bridge101", "192.168.253.1")]
+ 86 |         let result = NetworkDiagnosis.diagnose(
+    |                      `- error: cannot find 'NetworkDiagnosis' in scope
+ 87 |             configuredSubnet: try CIDRv4("192.168.252.1/24"), hostInterfaces: bridges,
+ 88 |             systemSharedAddress: try IPv4Address("192.168.253.1"), containerBridge: nil)
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:88:85: error: 'nil' requires a contextual type
+ 86 |         let result = NetworkDiagnosis.diagnose(
+ 87 |             configuredSubnet: try CIDRv4("192.168.252.1/24"), hostInterfaces: bridges,
+ 88 |             systemSharedAddress: try IPv4Address("192.168.253.1"), containerBridge: nil)
+    |                                                                                     `- error: 'nil' requires a contextual type
+ 89 |         guard case .mismatch(_, let suggested, _) = result else {
+ 90 |             Issue.record("expected mismatch, got \(result)")
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:97:22: error: cannot find 'NetworkDiagnosis' in scope
+ 95 | 
+ 96 |     @Test func noBridgesIsUndetermined() throws {
+ 97 |         let result = NetworkDiagnosis.diagnose(
+    |                      `- error: cannot find 'NetworkDiagnosis' in scope
+ 98 |             configuredSubnet: configured64, hostInterfaces: [try b("en0", "10.0.0.5")],
+ 99 |             systemSharedAddress: nil, containerBridge: nil)
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:99:34: error: 'nil' requires a contextual type
+ 97 |         let result = NetworkDiagnosis.diagnose(
+ 98 |             configuredSubnet: configured64, hostInterfaces: [try b("en0", "10.0.0.5")],
+ 99 |             systemSharedAddress: nil, containerBridge: nil)
+    |                                  `- error: 'nil' requires a contextual type
+100 |         #expect(result == .undetermined(current: configured64))
+101 |     }
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:99:56: error: 'nil' requires a contextual type
+ 97 |         let result = NetworkDiagnosis.diagnose(
+ 98 |             configuredSubnet: configured64, hostInterfaces: [try b("en0", "10.0.0.5")],
+ 99 |             systemSharedAddress: nil, containerBridge: nil)
+    |                                                        `- error: 'nil' requires a contextual type
+100 |         #expect(result == .undetermined(current: configured64))
+101 |     }
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:105:17: error: cannot find 'NetworkDiagnosis' in scope
+103 |     @Test func gatewayIsLowerPlusOne() throws {
+104 |         let expected = try IPv4Address("192.168.253.1")
+105 |         #expect(NetworkDiagnosis.gateway(of: try CIDRv4("192.168.253.0/24")) == expected)
+    |                 `- error: cannot find 'NetworkDiagnosis' in scope
+106 |         #expect(NetworkDiagnosis.gateway(of: try CIDRv4("192.168.253.1/24")) == expected)
+107 |     }
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:106:17: error: cannot find 'NetworkDiagnosis' in scope
+104 |         let expected = try IPv4Address("192.168.253.1")
+105 |         #expect(NetworkDiagnosis.gateway(of: try CIDRv4("192.168.253.0/24")) == expected)
+106 |         #expect(NetworkDiagnosis.gateway(of: try CIDRv4("192.168.253.1/24")) == expected)
+    |                 `- error: cannot find 'NetworkDiagnosis' in scope
+107 |     }
+108 | }
+[3477/3512] Applying k8s
+[3479/3512] Compiling ContainerCommandsTests ContainerLogsTests.swift
+error: emit-module command failed with exit code 1 (use -v to see invocation)
+[3480/3512] Emitting module ContainerCommandsTests
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkDiagnosisTests.swift:23:79: error: cannot find type 'HostInterface' in scope
+ 21 | 
+ 22 | struct NetworkDiagnosisTests {
+ 23 |     private func b(_ name: String, _ ip: String, _ len: UInt8 = 24) throws -> HostInterface {
+    |                                                                               `- error: cannot find type 'HostInterface' in scope
+ 24 |         HostInterface(name: name, address: try IPv4Address(ip), prefixLength: len)
+ 25 |     }
+[3481/3512] Compiling ContainerCommandsTests HelpCommandTests.swift
+[3482/3512] Compiling ContainerCommandsTests ImageListTests.swift
+[3483/3512] Compiling ContainerAPIClientTests PacketFilterTest.swift
+[3483/3512] Linking container-build
+[3489/3512] Linking container
+[3489/3512] Linking container-apiserver
+[3489/3512] Linking container-core-images
+[3489/3512] Linking container-builder
+[3489/3512] Linking container-runtime-linux
+[3489/3512] Linking machine-apiserver
+error: fatalError

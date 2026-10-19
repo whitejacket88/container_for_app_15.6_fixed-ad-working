@@ -1,0 +1,209 @@
+//===----------------------------------------------------------------------===//
+// Copyright © 2025-2026 Apple Inc. and the container project authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//===----------------------------------------------------------------------===//
+
+import ArgumentParser
+import ContainerAPIClient
+import ContainerPersistence
+import ContainerPlugin
+import ContainerResource
+import Containerization
+import ContainerizationError
+import ContainerizationExtras
+import ContainerizationOS
+import Foundation
+import NIOCore
+import NIOPosix
+import TerminalProgress
+
+extension Application {
+    public struct ContainerRun: AsyncLoggableCommand {
+        public init() {}
+        public static let configuration = CommandConfiguration(
+            commandName: "run",
+            abstract: "Run a container")
+
+        @OptionGroup(title: "Process options")
+        var processFlags: Flags.Process
+
+        @OptionGroup(title: "Resource options")
+        var resourceFlags: Flags.Resource
+
+        @OptionGroup(title: "Management options")
+        var managementFlags: Flags.Management
+
+        @OptionGroup(title: "Registry options")
+        var registryFlags: Flags.Registry
+
+        @OptionGroup(title: "Progress options")
+        var progressFlags: Flags.Progress
+
+        @OptionGroup(title: "Image fetch options")
+        var imageFetchFlags: Flags.ImageFetch
+
+        @OptionGroup
+        public var logOptions: Flags.Logging
+
+        @Argument(help: "Image name")
+        var image: String
+
+        @Argument(parsing: .captureForPassthrough, help: "Container init process arguments")
+        var arguments: [String] = []
+
+        public func run() async throws {
+            let containerSystemConfig: ContainerSystemConfig = try await ClientHealthCheck.loadContainerSystemConfig()
+            var exitCode: Int32 = 127
+            let id = Utility.createContainerID(name: self.managementFlags.name)
+
+            let progressConfig = try self.progressFlags.makeConfig(
+                showTasks: true,
+                showItems: true,
+                ignoreSmallSize: true,
+                totalTasks: 6
+            )
+
+            let progress = ProgressBar(config: progressConfig)
+            defer {
+                progress.finish()
+            }
+            progress.start()
+
+            guard ManagedContainer.nameValid(id) else {
+                throw ContainerizationError(.invalidArgument, message: "container ID \(id) is not a valid container ID")
+            }
+
+            // Check if container with id already exists.
+            let client = ContainerClient()
+            let existing = try? await client.get(id: id)
+            guard existing == nil else {
+                throw ContainerizationError(
+                    .exists,
+                    message: "container with id \(id) already exists"
+                )
+            }
+
+            let ck = try await Utility.containerConfigFromFlags(
+                id: id,
+                image: image,
+                arguments: arguments,
+                process: processFlags,
+                management: managementFlags,
+                resource: resourceFlags,
+                registry: registryFlags,
+                imageFetch: imageFetchFlags,
+                containerSystemConfig: containerSystemConfig,
+                progressUpdate: progress.handler,
+                log: log
+            )
+
+            progress.set(description: "Starting container")
+
+            let options = ContainerCreateOptions(autoRemove: managementFlags.remove)
+            try await client.create(
+                configuration: ck.0,
+                options: options,
+                kernel: ck.1,
+                initImage: ck.2
+            )
+
+            let detach = self.managementFlags.detach
+            do {
+                guard let code = try await runOnce(client: client, id: id, detach: detach, progress: progress, network: .check) else {
+                    return
+                }
+                exitCode = code
+            } catch {
+                try? await client.delete(id: id)
+                if error is ContainerizationError || error is ArgumentParser.ExitCode {
+                    throw error
+                }
+                throw ContainerizationError(.internalError, message: "failed to run container: \(error)")
+            }
+            throw ArgumentParser.ExitCode(exitCode)
+        }
+
+        /// Bootstraps and starts the container. Returns nil when detached, else the exit code.
+        private func runOnce(
+            client: ContainerClient,
+            id: String,
+            detach: Bool,
+            progress: ProgressBar,
+            network: NetworkCheckMode
+        ) async throws -> Int32? {
+            let io = try ProcessIO.create(
+                tty: self.processFlags.tty,
+                interactive: self.processFlags.interactive,
+                detach: detach
+            )
+            defer {
+                try? io.close()
+            }
+
+            var dynamicEnv: [String: String] = [:]
+            if let sshAuthSock = ProcessInfo.processInfo.environment["SSH_AUTH_SOCK"] {
+                dynamicEnv["SSH_AUTH_SOCK"] = sshAuthSock
+            }
+
+            let process = try await client.bootstrap(id: id, stdio: io.stdio, dynamicEnv: dynamicEnv)
+            progress.finish()
+
+            if network == .check && !self.managementFlags.cidfile.isEmpty {
+                let path = self.managementFlags.cidfile
+                let data = id.data(using: .utf8)
+                var attributes = [FileAttributeKey: Any]()
+                attributes[.posixPermissions] = 0o644
+                let success = FileManager.default.createFile(
+                    atPath: path,
+                    contents: data,
+                    attributes: attributes
+                )
+                guard success else {
+                    throw ContainerizationError(
+                        .internalError, message: "failed to create cidfile at \(path): \(errno)")
+                }
+            }
+
+            if let next = await network.afterBootstrap(containerId: id, client: client, console: io.console, log: log) {
+                // Repairing restarted container services, which stopped this container. Use a
+                // new client: the old XPC connection was to the services that were stopped.
+                try? io.close()
+                let client = ContainerClient()
+                guard (try? await client.get(id: id)) != nil else {
+                    print("The container was removed by the restart. Run the same command again.")
+                    throw ArgumentParser.ExitCode(1)
+                }
+                return try await runOnce(client: client, id: id, detach: detach, progress: progress, network: next)
+            }
+
+            if detach {
+                try await process.start()
+                try io.closeAfterStart()
+                print(id)
+                return nil
+            }
+
+            if !self.processFlags.tty {
+                var handler = SignalThreshold(threshold: 3, signals: [SIGINT, SIGTERM])
+                let log = self.log
+                handler.start {
+                    log.warning("Received 3 SIGINT/SIGTERM's, forcefully exiting.")
+                    Darwin.exit(1)
+                }
+            }
+
+            return try await io.handleProcess(process: process, log: log)
+        }
+    }
+}

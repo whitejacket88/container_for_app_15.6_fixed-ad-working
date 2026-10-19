@@ -1,0 +1,256 @@
+[0/1] Planning build
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/38] Write swift-version--58304C5D6DBC2206.txt
+[8/38] Write sources
+[10/41] Compiling ContainerPersistence ContainerSystemConfig.swift
+[11/41] Emitting module ContainerPersistence
+[12/41] Compiling ContainerPersistence NetworkConfigEditor.swift
+[13/42] Compiling ContainerPersistence ConfigurationLoader.swift
+[13/59] Write Objects.LinkFileList
+[15/59] Compiling ContainerAPIClient DefaultPlatform.swift
+[16/59] Compiling ContainerAPIClient FileDownloader.swift
+[17/59] Compiling ContainerAPIClient ClientImage+ImageResource.swift
+[18/59] Compiling ContainerAPIClient ClientImage.swift
+[19/59] Compiling ContainerAPIClient Parser.swift
+[20/59] Compiling ContainerAPIClient ProcessIO.swift
+[21/59] Compiling ContainerAPIClient SystemHealth.swift
+[22/59] Emitting module ContainerAPIClient
+[23/59] Compiling ContainerAPIClient Archiver.swift
+[24/59] Compiling ContainerAPIClient ClientHealthCheck.swift
+[25/59] Compiling ContainerAPIClient Utility+PluginLoader.swift
+[26/59] Compiling ContainerAPIClient ClientVolume.swift
+[27/59] Compiling ContainerAPIClient ContainerClient.swift
+[28/59] Compiling ContainerAPIClient NetworkClient.swift
+[29/59] Compiling ContainerAPIClient PacketFilter.swift
+[30/59] Compiling ContainerAPIClient Flags.swift
+[31/59] Compiling ContainerAPIClient HostDNSResolver.swift
+[32/60] Compiling ContainerAPIClient Utility.swift
+[33/120] Emitting module ContainerK8s
+[34/121] Compiling MachineAPIClient MachineSnapshot.swift
+[35/121] Compiling ContainerAPIService DiskUsageHarness.swift
+[36/121] Compiling ContainerAPIService DiskUsageService.swift
+[37/122] Compiling MachineAPIClient MachineConfiguration.swift
+[38/122] Compiling ContainerTestSupport TemporaryStorage.swift
+[39/122] Compiling ContainerAPIService NetworksHarness.swift
+[40/123] Compiling ContainerBuild Globber.swift
+[41/123] Emitting module MachineAPIClient
+[42/123] Compiling MachineAPIClient MachineClient.swift
+[43/123] Compiling MachineAPIClient MachineBundle.swift
+[44/124] Compiling ContainerAPIService HealthCheckHarness.swift
+[45/124] Compiling ContainerTestSupport ContainerFixture+VolumeHelpers.swift
+[46/124] Compiling ContainerTestSupport ContainerFixture+SystemHelpers.swift
+[47/124] Compiling ContainerK8s K8sHelper+Readiness.swift
+[48/124] Compiling ContainerAPIService VolumesHarness.swift
+[49/124] Compiling ContainerAPIService PluginsService.swift
+[50/124] Compiling ContainerBuild BuildFile.swift
+[51/124] Compiling ContainerBuild BuildImageResolver.swift
+[52/124] Compiling ContainerTestSupport ContainerFixture+NetworkHelpers.swift
+[53/124] Compiling ContainerTestSupport ContainerFixture+ContainerHelpers.swift
+[54/124] Compiling ContainerImagesService ImagesServiceHarness.swift
+[55/124] Compiling ContainerK8s K8sHelper+Image.swift
+[56/124] Compiling ContainerK8s K8sHelper+Kubeconfig.swift
+[57/124] Compiling ContainerBuild BuildPipelineHandler.swift
+[58/124] Compiling ContainerBuild BuildRemoteContentProxy.swift
+[61/124] Compiling ContainerImagesService SnapshotStore.swift
+[62/124] Compiling ContainerTestSupport WarmupImage.swift
+[63/124] Compiling ContainerK8s K8sHelper+Networking.swift
+[64/124] Compiling ContainerK8s K8sHelper+Bootstrap.swift
+[65/124] Compiling ContainerAPIService NetworksService.swift
+[66/124] Compiling ContainerAPIService ContainersHarness.swift
+[67/124] Compiling ContainerAPIService ContainersService.swift
+[68/124] Compiling ContainerTestSupport ContainerFixture+MachineHelpers.swift
+[69/124] Compiling ContainerTestSupport ContainerFixture+ImageHelpers.swift
+[70/124] Compiling ContainerTestSupport ContainerFixture.swift
+[71/124] Emitting module ContainerTestSupport
+[72/124] Compiling ContainerTestSupport BuildFixture.swift
+[73/124] Compiling ContainerK8s TableOutput.swift
+[74/124] Compiling ContainerImagesService ContentStoreService.swift
+[75/124] Emitting module ContainerImagesService
+[76/124] Compiling ContainerImagesService ImagesService.swift
+[77/124] Emitting module ContainerBuild
+[80/124] Compiling ContainerAPIService KernelService.swift
+[81/127] Compiling ContainerK8s K8sWriteConfig.swift
+[82/127] Compiling ContainerK8s K8sHelper.swift
+[83/127] Compiling ContainerK8s KubeConfig.swift
+[84/127] Compiling ContainerK8s LinuxNodeProvisioner.swift
+[85/127] Compiling ContainerBuild Builder.grpc.swift
+[86/127] Compiling ContainerBuild Builder.pb.swift
+[87/127] Compiling ContainerBuild Builder+Start.swift
+[88/127] Compiling ContainerBuild Builder.swift
+[88/127] Write Objects.LinkFileList
+[90/127] Compiling ContainerAPIService VolumesService.swift
+[91/127] Compiling ContainerBuild URL+Extensions.swift
+[92/145] Compiling machine_apiserver MachineAPIServer+Start.swift
+[93/145] Compiling machine_apiserver MachineAPIServer.swift
+[94/145] Emitting module machine_apiserver
+[95/196] Emitting module container_core_images
+[96/199] Compiling ContainerRuntimeLinuxServer NonisolatedInterfaceStrategy.swift
+[97/199] Emitting module ContainerRuntimeLinuxServer
+[98/199] Compiling ContainerRuntimeLinuxServer RuntimeService.swift
+[99/199] Emitting module ContainerAPIService
+[100/199] Compiling IntegrationTests TestCLIBuilder.swift
+[101/199] Compiling IntegrationTests TestCLIBuilderEnvOnly.swift
+[101/199] Write Objects.LinkFileList
+[103/199] Compiling container_core_images ImagesHelper.swift
+[104/204] Compiling ContainerPersistenceTests PathUtilsTests.swift
+[105/268] Compiling ContainerPersistenceTests MachineConfigTests.swift
+[106/273] Emitting module container_builder
+[107/273] Compiling container_builder BuilderDelete.swift
+[108/273] Compiling container_builder BuilderStart.swift
+[109/273] Compiling container_builder BuilderStop.swift
+[110/273] Compiling container_builder BuilderStatus.swift
+[110/277] Write Objects.LinkFileList
+[113/277] Compiling ContainerPersistenceTests FilesystemEntityStoreTests.swift
+[114/277] Compiling ContainerPersistenceTests FilePathSymlinksTests.swift
+[115/277] Compiling ContainerPersistenceTests NetworkConfigEditorTests.swift
+[116/277] Compiling container_apiserver LocalhostDNSHandler.swift
+[117/277] Compiling container_apiserver ContainerDNSHandler.swift
+[118/277] Compiling ContainerAPIClientTests MemorySizeTests.swift
+[119/277] Compiling ContainerAPIServiceTests RuntimeConfigurationTests.swift
+[120/277] Compiling container_apiserver APIServer.swift
+[121/277] Emitting module container_apiserver
+[122/277] Compiling container_apiserver APIServer+Start.swift
+[123/277] Compiling ContainerAPIServiceTests DiskUsagePathTests.swift
+[124/277] Compiling ContainerAPIServiceTests LogFileTests.swift
+[125/277] Emitting module ContainerAPIServiceTests
+[125/277] Write Objects.LinkFileList
+[128/277] Compiling ContainerCommands ContainerCopy.swift
+[129/277] Compiling ContainerCommands ContainerCreate.swift
+[130/277] Compiling ContainerCommands MachineSet.swift
+[131/277] Compiling ContainerCommands MachineSetDefault.swift
+[132/277] Compiling ContainerCommands MachineStop.swift
+[133/277] Compiling ContainerCommands NetworkCreate.swift
+[134/282] Compiling ContainerCommands NetworkPrune.swift
+[135/282] Compiling ContainerCommands NetworkResource+ListDisplayable.swift
+[136/282] Compiling ContainerCommands RegistryList.swift
+[137/282] Compiling ContainerCommands RegistryLogin.swift
+[138/282] Compiling ContainerCommands DNSCreate.swift
+[139/282] Compiling ContainerCommands DNSDelete.swift
+[140/282] Compiling ContainerCommands DNSList.swift
+[141/282] Emitting module ContainerCommands
+[142/288] Compiling ContainerCommands ContainerStart.swift
+[143/288] Compiling ContainerCommands ContainerStats.swift
+[144/288] Compiling ContainerCommands ContainerStop.swift
+[145/288] Compiling ContainerCommands ManagedContainer+ListDisplayable.swift
+[146/288] Compiling ContainerCommands ProcessUtils.swift
+[147/288] Compiling ContainerCommands DefaultCommand.swift
+[148/288] Compiling ContainerCommands HelpCommand.swift
+[149/288] Compiling ContainerCommands KernelSet.swift
+[150/288] Compiling ContainerCommands PropertyList.swift
+[151/288] Compiling ContainerCommands SystemCommand.swift
+[152/288] Compiling ContainerCommands SystemStart.swift
+[153/288] Compiling ContainerCommands SystemStatus.swift
+[154/288] Compiling ContainerCommands SystemStop.swift
+[155/288] Compiling ContainerCommands SystemVersion.swift
+[156/288] Compiling IntegrationTests TestCLIVolumesSerial.swift
+[157/288] Compiling IntegrationTests ImageWarmup.swift
+[158/288] Compiling ContainerCommands ImageSave.swift
+[159/288] Compiling ContainerCommands ImageTag.swift
+[160/288] Compiling ContainerCommands OCIImageArchive.swift
+[161/288] Compiling ContainerCommands ListFormat+ExpressibleByArgument.swift
+[162/288] Compiling ContainerCommands MachineCommand.swift
+[163/288] Compiling ContainerCommands ImageCommand.swift
+[164/288] Compiling ContainerCommands ImageDelete.swift
+[165/288] Compiling ContainerCommands ImageInspect.swift
+[166/288] Compiling ContainerCommands ImageList.swift
+[167/288] Compiling IntegrationTests TestCLIVersion.swift
+[168/288] Compiling IntegrationTests TestCLIAnonymousVolumes.swift
+[169/288] Compiling IntegrationTests TestCLIVolumes.swift
+[170/288] Compiling ContainerCommands MachineCreate.swift
+[171/288] Compiling ContainerCommands MachineDelete.swift
+[172/288] Compiling ContainerCommands MachineHelpers.swift
+[173/288] Compiling ContainerCommands MachineInspect.swift
+[174/288] Compiling ContainerCommands MachineList.swift
+[175/288] Compiling ContainerCommands MachineLogs.swift
+[176/288] Compiling ContainerCommands MachineRun.swift
+[182/288] Compiling ContainerAPIClientTests HostDNSResolverTest.swift
+[183/288] Compiling ContainerAPIClientTests DefaultPlatformTests.swift
+[184/288] Compiling ContainerCommands ContainerDelete.swift
+[185/288] Compiling ContainerCommands ContainerExec.swift
+[186/288] Compiling ContainerCommands ContainerInspect.swift
+[187/288] Compiling ContainerCommands ContainerKill.swift
+[188/288] Compiling ContainerCommands ContainerList.swift
+[189/288] Compiling ContainerCommands ContainerPrune.swift
+[190/288] Compiling ContainerCommands ContainerRun.swift
+[195/288] Compiling ContainerCommands NetworkDelete.swift
+[196/288] Compiling ContainerCommands NetworkInspect.swift
+[197/288] Compiling ContainerCommands NetworkList.swift
+[198/288] Compiling ContainerCommands Application.swift
+[199/288] Compiling ContainerCommands AsyncLoggableCommand.swift
+[200/288] Compiling ContainerCommands BuildOptions+LinuxBuild.swift
+[201/288] Compiling ContainerCommands BuildOptions.swift
+[202/288] Compiling ContainerCommands ContainerCommit.swift
+[210/288] Linking container-network-vmnet
+[212/288] Compiling ContainerAPIClientTests Measurement+ParseTests.swift
+[213/288] Compiling ContainerAPIClientTests PacketFilterTest.swift
+[220/288] Emitting module ContainerAPIClientTests
+[221/288] Emitting module ContainerPersistenceTests
+[222/288] Compiling ContainerPersistenceTests ConfigSnapshotDecoderTests.swift
+[223/288] Compiling ContainerPersistenceTests ConfigurationLoaderTests.swift
+[224/288] Compiling ContainerCommands VolumeCreate.swift
+[225/288] Compiling ContainerCommands VolumeDelete.swift
+[226/288] Compiling ContainerCommands VolumeInspect.swift
+[227/288] Compiling ContainerCommands VolumeList.swift
+[228/288] Compiling ContainerCommands VolumePrune.swift
+[229/288] Compiling ContainerCommands VolumeResource+ListDisplayable.swift
+[229/288] Write Objects.LinkFileList
+[231/288] Applying container-network-vmnet
+[245/288] Emitting module IntegrationTests
+[256/288] Linking k8s
+[257/288] Linking machine-apiserver
+[258/288] Applying k8s
+[259/288] Applying machine-apiserver
+[272/288] Linking container-runtime-linux
+[273/288] Linking container-apiserver
+[274/288] Linking container-core-images
+[275/288] Applying container-runtime-linux
+[276/288] Linking container-builder
+[277/288] Applying container-apiserver
+[278/288] Applying container-core-images
+[278/288] Applying container-builder
+[280/288] Linking container
+[281/288] Linking container-build
+[282/288] Applying container
+[283/288] Applying container-build
+[285/288] Compiling ContainerAPIClientTests ParserTest.swift
+[286/288] Compiling ContainerAPIClientTests UtilityTests.swift
+[286/288] Write Objects.LinkFileList
+[287/288] Linking containerPackageTests
+Build complete! (39.36s)
+Test Suite 'Selected tests' started at 2026-10-18 19:06:09.982.
+Test Suite 'containerPackageTests.xctest' started at 2026-10-18 19:06:09.986.
+Test Suite 'containerPackageTests.xctest' passed at 2026-10-18 19:06:09.986.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-18 19:06:09.986.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.003) seconds
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite NetworkConfigEditorTests started.
+◇ Test insertsIntoExistingNetworkTable() started.
+◇ Test appendsNetworkTableWhenMissing() started.
+◇ Test readsSubnet() started.
+◇ Test checkOnStartDefaultsTrue() started.
+◇ Test restoreRevertsFile() started.
+◇ Test replacesExistingSubnet() started.
+◇ Test preservesOtherSectionsAndComments() started.
+◇ Test keepsFiveBackups() started.
+◇ Test writeCreatesDirAndBacksUp() started.
+✔ Test readsSubnet() passed after 0.001 seconds.
+✔ Test preservesOtherSectionsAndComments() passed after 0.001 seconds.
+✔ Test appendsNetworkTableWhenMissing() passed after 0.001 seconds.
+✔ Test replacesExistingSubnet() passed after 0.001 seconds.
+✔ Test insertsIntoExistingNetworkTable() passed after 0.001 seconds.
+✔ Test checkOnStartDefaultsTrue() passed after 0.008 seconds.
+✔ Test writeCreatesDirAndBacksUp() passed after 0.012 seconds.
+✔ Test restoreRevertsFile() passed after 0.013 seconds.
+✔ Test keepsFiveBackups() passed after 0.024 seconds.
+✔ Suite NetworkConfigEditorTests passed after 0.025 seconds.
+✔ Test run with 9 tests in 1 suite passed after 0.025 seconds.

@@ -1,0 +1,86 @@
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/27] Write swift-version--58304C5D6DBC2206.txt
+Build complete! (0.85s)
+Test Suite 'Selected tests' started at 2026-10-18 19:04:27.608.
+Test Suite 'containerPackageTests.xctest' started at 2026-10-18 19:04:27.609.
+Test Suite 'containerPackageTests.xctest' passed at 2026-10-18 19:04:27.609.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-18 19:04:27.609.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite SystemStatusTests started.
+◇ Suite NetworkDiagnosisTests started.
+◇ Suite NetworkResourceDisplayTests started.
+◇ Suite ManagedContainerDisplayTests started.
+◇ Suite ImageListTests started.
+◇ Test okRejectedWhenSystemAddressDisagrees() started.
+◇ Suite HelpCommandTests started.
+◇ Test containerBridgeWins() started.
+◇ Test systemAddressWins() started.
+◇ Test imageCountWithoutResourceCountsStaysNil() started.
+◇ Suite ContainerLogsTests started.
+◇ Test twoBridgesNoSignalIsAmbiguous() started.
+◇ Test gatewayIsLowerPlusOne() started.
+◇ Test noBridgesIsUndetermined() started.
+◇ Test imageCountOmittedWhenUnavailable() started.
+◇ Test mismatchSingleBridge() started.
+◇ Test okWhenGatewayPresent() started.
+◇ Test tableShowsServerAndDaemonFieldsWhenRunning() started.
+◇ Test tableHeaderHasTwoColumns() started.
+◇ Test payloadRoundTripsThroughJSON() started.
+◇ Test tableHeaderHasNineColumns() started.
+◇ Test tableIncludesStatusClientAndHostWhenRunning() started.
+◇ Test imageCountIsRecordedOnResourceCounts() started.
+◇ Test partialListingRendersHealthyImageAndReportsFailure(format:) started.
+◇ Test serviceFailureIsNotTreatedAsUnreadableImage() started.
+◇ Test healthyListingSucceedsWithoutWarnings() started.
+◇ Test allUnreadableImagesRenderEmptyJSONAndReportFailure() started.
+◇ Test tableShowsOnlyStatusWhenNotRunning() started.
+◇ Test followsInitiallyEmptyLog() started.
+◇ Test everyStaticSubcommandReachableViaHelp() started.
+◇ Test unknownSubcommandReturnsNil() started.
+✔ Test gatewayIsLowerPlusOne() passed after 0.001 seconds.
+✔ Test noBridgesIsUndetermined() passed after 0.001 seconds.
+✔ Test imageCountWithoutResourceCountsStaysNil() passed after 0.001 seconds.
+✔ Test twoBridgesNoSignalIsAmbiguous() passed after 0.001 seconds.
+✔ Test systemAddressWins() passed after 0.001 seconds.
+✔ Test containerBridgeWins() passed after 0.001 seconds.
+✔ Test mismatchSingleBridge() passed after 0.001 seconds.
+✔ Test imageCountOmittedWhenUnavailable() passed after 0.001 seconds.
+◇ Test case passing 1 argument format → .yaml to partialListingRendersHealthyImageAndReportsFailure(format:) started.
+◇ Test case passing 1 argument format → .table to partialListingRendersHealthyImageAndReportsFailure(format:) started.
+◇ Test case passing 1 argument format → .toml to partialListingRendersHealthyImageAndReportsFailure(format:) started.
+✔ Test okRejectedWhenSystemAddressDisagrees() passed after 0.001 seconds.
+◇ Test case passing 1 argument format → .json to partialListingRendersHealthyImageAndReportsFailure(format:) started.
+✔ Test tableHeaderHasTwoColumns() passed after 0.001 seconds.
+✔ Test okWhenGatewayPresent() passed after 0.001 seconds.
+✔ Test tableHeaderHasNineColumns() passed after 0.001 seconds.
+✔ Test tableIncludesStatusClientAndHostWhenRunning() passed after 0.001 seconds.
+✔ Test serviceFailureIsNotTreatedAsUnreadableImage() passed after 0.001 seconds.
+✔ Test imageCountIsRecordedOnResourceCounts() passed after 0.001 seconds.
+✔ Test allUnreadableImagesRenderEmptyJSONAndReportFailure() passed after 0.001 seconds.
+✔ Test tableShowsOnlyStatusWhenNotRunning() passed after 0.001 seconds.
+✔ Test tableShowsServerAndDaemonFieldsWhenRunning() passed after 0.001 seconds.
+✔ Suite NetworkDiagnosisTests passed after 0.001 seconds.
+✔ Suite NetworkResourceDisplayTests passed after 0.001 seconds.
+✔ Suite ManagedContainerDisplayTests passed after 0.001 seconds.
+✔ Test payloadRoundTripsThroughJSON() passed after 0.002 seconds.
+✔ Suite SystemStatusTests passed after 0.003 seconds.
+✔ Test healthyListingSucceedsWithoutWarnings() passed after 0.002 seconds.
+✔ Test partialListingRendersHealthyImageAndReportsFailure(format:) with 4 test cases passed after 0.006 seconds.
+✔ Suite ImageListTests passed after 0.007 seconds.
+✔ Test unknownSubcommandReturnsNil() passed after 0.009 seconds.
+✔ Test everyStaticSubcommandReachableViaHelp() passed after 0.011 seconds.
+✔ Suite HelpCommandTests passed after 0.011 seconds.
+✔ Test followsInitiallyEmptyLog() passed after 0.080 seconds.
+✔ Suite ContainerLogsTests passed after 0.080 seconds.
+✔ Test run with 24 tests in 7 suites passed after 0.081 seconds.

@@ -1,0 +1,179 @@
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/37] Write swift-version--58304C5D6DBC2206.txt
+[8/38] Write sources
+[10/39] Compiling ContainerCommands SystemCommand.swift
+[11/40] Compiling ContainerCommands Application.swift
+[12/40] Compiling ContainerCommands SystemNetwork.swift
+[13/40] Emitting module ContainerCommands
+[14/110] Emitting module ContainerAPIClientTests
+[15/110] Compiling ContainerCommands NetworkInspect.swift
+[16/110] Compiling ContainerCommands NetworkList.swift
+[17/110] Compiling ContainerCommands NetworkPrune.swift
+[18/110] Compiling ContainerCommands RegistryCommand.swift
+[19/110] Compiling ContainerCommands RegistryList.swift
+[20/110] Compiling ContainerCommands RegistryLogin.swift
+[21/110] Compiling ContainerCommands RegistryLogout.swift
+[22/110] Compiling ContainerCommands ContainerStats.swift
+[23/110] Compiling ContainerCommands ContainerStop.swift
+[24/110] Compiling ContainerCommands ProcessUtils.swift
+[25/110] Compiling ContainerCommands DefaultCommand.swift
+[26/110] Compiling ContainerCommands HelpCommand.swift
+[27/110] Compiling ContainerCommands ImageCommand.swift
+[28/110] Compiling ContainerCommands ImageDelete.swift
+[29/110] Compiling ContainerCommands ContainerClean.swift
+[30/110] Compiling ContainerCommands ContainerCommit.swift
+[31/110] Compiling ContainerCommands ContainerCopy.swift
+[32/110] Compiling ContainerCommands ContainerCreate.swift
+[33/110] Compiling ContainerCommands ContainerDelete.swift
+[34/110] Compiling ContainerCommands ContainerExec.swift
+[35/110] Compiling ContainerCommands ContainerExport.swift
+[36/110] Compiling ContainerCommands SystemVersion.swift
+[37/110] Compiling ContainerCommands VolumeCommand.swift
+[38/110] Compiling ContainerCommands VolumeCreate.swift
+[39/110] Compiling ContainerCommands VolumeDelete.swift
+[40/110] Compiling ContainerCommands VolumeInspect.swift
+[41/110] Compiling ContainerCommands VolumeList.swift
+[42/110] Compiling ContainerCommands VolumePrune.swift
+[43/110] Compiling ContainerCommands ImageInspect.swift
+[44/110] Compiling ContainerCommands ImageList.swift
+[45/110] Compiling ContainerCommands ImageLoad.swift
+[46/110] Compiling ContainerCommands ImagePrune.swift
+[47/110] Compiling ContainerCommands ImagePull.swift
+[48/110] Compiling ContainerCommands ImagePush.swift
+[49/110] Compiling ContainerCommands ImageSave.swift
+[50/110] Compiling ContainerCommands DNSCreate.swift
+[51/110] Compiling ContainerCommands DNSDelete.swift
+[52/110] Compiling ContainerCommands DNSList.swift
+[53/110] Compiling ContainerCommands KernelSet.swift
+[54/110] Compiling ContainerCommands SystemNetworkCheck.swift
+[55/110] Compiling ContainerCommands PropertyList.swift
+[56/110] Compiling ContainerCommands SystemDF.swift
+[57/110] Compiling ContainerCommands MachineRun.swift
+[58/110] Compiling ContainerCommands MachineSet.swift
+[59/110] Compiling ContainerCommands MachineSetDefault.swift
+[60/110] Compiling ContainerCommands MachineStop.swift
+[61/110] Compiling ContainerCommands NetworkCommand.swift
+[62/110] Compiling ContainerCommands NetworkCreate.swift
+[63/110] Compiling ContainerCommands NetworkDelete.swift
+[64/110] Compiling ContainerCommands ImageTag.swift
+[65/110] Compiling ContainerCommands MachineCommand.swift
+[66/110] Compiling ContainerCommands MachineCreate.swift
+[67/110] Compiling ContainerCommands MachineDelete.swift
+[68/110] Compiling ContainerCommands MachineInspect.swift
+[69/110] Compiling ContainerCommands MachineList.swift
+[70/110] Compiling ContainerCommands MachineLogs.swift
+[71/110] Compiling ContainerCommands SystemDNS.swift
+[72/110] Compiling ContainerCommands SystemKernel.swift
+[73/110] Compiling ContainerCommands SystemLogs.swift
+[74/110] Compiling ContainerCommands SystemProperty.swift
+[75/110] Compiling ContainerCommands SystemStart.swift
+[76/110] Compiling ContainerCommands SystemStatus.swift
+[77/110] Compiling ContainerCommands SystemStop.swift
+[78/110] Compiling ContainerCommands ContainerInspect.swift
+[79/110] Compiling ContainerCommands ContainerKill.swift
+[80/110] Compiling ContainerCommands ContainerList.swift
+[81/110] Compiling ContainerCommands ContainerLogs.swift
+[82/110] Compiling ContainerCommands ContainerPrune.swift
+[83/110] Compiling ContainerCommands ContainerRun.swift
+[84/110] Compiling ContainerCommands ContainerStart.swift
+[85/114] Emitting module container
+[86/114] Compiling container ContainerCLI.swift
+[87/114] Compiling container_build Application.swift
+[88/114] Emitting module container_build
+[88/114] Write Objects.LinkFileList
+[91/125] Compiling ContainerCommandsTests SystemNetworkCheckTests.swift
+[92/126] Compiling ContainerCommandsTests HostNetworkProbeTests.swift
+[93/126] Emitting module ContainerCommandsTests
+[94/126] Compiling ContainerCommandsTests ContainerLogsTests.swift
+[95/126] Compiling ContainerCommandsTests HelpCommandTests.swift
+[96/126] Compiling ContainerCommandsTests SystemStatusTests.swift
+[97/126] Compiling ContainerCommandsTests NetworkRepairerTests.swift
+[98/126] Compiling ContainerCommandsTests ListFormattingTests.swift
+[99/126] Compiling ContainerCommandsTests NetworkRepairPromptTests.swift
+[100/126] Compiling ContainerCommandsTests NetworkDiagnosisTests.swift
+[101/126] Compiling ContainerCommandsTests ImageListTests.swift
+[102/126] Compiling ContainerCommandsTests NetworkStartCheckTests.swift
+[102/126] Linking container-network-vmnet
+[102/126] Linking machine-apiserver
+[102/126] Linking container-runtime-linux
+[102/126] Linking container-core-images
+[103/126] Linking container-apiserver
+[103/126] Linking k8s
+[103/126] Linking container-builder
+[109/126] Applying container-network-vmnet
+[110/126] Applying container-builder
+[110/126] Applying container-apiserver
+[112/126] Applying container-runtime-linux
+[112/126] Applying container-core-images
+[114/126] Applying machine-apiserver
+[115/126] Applying k8s
+[116/126] Linking container
+[117/126] Applying container
+[118/126] Linking container-build
+[119/126] Applying container-build
+[121/126] Compiling ContainerAPIClientTests PacketFilterTest.swift
+[122/126] Compiling ContainerAPIClientTests ParserTest.swift
+[123/126] Compiling ContainerAPIClientTests MemorySizeTests.swift
+[124/126] Compiling ContainerAPIClientTests Measurement+ParseTests.swift
+[125/128] Compiling containerPackageTests runner.swift
+[126/128] Emitting module containerPackageTests
+[126/128] Write Objects.LinkFileList
+[127/128] Linking containerPackageTests
+Build complete! (22.34s)
+Test Suite 'Selected tests' started at 2026-10-18 19:21:38.257.
+Test Suite 'containerPackageTests.xctest' started at 2026-10-18 19:21:38.259.
+Test Suite 'containerPackageTests.xctest' passed at 2026-10-18 19:21:38.259.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-18 19:21:38.259.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.002) seconds
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite SystemNetworkCheckTests started.
+◇ Suite NetworkCheckModeTests started.
+◇ Suite NetworkStartCheckTests started.
+◇ Test registeredUnderSystem() started.
+◇ Test helpListsFlags() started.
+◇ Test proceedMeansNoRebootstrap() started.
+◇ Test exitCodes() started.
+◇ Test rolledBackMeansPlainRebootstrap() started.
+◇ Test ambiguousAsksNetworkFirst() started.
+◇ Test choiceOneRepairsAndAsksForRebootstrap() started.
+◇ Test choiceThreeChangesNothing() started.
+◇ Test pendingFixOffersRestart() started.
+◇ Test repairedMeansVerifyOnRebootstrap() started.
+◇ Test choiceTwoUpdatesOnly() started.
+◇ Test undeterminedWarns() started.
+◇ Test skipsWhenNotAllocationOnly() started.
+◇ Test ambiguousDontKnowPrintsAdminCheck() started.
+◇ Test okIsSilent() started.
+◇ Test nonTTYPrintsStepsAndChangesNothing() started.
+◇ Test skipsWhenOptedOut() started.
+✔ Test proceedMeansNoRebootstrap() passed after 0.005 seconds.
+✔ Test rolledBackMeansPlainRebootstrap() passed after 0.005 seconds.
+✔ Test registeredUnderSystem() passed after 0.005 seconds.
+✔ Test repairedMeansVerifyOnRebootstrap() passed after 0.005 seconds.
+✔ Test helpListsFlags() passed after 0.005 seconds.
+✔ Test exitCodes() passed after 0.005 seconds.
+✔ Test undeterminedWarns() passed after 0.005 seconds.
+✔ Test ambiguousDontKnowPrintsAdminCheck() passed after 0.005 seconds.
+✔ Test skipsWhenNotAllocationOnly() passed after 0.005 seconds.
+✔ Suite SystemNetworkCheckTests passed after 0.006 seconds.
+✔ Suite NetworkCheckModeTests passed after 0.006 seconds.
+✔ Test choiceThreeChangesNothing() passed after 0.006 seconds.
+✔ Test skipsWhenOptedOut() passed after 0.006 seconds.
+✔ Test nonTTYPrintsStepsAndChangesNothing() passed after 0.007 seconds.
+✔ Test okIsSilent() passed after 0.008 seconds.
+✔ Test choiceOneRepairsAndAsksForRebootstrap() passed after 0.010 seconds.
+✔ Test choiceTwoUpdatesOnly() passed after 0.010 seconds.
+✔ Test ambiguousAsksNetworkFirst() passed after 0.010 seconds.
+✔ Test pendingFixOffersRestart() passed after 0.013 seconds.
+✔ Suite NetworkStartCheckTests passed after 0.013 seconds.
+✔ Test run with 17 tests in 3 suites passed after 0.014 seconds.

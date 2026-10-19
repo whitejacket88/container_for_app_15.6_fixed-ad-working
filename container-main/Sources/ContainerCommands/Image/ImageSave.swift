@@ -1,0 +1,163 @@
+//===----------------------------------------------------------------------===//
+// Copyright © 2025-2026 Apple Inc. and the container project authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//===----------------------------------------------------------------------===//
+
+import ArgumentParser
+import ContainerAPIClient
+import ContainerPersistence
+import ContainerPlugin
+import ContainerResource
+import Containerization
+import ContainerizationError
+import ContainerizationOCI
+import ContainerizationOS
+import Foundation
+import SystemPackage
+import TerminalProgress
+
+extension Application {
+    public struct ImageSave: AsyncLoggableCommand {
+        public init() {}
+        public static let configuration = CommandConfiguration(
+            commandName: "save",
+            abstract: "Save one or more images as an OCI compatible tar archive"
+        )
+
+        @Option(
+            name: .shortAndLong,
+            help: "Architecture for the saved image"
+        )
+        var arch: String?
+
+        @Option(
+            help: "OS for the saved image"
+        )
+        var os: String?
+
+        @Option(
+            name: .shortAndLong, help: "Pathname for the saved image", completion: .file(),
+            transform: { str in
+                FilePathOps.absolutePath(FilePath(str))
+            })
+        var output: FilePath?
+
+        @Option(
+            help: "Platform for the saved image (format: os/arch[/variant], takes precedence over --os and --arch) [environment: CONTAINER_DEFAULT_PLATFORM]"
+        )
+        var platform: String?
+
+        @OptionGroup
+        public var logOptions: Flags.Logging
+
+        @Argument var references: [String]
+
+        public func run() async throws {
+            let containerSystemConfig: ContainerSystemConfig = try await ClientHealthCheck.loadContainerSystemConfig()
+            let p = try DefaultPlatform.resolve(platform: platform, os: os, arch: arch, log: log)
+
+            let progressConfig = try ProgressConfig(
+                description: "Saving image(s)"
+            )
+            let progress = ProgressBar(config: progressConfig)
+            defer {
+                progress.finish()
+            }
+            progress.start()
+
+            var images: [ImageDescription] = []
+            for reference in references {
+                do {
+                    images.append(try await ClientImage.get(reference: reference, containerSystemConfig: containerSystemConfig).description)
+                } catch {
+                    log.error("failed to get image for reference \(reference): \(error)")
+                }
+            }
+
+            guard images.count == references.count else {
+                throw ContainerizationError(.invalidArgument, message: "failed to save image(s)")
+            }
+
+            if let p {
+                for (reference, description) in zip(references, images) {
+                    let image = ClientImage(description: description)
+                    do {
+                        _ = try await image.manifest(for: p)
+                    } catch {
+                        var available: [String] = []
+                        if let index = try? await image.index() {
+                            for desc in index.manifests {
+                                guard let platform = desc.platform, platform.description != "unknown/unknown" else {
+                                    continue
+                                }
+                                // The index can list platforms whose content is not in the store, for example
+                                // after a pull or a load of a single platform. Only report those that can be saved.
+                                guard (try? await image.manifest(for: platform)) != nil, !available.contains(platform.description) else {
+                                    continue
+                                }
+                                available.append(platform.description)
+                            }
+                        }
+                        let availableStr = available.isEmpty ? "none" : available.joined(separator: ", ")
+                        throw ContainerizationError(
+                            .invalidArgument,
+                            message: "image \(reference) has no content for platform \(p.description); available platforms: \(availableStr)"
+                        )
+                    }
+                }
+            }
+
+            // Write to stdout; otherwise write to the output file
+            if let output {
+                try await ClientImage.save(references: references, out: output.string, platform: p, containerSystemConfig: containerSystemConfig)
+            } else {
+                let tempFile = FileManager.default.temporaryDirectory.appendingPathComponent("\(UUID().uuidString).tar")
+                defer {
+                    try? FileManager.default.removeItem(at: tempFile)
+                }
+
+                guard FileManager.default.createFile(atPath: tempFile.path(), contents: nil) else {
+                    throw ContainerizationError(.internalError, message: "unable to create temporary file")
+                }
+
+                try await ClientImage.save(references: references, out: tempFile.path(), platform: p, containerSystemConfig: containerSystemConfig)
+
+                guard let fileHandle = try? FileHandle(forReadingFrom: tempFile) else {
+                    throw ContainerizationError(.internalError, message: "unable to open temporary file for reading")
+                }
+
+                let bufferSize = 4096
+                while true {
+                    let chunk = fileHandle.readData(ofLength: bufferSize)
+                    if chunk.isEmpty { break }
+                    FileHandle.standardOutput.write(chunk)
+                }
+                try fileHandle.close()
+            }
+
+            progress.finish()
+            for reference in references {
+                if output == nil {
+                    // stdout is carrying the OCI archive in this branch, so the
+                    // saved-reference list goes to stderr via the logger. Printing
+                    // it to stdout appends non-archive bytes after the tar EOF and
+                    // corrupts the stream for redirection and pipelines (#1801).
+                    log.info("\(reference)")
+                } else {
+                    print(reference)
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,125 @@
+[0/1] Planning build
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/30] Write swift-version--58304C5D6DBC2206.txt
+[8/29] Write sources
+[10/116] Compiling SwiftProtobuf PathVisitor.swift
+[11/116] Compiling SwiftProtobuf ProtoNameProviding.swift
+[12/116] Compiling SwiftProtobuf ProtobufAPIVersionCheck.swift
+[13/116] Compiling SwiftProtobuf ProtobufMap.swift
+[14/116] Compiling SwiftProtobuf SelectiveVisitor.swift
+[15/116] Compiling SwiftProtobuf SimpleExtensionMap.swift
+[16/116] Compiling SwiftProtobuf StringUtils.swift
+[17/116] Compiling SwiftProtobuf SwiftProtobufContiguousBytes.swift
+[18/116] Compiling SwiftProtobuf SwiftProtobufError.swift
+[19/125] Compiling SwiftProtobuf ExtensionFields.swift
+[20/125] Compiling SwiftProtobuf ExtensionMap.swift
+[21/125] Compiling SwiftProtobuf FieldTag.swift
+[22/125] Compiling SwiftProtobuf FieldTypes.swift
+[23/125] Compiling SwiftProtobuf Google_Protobuf_Any+Extensions.swift
+[24/125] Compiling SwiftProtobuf Google_Protobuf_Any+Registry.swift
+[25/125] Compiling SwiftProtobuf Google_Protobuf_Duration+Extensions.swift
+[26/125] Compiling SwiftProtobuf Google_Protobuf_FieldMask+Extensions.swift
+[27/125] Compiling SwiftProtobuf Google_Protobuf_ListValue+Extensions.swift
+[28/125] Compiling SwiftProtobuf Google_Protobuf_NullValue+Extensions.swift
+[29/125] Compiling SwiftProtobuf Google_Protobuf_Struct+Extensions.swift
+[30/125] Compiling SwiftProtobuf Google_Protobuf_Timestamp+Extensions.swift
+[31/125] Compiling SwiftProtobuf Google_Protobuf_Value+Extensions.swift
+[32/125] Compiling SwiftProtobuf Google_Protobuf_Wrappers+Extensions.swift
+[33/125] Compiling SwiftProtobuf HashVisitor.swift
+[34/125] Compiling SwiftProtobuf Internal.swift
+[35/125] Compiling SwiftProtobuf JSONDecoder.swift
+[36/125] Compiling SwiftProtobuf JSONDecodingError.swift
+[37/125] Compiling SwiftProtobuf JSONDecodingOptions.swift
+[38/125] Compiling SwiftProtobuf JSONEncoder.swift
+[39/125] Compiling SwiftProtobuf duration.pb.swift
+[40/125] Compiling SwiftProtobuf empty.pb.swift
+[41/125] Compiling SwiftProtobuf field_mask.pb.swift
+[42/125] Compiling SwiftProtobuf source_context.pb.swift
+[43/125] Compiling SwiftProtobuf struct.pb.swift
+[44/125] Compiling SwiftProtobuf timestamp.pb.swift
+[45/125] Compiling SwiftProtobuf type.pb.swift
+[46/125] Compiling SwiftProtobuf wrappers.pb.swift
+[47/125] Compiling SwiftProtobuf resource_bundle_accessor.swift
+[48/125] Compiling SwiftProtobuf JSONEncodingError.swift
+[49/125] Compiling SwiftProtobuf JSONEncodingOptions.swift
+[50/125] Compiling SwiftProtobuf JSONEncodingVisitor.swift
+[51/125] Compiling SwiftProtobuf JSONMapEncodingVisitor.swift
+[52/125] Compiling SwiftProtobuf JSONScanner.swift
+[53/125] Compiling SwiftProtobuf MathUtils.swift
+[54/125] Compiling SwiftProtobuf Message+AnyAdditions.swift
+[55/125] Compiling SwiftProtobuf Message+BinaryAdditions.swift
+[56/125] Compiling SwiftProtobuf Message+BinaryAdditions_Data.swift
+[57/125] Compiling SwiftProtobuf Message+FieldMask.swift
+[58/125] Emitting module SwiftProtobuf
+[59/125] Compiling SwiftProtobuf AnyMessageStorage.swift
+[60/125] Compiling SwiftProtobuf AnyUnpackError.swift
+[61/125] Compiling SwiftProtobuf AsyncMessageSequence.swift
+[62/125] Compiling SwiftProtobuf BinaryDecoder.swift
+[63/125] Compiling SwiftProtobuf BinaryDecodingError.swift
+[64/125] Compiling SwiftProtobuf BinaryDecodingOptions.swift
+[65/125] Compiling SwiftProtobuf BinaryDelimited.swift
+[66/125] Compiling SwiftProtobuf BinaryEncoder.swift
+[67/125] Compiling SwiftProtobuf BinaryEncodingError.swift
+[68/125] Compiling SwiftProtobuf BinaryEncodingOptions.swift
+[69/125] Compiling SwiftProtobuf Message+JSONAdditions.swift
+[70/125] Compiling SwiftProtobuf Message+JSONAdditions_Data.swift
+[71/125] Compiling SwiftProtobuf Message+JSONArrayAdditions.swift
+[72/125] Compiling SwiftProtobuf Message+JSONArrayAdditions_Data.swift
+[73/125] Compiling SwiftProtobuf Message+TextFormatAdditions.swift
+[74/125] Compiling SwiftProtobuf Message.swift
+[75/125] Compiling SwiftProtobuf MessageExtension.swift
+[76/125] Compiling SwiftProtobuf NameMap.swift
+[77/125] Compiling SwiftProtobuf PathDecoder.swift
+[78/125] Compiling SwiftProtobuf BinaryEncodingSizeVisitor.swift
+[79/125] Compiling SwiftProtobuf BinaryEncodingVisitor.swift
+[80/125] Compiling SwiftProtobuf BytecodeInterpreter.swift
+[81/125] Compiling SwiftProtobuf BytecodeReader.swift
+[82/125] Compiling SwiftProtobuf CustomJSONCodable.swift
+[83/125] Compiling SwiftProtobuf Decoder.swift
+[84/125] Compiling SwiftProtobuf DoubleParser.swift
+[85/125] Compiling SwiftProtobuf Enum.swift
+[86/125] Compiling SwiftProtobuf ExtensibleMessage.swift
+[87/125] Compiling SwiftProtobuf ExtensionFieldValueSet.swift
+[88/125] Compiling SwiftProtobuf TextFormatDecoder.swift
+[89/125] Compiling SwiftProtobuf TextFormatDecodingError.swift
+[90/125] Compiling SwiftProtobuf TextFormatDecodingOptions.swift
+[91/125] Compiling SwiftProtobuf TextFormatEncoder.swift
+[92/125] Compiling SwiftProtobuf TextFormatEncodingOptions.swift
+[93/125] Compiling SwiftProtobuf TextFormatEncodingVisitor.swift
+[94/125] Compiling SwiftProtobuf TextFormatScanner.swift
+[95/125] Compiling SwiftProtobuf TimeUtils.swift
+[96/125] Compiling SwiftProtobuf UnknownStorage.swift
+[97/125] Compiling SwiftProtobuf UnsafeRawPointer+Shims.swift
+[98/125] Compiling SwiftProtobuf Varint.swift
+[99/125] Compiling SwiftProtobuf Version.swift
+[100/125] Compiling SwiftProtobuf Visitor.swift
+[101/125] Compiling SwiftProtobuf WireFormat.swift
+[102/125] Compiling SwiftProtobuf ZigZag.swift
+[103/125] Compiling SwiftProtobuf any.pb.swift
+[104/125] Compiling SwiftProtobuf api.pb.swift
+[105/125] Compiling SwiftProtobuf descriptor.pb.swift
+error: emit-module command failed with exit code 1 (use -v to see invocation)
+[106/109] Emitting module ContainerCommandsTests
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkStartCheckTests.swift:62:16: error: cannot find type 'StartCheckResult' in scope
+ 60 |         _ e: Env, _ term: FakeTerminal, attachment: ContainerResource.Attachment? = nil, checkOnStart: Bool = true,
+ 61 |         interfaces: [HostInterface]
+ 62 |     ) async -> StartCheckResult {
+    |                `- error: cannot find type 'StartCheckResult' in scope
+ 63 |         await NetworkStartCheck.evaluate(
+ 64 |             containerId: "kali-gui", attachment: attachment ?? self.attachment(), checkOnStart: checkOnStart,
+[107/109] Compiling ContainerCommandsTests NetworkStartCheckTests.swift
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkStartCheckTests.swift:62:16: error: cannot find type 'StartCheckResult' in scope
+ 60 |         _ e: Env, _ term: FakeTerminal, attachment: ContainerResource.Attachment? = nil, checkOnStart: Bool = true,
+ 61 |         interfaces: [HostInterface]
+ 62 |     ) async -> StartCheckResult {
+    |                `- error: cannot find type 'StartCheckResult' in scope
+ 63 |         await NetworkStartCheck.evaluate(
+ 64 |             containerId: "kali-gui", attachment: attachment ?? self.attachment(), checkOnStart: checkOnStart,
+error: fatalError

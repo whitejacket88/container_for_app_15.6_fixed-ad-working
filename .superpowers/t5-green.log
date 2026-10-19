@@ -1,0 +1,59 @@
+[0/1] Planning build
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/31] Write swift-version--58304C5D6DBC2206.txt
+[8/31] Write sources
+[10/19] Compiling ContainerCommands NetworkRepairer.swift
+[11/19] Emitting module ContainerCommands
+[12/33] Compiling container ContainerCLI.swift
+[13/33] Emitting module container
+[14/33] Emitting module container_build
+[15/33] Compiling container_build Application.swift
+[15/33] Write Objects.LinkFileList
+[18/33] Compiling ContainerCommandsTests HelpCommandTests.swift
+[19/33] Compiling ContainerCommandsTests ContainerLogsTests.swift
+[20/33] Emitting module ContainerCommandsTests
+[21/33] Compiling ContainerCommandsTests NetworkDiagnosisTests.swift
+[22/33] Compiling ContainerCommandsTests ListFormattingTests.swift
+[23/33] Compiling ContainerCommandsTests SystemStatusTests.swift
+[24/33] Compiling ContainerCommandsTests HostNetworkProbeTests.swift
+[25/33] Compiling ContainerCommandsTests ImageListTests.swift
+[26/33] Compiling ContainerCommandsTests NetworkRepairPromptTests.swift
+[27/33] Compiling ContainerCommandsTests NetworkRepairerTests.swift
+[27/33] Write Objects.LinkFileList
+[28/33] Linking container
+[29/33] Linking container-build
+[30/33] Applying container
+[31/33] Applying container-build
+[32/33] Linking containerPackageTests
+Build complete! (18.16s)
+Test Suite 'Selected tests' started at 2026-10-18 19:11:05.403.
+Test Suite 'containerPackageTests.xctest' started at 2026-10-18 19:11:05.404.
+Test Suite 'containerPackageTests.xctest' passed at 2026-10-18 19:11:05.404.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-18 19:11:05.404.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite NetworkRepairerTests started.
+◇ Test updateOnlyWritesAndRecordsPending() started.
+◇ Test verifyFailureRollsBack() started.
+◇ Test repairNowReportsRemoved() started.
+◇ Test repairNowRestartsOtherContainersOnly() started.
+◇ Test repairNowRollsBackOnStartFailure() started.
+◇ Test verifySucceedsMarksApplied() started.
+✔ Test repairNowRestartsOtherContainersOnly() passed after 0.016 seconds.
+✔ Test updateOnlyWritesAndRecordsPending() passed after 0.016 seconds.
+✔ Test repairNowReportsRemoved() passed after 0.016 seconds.
+✔ Test repairNowRollsBackOnStartFailure() passed after 0.016 seconds.
+✔ Test verifyFailureRollsBack() passed after 0.016 seconds.
+✔ Test verifySucceedsMarksApplied() passed after 0.017 seconds.
+✔ Suite NetworkRepairerTests passed after 0.018 seconds.
+✔ Test run with 6 tests in 1 suite passed after 0.018 seconds.

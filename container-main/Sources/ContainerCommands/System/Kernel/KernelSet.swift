@@ -1,0 +1,163 @@
+//===----------------------------------------------------------------------===//
+// Copyright © 2025-2026 Apple Inc. and the container project authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//===----------------------------------------------------------------------===//
+
+import ArgumentParser
+import ContainerAPIClient
+import ContainerPersistence
+import ContainerPlugin
+import Containerization
+import ContainerizationError
+import ContainerizationExtras
+import ContainerizationOCI
+import Foundation
+import TerminalProgress
+
+extension Application {
+    public struct KernelSet: AsyncLoggableCommand {
+        public static let configuration = CommandConfiguration(
+            commandName: "set",
+            abstract: "Set the default kernel"
+        )
+
+        @Option(name: .long, help: "The architecture of the kernel binary (values: amd64, arm64)")
+        var arch: String = ContainerizationOCI.Platform.current.architecture.description
+
+        @Option(name: .customLong("binary"), help: "Path to the kernel file (or archive member, if used with --tar)")
+        var binaryPath: String? = nil
+
+        @Flag(name: .long, help: "Overwrites an existing kernel with the same name")
+        var force: Bool = false
+
+        @Flag(name: .long, help: "Download and install the recommended kernel as the default (takes precedence over all other flags)")
+        var recommended: Bool = false
+
+        @Option(name: .customLong("tar"), help: "Filesystem path or remote URL to a tar archive containing a kernel file")
+        var tarPath: String? = nil
+
+        @Option(name: .long, help: "Expected digest for the tar archive, for example sha256:<hex>. Required when --tar is a remote URL.")
+        var digest: String? = nil
+
+        @OptionGroup
+        public var logOptions: Flags.Logging
+
+        public init() {}
+
+        public func run() async throws {
+            if recommended {
+                let containerSystemConfig: ContainerSystemConfig = try await ClientHealthCheck.loadContainerSystemConfig()
+                let url = containerSystemConfig.kernel.url
+                let path: String = containerSystemConfig.kernel.binaryPath
+                log.info("Installing the recommended kernel from \(url)...")
+                try await Self.downloadAndInstallWithProgressBar(
+                    tarRemoteURL: url,
+                    kernelFilePath: path,
+                    expectedDigest: containerSystemConfig.kernel.digest,
+                    force: force)
+                return
+            }
+            guard tarPath != nil else {
+                return try await self.setKernelFromBinary()
+            }
+            try await self.setKernelFromTar()
+        }
+
+        private func setKernelFromBinary() async throws {
+            guard digest == nil else {
+                throw ArgumentParser.ValidationError("'--digest' can only be used with '--tar'")
+            }
+            guard let binaryPath else {
+                throw ArgumentParser.ValidationError("missing argument '--binary'")
+            }
+            let absolutePath = URL(fileURLWithPath: binaryPath, relativeTo: .currentDirectory()).absoluteURL.absoluteString
+            let platform = try getSystemPlatform()
+            try await ClientKernel.installKernel(kernelFilePath: absolutePath, platform: platform, force: force)
+        }
+
+        private func setKernelFromTar() async throws {
+            guard let binaryPath else {
+                throw ArgumentParser.ValidationError("missing argument '--binary'")
+            }
+            guard let tarPath else {
+                throw ArgumentParser.ValidationError("missing argument '--tar")
+            }
+            let platform = try getSystemPlatform()
+            let remoteURL = URL(string: tarPath)
+            let remoteScheme = remoteURL?.scheme?.lowercased()
+            let isHTTPURL = remoteScheme == "http" || remoteScheme == "https"
+            let localTarPath = URL(fileURLWithPath: tarPath, relativeTo: .currentDirectory()).path
+            let fm = FileManager.default
+            if !isHTTPURL && fm.fileExists(atPath: localTarPath) {
+                try await ClientKernel.installKernelFromTar(
+                    tarFile: localTarPath,
+                    kernelFilePath: binaryPath,
+                    platform: platform,
+                    expectedDigest: digest,
+                    force: force)
+                return
+            }
+            guard let remoteURL else {
+                throw ContainerizationError(.invalidArgument, message: "invalid remote URL '\(tarPath)' for argument '--tar'. Missing protocol?")
+            }
+            guard let digest else {
+                throw ArgumentParser.ValidationError("'--digest' is required when '--tar' is a remote URL")
+            }
+            try await Self.downloadAndInstallWithProgressBar(
+                tarRemoteURL: remoteURL,
+                kernelFilePath: binaryPath,
+                platform: platform,
+                expectedDigest: digest,
+                force: force)
+        }
+
+        private func getSystemPlatform() throws -> SystemPlatform {
+            switch arch {
+            case "arm64":
+                return .linuxArm
+            case "amd64":
+                return .linuxAmd
+            default:
+                throw ContainerizationError(.unsupported, message: "unsupported architecture \(arch)")
+            }
+        }
+
+        static func downloadAndInstallWithProgressBar(
+            tarRemoteURL: URL,
+            kernelFilePath: String,
+            platform: SystemPlatform = .current,
+            expectedDigest: String,
+            force: Bool
+        ) async throws {
+            let progressConfig = try ProgressConfig(
+                showTasks: true,
+                totalTasks: 3
+            )
+            let progress = ProgressBar(config: progressConfig)
+            defer {
+                progress.finish()
+            }
+            progress.start()
+            try await ClientKernel.installKernelFromTar(
+                tarFile: tarRemoteURL.absoluteString,
+                kernelFilePath: kernelFilePath,
+                platform: platform,
+                progressUpdate: progress.handler,
+                expectedDigest: expectedDigest,
+                force: force)
+            progress.finish()
+        }
+
+    }
+}

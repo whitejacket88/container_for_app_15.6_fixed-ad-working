@@ -1,0 +1,221 @@
+[0/1] Planning build
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/29] Write sources
+[8/29] Write swift-version--58304C5D6DBC2206.txt
+[10/116] Compiling SwiftProtobuf PathVisitor.swift
+[11/116] Compiling SwiftProtobuf ProtoNameProviding.swift
+[12/116] Compiling SwiftProtobuf ProtobufAPIVersionCheck.swift
+[13/116] Compiling SwiftProtobuf ProtobufMap.swift
+[14/116] Compiling SwiftProtobuf SelectiveVisitor.swift
+[15/116] Compiling SwiftProtobuf SimpleExtensionMap.swift
+[16/116] Compiling SwiftProtobuf StringUtils.swift
+[17/116] Compiling SwiftProtobuf SwiftProtobufContiguousBytes.swift
+[18/116] Compiling SwiftProtobuf SwiftProtobufError.swift
+[19/125] Compiling SwiftProtobuf ExtensionFields.swift
+[20/125] Compiling SwiftProtobuf ExtensionMap.swift
+[21/125] Compiling SwiftProtobuf FieldTag.swift
+[22/125] Compiling SwiftProtobuf FieldTypes.swift
+[23/125] Compiling SwiftProtobuf Google_Protobuf_Any+Extensions.swift
+[24/125] Compiling SwiftProtobuf Google_Protobuf_Any+Registry.swift
+[25/125] Compiling SwiftProtobuf Google_Protobuf_Duration+Extensions.swift
+[26/125] Compiling SwiftProtobuf Google_Protobuf_FieldMask+Extensions.swift
+[27/125] Compiling SwiftProtobuf Google_Protobuf_ListValue+Extensions.swift
+[28/125] Compiling SwiftProtobuf Google_Protobuf_NullValue+Extensions.swift
+[29/125] Compiling SwiftProtobuf JSONEncodingError.swift
+[30/125] Compiling SwiftProtobuf JSONEncodingOptions.swift
+[31/125] Compiling SwiftProtobuf JSONEncodingVisitor.swift
+[32/125] Compiling SwiftProtobuf JSONMapEncodingVisitor.swift
+[33/125] Compiling SwiftProtobuf JSONScanner.swift
+[34/125] Compiling SwiftProtobuf MathUtils.swift
+[35/125] Compiling SwiftProtobuf Message+AnyAdditions.swift
+[36/125] Compiling SwiftProtobuf Message+BinaryAdditions.swift
+[37/125] Compiling SwiftProtobuf Message+BinaryAdditions_Data.swift
+[38/125] Compiling SwiftProtobuf Message+FieldMask.swift
+[39/125] Compiling SwiftProtobuf Message+JSONAdditions.swift
+[40/125] Compiling SwiftProtobuf Message+JSONAdditions_Data.swift
+[41/125] Compiling SwiftProtobuf Message+JSONArrayAdditions.swift
+[42/125] Compiling SwiftProtobuf Message+JSONArrayAdditions_Data.swift
+[43/125] Compiling SwiftProtobuf Message+TextFormatAdditions.swift
+[44/125] Compiling SwiftProtobuf Message.swift
+[45/125] Compiling SwiftProtobuf MessageExtension.swift
+[46/125] Compiling SwiftProtobuf NameMap.swift
+[47/125] Compiling SwiftProtobuf PathDecoder.swift
+[48/125] Compiling SwiftProtobuf BinaryEncodingSizeVisitor.swift
+[49/125] Compiling SwiftProtobuf BinaryEncodingVisitor.swift
+[50/125] Compiling SwiftProtobuf BytecodeInterpreter.swift
+[51/125] Compiling SwiftProtobuf BytecodeReader.swift
+[52/125] Compiling SwiftProtobuf CustomJSONCodable.swift
+[53/125] Compiling SwiftProtobuf Decoder.swift
+[54/125] Compiling SwiftProtobuf DoubleParser.swift
+[55/125] Compiling SwiftProtobuf Enum.swift
+[56/125] Compiling SwiftProtobuf ExtensibleMessage.swift
+[57/125] Compiling SwiftProtobuf ExtensionFieldValueSet.swift
+[58/125] Compiling SwiftProtobuf duration.pb.swift
+[59/125] Compiling SwiftProtobuf empty.pb.swift
+[60/125] Compiling SwiftProtobuf field_mask.pb.swift
+[61/125] Compiling SwiftProtobuf source_context.pb.swift
+[62/125] Compiling SwiftProtobuf struct.pb.swift
+[63/125] Compiling SwiftProtobuf timestamp.pb.swift
+[64/125] Compiling SwiftProtobuf type.pb.swift
+[65/125] Compiling SwiftProtobuf wrappers.pb.swift
+[66/125] Compiling SwiftProtobuf resource_bundle_accessor.swift
+[67/125] Compiling SwiftProtobuf AnyMessageStorage.swift
+[68/125] Compiling SwiftProtobuf AnyUnpackError.swift
+[69/125] Compiling SwiftProtobuf AsyncMessageSequence.swift
+[70/125] Compiling SwiftProtobuf BinaryDecoder.swift
+[71/125] Compiling SwiftProtobuf BinaryDecodingError.swift
+[72/125] Compiling SwiftProtobuf BinaryDecodingOptions.swift
+[73/125] Compiling SwiftProtobuf BinaryDelimited.swift
+[74/125] Compiling SwiftProtobuf BinaryEncoder.swift
+[75/125] Compiling SwiftProtobuf BinaryEncodingError.swift
+[76/125] Compiling SwiftProtobuf BinaryEncodingOptions.swift
+[77/125] Compiling SwiftProtobuf TextFormatDecoder.swift
+[78/125] Compiling SwiftProtobuf TextFormatDecodingError.swift
+[79/125] Compiling SwiftProtobuf TextFormatDecodingOptions.swift
+[80/125] Compiling SwiftProtobuf TextFormatEncoder.swift
+[81/125] Compiling SwiftProtobuf TextFormatEncodingOptions.swift
+[82/125] Compiling SwiftProtobuf TextFormatEncodingVisitor.swift
+[83/125] Compiling SwiftProtobuf TextFormatScanner.swift
+[84/125] Compiling SwiftProtobuf TimeUtils.swift
+[85/125] Compiling SwiftProtobuf UnknownStorage.swift
+[86/125] Emitting module SwiftProtobuf
+[87/125] Compiling SwiftProtobuf UnsafeRawPointer+Shims.swift
+[88/125] Compiling SwiftProtobuf Varint.swift
+[89/125] Compiling SwiftProtobuf Version.swift
+[90/125] Compiling SwiftProtobuf Visitor.swift
+[91/125] Compiling SwiftProtobuf WireFormat.swift
+[92/125] Compiling SwiftProtobuf ZigZag.swift
+[93/125] Compiling SwiftProtobuf any.pb.swift
+[94/125] Compiling SwiftProtobuf api.pb.swift
+[95/125] Compiling SwiftProtobuf descriptor.pb.swift
+[96/125] Compiling SwiftProtobuf Google_Protobuf_Struct+Extensions.swift
+[97/125] Compiling SwiftProtobuf Google_Protobuf_Timestamp+Extensions.swift
+[98/125] Compiling SwiftProtobuf Google_Protobuf_Value+Extensions.swift
+[99/125] Compiling SwiftProtobuf Google_Protobuf_Wrappers+Extensions.swift
+[100/125] Compiling SwiftProtobuf HashVisitor.swift
+[101/125] Compiling SwiftProtobuf Internal.swift
+[102/125] Compiling SwiftProtobuf JSONDecoder.swift
+[103/125] Compiling SwiftProtobuf JSONDecodingError.swift
+[104/125] Compiling SwiftProtobuf JSONDecodingOptions.swift
+[105/125] Compiling SwiftProtobuf JSONEncoder.swift
+[106/109] Emitting module ContainerPersistenceTests
+[107/109] Compiling ContainerPersistenceTests NetworkConfigEditorTests.swift
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerPersistenceTests/NetworkConfigEditorTests.swift:34:19: error: cannot find 'NetworkConfigEditor' in scope
+ 32 | 
+ 33 |     @Test func appendsNetworkTableWhenMissing() {
+ 34 |         let out = NetworkConfigEditor.settingSubnet(new, in: "[build]\ncpus = 2\n")
+    |                   `- error: cannot find 'NetworkConfigEditor' in scope
+ 35 |         #expect(out.hasPrefix("[build]\ncpus = 2\n"))
+ 36 |         #expect(out.contains("[network]\nsubnet = \"192.168.253.1/24\""))
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerPersistenceTests/NetworkConfigEditorTests.swift:40:19: error: cannot find 'NetworkConfigEditor' in scope
+ 38 | 
+ 39 |     @Test func replacesExistingSubnet() {
+ 40 |         let out = NetworkConfigEditor.settingSubnet(new, in: "[network]\nsubnet = \"192.168.64.1/24\"\n")
+    |                   `- error: cannot find 'NetworkConfigEditor' in scope
+ 41 |         let subnetLines = out.split(separator: "\n").filter { $0.hasPrefix("subnet") }
+ 42 |         #expect(subnetLines == ["subnet = \"192.168.253.1/24\""])
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerPersistenceTests/NetworkConfigEditorTests.swift:47:19: error: cannot find 'NetworkConfigEditor' in scope
+ 45 |     @Test func insertsIntoExistingNetworkTable() {
+ 46 |         let input = "[network]\n# keep me\n[network.extra]\nsubnet = \"10.0.0.1/24\"\n"
+ 47 |         let out = NetworkConfigEditor.settingSubnet(new, in: input)
+    |                   `- error: cannot find 'NetworkConfigEditor' in scope
+ 48 |         #expect(out == "[network]\nsubnet = \"192.168.253.1/24\"\n# keep me\n[network.extra]\nsubnet = \"10.0.0.1/24\"\n")
+ 49 |     }
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerPersistenceTests/NetworkConfigEditorTests.swift:66:19: error: cannot find 'NetworkConfigEditor' in scope
+ 64 | 
+ 65 |             """
+ 66 |         let out = NetworkConfigEditor.settingSubnet(new, in: input)
+    |                   `- error: cannot find 'NetworkConfigEditor' in scope
+ 67 |         let inLines = input.components(separatedBy: "\n")
+ 68 |         let outLines = out.components(separatedBy: "\n")
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerPersistenceTests/NetworkConfigEditorTests.swift:77:17: error: cannot find 'NetworkConfigEditor' in scope
+ 75 | 
+ 76 |     @Test func readsSubnet() throws {
+ 77 |         #expect(NetworkConfigEditor.subnet(in: "[network]\nsubnet = \"192.168.253.1/24\"\n") == new)
+    |                 `- error: cannot find 'NetworkConfigEditor' in scope
+ 78 |         #expect(NetworkConfigEditor.subnet(in: "[build]\ncpus = 2\n") == nil)
+ 79 |         #expect(NetworkConfigEditor.subnet(in: "[network.extra]\nsubnet = \"192.168.253.1/24\"\n") == nil)
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerPersistenceTests/NetworkConfigEditorTests.swift:78:17: error: cannot find 'NetworkConfigEditor' in scope
+ 76 |     @Test func readsSubnet() throws {
+ 77 |         #expect(NetworkConfigEditor.subnet(in: "[network]\nsubnet = \"192.168.253.1/24\"\n") == new)
+ 78 |         #expect(NetworkConfigEditor.subnet(in: "[build]\ncpus = 2\n") == nil)
+    |                 `- error: cannot find 'NetworkConfigEditor' in scope
+ 79 |         #expect(NetworkConfigEditor.subnet(in: "[network.extra]\nsubnet = \"192.168.253.1/24\"\n") == nil)
+ 80 |     }
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerPersistenceTests/NetworkConfigEditorTests.swift:79:17: error: cannot find 'NetworkConfigEditor' in scope
+ 77 |         #expect(NetworkConfigEditor.subnet(in: "[network]\nsubnet = \"192.168.253.1/24\"\n") == new)
+ 78 |         #expect(NetworkConfigEditor.subnet(in: "[build]\ncpus = 2\n") == nil)
+ 79 |         #expect(NetworkConfigEditor.subnet(in: "[network.extra]\nsubnet = \"192.168.253.1/24\"\n") == nil)
+    |                 `- error: cannot find 'NetworkConfigEditor' in scope
+ 80 |     }
+ 81 | 
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerPersistenceTests/NetworkConfigEditorTests.swift:85:29: error: cannot find 'NetworkConfigEditor' in scope
+ 83 |         try await TemporaryStorage.withTempDir { tempDir in
+ 84 |             let file = tempDir.appending("nested/container/config.toml")
+ 85 |             let first = try NetworkConfigEditor.write(subnet: try CIDRv4("192.168.64.1/24"), to: file, now: Date(timeIntervalSince1970: 1000))
+    |                             `- error: cannot find 'NetworkConfigEditor' in scope
+ 86 |             #expect(first == nil)
+ 87 |             let firstContent = try String(contentsOfFile: file.string, encoding: .utf8)
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerPersistenceTests/NetworkConfigEditorTests.swift:89:30: error: cannot find 'NetworkConfigEditor' in scope
+ 87 |             let firstContent = try String(contentsOfFile: file.string, encoding: .utf8)
+ 88 | 
+ 89 |             let backup = try NetworkConfigEditor.write(subnet: new, to: file, now: Date(timeIntervalSince1970: 2000))
+    |                              `- error: cannot find 'NetworkConfigEditor' in scope
+ 90 |             let backupPath = try #require(backup)
+ 91 |             #expect(try String(contentsOfFile: backupPath.string, encoding: .utf8) == firstContent)
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerPersistenceTests/NetworkConfigEditorTests.swift:92:21: error: cannot find 'NetworkConfigEditor' in scope
+ 90 |             let backupPath = try #require(backup)
+ 91 |             #expect(try String(contentsOfFile: backupPath.string, encoding: .utf8) == firstContent)
+ 92 |             #expect(NetworkConfigEditor.subnet(in: try String(contentsOfFile: file.string, encoding: .utf8)) == new)
+    |                     `- error: cannot find 'NetworkConfigEditor' in scope
+ 93 |         }
+ 94 |     }
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerPersistenceTests/NetworkConfigEditorTests.swift:100:43: error: cannot find 'NetworkConfigEditor' in scope
+ 98 |             let file = tempDir.appending("config.toml")
+ 99 |             try "[build]\ncpus = 2\n".write(toFile: file.string, atomically: true, encoding: .utf8)
+100 |             let backup = try #require(try NetworkConfigEditor.write(subnet: new, to: file))
+    |                                           `- error: cannot find 'NetworkConfigEditor' in scope
+101 |             try NetworkConfigEditor.restore(backup: backup, to: file)
+102 |             #expect(try String(contentsOfFile: file.string, encoding: .utf8) == "[build]\ncpus = 2\n")
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerPersistenceTests/NetworkConfigEditorTests.swift:101:17: error: cannot find 'NetworkConfigEditor' in scope
+ 99 |             try "[build]\ncpus = 2\n".write(toFile: file.string, atomically: true, encoding: .utf8)
+100 |             let backup = try #require(try NetworkConfigEditor.write(subnet: new, to: file))
+101 |             try NetworkConfigEditor.restore(backup: backup, to: file)
+    |                 `- error: cannot find 'NetworkConfigEditor' in scope
+102 |             #expect(try String(contentsOfFile: file.string, encoding: .utf8) == "[build]\ncpus = 2\n")
+103 |         }
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerPersistenceTests/NetworkConfigEditorTests.swift:110:21: error: cannot find 'NetworkConfigEditor' in scope
+108 |             let file = tempDir.appending("config.toml")
+109 |             for i in 0..<7 {
+110 |                 try NetworkConfigEditor.write(subnet: new, to: file, now: Date(timeIntervalSince1970: Double(1000 + i * 60)))
+    |                     `- error: cannot find 'NetworkConfigEditor' in scope
+111 |             }
+112 |             #expect(try backups(in: tempDir).count == 5)
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerPersistenceTests/NetworkConfigEditorTests.swift:121:36: error: value of type 'NetworkConfig' has no member 'shouldCheckOnStart'
+119 |             try "[network]\n".write(toFile: file.string, atomically: true, encoding: .utf8)
+120 |             let config: ContainerSystemConfig = try await ConfigurationLoader.load(configurationFiles: [file])
+121 |             #expect(config.network.shouldCheckOnStart == true)
+    |                                    `- error: value of type 'NetworkConfig' has no member 'shouldCheckOnStart'
+122 | 
+123 |             try "[network]\ncheckOnStart = false\n".write(toFile: file.string, atomically: true, encoding: .utf8)
+error: fatalError

@@ -1,0 +1,94 @@
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/28] Write sources
+[8/28] Write swift-version--58304C5D6DBC2206.txt
+[10/17] Compiling ContainerCommands NetworkStartCheck.swift
+[11/17] Compiling ContainerCommands NetworkRepairPrompt.swift
+[12/17] Emitting module ContainerCommands
+[13/18] Compiling ContainerCommands SystemNetworkCheck.swift
+[13/23] Write Objects.LinkFileList
+[16/23] Emitting module ContainerCommandsTests
+[17/23] Compiling ContainerCommandsTests NetworkRepairPromptTests.swift
+[17/23] Write Objects.LinkFileList
+[18/23] Linking container-build
+[19/23] Linking container
+[20/23] Applying container-build
+[21/23] Applying container
+[22/23] Linking containerPackageTests
+Build complete! (8.96s)
+Test Suite 'Selected tests' started at 2026-10-18 19:38:05.879.
+Test Suite 'containerPackageTests.xctest' started at 2026-10-18 19:38:05.880.
+Test Suite 'containerPackageTests.xctest' passed at 2026-10-18 19:38:05.880.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-18 19:38:05.880.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite NetworkRepairPromptTests started.
+◇ Suite NetworkStartCheckTests started.
+◇ Suite NetworkCheckModeTests started.
+◇ Test endOfInputMeansDoNothing() started.
+◇ Test choiceLabelsShown() started.
+◇ Test chooseNetworkPicksSecond() started.
+◇ Test manualStepsListsCommands() started.
+◇ Test notificationMentionsRecentChange() started.
+◇ Test enterMeansDoNothing() started.
+◇ Test historyMissingFileIsEmpty() started.
+◇ Test invalidThenGiveUp() started.
+◇ Test choiceOneAndTwo() started.
+◇ Test notificationListsAllRunning() started.
+◇ Test proceedMeansNoRebootstrap() started.
+◇ Test historyMarkApplied() started.
+◇ Test skipsWhenNotAllocationOnly() started.
+◇ Test ambiguousDontKnowPrintsAdminCheck() started.
+◇ Test choiceTwoUpdatesOnly() started.
+◇ Test ambiguousAsksNetworkFirst() started.
+◇ Test choiceOneRepairsAndAsksForRebootstrap() started.
+◇ Test repairedMeansVerifyOnRebootstrap() started.
+◇ Test undeterminedWarns() started.
+◇ Test rolledBackMeansPlainRebootstrap() started.
+◇ Test pendingFixOffersRestart() started.
+◇ Test nonTTYPrintsStepsAndChangesNothing() started.
+◇ Test nonTTYNeverReadsOrWrites() started.
+◇ Test skipsWhenOptedOut() started.
+◇ Test historyRecentWindow() started.
+◇ Test choiceThreeChangesNothing() started.
+◇ Test okIsSilent() started.
+✔ Test invalidThenGiveUp() passed after 0.006 seconds.
+✔ Test enterMeansDoNothing() passed after 0.006 seconds.
+✔ Test choiceLabelsShown() passed after 0.006 seconds.
+✔ Test choiceOneAndTwo() passed after 0.006 seconds.
+✔ Test endOfInputMeansDoNothing() passed after 0.006 seconds.
+✔ Test proceedMeansNoRebootstrap() passed after 0.006 seconds.
+✔ Test notificationMentionsRecentChange() passed after 0.006 seconds.
+✔ Test chooseNetworkPicksSecond() passed after 0.006 seconds.
+✔ Test notificationListsAllRunning() passed after 0.006 seconds.
+✔ Test manualStepsListsCommands() passed after 0.006 seconds.
+✔ Test rolledBackMeansPlainRebootstrap() passed after 0.006 seconds.
+✔ Test repairedMeansVerifyOnRebootstrap() passed after 0.006 seconds.
+✔ Test historyMissingFileIsEmpty() passed after 0.006 seconds.
+✔ Test nonTTYNeverReadsOrWrites() passed after 0.006 seconds.
+✔ Test skipsWhenOptedOut() passed after 0.006 seconds.
+✔ Test skipsWhenNotAllocationOnly() passed after 0.006 seconds.
+✔ Test undeterminedWarns() passed after 0.006 seconds.
+✔ Test nonTTYPrintsStepsAndChangesNothing() passed after 0.006 seconds.
+✔ Test ambiguousDontKnowPrintsAdminCheck() passed after 0.006 seconds.
+✔ Suite NetworkCheckModeTests passed after 0.006 seconds.
+✔ Test choiceThreeChangesNothing() passed after 0.006 seconds.
+✔ Test okIsSilent() passed after 0.008 seconds.
+✔ Test historyRecentWindow() passed after 0.009 seconds.
+✔ Test choiceOneRepairsAndAsksForRebootstrap() passed after 0.011 seconds.
+✔ Test ambiguousAsksNetworkFirst() passed after 0.011 seconds.
+✔ Test choiceTwoUpdatesOnly() passed after 0.011 seconds.
+✔ Test historyMarkApplied() passed after 0.011 seconds.
+✔ Suite NetworkRepairPromptTests passed after 0.012 seconds.
+✔ Test pendingFixOffersRestart() passed after 0.014 seconds.
+✔ Suite NetworkStartCheckTests passed after 0.014 seconds.
+✔ Test run with 27 tests in 3 suites passed after 0.015 seconds.

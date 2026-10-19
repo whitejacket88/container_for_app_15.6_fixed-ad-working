@@ -1,0 +1,82 @@
+[0/1] Planning build
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/29] Write sources
+[8/36] Write swift-version--58304C5D6DBC2206.txt
+[10/38] Compiling ContainerCommands NetworkDiagnosis.swift
+[11/38] Compiling IntegrationTests TestCLIMachineUserSetupScript.swift
+[12/38] Emitting module ContainerCommands
+[13/49] Emitting module container
+[14/49] Compiling container ContainerCLI.swift
+[15/49] Emitting module container_build
+[15/49] Write Objects.LinkFileList
+[17/49] Compiling container_build Application.swift
+[17/49] Write Objects.LinkFileList
+[19/49] Compiling ContainerCommandsTests NetworkDiagnosisTests.swift
+[20/49] Compiling ContainerCommandsTests ListFormattingTests.swift
+[21/49] Compiling ContainerCommandsTests SystemStatusTests.swift
+[22/49] Compiling ContainerCommandsTests HelpCommandTests.swift
+[23/49] Compiling ContainerCommandsTests ContainerLogsTests.swift
+[24/49] Emitting module ContainerCommandsTests
+[25/49] Compiling ContainerCommandsTests ImageListTests.swift
+[25/49] Linking container-builder
+[26/49] Linking container-runtime-linux
+[27/49] Linking container-core-images
+[28/49] Linking container-apiserver
+[29/49] Linking machine-apiserver
+[31/49] Compiling IntegrationTests TestCLIMachineCommand.swift
+[32/49] Compiling IntegrationTests TestK8sWriteConfigSerial.swift
+[33/49] Compiling IntegrationTests TestCLIMachineRuntimeSerial.swift
+[34/49] Compiling IntegrationTests TestK8sRunSerial.swift
+[35/49] Compiling IntegrationTests TestK8sNetworkingSerial.swift
+[36/49] Emitting module IntegrationTests
+[36/49] Applying container-core-images
+[37/49] Applying container-runtime-linux
+[37/49] Applying container-builder
+[39/49] Applying container-apiserver
+[40/49] Applying machine-apiserver
+[41/49] Linking container
+[42/49] Linking container-build
+[43/49] Applying container
+[44/49] Applying container-build
+[46/49] Emitting module ContainerAPIClientTests
+[47/49] Compiling ContainerAPIClientTests ParserTest.swift
+[48/51] Emitting module containerPackageTests
+[49/51] Compiling containerPackageTests runner.swift
+[49/51] Write Objects.LinkFileList
+[50/51] Linking containerPackageTests
+Build complete! (29.77s)
+Test Suite 'Selected tests' started at 2026-10-18 19:04:18.586.
+Test Suite 'containerPackageTests.xctest' started at 2026-10-18 19:04:18.589.
+Test Suite 'containerPackageTests.xctest' passed at 2026-10-18 19:04:18.589.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-18 19:04:18.589.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.003) seconds
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite NetworkDiagnosisTests started.
+◇ Test mismatchSingleBridge() started.
+◇ Test containerBridgeWins() started.
+◇ Test noBridgesIsUndetermined() started.
+◇ Test twoBridgesNoSignalIsAmbiguous() started.
+◇ Test gatewayIsLowerPlusOne() started.
+◇ Test okWhenGatewayPresent() started.
+◇ Test okRejectedWhenSystemAddressDisagrees() started.
+◇ Test systemAddressWins() started.
+✔ Test containerBridgeWins() passed after 0.001 seconds.
+✔ Test gatewayIsLowerPlusOne() passed after 0.001 seconds.
+✔ Test noBridgesIsUndetermined() passed after 0.001 seconds.
+✔ Test systemAddressWins() passed after 0.001 seconds.
+✔ Test okWhenGatewayPresent() passed after 0.001 seconds.
+✔ Test mismatchSingleBridge() passed after 0.001 seconds.
+✔ Test okRejectedWhenSystemAddressDisagrees() passed after 0.001 seconds.
+✔ Test twoBridgesNoSignalIsAmbiguous() passed after 0.001 seconds.
+✔ Suite NetworkDiagnosisTests passed after 0.001 seconds.
+✔ Test run with 8 tests in 1 suite passed after 0.001 seconds.

@@ -1,0 +1,170 @@
+[0/1] Planning build
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/32] Write swift-version--58304C5D6DBC2206.txt
+[8/32] Write sources
+[10/118] Compiling SwiftProtobuf JSONEncodingError.swift
+[11/118] Compiling SwiftProtobuf JSONEncodingOptions.swift
+[12/118] Compiling SwiftProtobuf JSONEncodingVisitor.swift
+[13/118] Compiling SwiftProtobuf JSONMapEncodingVisitor.swift
+[14/118] Compiling SwiftProtobuf JSONScanner.swift
+[15/118] Compiling SwiftProtobuf MathUtils.swift
+[16/118] Compiling SwiftProtobuf Message+AnyAdditions.swift
+[17/118] Compiling SwiftProtobuf Message+BinaryAdditions.swift
+[18/118] Compiling SwiftProtobuf Message+BinaryAdditions_Data.swift
+[19/118] Compiling SwiftProtobuf Message+FieldMask.swift
+[20/127] Compiling SwiftProtobuf Message+JSONAdditions.swift
+[21/127] Compiling SwiftProtobuf Message+JSONAdditions_Data.swift
+[22/127] Compiling SwiftProtobuf Message+JSONArrayAdditions.swift
+[23/127] Compiling SwiftProtobuf Message+JSONArrayAdditions_Data.swift
+[24/127] Compiling SwiftProtobuf Message+TextFormatAdditions.swift
+[25/127] Compiling SwiftProtobuf Message.swift
+[26/127] Compiling SwiftProtobuf MessageExtension.swift
+[27/127] Compiling SwiftProtobuf NameMap.swift
+[28/127] Compiling SwiftProtobuf PathDecoder.swift
+[29/127] Compiling SwiftProtobuf Google_Protobuf_Struct+Extensions.swift
+[30/127] Compiling SwiftProtobuf Google_Protobuf_Timestamp+Extensions.swift
+[31/127] Compiling SwiftProtobuf Google_Protobuf_Value+Extensions.swift
+[32/127] Compiling SwiftProtobuf Google_Protobuf_Wrappers+Extensions.swift
+[33/127] Compiling SwiftProtobuf HashVisitor.swift
+[34/127] Compiling SwiftProtobuf Internal.swift
+[35/127] Compiling SwiftProtobuf JSONDecoder.swift
+[36/127] Compiling SwiftProtobuf JSONDecodingError.swift
+[37/127] Compiling SwiftProtobuf JSONDecodingOptions.swift
+[38/127] Compiling SwiftProtobuf JSONEncoder.swift
+[39/127] Compiling SwiftProtobuf ExtensionFields.swift
+[40/127] Compiling SwiftProtobuf ExtensionMap.swift
+[41/127] Compiling SwiftProtobuf FieldTag.swift
+[42/127] Compiling SwiftProtobuf FieldTypes.swift
+[43/127] Compiling SwiftProtobuf Google_Protobuf_Any+Extensions.swift
+[44/127] Compiling SwiftProtobuf Google_Protobuf_Any+Registry.swift
+[45/127] Compiling SwiftProtobuf Google_Protobuf_Duration+Extensions.swift
+[46/127] Compiling SwiftProtobuf Google_Protobuf_FieldMask+Extensions.swift
+[47/127] Compiling SwiftProtobuf Google_Protobuf_ListValue+Extensions.swift
+[48/127] Compiling SwiftProtobuf Google_Protobuf_NullValue+Extensions.swift
+[49/127] Compiling SwiftProtobuf AnyMessageStorage.swift
+[50/127] Compiling SwiftProtobuf AnyUnpackError.swift
+[51/127] Compiling SwiftProtobuf AsyncMessageSequence.swift
+[52/127] Compiling SwiftProtobuf BinaryDecoder.swift
+[53/127] Compiling SwiftProtobuf BinaryDecodingError.swift
+[54/127] Compiling SwiftProtobuf BinaryDecodingOptions.swift
+[55/127] Compiling SwiftProtobuf BinaryDelimited.swift
+[56/127] Compiling SwiftProtobuf BinaryEncoder.swift
+[57/127] Compiling SwiftProtobuf BinaryEncodingError.swift
+[58/127] Compiling SwiftProtobuf BinaryEncodingOptions.swift
+[59/127] Compiling SwiftProtobuf duration.pb.swift
+[60/127] Compiling SwiftProtobuf empty.pb.swift
+[61/127] Compiling SwiftProtobuf field_mask.pb.swift
+[62/127] Compiling SwiftProtobuf source_context.pb.swift
+[63/127] Compiling SwiftProtobuf struct.pb.swift
+[64/127] Compiling SwiftProtobuf timestamp.pb.swift
+[65/127] Compiling SwiftProtobuf type.pb.swift
+[66/127] Compiling SwiftProtobuf wrappers.pb.swift
+[67/127] Compiling SwiftProtobuf resource_bundle_accessor.swift
+[68/127] Compiling SwiftProtobuf TextFormatDecoder.swift
+[69/127] Compiling SwiftProtobuf TextFormatDecodingError.swift
+[70/127] Compiling SwiftProtobuf TextFormatDecodingOptions.swift
+[71/127] Compiling SwiftProtobuf TextFormatEncoder.swift
+[72/127] Compiling SwiftProtobuf TextFormatEncodingOptions.swift
+[73/127] Compiling SwiftProtobuf TextFormatEncodingVisitor.swift
+[74/127] Compiling SwiftProtobuf TextFormatScanner.swift
+[75/127] Compiling SwiftProtobuf TimeUtils.swift
+[76/127] Compiling SwiftProtobuf UnknownStorage.swift
+[77/127] Emitting module SwiftProtobuf
+[78/127] Compiling SwiftProtobuf UnsafeRawPointer+Shims.swift
+[79/127] Compiling SwiftProtobuf Varint.swift
+[80/127] Compiling SwiftProtobuf Version.swift
+[81/127] Compiling SwiftProtobuf Visitor.swift
+[82/127] Compiling SwiftProtobuf WireFormat.swift
+[83/127] Compiling SwiftProtobuf ZigZag.swift
+[84/127] Compiling SwiftProtobuf any.pb.swift
+[85/127] Compiling SwiftProtobuf api.pb.swift
+[86/127] Compiling SwiftProtobuf descriptor.pb.swift
+[87/127] Compiling SwiftProtobuf PathVisitor.swift
+[88/127] Compiling SwiftProtobuf ProtoNameProviding.swift
+[89/127] Compiling SwiftProtobuf ProtobufAPIVersionCheck.swift
+[90/127] Compiling SwiftProtobuf ProtobufMap.swift
+[91/127] Compiling SwiftProtobuf SelectiveVisitor.swift
+[92/127] Compiling SwiftProtobuf SimpleExtensionMap.swift
+[93/127] Compiling SwiftProtobuf StringUtils.swift
+[94/127] Compiling SwiftProtobuf SwiftProtobufContiguousBytes.swift
+[95/127] Compiling SwiftProtobuf SwiftProtobufError.swift
+[96/127] Compiling SwiftProtobuf BinaryEncodingSizeVisitor.swift
+[97/127] Compiling SwiftProtobuf BinaryEncodingVisitor.swift
+[98/127] Compiling SwiftProtobuf BytecodeInterpreter.swift
+[99/127] Compiling SwiftProtobuf BytecodeReader.swift
+[100/127] Compiling SwiftProtobuf CustomJSONCodable.swift
+[101/127] Compiling SwiftProtobuf Decoder.swift
+[102/127] Compiling SwiftProtobuf DoubleParser.swift
+[103/127] Compiling SwiftProtobuf Enum.swift
+[104/127] Compiling SwiftProtobuf ExtensibleMessage.swift
+[105/127] Compiling SwiftProtobuf ExtensionFieldValueSet.swift
+[106/116] Compiling ContainerCommands NetworkRepairPrompt.swift
+[107/116] Compiling ContainerCommands NetworkRepairHistory.swift
+[108/116] Emitting module ContainerCommands
+[109/129] Compiling container ContainerCLI.swift
+[110/129] Emitting module container
+[110/129] Write Objects.LinkFileList
+[112/129] Compiling container_build Application.swift
+[113/129] Emitting module container_build
+[113/129] Write Objects.LinkFileList
+[115/129] Compiling ContainerCommandsTests ListFormattingTests.swift
+[116/129] Compiling ContainerCommandsTests SystemStatusTests.swift
+[117/129] Compiling ContainerCommandsTests HelpCommandTests.swift
+[118/129] Compiling ContainerCommandsTests ContainerLogsTests.swift
+[119/129] Emitting module ContainerCommandsTests
+[120/129] Compiling ContainerCommandsTests NetworkRepairPromptTests.swift
+[121/129] Compiling ContainerCommandsTests NetworkDiagnosisTests.swift
+[122/129] Compiling ContainerCommandsTests ImageListTests.swift
+[123/129] Compiling ContainerCommandsTests HostNetworkProbeTests.swift
+[123/129] Write Objects.LinkFileList
+[124/129] Linking container
+[125/129] Linking container-build
+[126/129] Applying container
+[127/129] Applying container-build
+[128/129] Linking containerPackageTests
+Build complete! (21.67s)
+Test Suite 'Selected tests' started at 2026-10-18 19:09:04.403.
+Test Suite 'containerPackageTests.xctest' started at 2026-10-18 19:09:04.404.
+Test Suite 'containerPackageTests.xctest' passed at 2026-10-18 19:09:04.404.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-18 19:09:04.404.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite NetworkRepairPromptTests started.
+◇ Test historyMissingFileIsEmpty() started.
+◇ Test historyMarkApplied() started.
+◇ Test choiceOneAndTwo() started.
+◇ Test enterMeansDoNothing() started.
+◇ Test historyRecentWindow() started.
+◇ Test choiceLabelsShown() started.
+◇ Test chooseNetworkPicksSecond() started.
+◇ Test manualStepsListsCommands() started.
+◇ Test invalidThenGiveUp() started.
+◇ Test endOfInputMeansDoNothing() started.
+◇ Test notificationMentionsRecentChange() started.
+◇ Test notificationListsAllRunning() started.
+◇ Test nonTTYNeverReadsOrWrites() started.
+✔ Test enterMeansDoNothing() passed after 0.001 seconds.
+✔ Test choiceLabelsShown() passed after 0.001 seconds.
+✔ Test manualStepsListsCommands() passed after 0.001 seconds.
+✔ Test invalidThenGiveUp() passed after 0.001 seconds.
+✔ Test chooseNetworkPicksSecond() passed after 0.001 seconds.
+✔ Test historyMissingFileIsEmpty() passed after 0.001 seconds.
+✔ Test nonTTYNeverReadsOrWrites() passed after 0.001 seconds.
+✔ Test choiceOneAndTwo() passed after 0.001 seconds.
+✔ Test notificationMentionsRecentChange() passed after 0.001 seconds.
+✔ Test endOfInputMeansDoNothing() passed after 0.001 seconds.
+✔ Test notificationListsAllRunning() passed after 0.001 seconds.
+✔ Test historyRecentWindow() passed after 0.007 seconds.
+✔ Test historyMarkApplied() passed after 0.009 seconds.
+✔ Suite NetworkRepairPromptTests passed after 0.009 seconds.
+✔ Test run with 13 tests in 1 suite passed after 0.009 seconds.

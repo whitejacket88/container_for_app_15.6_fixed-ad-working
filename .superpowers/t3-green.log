@@ -1,0 +1,51 @@
+[0/1] Planning build
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/31] Write swift-version--58304C5D6DBC2206.txt
+[8/31] Write sources
+[10/19] Emitting module ContainerCommands
+[11/19] Compiling ContainerCommands HostNetworkProbe.swift
+[12/31] Compiling container ContainerCLI.swift
+[13/31] Emitting module container
+[14/31] Emitting module container_build
+[15/31] Compiling container_build Application.swift
+[15/31] Write Objects.LinkFileList
+[18/31] Compiling ContainerCommandsTests ListFormattingTests.swift
+[19/31] Compiling ContainerCommandsTests HostNetworkProbeTests.swift
+[20/31] Emitting module ContainerCommandsTests
+[21/31] Compiling ContainerCommandsTests ImageListTests.swift
+[22/31] Compiling ContainerCommandsTests NetworkDiagnosisTests.swift
+[23/31] Compiling ContainerCommandsTests ContainerLogsTests.swift
+[24/31] Compiling ContainerCommandsTests HelpCommandTests.swift
+[25/31] Compiling ContainerCommandsTests SystemStatusTests.swift
+[25/31] Write Objects.LinkFileList
+[26/31] Linking container-build
+[27/31] Linking container
+[28/31] Applying container-build
+[29/31] Applying container
+[30/31] Linking containerPackageTests
+Build complete! (17.34s)
+Test Suite 'Selected tests' started at 2026-10-18 19:07:09.602.
+Test Suite 'containerPackageTests.xctest' started at 2026-10-18 19:07:09.603.
+Test Suite 'containerPackageTests.xctest' passed at 2026-10-18 19:07:09.603.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'Selected tests' passed at 2026-10-18 19:07:09.603.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+◇ Test run started.
+↳ Testing Library Version: 1501
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite HostNetworkProbeTests started.
+◇ Test parsesSharedAddress() started.
+◇ Test parseRejectsGarbage() started.
+◇ Test enumeratesLoopback() started.
+✔ Test parseRejectsGarbage() passed after 0.001 seconds.
+✔ Test parsesSharedAddress() passed after 0.001 seconds.
+✔ Test enumeratesLoopback() passed after 0.001 seconds.
+✔ Suite HostNetworkProbeTests passed after 0.001 seconds.
+✔ Test run with 3 tests in 1 suite passed after 0.001 seconds.

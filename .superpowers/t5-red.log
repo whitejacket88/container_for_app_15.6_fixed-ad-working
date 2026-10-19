@@ -1,0 +1,53 @@
+[0/1] Planning build
+[1/1] Compiling plugin Swift-DocC Preview
+[2/2] Compiling plugin Swift-DocC
+[3/3] Compiling plugin generate-grpc-code-from-protos
+[4/4] Compiling plugin GRPCProtobufGenerator
+[5/5] Compiling plugin SwiftProtobufPlugin
+[6/6] Compiling plugin GenerateManual
+[7/7] Compiling plugin GenerateDoccReference
+Building for debugging...
+[7/30] Write swift-version--58304C5D6DBC2206.txt
+[8/29] Write sources
+error: emit-module command failed with exit code 1 (use -v to see invocation)
+[10/13] Emitting module ContainerCommandsTests
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairerTests.swift:27:26: error: cannot find type 'ContainerSystemControl' in scope
+ 25 | 
+ 26 | /// Records the system actions the repairer takes; failures and state are configurable.
+ 27 | final class FakeControl: ContainerSystemControl {
+    |                          `- error: cannot find type 'ContainerSystemControl' in scope
+ 28 |     struct State {
+ 29 |         var calls: [String] = []
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairerTests.swift:80:76: error: cannot find type 'NetworkRepairer' in scope
+ 78 |     private let bridge = HostInterface(name: "bridge101", address: try! IPv4Address("192.168.253.1"), prefixLength: 24)
+ 79 | 
+ 80 |     private func setUp(_ dir: FilePath, _ control: FakeControl) throws -> (NetworkRepairer, FilePath, NetworkRepairHistory) {
+    |                                                                            `- error: cannot find type 'NetworkRepairer' in scope
+ 81 |         let file = dir.appending("config.toml")
+ 82 |         try original.write(toFile: file.string, atomically: true, encoding: .utf8)
+[11/13] Compiling ContainerCommandsTests NetworkRepairerTests.swift
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairerTests.swift:27:26: error: cannot find type 'ContainerSystemControl' in scope
+ 25 | 
+ 26 | /// Records the system actions the repairer takes; failures and state are configurable.
+ 27 | final class FakeControl: ContainerSystemControl {
+    |                          `- error: cannot find type 'ContainerSystemControl' in scope
+ 28 |     struct State {
+ 29 |         var calls: [String] = []
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairerTests.swift:80:76: error: cannot find type 'NetworkRepairer' in scope
+ 78 |     private let bridge = HostInterface(name: "bridge101", address: try! IPv4Address("192.168.253.1"), prefixLength: 24)
+ 79 | 
+ 80 |     private func setUp(_ dir: FilePath, _ control: FakeControl) throws -> (NetworkRepairer, FilePath, NetworkRepairHistory) {
+    |                                                                            `- error: cannot find type 'NetworkRepairer' in scope
+ 81 |         let file = dir.appending("config.toml")
+ 82 |         try original.write(toFile: file.string, atomically: true, encoding: .utf8)
+
+/Users/whitejacket88/Workspace/App.Projects/FieldTECh.app.local/workspace/container/container-main-nat-patched/Tests/ContainerCommandsTests/NetworkRepairerTests.swift:178:36: error: cannot infer key path type from context; consider explicitly specifying a root type
+176 |         }
+177 |         #expect(await repairer.verify(pending, id: "cur") == true)
+178 |         #expect(history.load().map(\.pending) == [false])
+    |                                    `- error: cannot infer key path type from context; consider explicitly specifying a root type
+179 |         #expect(try read(file).contains("192.168.253.1/24"))
+180 |     }
+error: fatalError
